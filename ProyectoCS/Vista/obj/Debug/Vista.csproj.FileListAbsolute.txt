@@ -1,0 +1,57 @@
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\bin\Debug\Vista.exe.config
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\bin\Debug\Vista.exe
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\bin\Debug\Vista.pdb
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.csprojResolveAssemblyReference.cache
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.exe
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.pdb
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.frmLogin.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.frmMainOptionsGerente.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.frmMainOptionsAdmin.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.frmMainOptionsJefe.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.frmMainOptionsComisionista.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.GestionarUsuarios.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.GestionarOrdenes.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.GestionarProductos.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.ReportarInfraccion.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.Otros.AdministrarCuenta.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.Otros.CambiarContraseña.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.Otros.Noticias.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.Otros.AñadirNoticias.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.Otros.VerRecomendaciones.resources
+C:\Users\sebas\Documents\Projects\Visual Studio\GESCOM TDP\Vista\obj\Debug\Vista.Otros.FijarPeriodoCalculo.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\bin\Debug\Vista.exe.config
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\bin\Debug\Vista.exe
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\bin\Debug\Vista.pdb
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.csprojResolveAssemblyReference.cache
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.AdministrarCuenta.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.AñadirNoticias.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.CambiarContraseña.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.FijarPeriodoCalculo.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.GestionarProductos.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.GestionarOrdenes.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.GestionarUsuarios.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.frmLogin.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.frmMainOptionsComisionista.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.frmMainOptionsJefe.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.frmMainOptionsGerente.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.frmMainOptionsAdmin.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.VerRecomendaciones.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.Noticias.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.ReportarInfraccion.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.exe
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.pdb
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.RealizarBackup.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.PapeleraReciclaje.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.VisualizarRecordVendido.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.VisualizarCanalVenta.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.VisualizarComisionista.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.VisualizarInfracciones.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.VisualizarJefes.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.VisualizarMapa.resources
+C:\Users\Oscar\Documents\DISCO D\usb kingston ultimo\CICLO 2018-1\Fundamentos de Programacion\Laboratorio4\GESCOM TDP\Vista\obj\Debug\Vista.Otros.VisualizarProductos.resources
