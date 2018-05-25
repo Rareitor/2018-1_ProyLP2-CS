@@ -16,8 +16,6 @@ namespace Modelo
         //setters y getters
         internal TipoLocacion Region { get => region; set => region = value; }
         //métodos adicionales
-        public override void emitirReporte()
-        {
-        }
+       
     }
 }

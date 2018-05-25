@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public abstract class Retribucion
+    public class Retribucion
     {
     //atributos
         private string idRetribucion;

@@ -35,6 +35,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,233 +47,333 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Otros\AdministrarCuenta.cs">
+    <Compile Include="FrmAdministrarCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\AdministrarCuenta.Designer.cs">
-      <DependentUpon>AdministrarCuenta.cs</DependentUpon>
+    <Compile Include="FrmAdministrarCuenta.Designer.cs">
+      <DependentUpon>FrmAdministrarCuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\AñadirNoticias.cs">
+    <Compile Include="FrmAñadirNoticia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\AñadirNoticias.Designer.cs">
-      <DependentUpon>AñadirNoticias.cs</DependentUpon>
+    <Compile Include="FrmAñadirNoticia.Designer.cs">
+      <DependentUpon>FrmAñadirNoticia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\CambiarContraseña.cs">
+    <Compile Include="frmBuscarSuperior.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\CambiarContraseña.Designer.cs">
-      <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    <Compile Include="frmBuscarSuperior.Designer.cs">
+      <DependentUpon>frmBuscarSuperior.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\FijarPeriodoCalculo.cs">
+    <Compile Include="FrmBusquedaOrdenPersonalizada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\FijarPeriodoCalculo.Designer.cs">
-      <DependentUpon>FijarPeriodoCalculo.cs</DependentUpon>
+    <Compile Include="FrmBusquedaOrdenPersonalizada.Designer.cs">
+      <DependentUpon>FrmBusquedaOrdenPersonalizada.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\GestionarProductos.cs">
+    <Compile Include="FrmBusquedaProductoPersonalizado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\GestionarProductos.Designer.cs">
-      <DependentUpon>GestionarProductos.cs</DependentUpon>
+    <Compile Include="FrmBusquedaProductoPersonalizado.Designer.cs">
+      <DependentUpon>FrmBusquedaProductoPersonalizado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\GestionarOrdenes.cs">
+    <Compile Include="FrmBusquedaUsuarioPersonalizada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\GestionarOrdenes.Designer.cs">
-      <DependentUpon>GestionarOrdenes.cs</DependentUpon>
+    <Compile Include="FrmBusquedaUsuarioPersonalizada.Designer.cs">
+      <DependentUpon>FrmBusquedaUsuarioPersonalizada.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\GestionarUsuarios.cs">
+    <Compile Include="FrmCambiarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\GestionarUsuarios.Designer.cs">
-      <DependentUpon>GestionarUsuarios.cs</DependentUpon>
+    <Compile Include="FrmCambiarContraseña.Designer.cs">
+      <DependentUpon>FrmCambiarContraseña.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="FrmConfirmaBorrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="FrmConfirmaBorrar.Designer.cs">
+      <DependentUpon>FrmConfirmaBorrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Comisionista\frmMainOptionsComisionista.cs">
+    <Compile Include="FrmElegirTipoExportar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Comisionista\frmMainOptionsComisionista.Designer.cs">
-      <DependentUpon>frmMainOptionsComisionista.cs</DependentUpon>
+    <Compile Include="FrmElegirTipoExportar.Designer.cs">
+      <DependentUpon>FrmElegirTipoExportar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jefe\frmMainOptionsJefe.cs">
+    <Compile Include="FrmFijarPeriodoCalculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Jefe\frmMainOptionsJefe.Designer.cs">
-      <DependentUpon>frmMainOptionsJefe.cs</DependentUpon>
+    <Compile Include="FrmFijarPeriodoCalculo.Designer.cs">
+      <DependentUpon>FrmFijarPeriodoCalculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gerente\frmMainOptionsGerente.cs">
+    <Compile Include="FrmGestionarOrdenAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gerente\frmMainOptionsGerente.Designer.cs">
-      <DependentUpon>frmMainOptionsGerente.cs</DependentUpon>
+    <Compile Include="FrmGestionarOrdenAdmin.Designer.cs">
+      <DependentUpon>FrmGestionarOrdenAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrador\frmMainOptionsAdmin.cs">
+    <Compile Include="FrmGestionarProductoAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrador\frmMainOptionsAdmin.Designer.cs">
-      <DependentUpon>frmMainOptionsAdmin.cs</DependentUpon>
+    <Compile Include="FrmGestionarProductoAdmin.Designer.cs">
+      <DependentUpon>FrmGestionarProductoAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\PapeleraReciclaje.cs">
+    <Compile Include="FrmGestionarUsuarioAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\PapeleraReciclaje.Designer.cs">
-      <DependentUpon>PapeleraReciclaje.cs</DependentUpon>
+    <Compile Include="FrmGestionarUsuarioAdmin.Designer.cs">
+      <DependentUpon>FrmGestionarUsuarioAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\RealizarBackup.cs">
+    <Compile Include="FrmGestionarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\RealizarBackup.Designer.cs">
-      <DependentUpon>RealizarBackup.cs</DependentUpon>
+    <Compile Include="FrmGestionarProducto.Designer.cs">
+      <DependentUpon>FrmGestionarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\VerRecomendaciones.cs">
+    <Compile Include="FrmGestionarOrden.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\VerRecomendaciones.Designer.cs">
-      <DependentUpon>VerRecomendaciones.cs</DependentUpon>
+    <Compile Include="FrmGestionarOrden.Designer.cs">
+      <DependentUpon>FrmGestionarOrden.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\Noticias.cs">
+    <Compile Include="FrmGestionarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\Noticias.Designer.cs">
-      <DependentUpon>Noticias.cs</DependentUpon>
+    <Compile Include="FrmGestionarUsuario.Designer.cs">
+      <DependentUpon>FrmGestionarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\ReportarInfraccion.cs">
+    <Compile Include="FrmTipoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\ReportarInfraccion.Designer.cs">
-      <DependentUpon>ReportarInfraccion.cs</DependentUpon>
+    <Compile Include="FrmTipoUsuario.Designer.cs">
+      <DependentUpon>FrmTipoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\VisualizarCanalVenta.cs">
+    <Compile Include="FrmVisualizarGerente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\VisualizarCanalVenta.Designer.cs">
-      <DependentUpon>VisualizarCanalVenta.cs</DependentUpon>
+    <Compile Include="FrmVisualizarGerente.Designer.cs">
+      <DependentUpon>FrmVisualizarGerente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\VisualizarComisionista.cs">
+    <Compile Include="FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\VisualizarComisionista.Designer.cs">
-      <DependentUpon>VisualizarComisionista.cs</DependentUpon>
+    <Compile Include="FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\VisualizarInfracciones.cs">
+    <Compile Include="FrmLogin2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\VisualizarInfracciones.Designer.cs">
-      <DependentUpon>VisualizarInfracciones.cs</DependentUpon>
+    <Compile Include="FrmLogin2.Designer.cs">
+      <DependentUpon>FrmLogin2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\VisualizarJefes.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRecuperarContrasena.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\VisualizarJefes.Designer.cs">
-      <DependentUpon>VisualizarJefes.cs</DependentUpon>
+    <Compile Include="FrmRecuperarContrasena.Designer.cs">
+      <DependentUpon>FrmRecuperarContrasena.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\VisualizarMapa.cs">
+    <Compile Include="FrmMainOptionsAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\VisualizarMapa.Designer.cs">
-      <DependentUpon>VisualizarMapa.cs</DependentUpon>
+    <Compile Include="FrmMainOptionsAdmin.Designer.cs">
+      <DependentUpon>FrmMainOptionsAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\VisualizarProductos.cs">
+    <Compile Include="FrmPapeleraReciclaje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\VisualizarProductos.Designer.cs">
-      <DependentUpon>VisualizarProductos.cs</DependentUpon>
+    <Compile Include="FrmPapeleraReciclaje.Designer.cs">
+      <DependentUpon>FrmPapeleraReciclaje.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\VisualizarRecordVendido.cs">
+    <Compile Include="FrmRealizarBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otros\VisualizarRecordVendido.Designer.cs">
-      <DependentUpon>VisualizarRecordVendido.cs</DependentUpon>
+    <Compile Include="FrmRealizarBackup.Designer.cs">
+      <DependentUpon>FrmRealizarBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisualizarRecomendacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarRecomendacion.Designer.cs">
+      <DependentUpon>FrmVisualizarRecomendacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNoticias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNoticias.Designer.cs">
+      <DependentUpon>FrmNoticias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportarInfraccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportarInfraccion.Designer.cs">
+      <DependentUpon>FrmReportarInfraccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisualizarCanalVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarCanalVenta.Designer.cs">
+      <DependentUpon>FrmVisualizarCanalVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisualizarComisionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarComisionista.Designer.cs">
+      <DependentUpon>FrmVisualizarComisionista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisualizarInfraccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarInfraccion.Designer.cs">
+      <DependentUpon>FrmVisualizarInfraccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisualizarJefe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarJefe.Designer.cs">
+      <DependentUpon>FrmVisualizarJefe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisualizarMapa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarMapa.Designer.cs">
+      <DependentUpon>FrmVisualizarMapa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisualizarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarProducto.Designer.cs">
+      <DependentUpon>FrmVisualizarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisualizarRecordVendido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarRecordVendido.Designer.cs">
+      <DependentUpon>FrmVisualizarRecordVendido.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Otros\AdministrarCuenta.resx">
-      <DependentUpon>AdministrarCuenta.cs</DependentUpon>
+    <Compile Include="FrmVentanaAdministracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVentanaAdministracion.Designer.cs">
+      <DependentUpon>FrmVentanaAdministracion.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmAdministrarCuenta.resx">
+      <DependentUpon>FrmAdministrarCuenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\AñadirNoticias.resx">
-      <DependentUpon>AñadirNoticias.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAñadirNoticia.resx">
+      <DependentUpon>FrmAñadirNoticia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\CambiarContraseña.resx">
-      <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    <EmbeddedResource Include="frmBuscarSuperior.resx">
+      <DependentUpon>frmBuscarSuperior.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\FijarPeriodoCalculo.resx">
-      <DependentUpon>FijarPeriodoCalculo.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBusquedaOrdenPersonalizada.resx">
+      <DependentUpon>FrmBusquedaOrdenPersonalizada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\GestionarProductos.resx">
-      <DependentUpon>GestionarProductos.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBusquedaProductoPersonalizado.resx">
+      <DependentUpon>FrmBusquedaProductoPersonalizado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\GestionarOrdenes.resx">
-      <DependentUpon>GestionarOrdenes.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBusquedaUsuarioPersonalizada.resx">
+      <DependentUpon>FrmBusquedaUsuarioPersonalizada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\GestionarUsuarios.resx">
-      <DependentUpon>GestionarUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCambiarContraseña.resx">
+      <DependentUpon>FrmCambiarContraseña.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="FrmConfirmaBorrar.resx">
+      <DependentUpon>FrmConfirmaBorrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comisionista\frmMainOptionsComisionista.resx">
-      <DependentUpon>frmMainOptionsComisionista.cs</DependentUpon>
+    <EmbeddedResource Include="FrmElegirTipoExportar.resx">
+      <DependentUpon>FrmElegirTipoExportar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Jefe\frmMainOptionsJefe.resx">
-      <DependentUpon>frmMainOptionsJefe.cs</DependentUpon>
+    <EmbeddedResource Include="FrmFijarPeriodoCalculo.resx">
+      <DependentUpon>FrmFijarPeriodoCalculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gerente\frmMainOptionsGerente.resx">
-      <DependentUpon>frmMainOptionsGerente.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestionarOrdenAdmin.resx">
+      <DependentUpon>FrmGestionarOrdenAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administrador\frmMainOptionsAdmin.resx">
-      <DependentUpon>frmMainOptionsAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestionarProductoAdmin.resx">
+      <DependentUpon>FrmGestionarProductoAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\PapeleraReciclaje.resx">
-      <DependentUpon>PapeleraReciclaje.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestionarUsuarioAdmin.resx">
+      <DependentUpon>FrmGestionarUsuarioAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\RealizarBackup.resx">
-      <DependentUpon>RealizarBackup.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestionarProducto.resx">
+      <DependentUpon>FrmGestionarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\VerRecomendaciones.resx">
-      <DependentUpon>VerRecomendaciones.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestionarOrden.resx">
+      <DependentUpon>FrmGestionarOrden.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\Noticias.resx">
-      <DependentUpon>Noticias.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestionarUsuario.resx">
+      <DependentUpon>FrmGestionarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\ReportarInfraccion.resx">
-      <DependentUpon>ReportarInfraccion.cs</DependentUpon>
+    <EmbeddedResource Include="FrmRecuperarContrasena.resx">
+      <DependentUpon>FrmRecuperarContrasena.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\VisualizarCanalVenta.resx">
-      <DependentUpon>VisualizarCanalVenta.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMainOptionsAdmin.resx">
+      <DependentUpon>FrmMainOptionsAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\VisualizarComisionista.resx">
-      <DependentUpon>VisualizarComisionista.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPapeleraReciclaje.resx">
+      <DependentUpon>FrmPapeleraReciclaje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\VisualizarInfracciones.resx">
-      <DependentUpon>VisualizarInfracciones.cs</DependentUpon>
+    <EmbeddedResource Include="FrmRealizarBackup.resx">
+      <DependentUpon>FrmRealizarBackup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\VisualizarJefes.resx">
-      <DependentUpon>VisualizarJefes.cs</DependentUpon>
+    <EmbeddedResource Include="FrmTipoUsuario.resx">
+      <DependentUpon>FrmTipoUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\VisualizarMapa.resx">
-      <DependentUpon>VisualizarMapa.cs</DependentUpon>
+    <EmbeddedResource Include="FrmVisualizarGerente.resx">
+      <DependentUpon>FrmVisualizarGerente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\VisualizarProductos.resx">
-      <DependentUpon>VisualizarProductos.cs</DependentUpon>
+    <EmbeddedResource Include="FrmVisualizarRecomendacion.resx">
+      <DependentUpon>FrmVisualizarRecomendacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\VisualizarRecordVendido.resx">
-      <DependentUpon>VisualizarRecordVendido.cs</DependentUpon>
+    <EmbeddedResource Include="FrmNoticias.resx">
+      <DependentUpon>FrmNoticias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportarInfraccion.resx">
+      <DependentUpon>FrmReportarInfraccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarCanalVenta.resx">
+      <DependentUpon>FrmVisualizarCanalVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarComisionista.resx">
+      <DependentUpon>FrmVisualizarComisionista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarInfraccion.resx">
+      <DependentUpon>FrmVisualizarInfraccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarJefe.resx">
+      <DependentUpon>FrmVisualizarJefe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarMapa.resx">
+      <DependentUpon>FrmVisualizarMapa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarProducto.resx">
+      <DependentUpon>FrmVisualizarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarRecordVendido.resx">
+      <DependentUpon>FrmVisualizarRecordVendido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin2.resx">
+      <DependentUpon>FrmLogin2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="FrmVentanaAdministracion.resx">
+      <DependentUpon>FrmVentanaAdministracion.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -286,6 +387,48 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\noticias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\papelera.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-backup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infraccion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consejos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconos\new iconos\Mobile-Menu-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teleonica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo telefon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controlador\Controlador.csproj">
+      <Project>{59972881-fb5f-4b43-86b5-57a2433e2608}</Project>
+      <Name>Controlador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{dafd44b9-5dcd-4cb4-876c-546e6589a751}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

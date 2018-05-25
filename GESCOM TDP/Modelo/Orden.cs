@@ -13,8 +13,10 @@ namespace Modelo
         private DateTime fechaVenta;
         private Producto producto;
         private Canal canal;
-        private Payee payee;
+        private Trabajador trabajador;
         private Retribucion retribucion;
+        private Combo combo;
+        private double monto;
     //métodos
         //constructores
         public Orden()
@@ -24,9 +26,19 @@ namespace Modelo
         public string Id { get => id; set => id = value; }
         public DateTime FechaVenta { get => fechaVenta; set => fechaVenta = value; }
         public Producto Producto { get => producto; set => producto = value; }
-        internal Canal Canal { get => canal; set => canal = value; }
+        public Canal Canal { get => canal; set => canal = value; }
+        public Trabajador Trabajador { get => trabajador; set => trabajador = value; }
+        public Retribucion Retribucion { get => retribucion; set => retribucion = value; }
+        public Combo Combo { get => combo; set => combo = value; }
+        public double Monto { get => monto; set => monto = value; }
+        public string IdComisionista { get => trabajador.IdTrabajador; }
+        public string NombreProducto { get => producto.Nombre; }
 
+        public string NombreComisionista { get => trabajador.Nombre; }
 
+        public string NombreCanal { get => canal.Nombre; }
+
+        public string NombreCombo { get => combo.Nombre; }
         //métodos dicionales
         //no implementado hasta definir casteo y/o polimorfismo
         //public Retribucion Retribucion { get => _retribucion; set => _retribucion = value; }

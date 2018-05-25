@@ -69,8 +69,10 @@
     <Compile Include="Comisionista.cs" />
     <Compile Include="Entidad.cs" />
     <Compile Include="Gerente.cs" />
+    <Compile Include="Infraccion.cs" />
     <Compile Include="Jefe.cs" />
     <Compile Include="Multiplicador.cs" />
+    <Compile Include="Noticia.cs" />
     <Compile Include="Orden.cs" />
     <Compile Include="Parametrica.cs" />
     <Compile Include="Payee.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restriccion.cs" />
     <Compile Include="Retribucion.cs" />
+    <Compile Include="Sede.cs" />
     <Compile Include="TipoLocacion.cs" />
     <Compile Include="TipoRegimen.cs" />
     <Compile Include="Trabajador.cs" />

@@ -19,9 +19,7 @@ namespace Modelo
         internal List<Jefe> ListaJefes { get => listaJefes; set => listaJefes = value; }
         internal TipoLocacion Sede { get => sede; set => sede = value; }
         //métodos adicionales
-        public override void emitirReporte()
-        {
-        }
+        
 
         public void listarJefes()
         {

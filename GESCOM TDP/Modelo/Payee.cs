@@ -14,6 +14,6 @@ namespace Modelo
         }
 
         //métodos adicionales
-        override public abstract void emitirReporte();
+      
     }
 }

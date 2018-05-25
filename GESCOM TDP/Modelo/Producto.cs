@@ -13,6 +13,9 @@ namespace Modelo
         private float precioEstandar;
         private String nombre;
         private String marca;
+        private string idProducto;
+        private string tipo;
+
 
     //métodos
         //constructores
@@ -20,10 +23,14 @@ namespace Modelo
         {
 
         }
+
+        public string IdProducto { get => idProducto; set => idProducto = value; }
+        public string Tipo { get => tipo; set => tipo = value; }
+
         //setters y getters
         protected int Stock { get => stock; set => stock = value; }
         protected float PrecioEstandar { get => precioEstandar; set => precioEstandar = value; }
-        protected string Nombre { get => nombre; set => nombre = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
         protected string Marca { get => marca; set => marca = value; }
 
         //métodos adicionales

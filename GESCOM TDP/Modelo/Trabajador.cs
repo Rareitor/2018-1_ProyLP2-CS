@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Modelo
 {
-    public abstract class Trabajador : Persona
+    public class Trabajador : Persona
     {
      //atributos	
         private string idTrabajador;
@@ -14,6 +14,8 @@ namespace Modelo
         private string telefono;
         private string userName;
         private string password;
+        private Sede locacion;
+        private string superior;
 
      //métodos
         //constructores
@@ -22,15 +24,18 @@ namespace Modelo
         }
 
         //setters y getters
-        public string IdTrabajador { get => idTrabajador; set => idTrabajador = value; }
+  
         public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
         public string Email { get => email; set => email = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
+        public string IdTrabajador { get => idTrabajador; set => idTrabajador = value; }
+        public Sede Locacion { get => locacion; set => locacion = value; }
+        public string Superior { get => superior; set => superior = value; }
         internal TipoRegimen Regimen { get => regimen; set => regimen = value; }
 
         //métodos adicionales
-        public abstract void emitirReporte();
+        //public  void emitirReporte();
     }
 }

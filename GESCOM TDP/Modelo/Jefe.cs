@@ -24,10 +24,7 @@ namespace Modelo
         internal TipoLocacion Sede { get => sede; set => sede = value; }
 
         //métodos adicionales
-        public override void emitirReporte()
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public void listarComisionistas()
         {

@@ -10,18 +10,12 @@ namespace Modelo
 
         //métodos
         //constructores
-        //public Administrador()
-        //{
-        //}
 
         //setters y getters
 
         //métodos adicionales
 
-        public override void emitirReporte()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
  
