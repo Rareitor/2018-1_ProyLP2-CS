@@ -17,10 +17,17 @@ namespace Controlador
         {
             return accesoDatos.listarProductos();
         }
+
+        public BindingList<Producto> listarProductosPapelera()
+        {
+            return accesoDatos.listarProductosPapelera();
+        }
+
         public BindingList<String> listarTiposProductos()
         {
             return accesoDatos.listarTiposProductos();
         }
+        
 
 
     }

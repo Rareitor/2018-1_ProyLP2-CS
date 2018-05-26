@@ -7,11 +7,11 @@ using Vista.Otros;
 
 namespace Vista
 {
-    public partial class FrmLogin2 : Form
+    public partial class FrmLogin : Form
     {
         TrabajadorBL logicaTrabajador = new TrabajadorBL();
         private FrmVentanaAdministracion ven;
-        public FrmLogin2()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -123,6 +123,7 @@ namespace Vista
 
             if (usuario != "USUARIO" && contra != "CONTRASEÑA")
             {
+                usuario = usuario.Trim();
                 int existeUsu=0, errorContra=0;
                 string respuesta = logicaTrabajador.existeUsuarioyContraseña(usuario, contra, ref existeUsu, ref errorContra,
                     ref id_usuario, ref nombreUsu, ref apellidoPat);

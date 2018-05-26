@@ -36,5 +36,12 @@ namespace Vista.Otros
         {
             this.Close();
         }
+
+        private void btnRecuperarProducto_Click(object sender, EventArgs e)
+        {
+            FrmVisualizarProducto frmVisualizarProducto = new FrmVisualizarProducto();
+            frmVisualizarProducto.Papelera = true;
+            frmVisualizarProducto.ShowDialog();
+        }
     }
 }

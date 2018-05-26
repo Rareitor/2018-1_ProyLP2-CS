@@ -35,6 +35,7 @@
             this.lblIngreseCampo = new System.Windows.Forms.Label();
             this.cmbCampo = new System.Windows.Forms.ComboBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,8 +44,6 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlIngreseDato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -104,12 +103,15 @@
             "Apellido Materno",
             "Correo",
             "Jefe Directo"});
+            this.cmbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCampo.FormattingEnabled = true;
             this.cmbCampo.Items.AddRange(new object[] {
+            "<Todos>",
             "idUsuario",
             "Nombre",
-            "Distrito",
-            "Cargo"});
+            "Apellido Paterno",
+            "Apellido Materno",
+            "Distrito"});
             this.cmbCampo.Location = new System.Drawing.Point(189, 25);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(121, 21);
@@ -127,12 +129,21 @@
             this.apellidoMaterno,
             this.email,
             this.username,
-            this.distrito,
-            this.cargo});
+            this.distrito});
             this.dgvUsuarios.Location = new System.Drawing.Point(26, 177);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(881, 295);
             this.dgvUsuarios.TabIndex = 35;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(807, 132);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 36;
+            this.btnCancelar.Text = "Regresar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // idUsuario
             // 
@@ -182,22 +193,6 @@
             this.distrito.HeaderText = "Distrito";
             this.distrito.Name = "distrito";
             // 
-            // cargo
-            // 
-            this.cargo.DataPropertyName = "Cargo";
-            this.cargo.HeaderText = "Cargo";
-            this.cargo.Name = "cargo";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(807, 132);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 36;
-            this.btnCancelar.Text = "Regresar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // FrmVisualizarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +231,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn distrito;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cargo;
     }
 }

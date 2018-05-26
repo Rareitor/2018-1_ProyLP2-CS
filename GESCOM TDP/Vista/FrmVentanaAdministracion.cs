@@ -321,7 +321,7 @@ namespace Vista
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FrmLogin2 login= new FrmLogin2();
+            FrmLogin login= new FrmLogin();
             login.ShowDialog();
         }
 

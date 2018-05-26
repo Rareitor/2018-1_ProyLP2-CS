@@ -37,13 +37,16 @@
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.lblFechaFin = new System.Windows.Forms.Label();
-            this.btnDetalle = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnRecuperar = new System.Windows.Forms.Button();
             this.picPapelera = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRecuperarProducto = new System.Windows.Forms.Button();
+            this.btnRecuperarUsuario = new System.Windows.Forms.Button();
+            this.btnRecuperarOrden = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPapelera)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvRegistro
@@ -53,9 +56,9 @@
             this.id_Usuario,
             this.Fecha_eliminacion,
             this.ItemBorrado});
-            this.dgvRegistro.Location = new System.Drawing.Point(30, 106);
+            this.dgvRegistro.Location = new System.Drawing.Point(98, 214);
             this.dgvRegistro.Name = "dgvRegistro";
-            this.dgvRegistro.Size = new System.Drawing.Size(373, 137);
+            this.dgvRegistro.Size = new System.Drawing.Size(383, 156);
             this.dgvRegistro.TabIndex = 0;
             this.dgvRegistro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -76,14 +79,14 @@
             // 
             // dtpFechaInicio
             // 
-            this.dtpFechaInicio.Location = new System.Drawing.Point(125, 12);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(196, 71);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(250, 20);
             this.dtpFechaInicio.TabIndex = 1;
             // 
             // dtpFechaFin
             // 
-            this.dtpFechaFin.Location = new System.Drawing.Point(125, 51);
+            this.dtpFechaFin.Location = new System.Drawing.Point(196, 110);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(250, 20);
             this.dtpFechaFin.TabIndex = 2;
@@ -91,55 +94,39 @@
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Location = new System.Drawing.Point(24, 18);
+            this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaInicio.Location = new System.Drawing.Point(95, 77);
             this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(68, 13);
+            this.lblFechaInicio.Size = new System.Drawing.Size(83, 16);
             this.lblFechaInicio.TabIndex = 3;
             this.lblFechaInicio.Text = "Fecha Inicio:";
             // 
             // lblFechaFin
             // 
             this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.Location = new System.Drawing.Point(24, 57);
+            this.lblFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaFin.Location = new System.Drawing.Point(95, 116);
             this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(57, 13);
+            this.lblFechaFin.Size = new System.Drawing.Size(70, 16);
             this.lblFechaFin.TabIndex = 4;
             this.lblFechaFin.Text = "Fecha Fin:";
-            // 
-            // btnDetalle
-            // 
-            this.btnDetalle.Location = new System.Drawing.Point(74, 260);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(123, 23);
-            this.btnDetalle.TabIndex = 5;
-            this.btnDetalle.Text = "Visualizar Detalle";
-            this.btnDetalle.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 90);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(95, 175);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 13);
+            this.label3.Size = new System.Drawing.Size(321, 16);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Seleccione un registro:";
-            // 
-            // btnRecuperar
-            // 
-            this.btnRecuperar.Location = new System.Drawing.Point(220, 260);
-            this.btnRecuperar.Name = "btnRecuperar";
-            this.btnRecuperar.Size = new System.Drawing.Size(134, 23);
-            this.btnRecuperar.TabIndex = 7;
-            this.btnRecuperar.Text = "Recuperar Información";
-            this.btnRecuperar.UseVisualStyleBackColor = true;
-            this.btnRecuperar.Click += new System.EventHandler(this.btnRecuperar_Click);
+            this.label3.Text = "Los siguientes usuarios han realizado eliminaciones:";
             // 
             // picPapelera
             // 
             this.picPapelera.Image = ((System.Drawing.Image)(resources.GetObject("picPapelera.Image")));
-            this.picPapelera.Location = new System.Drawing.Point(455, 71);
+            this.picPapelera.Location = new System.Drawing.Point(782, 110);
             this.picPapelera.Name = "picPapelera";
-            this.picPapelera.Size = new System.Drawing.Size(183, 172);
+            this.picPapelera.Size = new System.Drawing.Size(192, 178);
             this.picPapelera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPapelera.TabIndex = 8;
             this.picPapelera.TabStop = false;
@@ -147,7 +134,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(586, 260);
+            this.btnCancelar.Location = new System.Drawing.Point(941, 356);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 45;
@@ -155,16 +142,60 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btnRecuperarProducto);
+            this.panel1.Controls.Add(this.btnRecuperarUsuario);
+            this.panel1.Controls.Add(this.btnRecuperarOrden);
+            this.panel1.Location = new System.Drawing.Point(2, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1090, 44);
+            this.panel1.TabIndex = 47;
+            // 
+            // btnRecuperarProducto
+            // 
+            this.btnRecuperarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRecuperarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnRecuperarProducto.Location = new System.Drawing.Point(362, 3);
+            this.btnRecuperarProducto.Name = "btnRecuperarProducto";
+            this.btnRecuperarProducto.Size = new System.Drawing.Size(363, 38);
+            this.btnRecuperarProducto.TabIndex = 1;
+            this.btnRecuperarProducto.Text = "Producto";
+            this.btnRecuperarProducto.UseVisualStyleBackColor = false;
+            this.btnRecuperarProducto.Click += new System.EventHandler(this.btnRecuperarProducto_Click);
+            // 
+            // btnRecuperarUsuario
+            // 
+            this.btnRecuperarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRecuperarUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnRecuperarUsuario.Location = new System.Drawing.Point(0, 3);
+            this.btnRecuperarUsuario.Name = "btnRecuperarUsuario";
+            this.btnRecuperarUsuario.Size = new System.Drawing.Size(363, 38);
+            this.btnRecuperarUsuario.TabIndex = 0;
+            this.btnRecuperarUsuario.Text = "Usuario";
+            this.btnRecuperarUsuario.UseVisualStyleBackColor = false;
+            // 
+            // btnRecuperarOrden
+            // 
+            this.btnRecuperarOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRecuperarOrden.ForeColor = System.Drawing.Color.White;
+            this.btnRecuperarOrden.Location = new System.Drawing.Point(724, 3);
+            this.btnRecuperarOrden.Name = "btnRecuperarOrden";
+            this.btnRecuperarOrden.Size = new System.Drawing.Size(363, 38);
+            this.btnRecuperarOrden.TabIndex = 2;
+            this.btnRecuperarOrden.Text = "Orden";
+            this.btnRecuperarOrden.UseVisualStyleBackColor = false;
+            // 
             // FrmPapeleraReciclaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 302);
+            this.ClientSize = new System.Drawing.Size(1092, 408);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.picPapelera);
-            this.Controls.Add(this.btnRecuperar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.lblFechaFin);
             this.Controls.Add(this.lblFechaInicio);
             this.Controls.Add(this.dtpFechaFin);
@@ -174,6 +205,7 @@
             this.Text = "Papelera Reciclaje";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPapelera)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,10 +221,12 @@
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.Label lblFechaInicio;
         private System.Windows.Forms.Label lblFechaFin;
-        private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnRecuperar;
         private System.Windows.Forms.PictureBox picPapelera;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnRecuperarOrden;
+        private System.Windows.Forms.Button btnRecuperarProducto;
+        private System.Windows.Forms.Button btnRecuperarUsuario;
     }
 }

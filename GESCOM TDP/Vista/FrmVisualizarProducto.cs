@@ -18,9 +18,14 @@ namespace Vista.Otros
         private ProductoBL logicaNegocio;
         private BindingList<Producto> listaOriginal;
         private BindingList<Producto> listaFiltrada;
+        private bool papelera;
+
+        public bool Papelera { get => papelera; set => papelera = value; }
+
         public FrmVisualizarProducto()
         {
             InitializeComponent();
+            papelera = false;
             logicaNegocio = new ProductoBL();
             listaOriginal = new BindingList<Producto>();
             listaFiltrada = new BindingList<Producto>();
@@ -48,6 +53,10 @@ namespace Vista.Otros
 
         private void cargarLista()
         {
+            if (papelera)
+            {
+                listaOriginal = logicaNegocio.listarProductosPapelera();
+            }
             listaOriginal = logicaNegocio.listarProductos();
             dgvProducto.DataSource = listaOriginal;
         }

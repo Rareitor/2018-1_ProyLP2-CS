@@ -22,7 +22,8 @@ namespace Vista.Otros
         {
             InitializeComponent();
             dgvUsuarios.AutoGenerateColumns = false;
-            
+            cmbCampo.Text = "<Todos>";
+
             this.puesto = puesto;
             logicaNegocio = new TrabajadorBL();
             listaOriginal = new BindingList<Trabajador>();
@@ -80,19 +81,34 @@ namespace Vista.Otros
             foreach (Trabajador trabajador in listaOriginal){
                 switch (filtro)
                 {
+                    case "<Todos>":
+                        cumple = trabajador.IdTrabajador.Contains(field)
+                                || trabajador.Dni.Contains(field)
+                                || trabajador.Email.Contains(field)
+                                || trabajador.UserName.Contains(field)
+                                || trabajador.Nombre.Contains(field)
+                                || trabajador.ApellidoPaterno.Contains(field)
+                                || trabajador.ApellidoMaterno.Contains(field)
+                                || trabajador.IdTrabajador.Contains(field)
+                                || trabajador.Distrito.Contains(field);
+                        break;
                     case "ID":
-                        cumple = trabajador.IdTrabajador.StartsWith(field);
+                        cumple = trabajador.IdTrabajador.Contains(field);
                         break;
                     case "Nombre":
-                        cumple = trabajador.Nombre.StartsWith(field)
-                                || trabajador.ApellidoPaterno.StartsWith(field)
-                                || trabajador.ApellidoMaterno.StartsWith(field);
+                        cumple = trabajador.Nombre.Contains(field);
+                        break;
+                    case "Apellido Paterno":
+                        trabajador.ApellidoPaterno.Contains(field);
+                        break;
+                    case "Apellido Materno":
+                        trabajador.ApellidoMaterno.Contains(field);
                         break;
                     case "Distrito":
-                        cumple = trabajador.Distrito.StartsWith(field);
+                        cumple = trabajador.Distrito.Contains(field);
                         break;
-                    case "Cargo":
-                        cumple = trabajador.Cargo.StartsWith(field);
+                    default:
+                        cumple = true;
                         break;
                 }
                 if (!cumple) continue;
