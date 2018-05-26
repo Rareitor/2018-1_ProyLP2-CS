@@ -141,9 +141,9 @@
             this.pnlVisualizar.Controls.Add(this.btnCanalesDeVenta);
             this.pnlVisualizar.Controls.Add(this.btnProductosVisu);
             this.pnlVisualizar.Controls.Add(this.btnComisionesVisu);
-            this.pnlVisualizar.Location = new System.Drawing.Point(50, 276);
+            this.pnlVisualizar.Location = new System.Drawing.Point(0, 276);
             this.pnlVisualizar.Name = "pnlVisualizar";
-            this.pnlVisualizar.Size = new System.Drawing.Size(150, 225);
+            this.pnlVisualizar.Size = new System.Drawing.Size(200, 225);
             this.pnlVisualizar.TabIndex = 12;
             this.pnlVisualizar.Visible = false;
             // 
@@ -161,6 +161,7 @@
             this.btnMapa2.Size = new System.Drawing.Size(150, 25);
             this.btnMapa2.TabIndex = 14;
             this.btnMapa2.Text = "Mapa";
+            this.btnMapa2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMapa2.UseVisualStyleBackColor = false;
             this.btnMapa2.Click += new System.EventHandler(this.btnMapa2_Click);
             // 
@@ -178,6 +179,7 @@
             this.btnJefes.Size = new System.Drawing.Size(120, 25);
             this.btnJefes.TabIndex = 8;
             this.btnJefes.Text = "Jefes";
+            this.btnJefes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnJefes.UseVisualStyleBackColor = false;
             this.btnJefes.Click += new System.EventHandler(this.btnJefes_Click);
             // 
@@ -195,6 +197,7 @@
             this.btnComisionista.Size = new System.Drawing.Size(120, 25);
             this.btnComisionista.TabIndex = 9;
             this.btnComisionista.Text = "Comisionistas";
+            this.btnComisionista.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnComisionista.UseVisualStyleBackColor = false;
             this.btnComisionista.Click += new System.EventHandler(this.btnComisionista_Click);
             // 
@@ -212,6 +215,7 @@
             this.btnNoticiasVisu.Size = new System.Drawing.Size(150, 25);
             this.btnNoticiasVisu.TabIndex = 13;
             this.btnNoticiasVisu.Text = "Noticias";
+            this.btnNoticiasVisu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNoticiasVisu.UseVisualStyleBackColor = false;
             this.btnNoticiasVisu.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -229,6 +233,7 @@
             this.btnPersonalCargo.Size = new System.Drawing.Size(150, 25);
             this.btnPersonalCargo.TabIndex = 11;
             this.btnPersonalCargo.Text = "Personal a Cargo";
+            this.btnPersonalCargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPersonalCargo.UseVisualStyleBackColor = false;
             this.btnPersonalCargo.Click += new System.EventHandler(this.btnPersonalCargo_Click);
             // 
@@ -246,6 +251,7 @@
             this.btnInfracciones.Size = new System.Drawing.Size(150, 25);
             this.btnInfracciones.TabIndex = 12;
             this.btnInfracciones.Text = "Infracciones";
+            this.btnInfracciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfracciones.UseVisualStyleBackColor = false;
             this.btnInfracciones.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -263,6 +269,7 @@
             this.btnCanalesDeVenta.Size = new System.Drawing.Size(150, 25);
             this.btnCanalesDeVenta.TabIndex = 10;
             this.btnCanalesDeVenta.Text = "Canales de Venta";
+            this.btnCanalesDeVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCanalesDeVenta.UseVisualStyleBackColor = false;
             this.btnCanalesDeVenta.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -280,6 +287,7 @@
             this.btnProductosVisu.Size = new System.Drawing.Size(150, 25);
             this.btnProductosVisu.TabIndex = 9;
             this.btnProductosVisu.Text = "Productos";
+            this.btnProductosVisu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductosVisu.UseVisualStyleBackColor = false;
             this.btnProductosVisu.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -297,6 +305,7 @@
             this.btnComisionesVisu.Size = new System.Drawing.Size(150, 25);
             this.btnComisionesVisu.TabIndex = 8;
             this.btnComisionesVisu.Text = "Comisiones";
+            this.btnComisionesVisu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnComisionesVisu.UseVisualStyleBackColor = false;
             this.btnComisionesVisu.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -328,6 +337,7 @@
             this.btnAñadirNoticias.Size = new System.Drawing.Size(180, 25);
             this.btnAñadirNoticias.TabIndex = 13;
             this.btnAñadirNoticias.Text = "Añadir Noticias";
+            this.btnAñadirNoticias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAñadirNoticias.UseVisualStyleBackColor = false;
             this.btnAñadirNoticias.Click += new System.EventHandler(this.button12_Click);
             // 
@@ -345,6 +355,7 @@
             this.btnReportarInfraccion.Size = new System.Drawing.Size(180, 25);
             this.btnReportarInfraccion.TabIndex = 12;
             this.btnReportarInfraccion.Text = "Reportar Infraccion";
+            this.btnReportarInfraccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportarInfraccion.UseVisualStyleBackColor = false;
             this.btnReportarInfraccion.Click += new System.EventHandler(this.button13_Click);
             // 
@@ -362,6 +373,7 @@
             this.btnMapa.Size = new System.Drawing.Size(180, 25);
             this.btnMapa.TabIndex = 11;
             this.btnMapa.Text = "Mapa";
+            this.btnMapa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMapa.UseVisualStyleBackColor = false;
             this.btnMapa.Click += new System.EventHandler(this.button14_Click);
             // 
@@ -379,6 +391,7 @@
             this.btnBackup.Size = new System.Drawing.Size(180, 25);
             this.btnBackup.TabIndex = 10;
             this.btnBackup.Text = "Backup";
+            this.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBackup.UseVisualStyleBackColor = false;
             this.btnBackup.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -396,6 +409,7 @@
             this.btnPapelera.Size = new System.Drawing.Size(180, 25);
             this.btnPapelera.TabIndex = 9;
             this.btnPapelera.Text = "Papelera Reciclaje";
+            this.btnPapelera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPapelera.UseVisualStyleBackColor = false;
             this.btnPapelera.Click += new System.EventHandler(this.button16_Click);
             // 
@@ -413,6 +427,7 @@
             this.btnEnviarRecomend.Size = new System.Drawing.Size(180, 25);
             this.btnEnviarRecomend.TabIndex = 8;
             this.btnEnviarRecomend.Text = "Recomendaciones";
+            this.btnEnviarRecomend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEnviarRecomend.UseVisualStyleBackColor = false;
             this.btnEnviarRecomend.Click += new System.EventHandler(this.button17_Click);
             // 
@@ -453,11 +468,12 @@
             this.btnComisionCalculo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComisionCalculo.ForeColor = System.Drawing.Color.White;
             this.btnComisionCalculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComisionCalculo.Location = new System.Drawing.Point(0, 25);
+            this.btnComisionCalculo.Location = new System.Drawing.Point(-48, 25);
             this.btnComisionCalculo.Name = "btnComisionCalculo";
             this.btnComisionCalculo.Size = new System.Drawing.Size(150, 25);
             this.btnComisionCalculo.TabIndex = 9;
             this.btnComisionCalculo.Text = "Comisiones";
+            this.btnComisionCalculo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnComisionCalculo.UseVisualStyleBackColor = false;
             this.btnComisionCalculo.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -470,11 +486,12 @@
             this.btnFijarPeri.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFijarPeri.ForeColor = System.Drawing.Color.White;
             this.btnFijarPeri.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFijarPeri.Location = new System.Drawing.Point(0, 0);
+            this.btnFijarPeri.Location = new System.Drawing.Point(-26, 0);
             this.btnFijarPeri.Name = "btnFijarPeri";
             this.btnFijarPeri.Size = new System.Drawing.Size(150, 25);
             this.btnFijarPeri.TabIndex = 8;
             this.btnFijarPeri.Text = "Fijar Periodo";
+            this.btnFijarPeri.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFijarPeri.UseVisualStyleBackColor = false;
             this.btnFijarPeri.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -521,6 +538,7 @@
             this.btnProductosGestion.Size = new System.Drawing.Size(150, 25);
             this.btnProductosGestion.TabIndex = 10;
             this.btnProductosGestion.Text = "Productos";
+            this.btnProductosGestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductosGestion.UseVisualStyleBackColor = false;
             this.btnProductosGestion.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -538,6 +556,7 @@
             this.btnOrdenes.Size = new System.Drawing.Size(150, 25);
             this.btnOrdenes.TabIndex = 9;
             this.btnOrdenes.Text = "Ordenes";
+            this.btnOrdenes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrdenes.UseVisualStyleBackColor = false;
             this.btnOrdenes.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -555,6 +574,7 @@
             this.btnUsuarios.Size = new System.Drawing.Size(150, 25);
             this.btnUsuarios.TabIndex = 8;
             this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.UseVisualStyleBackColor = false;
             this.btnUsuarios.Click += new System.EventHandler(this.button1_Click_1);
             // 

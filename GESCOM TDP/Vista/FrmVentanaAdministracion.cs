@@ -663,14 +663,18 @@ namespace Vista
         {
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmVisualizarUsuario("Jefe",usuarioIngresado, tipoUsu));
+            FrmVisualizarUsuario frmVisualizarUsuario = new FrmVisualizarUsuario("Jefe",usuarioIngresado, tipoUsu);
+            frmVisualizarUsuario.ocultarSeleccionar();
+            AbrirFormInPanel(frmVisualizarUsuario);
         }
 
         private void btnComisionista_Click(object sender, EventArgs e)
         {
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmVisualizarUsuario("Comisionista", usuarioIngresado, tipoUsu));
+            FrmVisualizarUsuario frmVisualizarUsuario = new FrmVisualizarUsuario("Comisionista", usuarioIngresado, tipoUsu);
+            frmVisualizarUsuario.ocultarSeleccionar();
+            AbrirFormInPanel(frmVisualizarUsuario);
         }
 
         private void lblCargo_Click(object sender, EventArgs e)

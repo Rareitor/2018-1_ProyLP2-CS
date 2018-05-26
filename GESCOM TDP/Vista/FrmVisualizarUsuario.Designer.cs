@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.pnlIngreseDato = new System.Windows.Forms.Panel();
             this.txtDato = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblIngreseCampo = new System.Windows.Forms.Label();
             this.cmbCampo = new System.Windows.Forms.ComboBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,28 +44,20 @@
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlIngreseDato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(398, 110);
+            this.btnSeleccionar.Location = new System.Drawing.Point(662, 132);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 4;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(344, 20);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 28;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // pnlIngreseDato
             // 
@@ -84,7 +74,7 @@
             this.txtDato.Name = "txtDato";
             this.txtDato.Size = new System.Drawing.Size(278, 20);
             this.txtDato.TabIndex = 1;
-            this.txtDato.TextChanged += new System.EventHandler(this.txtDato_TextChanged);
+            this.txtDato.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDato_KeyUp);
             // 
             // label2
             // 
@@ -117,12 +107,9 @@
             this.cmbCampo.FormattingEnabled = true;
             this.cmbCampo.Items.AddRange(new object[] {
             "idUsuario",
-            "Usuario",
             "Nombre",
-            "Apellido Paterno",
-            "Apellido Materno",
-            "Correo",
-            "Jefe Directo"});
+            "Distrito",
+            "Cargo"});
             this.cmbCampo.Location = new System.Drawing.Point(189, 25);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(121, 21);
@@ -146,16 +133,6 @@
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(881, 295);
             this.dgvUsuarios.TabIndex = 35;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(807, 132);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 36;
-            this.btnCancelar.Text = "Regresar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // idUsuario
             // 
@@ -195,18 +172,31 @@
             // 
             // username
             // 
+            this.username.DataPropertyName = "Username";
             this.username.HeaderText = "Username";
             this.username.Name = "username";
             // 
             // distrito
             // 
+            this.distrito.DataPropertyName = "Distrito";
             this.distrito.HeaderText = "Distrito";
             this.distrito.Name = "distrito";
             // 
             // cargo
             // 
+            this.cargo.DataPropertyName = "Cargo";
             this.cargo.HeaderText = "Cargo";
             this.cargo.Name = "cargo";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(807, 132);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 36;
+            this.btnCancelar.Text = "Regresar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FrmVisualizarUsuario
             // 
@@ -215,14 +205,12 @@
             this.ClientSize = new System.Drawing.Size(926, 484);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dgvUsuarios);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.pnlIngreseDato);
             this.Controls.Add(this.lblIngreseCampo);
             this.Controls.Add(this.cmbCampo);
             this.Controls.Add(this.btnSeleccionar);
             this.Name = "FrmVisualizarUsuario";
             this.Text = "Visualizar Comisionista";
-            this.Load += new System.EventHandler(this.FrmVisualizarComisionista_Load);
             this.pnlIngreseDato.ResumeLayout(false);
             this.pnlIngreseDato.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
@@ -233,7 +221,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnSeleccionar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Panel pnlIngreseDato;
         private System.Windows.Forms.TextBox txtDato;
         private System.Windows.Forms.Label label2;

@@ -298,7 +298,6 @@ namespace AccesoDatos
 
             while (rs.Read())
             {
-
                 Trabajador t = null;
                 string tipoU = rs.GetString("cargo");
 
@@ -328,6 +327,8 @@ namespace AccesoDatos
                 t.Nombre = rs.GetString("nombre");
                 t.IdTrabajador = rs.GetString("idPayee");
                 t.Cargo = rs.GetString("cargo");
+                t.UserName = rs.GetString("username");
+                t.Distrito = rs.GetString("distrito");
 
                 lista.Add(t);
             }

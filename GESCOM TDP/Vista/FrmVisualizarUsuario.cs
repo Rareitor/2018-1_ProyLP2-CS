@@ -21,6 +21,8 @@ namespace Vista.Otros
         public FrmVisualizarUsuario(String cargoListar, String idPayee, String puesto)
         {
             InitializeComponent();
+            dgvUsuarios.AutoGenerateColumns = false;
+            
             this.puesto = puesto;
             logicaNegocio = new TrabajadorBL();
             listaOriginal = new BindingList<Trabajador>();
@@ -67,16 +69,37 @@ namespace Vista.Otros
             dgvUsuarios.DataSource = listaOriginal;
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void filtrar()
         {
-            string opcion = cmbCampo.SelectedItem.ToString();
-            if (!opcion.Equals(""))
-            {
-                if (txtDato.Text.Equals(""))
+            string filtro = cmbCampo.Text;
+            string field = txtDato.Text;
+
+            BindingList<Trabajador> listaAux = new BindingList<Trabajador>();
+
+            Boolean cumple = false;
+            foreach (Trabajador trabajador in listaOriginal){
+                switch (filtro)
                 {
-                    MessageBox.Show("Escriba un dato para buscar");
+                    case "ID":
+                        cumple = trabajador.IdTrabajador.StartsWith(field);
+                        break;
+                    case "Nombre":
+                        cumple = trabajador.Nombre.StartsWith(field)
+                                || trabajador.ApellidoPaterno.StartsWith(field)
+                                || trabajador.ApellidoMaterno.StartsWith(field);
+                        break;
+                    case "Distrito":
+                        cumple = trabajador.Distrito.StartsWith(field);
+                        break;
+                    case "Cargo":
+                        cumple = trabajador.Cargo.StartsWith(field);
+                        break;
                 }
+                if (!cumple) continue;
+                listaAux.Add(trabajador);
             }
+            dgvUsuarios.DataSource = listaAux;
+            dgvUsuarios.Refresh();
         }
 
         private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,24 +107,24 @@ namespace Vista.Otros
             txtDato.Text = "";
         }
 
-        private void txtDato_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void FrmVisualizarComisionista_Load(object sender, EventArgs e)
+        public void ocultarSeleccionar()
+        {
+            btnSeleccionar.Hide();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
         {
 
         }
 
-        public void ocultarSeleccionar()
+        private void txtDato_KeyUp(object sender, KeyEventArgs e)
         {
-            btnSeleccionar.Hide();
+            filtrar();
         }
     }
 }

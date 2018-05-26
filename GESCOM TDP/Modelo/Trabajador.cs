@@ -17,6 +17,7 @@ namespace Modelo
         private Sede locacion;
         private string superior;
         private String cargo;
+        private String distrito;
 
      //métodos
         //constructores
@@ -32,12 +33,13 @@ namespace Modelo
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
         public string IdTrabajador { get => idTrabajador; set => idTrabajador = value; }
-        public Sede Locacion { get => locacion; set => locacion = value; }
         public string Superior { get => superior; set => superior = value; }
         public string Cargo { get => cargo; set => cargo = value; }
+        public string Distrito { get => distrito; set => distrito = value; }
+        public Sede Locacion { get => locacion; set => locacion = value; }
         internal TipoRegimen Regimen { get => regimen; set => regimen = value; }
 
         //métodos adicionales
         //public  void emitirReporte();
-    }
+}
 }
