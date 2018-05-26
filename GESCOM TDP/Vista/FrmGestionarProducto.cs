@@ -16,7 +16,7 @@ namespace Vista
         public FrmGestionarProducto()
         {
             InitializeComponent();
-            if (Owner is FrmMainOptionsAdmin)
+            if (Owner is FrmVentanaAdministracion)
             {
                 //source -> Adminstrador
             };

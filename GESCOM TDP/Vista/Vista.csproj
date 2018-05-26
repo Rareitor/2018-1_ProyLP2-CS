@@ -178,12 +178,6 @@
     <Compile Include="FrmRecuperarContrasena.Designer.cs">
       <DependentUpon>FrmRecuperarContrasena.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMainOptionsAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMainOptionsAdmin.Designer.cs">
-      <DependentUpon>FrmMainOptionsAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmPapeleraReciclaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,9 +308,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRecuperarContrasena.resx">
       <DependentUpon>FrmRecuperarContrasena.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMainOptionsAdmin.resx">
-      <DependentUpon>FrmMainOptionsAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPapeleraReciclaje.resx">
       <DependentUpon>FrmPapeleraReciclaje.cs</DependentUpon>
