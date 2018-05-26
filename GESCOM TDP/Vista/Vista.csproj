@@ -244,11 +244,11 @@
     <Compile Include="FrmVisualizarProducto.Designer.cs">
       <DependentUpon>FrmVisualizarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVisualizarRecordVendido.cs">
+    <Compile Include="FrmVisualizarOrden.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmVisualizarRecordVendido.Designer.cs">
-      <DependentUpon>FrmVisualizarRecordVendido.cs</DependentUpon>
+    <Compile Include="FrmVisualizarOrden.Designer.cs">
+      <DependentUpon>FrmVisualizarOrden.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -348,8 +348,8 @@
     <EmbeddedResource Include="FrmVisualizarProducto.resx">
       <DependentUpon>FrmVisualizarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmVisualizarRecordVendido.resx">
-      <DependentUpon>FrmVisualizarRecordVendido.cs</DependentUpon>
+    <EmbeddedResource Include="FrmVisualizarOrden.resx">
+      <DependentUpon>FrmVisualizarOrden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
