@@ -48,18 +48,30 @@ namespace Controlador
 
         public BindingList<Trabajador> listarGerentes()
         {
-            return accesoTrabajador.listar("GERENTE");
+            return accesoTrabajador.listar("GERENTE","ALL");
         }
 
         public BindingList<Trabajador> listarJefes()
         {
-            return accesoTrabajador.listar("JEFE");
+            return accesoTrabajador.listar("JEFE","ALL");
         }
 
         public BindingList<Trabajador> listarComisionistas()
         {
-            return accesoTrabajador.listar("COMISIONISTA");
+            return accesoTrabajador.listar("COMISIONISTA", "ALL");
         }
+
+        public BindingList<Trabajador> listarMisJefes(String idPayee)
+        {
+            return accesoTrabajador.listar("JEFE", idPayee);
+        }
+
+        public BindingList<Trabajador> listarMisComisionistas(String idPayee)
+        {
+            return accesoTrabajador.listar("COMISIONISTA", idPayee);
+        }
+
+
         public string existeUsuarioyContraseña(string usuario, string contraseña, ref int existeUsu,ref int errorContra
             ,ref string id_usuario, ref string nombreUsu, ref string apellidoPat)
         {

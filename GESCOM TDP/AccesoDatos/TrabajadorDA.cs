@@ -246,7 +246,7 @@ namespace AccesoDatos
            
         }
 
-        public BindingList<Trabajador> listar(string tipoUsu)
+        public BindingList<Trabajador> listar(string tipoUsu, string idPayee)
         {
             BindingList<Trabajador> lista= new BindingList<Trabajador>();
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
@@ -256,20 +256,43 @@ namespace AccesoDatos
             MySqlCommand comando = new MySqlCommand();
             con.Open();
 
-            comando.Connection = con;
-            if (tipoUsu == "GERENTE")
+            if (idPayee.Equals("ALL"))
             {
-                comando.CommandText = "LISTAR_GERENTES";
-            } else if (tipoUsu == "JEFE")
-            {
-                comando.CommandText = "LISTAR_JEFES";
-                comando.Parameters.Add("idPayee", MySqlDbType.VarChar).Value = "ALL";
-            } else if (tipoUsu == "COMISIONISTA")
-            {
-                comando.CommandText = "LISTAR_COMISIONISTAS";
-                comando.Parameters.Add("idPayee", MySqlDbType.VarChar).Value = "ALL";
+                comando.Connection = con;
+                if (tipoUsu == "GERENTE")
+                {
+                    comando.CommandText = "LISTAR_GERENTES";
+                }
+                else if (tipoUsu == "JEFE")
+                {
+                    comando.CommandText = "LISTAR_JEFES";
+                    comando.Parameters.Add("idPayee", MySqlDbType.VarChar).Value = "ALL";
+                }
+                else if (tipoUsu == "COMISIONISTA")
+                {
+                    comando.CommandText = "LISTAR_COMISIONISTAS";
+                    comando.Parameters.Add("idPayee", MySqlDbType.VarChar).Value = "ALL";
+                }
             }
-           
+            else
+            {
+                comando.Connection = con;
+                if (tipoUsu == "GERENTE")
+                {
+                    comando.CommandText = "LISTAR_GERENTES";
+                }
+                else if (tipoUsu == "JEFE")
+                {
+                    comando.CommandText = "LISTAR_JEFES";
+                    comando.Parameters.Add("idPayee", MySqlDbType.VarChar).Value = idPayee;
+                }
+                else if (tipoUsu == "COMISIONISTA")
+                {
+                    comando.CommandText = "LISTAR_COMISIONISTAS";
+                    comando.Parameters.Add("idPayee", MySqlDbType.VarChar).Value = idPayee;
+                }
+            }
+            
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             MySqlDataReader rs = comando.ExecuteReader();
 
@@ -304,7 +327,8 @@ namespace AccesoDatos
                 t.Email = rs.GetString("email");
                 t.Nombre = rs.GetString("nombre");
                 t.IdTrabajador = rs.GetString("idPayee");
-                
+                t.Cargo = rs.GetString("cargo");
+
                 lista.Add(t);
             }
             con.Close();

@@ -147,9 +147,6 @@ namespace Vista
                     txtUsuario.ForeColor = Color.Black;
                     return;
                 } 
-
-
-
             }
 
 

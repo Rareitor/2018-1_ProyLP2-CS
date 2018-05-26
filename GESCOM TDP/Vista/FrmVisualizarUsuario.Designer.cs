@@ -1,6 +1,6 @@
 ﻿namespace Vista.Otros
 {
-    partial class FrmVisualizarComisionista
+    partial class FrmVisualizarUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -36,15 +36,16 @@
             this.lblIngreseCampo = new System.Windows.Forms.Label();
             this.cmbCampo = new System.Windows.Forms.ComboBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jefeDir = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoUsu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlIngreseDato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -133,68 +134,18 @@
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idUsuario,
-            this.usuario,
-            this.Nombre,
-            this.ApellidoPaterno,
-            this.ApellidoMaterno,
-            this.correo,
-            this.jefeDir,
-            this.tipoUsu});
-            this.dgvUsuarios.Location = new System.Drawing.Point(26, 184);
+            this.dni,
+            this.nombre,
+            this.apellidoPaterno,
+            this.apellidoMaterno,
+            this.email,
+            this.username,
+            this.distrito,
+            this.cargo});
+            this.dgvUsuarios.Location = new System.Drawing.Point(26, 177);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(881, 295);
             this.dgvUsuarios.TabIndex = 35;
-            // 
-            // idUsuario
-            // 
-            this.idUsuario.HeaderText = "idUsuario";
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.ReadOnly = true;
-            this.idUsuario.Width = 75;
-            // 
-            // usuario
-            // 
-            this.usuario.HeaderText = "Usuario";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            this.usuario.Width = 110;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // ApellidoPaterno
-            // 
-            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
-            this.ApellidoPaterno.Name = "ApellidoPaterno";
-            this.ApellidoPaterno.ReadOnly = true;
-            // 
-            // ApellidoMaterno
-            // 
-            this.ApellidoMaterno.HeaderText = "Apellido Materno";
-            this.ApellidoMaterno.Name = "ApellidoMaterno";
-            this.ApellidoMaterno.ReadOnly = true;
-            // 
-            // correo
-            // 
-            this.correo.HeaderText = "Correo";
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            this.correo.Width = 150;
-            // 
-            // jefeDir
-            // 
-            this.jefeDir.HeaderText = "Jefe Directo";
-            this.jefeDir.Name = "jefeDir";
-            this.jefeDir.ReadOnly = true;
-            // 
-            // tipoUsu
-            // 
-            this.tipoUsu.HeaderText = "Tipo Usuario";
-            this.tipoUsu.Name = "tipoUsu";
-            this.tipoUsu.ReadOnly = true;
             // 
             // btnCancelar
             // 
@@ -206,7 +157,58 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // FrmVisualizarComisionista
+            // idUsuario
+            // 
+            this.idUsuario.DataPropertyName = "IdTrabajador";
+            this.idUsuario.HeaderText = "ID";
+            this.idUsuario.Name = "idUsuario";
+            // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "Dni";
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // apellidoPaterno
+            // 
+            this.apellidoPaterno.DataPropertyName = "ApellidoPaterno";
+            this.apellidoPaterno.HeaderText = "Apellido Paterno";
+            this.apellidoPaterno.Name = "apellidoPaterno";
+            // 
+            // apellidoMaterno
+            // 
+            this.apellidoMaterno.DataPropertyName = "ApellidoMaterno";
+            this.apellidoMaterno.HeaderText = "Apellido Materno";
+            this.apellidoMaterno.Name = "apellidoMaterno";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            // 
+            // username
+            // 
+            this.username.HeaderText = "Username";
+            this.username.Name = "username";
+            // 
+            // distrito
+            // 
+            this.distrito.HeaderText = "Distrito";
+            this.distrito.Name = "distrito";
+            // 
+            // cargo
+            // 
+            this.cargo.HeaderText = "Cargo";
+            this.cargo.Name = "cargo";
+            // 
+            // FrmVisualizarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,7 +220,7 @@
             this.Controls.Add(this.lblIngreseCampo);
             this.Controls.Add(this.cmbCampo);
             this.Controls.Add(this.btnSeleccionar);
-            this.Name = "FrmVisualizarComisionista";
+            this.Name = "FrmVisualizarUsuario";
             this.Text = "Visualizar Comisionista";
             this.Load += new System.EventHandler(this.FrmVisualizarComisionista_Load);
             this.pnlIngreseDato.ResumeLayout(false);
@@ -238,14 +240,15 @@
         private System.Windows.Forms.Label lblIngreseCampo;
         private System.Windows.Forms.ComboBox cmbCampo;
         private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoPaterno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoMaterno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jefeDir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoUsu;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoPaterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoMaterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn distrito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cargo;
     }
 }

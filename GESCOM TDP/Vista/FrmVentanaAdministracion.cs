@@ -663,12 +663,14 @@ namespace Vista
         {
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
+            AbrirFormInPanel(new FrmVisualizarUsuario("Jefe",usuarioIngresado, tipoUsu));
         }
 
         private void btnComisionista_Click(object sender, EventArgs e)
         {
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
+            AbrirFormInPanel(new FrmVisualizarUsuario("Comisionista", usuarioIngresado, tipoUsu));
         }
 
         private void lblCargo_Click(object sender, EventArgs e)
