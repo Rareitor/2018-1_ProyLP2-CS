@@ -67,7 +67,7 @@
             this.tipo});
             this.dgvProducto.Location = new System.Drawing.Point(12, 58);
             this.dgvProducto.Name = "dgvProducto";
-            this.dgvProducto.Size = new System.Drawing.Size(666, 429);
+            this.dgvProducto.Size = new System.Drawing.Size(666, 316);
             this.dgvProducto.TabIndex = 11;
             // 
             // idProducto
@@ -90,7 +90,7 @@
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(564, 511);
+            this.btnRegresar.Location = new System.Drawing.Point(573, 395);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(75, 23);
             this.btnRegresar.TabIndex = 13;
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 558);
+            this.ClientSize = new System.Drawing.Size(704, 433);
             this.Controls.Add(this.btnRecuperar);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.dgvProducto);
