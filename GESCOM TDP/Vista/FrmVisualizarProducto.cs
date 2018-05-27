@@ -30,6 +30,17 @@ namespace Vista.Otros
             listaOriginal = new BindingList<Producto>();
             listaFiltrada = new BindingList<Producto>();
             dgvProducto.AutoGenerateColumns = false;
+            btnRecuperar.Visible = false;
+        }
+
+        public FrmVisualizarProducto(bool papelera)
+        {
+            InitializeComponent();
+            this.papelera = papelera;
+            logicaNegocio = new ProductoBL();
+            listaOriginal = new BindingList<Producto>();
+            listaFiltrada = new BindingList<Producto>();
+            dgvProducto.AutoGenerateColumns = false;
         }
 
         private void FrmVisualizarProductos_Load(object sender, EventArgs e)
@@ -44,11 +55,13 @@ namespace Vista.Otros
 
         private void agregarComboBox()
         {
+            cmbTipoProducto.Items.Add("<Todos>");
             BindingList<String> tipos = logicaNegocio.listarTiposProductos();
             for (int i = 0; i < tipos.Count; i++)
             {
                 cmbTipoProducto.Items.Add(tipos[i]);
             }
+            cmbTipoProducto.Text = "<Todos>";
         }
 
         private void cargarLista()
@@ -57,7 +70,10 @@ namespace Vista.Otros
             {
                 listaOriginal = logicaNegocio.listarProductosPapelera();
             }
-            listaOriginal = logicaNegocio.listarProductos();
+            else
+            {
+                listaOriginal = logicaNegocio.listarProductos();
+            }
             dgvProducto.DataSource = listaOriginal;
         }
 
@@ -65,5 +81,35 @@ namespace Vista.Otros
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow fila in this.dgvProducto.SelectedRows){
+                Producto p = (Producto)fila.DataBoundItem;
+                logicaNegocio.recuperarProducto(p);
+                dgvProducto.Rows.RemoveAt(fila.Index);
+            }
+        }
+
+        private void cmbTipoProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
+
+        private void filtrar()
+        {
+            string filtro = cmbTipoProducto.Text;
+            listaFiltrada = new BindingList<Producto>();
+            foreach (Producto producto in listaOriginal)
+            {
+                if(filtro.Equals("<Todos>") || producto.Tipo == filtro)
+                {
+                    listaFiltrada.Add(producto);
+                }
+            }
+            dgvProducto.DataSource = listaFiltrada;
+            dgvProducto.Refresh();
+        }
+
     }
 }

@@ -70,13 +70,9 @@ namespace AccesoDatos
                 p.IdProducto = rs.GetString("idproducto");
                 p.Nombre = rs.GetString("nombre");
                 p.Tipo = rs.GetString("tipo");
+                p.IsVisible = rs.GetBoolean(rs.GetOrdinal("isVisible"));
 
-                bool visible = rs.GetBoolean(rs.GetOrdinal("isVisible"));
-                p.IsVisible = visible;
-                Console.WriteLine("visible:",p.IsVisible);
-                Console.WriteLine("char:", visible);
-
-                if (!p.IsVisible) listaProducto.Add(p);
+                if(!p.IsVisible) listaProducto.Add(p);
             }
             con.Close();
 
@@ -110,6 +106,24 @@ namespace AccesoDatos
             con.Close();
 
             return listaTipos;
+
+        }
+
+        public void recuperarProducto(Producto producto)
+        {
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "UPDATE Producto SET isVisible=1 WHERE idProducto=\"" + producto.IdProducto + "\"";
+            comando.ExecuteNonQuery();
+            
+            con.Close();
 
         }
 

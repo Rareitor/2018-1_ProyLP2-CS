@@ -31,11 +31,11 @@
             this.lblProducto = new System.Windows.Forms.Label();
             this.cmbTipoProducto = new System.Windows.Forms.ComboBox();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnRecuperar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +50,13 @@
             // 
             // cmbTipoProducto
             // 
+            this.cmbTipoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoProducto.FormattingEnabled = true;
             this.cmbTipoProducto.Location = new System.Drawing.Point(110, 15);
             this.cmbTipoProducto.Name = "cmbTipoProducto";
             this.cmbTipoProducto.Size = new System.Drawing.Size(143, 21);
             this.cmbTipoProducto.TabIndex = 6;
+            this.cmbTipoProducto.SelectedIndexChanged += new System.EventHandler(this.cmbTipoProducto_SelectedIndexChanged);
             // 
             // dgvProducto
             // 
@@ -65,27 +67,8 @@
             this.tipo});
             this.dgvProducto.Location = new System.Drawing.Point(12, 58);
             this.dgvProducto.Name = "dgvProducto";
-            this.dgvProducto.Size = new System.Drawing.Size(666, 469);
+            this.dgvProducto.Size = new System.Drawing.Size(666, 429);
             this.dgvProducto.TabIndex = 11;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(302, 13);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(556, 15);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegresar.TabIndex = 13;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = true;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // idProducto
             // 
@@ -105,13 +88,33 @@
             this.tipo.HeaderText = "Tipo";
             this.tipo.Name = "tipo";
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(564, 511);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegresar.TabIndex = 13;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // btnRecuperar
+            // 
+            this.btnRecuperar.Location = new System.Drawing.Point(552, 18);
+            this.btnRecuperar.Name = "btnRecuperar";
+            this.btnRecuperar.Size = new System.Drawing.Size(75, 23);
+            this.btnRecuperar.TabIndex = 14;
+            this.btnRecuperar.Text = "Recuperar";
+            this.btnRecuperar.UseVisualStyleBackColor = true;
+            this.btnRecuperar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmVisualizarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 558);
+            this.Controls.Add(this.btnRecuperar);
             this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvProducto);
             this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.cmbTipoProducto);
@@ -128,10 +131,10 @@
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.ComboBox cmbTipoProducto;
         private System.Windows.Forms.DataGridView dgvProducto;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.Button btnRecuperar;
     }
 }

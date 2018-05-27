@@ -27,8 +27,11 @@ namespace Controlador
         {
             return accesoDatos.listarTiposProductos();
         }
-        
 
+        public void recuperarProducto(Producto producto)
+        {
+            accesoDatos.recuperarProducto(producto);
+        }
 
     }
 }

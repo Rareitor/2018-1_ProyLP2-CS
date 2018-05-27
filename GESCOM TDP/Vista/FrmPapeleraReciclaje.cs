@@ -39,8 +39,7 @@ namespace Vista.Otros
 
         private void btnRecuperarProducto_Click(object sender, EventArgs e)
         {
-            FrmVisualizarProducto frmVisualizarProducto = new FrmVisualizarProducto();
-            frmVisualizarProducto.Papelera = true;
+            FrmVisualizarProducto frmVisualizarProducto = new FrmVisualizarProducto(true);
             frmVisualizarProducto.ShowDialog();
         }
     }
