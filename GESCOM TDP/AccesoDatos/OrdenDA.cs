@@ -128,5 +128,115 @@ namespace AccesoDatos
             con.Close();
             return listaOrden;
         }
+
+        public BindingList<Orden> listarOrdenesComisionista(string idPayee, DateTime fecha1, DateTime fecha2)
+        {
+            BindingList<Orden> listaOrden = new BindingList<Orden>();
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "LISTAR_ORDENES_COMISIONISTA";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = idPayee;
+            comando.Parameters.Add("fecha1", MySqlDbType.Date).Value = fecha1;
+            comando.Parameters.Add("fecha2", MySqlDbType.Date).Value = fecha2;
+
+            MySqlDataReader rs = comando.ExecuteReader();
+            while (rs.Read())
+            {
+                Orden o = new Orden();
+                o.Id = rs.GetString("idOrden");
+                o.NombreTrabajadorCompleto = rs.GetString("nombrePayee");
+                o.Producto = new Producto();
+                o.Producto.Nombre = rs.GetString("nombreProducto");
+                o.FechaVenta = rs.GetDateTime("fechaVenta");
+                o.Canal = new Canal();
+                o.Canal.Nombre = rs.GetString("nombreCanal");
+                o.Distrito = rs.GetString("distrito");
+                o.Monto = rs.GetFloat("monto");
+                listaOrden.Add(o);
+            }
+            con.Close();
+            return listaOrden;
+        }
+
+        public BindingList<Orden> listarOrdenesJefe(string idPayee, DateTime fecha1, DateTime fecha2)
+        {
+            BindingList<Orden> listaOrden = new BindingList<Orden>();
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "LISTAR_ORDENES_JEFE";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = idPayee;
+            comando.Parameters.Add("fecha1", MySqlDbType.Date).Value = fecha1;
+            comando.Parameters.Add("fecha2", MySqlDbType.Date).Value = fecha2;
+
+            MySqlDataReader rs = comando.ExecuteReader();
+            while (rs.Read())
+            {
+                Orden o = new Orden();
+                o.Id = rs.GetString("idOrden");
+                o.NombreTrabajadorCompleto = rs.GetString("nombrePayee");
+                o.Producto = new Producto();
+                o.Producto.Nombre = rs.GetString("nombreProducto");
+                o.FechaVenta = rs.GetDateTime("fechaVenta");
+                o.Canal = new Canal();
+                o.Canal.Nombre = rs.GetString("nombreCanal");
+                o.Distrito = rs.GetString("distrito");
+                o.Monto = rs.GetFloat("monto");
+                listaOrden.Add(o);
+            }
+            con.Close();
+            return listaOrden;
+        }
+
+        public BindingList<Orden> listarOrdenesGerente(DateTime fecha1, DateTime fecha2)
+        {
+            BindingList<Orden> listaOrden = new BindingList<Orden>();
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "LISTAR_ORDENES_GERENTE";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("fecha1", MySqlDbType.Date).Value = fecha1;
+            comando.Parameters.Add("fecha2", MySqlDbType.Date).Value = fecha2;
+
+            MySqlDataReader rs = comando.ExecuteReader();
+            while (rs.Read())
+            {
+                Orden o = new Orden();
+                o.Id = rs.GetString("idOrden");
+                o.NombreTrabajadorCompleto = rs.GetString("nombrePayee");
+                o.Producto = new Producto();
+                o.Producto.Nombre = rs.GetString("nombreProducto");
+                o.FechaVenta = rs.GetDateTime("fechaVenta");
+                o.Canal = new Canal();
+                o.Canal.Nombre = rs.GetString("nombreCanal");
+                o.Distrito = rs.GetString("distrito");
+                o.Monto = rs.GetFloat("monto");
+                listaOrden.Add(o);
+            }
+            con.Close();
+            return listaOrden;
+        }
     }
 }

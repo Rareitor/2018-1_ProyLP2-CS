@@ -39,5 +39,20 @@ namespace Controlador
         {
             return accesoOrden.listarOrden();
         }
+
+        public BindingList<Orden> listarOrdenesComisionista(string idPayee, DateTime fecha1, DateTime fecha2)
+        {
+            return accesoOrden.listarOrdenesComisionista(idPayee, fecha1, fecha2);
+        }
+
+        public BindingList<Orden> listarOrdenesJefe(string idPayee, DateTime fecha1, DateTime fecha2)
+        {
+            return accesoOrden.listarOrdenesJefe(idPayee, fecha1, fecha2);
+        }
+
+        public BindingList<Orden> listarOrdenesGerente(DateTime fecha1, DateTime fecha2)
+        {
+            return accesoOrden.listarOrdenesGerente(fecha1, fecha2);
+        }
     }
 }

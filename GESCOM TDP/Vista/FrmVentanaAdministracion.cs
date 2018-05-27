@@ -17,6 +17,7 @@ namespace Vista
     {
         private string tipoUsu;
         private string usuarioIngresado;
+        private string idPayee;
         private TrabajadorBL logicaTrabajador = new TrabajadorBL();
         public FrmVentanaAdministracion()
         {
@@ -30,8 +31,9 @@ namespace Vista
         {
             InitializeComponent();
             AbrirFormInPanel(new FrmInicio());
-            usuarioIngresado = id_usuario;
-            tipoUsu = tipoUsuario;
+            this.usuarioIngresado = id_usuario;
+            this.tipoUsu = tipoUsuario;
+            this.idPayee = id_usuario;
             estadoInicial(tipoUsuario);
             lblCargo.Text = tipoUsuario;
             lblNombreUsu.Text = nombreUsu + " " + apellidoPat;
@@ -231,7 +233,7 @@ namespace Vista
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
             
-            AbrirFormInPanel(new FrmVisualizarRecordVendido());
+            AbrirFormInPanel(new FrmVisualizarOrden(tipoUsu,idPayee));
         }
 
         private void button8_Click(object sender, EventArgs e)

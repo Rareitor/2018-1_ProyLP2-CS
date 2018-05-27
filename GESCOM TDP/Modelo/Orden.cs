@@ -9,7 +9,7 @@ namespace Modelo
     public class Orden
     {
     //atributos
-        private String id;
+        private string id;
         private DateTime fechaVenta;
         private Producto producto;
         private Canal canal;
@@ -17,6 +17,10 @@ namespace Modelo
         private Retribucion retribucion;
         private Combo combo;
         private double monto;
+
+        private string nombreTrabajadorCompleto;
+        private string distrito;
+
     //métodos
         //constructores
         public Orden()
@@ -30,15 +34,15 @@ namespace Modelo
         public Trabajador Trabajador { get => trabajador; set => trabajador = value; }
         public Retribucion Retribucion { get => retribucion; set => retribucion = value; }
         public Combo Combo { get => combo; set => combo = value; }
-        public double Monto { get => monto; set => monto = value; }
+        public double Monto { get => Math.Round(monto,2); set => monto = value; }
         public string IdComisionista { get => trabajador.IdTrabajador; }
         public string NombreProducto { get => producto.Nombre; }
-
         public string NombreComisionista { get => trabajador.Nombre; }
-
         public string NombreCanal { get => canal.Nombre; }
-
         public string NombreCombo { get => combo.Nombre; }
+        public string NombreTrabajadorCompleto { get => nombreTrabajadorCompleto; set => nombreTrabajadorCompleto = value; }
+        public string Distrito { get => distrito; set => distrito = value; }
+
         //métodos dicionales
         //no implementado hasta definir casteo y/o polimorfismo
         //public Retribucion Retribucion { get => _retribucion; set => _retribucion = value; }

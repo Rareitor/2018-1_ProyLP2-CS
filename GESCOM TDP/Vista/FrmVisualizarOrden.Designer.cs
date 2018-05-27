@@ -1,6 +1,6 @@
 ﻿namespace Vista.Otros
 {
-    partial class FrmVisualizarRecordVendido
+    partial class FrmVisualizarOrden
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,13 @@
             this.rdoMensual = new System.Windows.Forms.RadioButton();
             this.rdoDiario = new System.Windows.Forms.RadioButton();
             this.dgvRecord = new System.Windows.Forms.DataGridView();
+            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreComisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Canal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MontoVendido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -40,19 +47,13 @@
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.labelTotal = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbCampo = new System.Windows.Forms.ComboBox();
             this.tbFiltro = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreComisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Canal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MontoVendido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -101,8 +102,52 @@
             this.MontoVendido});
             this.dgvRecord.Location = new System.Drawing.Point(50, 178);
             this.dgvRecord.Name = "dgvRecord";
-            this.dgvRecord.Size = new System.Drawing.Size(778, 329);
+            this.dgvRecord.Size = new System.Drawing.Size(788, 332);
             this.dgvRecord.TabIndex = 3;
+            // 
+            // idOrden
+            // 
+            this.idOrden.DataPropertyName = "Id";
+            this.idOrden.HeaderText = "idOrden";
+            this.idOrden.Name = "idOrden";
+            // 
+            // nombreComisionista
+            // 
+            this.nombreComisionista.DataPropertyName = "NombreTrabajadorCompleto";
+            this.nombreComisionista.HeaderText = "Comisionista";
+            this.nombreComisionista.MinimumWidth = 150;
+            this.nombreComisionista.Name = "nombreComisionista";
+            this.nombreComisionista.Width = 150;
+            // 
+            // producto
+            // 
+            this.producto.DataPropertyName = "NombreProducto";
+            this.producto.HeaderText = "Producto";
+            this.producto.Name = "producto";
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "FechaVenta";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // Canal
+            // 
+            this.Canal.DataPropertyName = "NombreCanal";
+            this.Canal.HeaderText = "Canal";
+            this.Canal.Name = "Canal";
+            // 
+            // distrito
+            // 
+            this.distrito.DataPropertyName = "Distrito";
+            this.distrito.HeaderText = "Distrito";
+            this.distrito.Name = "distrito";
+            // 
+            // MontoVendido
+            // 
+            this.MontoVendido.DataPropertyName = "Monto";
+            this.MontoVendido.HeaderText = "MontoVendido";
+            this.MontoVendido.Name = "MontoVendido";
             // 
             // btnImprimir
             // 
@@ -156,6 +201,7 @@
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(250, 20);
             this.dtpFechaFin.TabIndex = 8;
+            this.dtpFechaFin.Value = new System.DateTime(2018, 6, 30, 0, 0, 0, 0);
             // 
             // dtpFechaInicio
             // 
@@ -163,6 +209,7 @@
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(250, 20);
             this.dtpFechaInicio.TabIndex = 7;
+            this.dtpFechaInicio.Value = new System.DateTime(2018, 5, 1, 0, 0, 0, 0);
             // 
             // labelTotal
             // 
@@ -174,13 +221,13 @@
             this.labelTotal.TabIndex = 12;
             this.labelTotal.Text = "Total:";
             // 
-            // textBox1
+            // textBoxTotal
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(695, 525);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 13;
+            this.textBoxTotal.Enabled = false;
+            this.textBoxTotal.Location = new System.Drawing.Point(695, 525);
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTotal.TabIndex = 13;
             // 
             // groupBox1
             // 
@@ -206,10 +253,12 @@
             // cbCampo
             // 
             this.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCampo.Enabled = false;
             this.cbCampo.FormattingEnabled = true;
             this.cbCampo.Items.AddRange(new object[] {
+            "<Todos>",
             "Comisionista",
-            "Combo Producto",
+            "Producto",
             "Canal",
             "Distrito"});
             this.cbCampo.Location = new System.Drawing.Point(152, 135);
@@ -219,13 +268,16 @@
             // 
             // tbFiltro
             // 
+            this.tbFiltro.Enabled = false;
             this.tbFiltro.Location = new System.Drawing.Point(314, 135);
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(134, 20);
             this.tbFiltro.TabIndex = 17;
+            this.tbFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltro_KeyUp);
             // 
             // buttonBuscar
             // 
+            this.buttonBuscar.Enabled = false;
             this.buttonBuscar.Location = new System.Drawing.Point(487, 135);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(43, 23);
@@ -233,52 +285,28 @@
             this.buttonBuscar.Text = "...";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             // 
-            // idOrden
+            // btnBuscar
             // 
-            this.idOrden.HeaderText = "idOrden";
-            this.idOrden.Name = "idOrden";
+            this.btnBuscar.Location = new System.Drawing.Point(429, 84);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // nombreComisionista
-            // 
-            this.nombreComisionista.HeaderText = "Comisionista";
-            this.nombreComisionista.Name = "nombreComisionista";
-            // 
-            // producto
-            // 
-            this.producto.HeaderText = "Producto";
-            this.producto.Name = "producto";
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // Canal
-            // 
-            this.Canal.HeaderText = "Canal";
-            this.Canal.Name = "Canal";
-            // 
-            // distrito
-            // 
-            this.distrito.HeaderText = "Distrito";
-            this.distrito.Name = "distrito";
-            // 
-            // MontoVendido
-            // 
-            this.MontoVendido.HeaderText = "MontoVendido";
-            this.MontoVendido.Name = "MontoVendido";
-            // 
-            // FrmVisualizarRecordVendido
+            // FrmVisualizarOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 623);
+            this.ClientSize = new System.Drawing.Size(888, 623);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.tbFiltro);
             this.Controls.Add(this.cbCampo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.lblFechaFin);
             this.Controls.Add(this.lblFechaInicio);
@@ -289,9 +317,8 @@
             this.Controls.Add(this.rdoDiario);
             this.Controls.Add(this.rdoMensual);
             this.Controls.Add(this.lblTipoReporte);
-            this.Name = "FrmVisualizarRecordVendido";
+            this.Name = "FrmVisualizarOrden";
             this.Text = "Visualizar Record Vendido";
-            this.Load += new System.EventHandler(this.VisualizarRecordVendido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -313,12 +340,13 @@
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.Label labelTotal;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbCampo;
         private System.Windows.Forms.TextBox tbFiltro;
         private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOrden;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreComisionista;
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;
