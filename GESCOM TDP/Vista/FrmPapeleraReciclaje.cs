@@ -50,5 +50,33 @@ namespace Vista.Otros
             frmRecuperarUsuario.Text = "Recuperar Usuarios";
             frmRecuperarUsuario.ShowDialog();
         }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+            FrmRecuperarUsuario frmRecuperarUsuario = new FrmRecuperarUsuario();
+            frmRecuperarUsuario.Text = "Recuperar Usuarios";
+            frmRecuperarUsuario.ShowDialog();
+        }
+
+        private void picUsuario_Click(object sender, EventArgs e)
+        {
+            FrmRecuperarUsuario frmRecuperarUsuario = new FrmRecuperarUsuario();
+            frmRecuperarUsuario.Text = "Recuperar Usuarios";
+            frmRecuperarUsuario.ShowDialog();
+        }
+
+        private void picProducto_Click(object sender, EventArgs e)
+        {
+            FrmVisualizarProducto frmVisualizarProducto = new FrmVisualizarProducto(true);
+            frmVisualizarProducto.Text = "Recuperar Producto";
+            frmVisualizarProducto.ShowDialog();
+        }
+
+        private void lblProductos_Click(object sender, EventArgs e)
+        {
+            FrmVisualizarProducto frmVisualizarProducto = new FrmVisualizarProducto(true);
+            frmVisualizarProducto.Text = "Recuperar Producto";
+            frmVisualizarProducto.ShowDialog();
+        }
     }
 }

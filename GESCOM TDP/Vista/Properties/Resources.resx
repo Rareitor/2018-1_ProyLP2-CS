@@ -118,29 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="logo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo telefon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo telefon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="data-backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\data-backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="infraccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\infraccion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mobile-Menu-Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\new iconos\Mobile-Menu-Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="correo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\correo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="noticias" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\noticias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="teleonica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teleonica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="consejos-767x576" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\consejos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,7 +130,28 @@
   <data name="descarga (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\papelera.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo telefon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo telefon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mobile-Menu-Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconos\new iconos\Mobile-Menu-Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="correo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\correo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="noticias" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noticias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consejos-767x576" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\consejos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="teleonica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\teleonica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infraccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infraccion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ordenes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ordenes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
