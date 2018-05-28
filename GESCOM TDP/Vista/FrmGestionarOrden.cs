@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -340,35 +341,61 @@ namespace Vista
 
         private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            if (open.ShowDialog() == DialogResult.OK)
+            try
             {
-                string ruta = open.FileName;
-                MessageBox.Show(ruta);
+                OpenFileDialog open = new OpenFileDialog();
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    string ruta = open.FileName;
+                    BindingList<Orden> listaCargar = cargarArchivo(ruta);
 
-                string conexion = "Provider=Microsoft.Jet.OleDb.4.0; Data Source= " +
-                    ruta + "; Extended Properties = \"Excel 8.0; HDR =Yes\"";
-                OleDbConnection origen = default(OleDbConnection);
-                origen = new OleDbConnection(conexion);
-
-                OleDbCommand seleccion = default(OleDbCommand);
-                seleccion = new OleDbCommand("Select * from [Hoja1$]", origen);
-
-                OleDbDataAdapter adaptador = new OleDbDataAdapter();
-                adaptador.SelectCommand = seleccion;
-
-                DataSet ds = new DataSet();
-                adaptador.Fill(ds);
-
-                dgvPrueba.DataSource = ds.Tables[0];
-
-                origen.Close();
-
-              
+                    foreach (Orden o in listaCargar)
+                    {
+                        logicaOrden.gestionarOrden(o, 1);
+                    }
 
 
+                }
+                MessageBox.Show("Se ha cargado los datos correctamente");
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
 
             }
+            
         }
+        private BindingList<Orden> cargarArchivo(string ruta)
+        {
+            FileStream archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+            StreamReader lector = new StreamReader(archivo);
+            string TextLine;
+            char delimitador = ';';
+            BindingList<Orden> listaOrd = new BindingList<Orden>();
+            lector.ReadLine();
+
+            while (lector.Peek() != -1)
+            {
+                Orden o = new Orden();
+                TextLine = lector.ReadLine();
+                String[] substrings = TextLine.Split(delimitador);
+                o.FechaVenta = Convert.ToDateTime(substrings[1]);
+                o.Trabajador = new Trabajador();
+                o.Trabajador.IdTrabajador = substrings[2];
+                o.Canal = new Canal();
+                o.Combo = new Combo();
+                o.Producto = new Producto();
+
+                o.Canal.IdCanal = substrings[3];
+                o.Combo.IdCombo = substrings[4];
+                o.Producto.IdProducto = substrings[5];
+                o.Monto = Convert.ToDouble(substrings[6]);
+
+                listaOrd.Add(o);
+
+            }
+
+            return listaOrd;
+        }
+        
     }
 }
