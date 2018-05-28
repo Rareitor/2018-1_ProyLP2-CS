@@ -468,7 +468,7 @@
             this.btnComisionCalculo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComisionCalculo.ForeColor = System.Drawing.Color.White;
             this.btnComisionCalculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComisionCalculo.Location = new System.Drawing.Point(-48, 25);
+            this.btnComisionCalculo.Location = new System.Drawing.Point(0, 25);
             this.btnComisionCalculo.Name = "btnComisionCalculo";
             this.btnComisionCalculo.Size = new System.Drawing.Size(150, 25);
             this.btnComisionCalculo.TabIndex = 9;
@@ -486,7 +486,7 @@
             this.btnFijarPeri.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFijarPeri.ForeColor = System.Drawing.Color.White;
             this.btnFijarPeri.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFijarPeri.Location = new System.Drawing.Point(-26, 0);
+            this.btnFijarPeri.Location = new System.Drawing.Point(0, 0);
             this.btnFijarPeri.Name = "btnFijarPeri";
             this.btnFijarPeri.Size = new System.Drawing.Size(150, 25);
             this.btnFijarPeri.TabIndex = 8;

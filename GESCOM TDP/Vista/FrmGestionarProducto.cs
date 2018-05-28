@@ -11,9 +11,9 @@ using Vista.Otros;
 
 namespace Vista
 {
-    public partial class FrmGestionarProducto : Form
+    public partial class FrmGestionarComboProducto : Form
     {
-        public FrmGestionarProducto()
+        public FrmGestionarComboProducto()
         {
             InitializeComponent();
             if (Owner is FrmVentanaAdministracion)
@@ -60,11 +60,7 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string opcion = cmbCampo.SelectedItem.ToString();
-            if (opcion.Equals(""))
-            {
-                MessageBox.Show("Por favor seleccione una categoría a buscar");
-            }
+          
         }
 
         private void btnListarTodo_Click(object sender, EventArgs e)
@@ -88,6 +84,15 @@ namespace Vista
         {
             FrmConfirmaBorrar frmConfBorr = new FrmConfirmaBorrar();
             frmConfBorr.Show();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            DateTime periodo =dtPeriodo.Value;
+            int mes = periodo.Month;
+            int year = periodo.Year;
+
+           // DateTime primer = DateTime(periodo.Year, periodo.Month, 1);
         }
     }
 }

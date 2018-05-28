@@ -201,7 +201,7 @@ namespace Vista
         {
             pnlGestion.Hide();
             estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmGestionarProducto());
+            AbrirFormInPanel(new FrmGestionarComboProducto());
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -470,17 +470,7 @@ namespace Vista
                     pnlOtro.Size = new System.Drawing.Size(180, 50);
                     cant = 2;
                 }
-                else if (tipoUsu == "Jefe")
-                {
-                    btnReportarInfraccion.Hide();
-                    btnBackup.Hide();
-                    btnPapelera.Hide();
-                    btnEnviarRecomend.Hide();
-                    btnAñadirNoticias.Location = new Point(0, 0);
-                    btnMapa.Hide();
-                    pnlOtro.Size = new System.Drawing.Size(180, 25);
-                    cant = 1;
-                }
+               
                 else
                 {
                     btnBackup.Hide();
