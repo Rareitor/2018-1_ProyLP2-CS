@@ -24,7 +24,7 @@ namespace Vista
         Orden objetoSeleccionado = new Orden();
         private int opcion =1;
         private string tipoUsuario;
-
+        //Prueba
         public enum Estado
         {
             Inicial, Nuevo, Deshabilitado
