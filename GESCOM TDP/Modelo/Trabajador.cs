@@ -18,8 +18,9 @@ namespace Modelo
         private string superior;
         private String cargo;
         private String distrito;
+        private bool isVisible;
 
-     //métodos
+        //métodos
         //constructores
         public Trabajador()
         {
@@ -37,6 +38,7 @@ namespace Modelo
         public string Cargo { get => cargo; set => cargo = value; }
         public string Distrito { get => distrito; set => distrito = value; }
         public Sede Locacion { get => locacion; set => locacion = value; }
+        public bool IsVisible { get => isVisible; set => isVisible = value; }
         internal TipoRegimen Regimen { get => regimen; set => regimen = value; }
 
         //métodos adicionales

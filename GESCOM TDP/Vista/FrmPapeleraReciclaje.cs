@@ -43,5 +43,12 @@ namespace Vista.Otros
             frmVisualizarProducto.Text = "Recuperar Producto";
             frmVisualizarProducto.ShowDialog();
         }
+
+        private void btnRecuperarUsuario_Click(object sender, EventArgs e)
+        {
+            FrmRecuperarUsuario frmRecuperarUsuario = new FrmRecuperarUsuario();
+            frmRecuperarUsuario.Text = "Recuperar Usuarios";
+            frmRecuperarUsuario.ShowDialog();
+        }
     }
 }

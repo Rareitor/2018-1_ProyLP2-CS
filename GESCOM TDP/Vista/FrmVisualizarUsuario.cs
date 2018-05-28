@@ -18,6 +18,13 @@ namespace Vista.Otros
         private TrabajadorBL logicaNegocio;
         String puesto;
 
+        public FrmVisualizarUsuario()
+        {
+            InitializeComponent();
+            dgvUsuarios.AutoGenerateColumns = false;
+            cmbCampo.Text = "<Todos>";
+        }
+
         public FrmVisualizarUsuario(String cargoListar, String idPayee, String puesto)
         {
             InitializeComponent();
@@ -141,6 +148,11 @@ namespace Vista.Otros
         private void txtDato_KeyUp(object sender, KeyEventArgs e)
         {
             filtrar();
+        }
+
+        private void FrmVisualizarUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

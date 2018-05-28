@@ -13,8 +13,6 @@ namespace AccesoDatos
     {
         public BindingList<Producto> listarProductos()
         {
-           
-
             BindingList<Producto> listaProducto = new BindingList<Producto>();
 
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +

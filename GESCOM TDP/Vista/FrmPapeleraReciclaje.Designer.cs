@@ -175,6 +175,7 @@
             this.btnRecuperarUsuario.TabIndex = 0;
             this.btnRecuperarUsuario.Text = "Usuario";
             this.btnRecuperarUsuario.UseVisualStyleBackColor = false;
+            this.btnRecuperarUsuario.Click += new System.EventHandler(this.btnRecuperarUsuario_Click);
             // 
             // btnRecuperarOrden
             // 

@@ -65,6 +65,22 @@ namespace AccesoDatos
             return idUsuario;
         }
 
+        public void recuperarUsuario(Trabajador trab)
+        {
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                   "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "UPDATE Payee SET isVisible=1 WHERE idPayee=\"" + trab.IdTrabajador + "\"";
+            comando.ExecuteNonQuery();
+
+            con.Close();
+        }
+
         public BindingList<String> listarCampos(string nombre, string apellidoPat, string apellidoMat, string email, string dni)
         {
             BindingList<String> listaCampos = new BindingList<String>(); 
@@ -482,6 +498,42 @@ namespace AccesoDatos
             }
 
             return null;
+        }
+
+        public BindingList<Trabajador> listarTrabajadorPapelera()
+        {
+
+            BindingList<Trabajador> listaTrabajador = new BindingList<Trabajador>();
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "SELECT * FROM Payee WHERE ISVISIBLE = 0";
+
+            MySqlDataReader rs = comando.ExecuteReader();
+
+            while (rs.Read())
+            {
+                Trabajador trab = new Trabajador();
+
+                trab.Dni = rs.GetString("dni");
+                trab.IdTrabajador = rs.GetString("idPayee");
+                trab.Nombre = rs.GetString("nombre");
+                trab.ApellidoPaterno = rs.GetString("apellidoPaterno");
+                trab.ApellidoMaterno = rs.GetString("apellidoMaterno");
+                trab.IsVisible = rs.GetBoolean(rs.GetOrdinal("isVisible"));
+
+                listaTrabajador.Add(trab);
+            }
+            con.Close();
+
+            return listaTrabajador;
+
         }
     }
 

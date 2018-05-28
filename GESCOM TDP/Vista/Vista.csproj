@@ -143,6 +143,12 @@
     <Compile Include="FrmGestionarUsuario.Designer.cs">
       <DependentUpon>FrmGestionarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRecuperarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRecuperarUsuario.Designer.cs">
+      <DependentUpon>FrmRecuperarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTipoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRealizarBackup.resx">
       <DependentUpon>FrmRealizarBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRecuperarUsuario.resx">
+      <DependentUpon>FrmRecuperarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTipoUsuario.resx">
       <DependentUpon>FrmTipoUsuario.cs</DependentUpon>

@@ -35,7 +35,6 @@
             this.lblIngreseCampo = new System.Windows.Forms.Label();
             this.cmbCampo = new System.Windows.Forms.ComboBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +43,7 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlIngreseDato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -135,16 +135,6 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(881, 295);
             this.dgvUsuarios.TabIndex = 35;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(807, 132);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 36;
-            this.btnCancelar.Text = "Regresar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // idUsuario
             // 
             this.idUsuario.DataPropertyName = "IdTrabajador";
@@ -193,6 +183,16 @@
             this.distrito.HeaderText = "Distrito";
             this.distrito.Name = "distrito";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(807, 132);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 36;
+            this.btnCancelar.Text = "Regresar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FrmVisualizarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +206,7 @@
             this.Controls.Add(this.btnSeleccionar);
             this.Name = "FrmVisualizarUsuario";
             this.Text = "Visualizar Comisionista";
+            this.Load += new System.EventHandler(this.FrmVisualizarUsuario_Load);
             this.pnlIngreseDato.ResumeLayout(false);
             this.pnlIngreseDato.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();

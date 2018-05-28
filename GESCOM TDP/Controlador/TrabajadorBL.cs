@@ -32,6 +32,12 @@ namespace Controlador
 
             return idUsuario;
         }
+
+        public void recuperarTrabajador(Trabajador trab)
+        {
+            accesoTrabajador.recuperarUsuario(trab);
+        }
+
         public BindingList<String> listarCampos(string nombre, string apellidoPat, string apellidoMat, 
             string email, string dni)
         {
@@ -87,7 +93,12 @@ namespace Controlador
         public Trabajador correoycontaseña(string dato)
         {
             return accesoTrabajador.obtenerLogin(dato);
-        } 
+        }
+
+        public BindingList<Trabajador> listarTrabajadorPapelera()
+        {
+            return accesoTrabajador.listarTrabajadorPapelera();
+        }
 
     }
 }
