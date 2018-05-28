@@ -13,6 +13,7 @@ namespace AccesoDatos
     {
         public BindingList<Producto> listarProductos()
         {
+           
 
             BindingList<Producto> listaProducto = new BindingList<Producto>();
 

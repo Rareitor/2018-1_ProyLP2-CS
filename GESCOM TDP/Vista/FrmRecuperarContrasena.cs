@@ -29,17 +29,17 @@ namespace Vista.Otros
             
 
 
-            if(txtCorreo.Text.Equals(""))
+            if(txtUsuario.Text.Equals(""))
             {
                 MessageBox.Show("Ingrese su correo electrónico");
             }
             else
             {
-                t = logicaTrabajador.correoycontaseña(txtCorreo.Text);
+                t = logicaTrabajador.correoycontaseña(txtUsuario.Text);
                 if (t == null)
                 {
-                    MessageBox.Show("El correo no se encuentra registrado");
-                } else if (txtCorreo.Text == t.Email)
+                    MessageBox.Show("El usuario no se encuentra registrado");
+                } else if (txtUsuario.Text == t.UserName)
                 {
                     enviarMensaje(t);
                     MessageBox.Show("Su contraseña se ha enviado satisfactoriamente al correo");
@@ -68,24 +68,23 @@ namespace Vista.Otros
 
         private void enviarMensaje (Trabajador t)
         {
-            System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
+            MailMessage Correo = new MailMessage();
 
-            mail.From = new MailAddress("oscar.ashtu@pucp.pe");
-
-            mail.To.Add(t.Email);
-            mail.Subject = "Envio de Contraseña - Sistema GESCOM TDP";
-            mail.Body = "Estimado(a) " + t.ApellidoPaterno + " ,su contraseña es: " + t.Password;
-
-            SmtpClient smtp = new SmtpClient();
-
-            smtp.Host = "smtp.gmail.com";
-            smtp.Port = 25; //465; //587
-            smtp.Credentials = new NetworkCredential("oscar.ashtu@pucp.edu.pe", "****");
-            smtp.EnableSsl = true;
+            Correo.From = new MailAddress("grupo8lp2@gmail.com");
+            Correo.To.Add(t.Email);
+            Correo.Subject = ("Recuperar Contraseña");
+            Correo.Body = "Hola " + t.Nombre + " " + t.ApellidoPaterno +
+                " Usted solicito recuperar contraseña\n Su contraseña es: " + t.Password;
+            Correo.Priority = MailPriority.Normal;
+            SmtpClient ServerMail = new SmtpClient();
+            ServerMail.Host = "smtp.gmail.com";
+            ServerMail.Port = 587; //465; //587
+            ServerMail.Credentials = new NetworkCredential("grupo8lp2@gmail.com", "pucppucp");
+            ServerMail.EnableSsl = true;
 
             try
             {
-                smtp.Send(mail);
+                ServerMail.Send(Correo);
             }
             catch (Exception )
             {
@@ -93,7 +92,9 @@ namespace Vista.Otros
             }
             finally
             {
-                smtp.Dispose();
+                Correo.Dispose();
+                ServerMail.Dispose();
+
             }
 
         }

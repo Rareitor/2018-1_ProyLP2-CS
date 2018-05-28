@@ -451,7 +451,7 @@ namespace AccesoDatos
             con.Close();
         }
 
-        public Trabajador obtenerLogin(string correo)
+        public Trabajador obtenerLogin(string usuario)
         {
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
                "port=3306;password=4LDJZU;SslMode=none;" + " ";
@@ -463,7 +463,7 @@ namespace AccesoDatos
             comando.Connection = con;
             comando.CommandText = "OBTENER_LOGIN";
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("DATO", MySqlDbType.VarChar).Value = correo;
+            comando.Parameters.Add("DATO", MySqlDbType.VarChar).Value = usuario;
 
             MySqlDataReader rs = comando.ExecuteReader();
 
@@ -474,6 +474,7 @@ namespace AccesoDatos
                 t.IdTrabajador = rs.GetString("idPayee");
                 t.Nombre = rs.GetString("nombre");
                 t.ApellidoPaterno= rs.GetString("apellidoPaterno");
+                t.UserName = rs.GetString("username");
                 t.Email = rs.GetString("email");
                 t.Password = rs.GetString("password");
 

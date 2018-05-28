@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -24,7 +25,7 @@ namespace Vista
         Orden objetoSeleccionado = new Orden();
         private int opcion =1;
         private string tipoUsuario;
-        //Prueba
+
         public enum Estado
         {
             Inicial, Nuevo, Deshabilitado
@@ -335,6 +336,39 @@ namespace Vista
         {
             opcion = 1;
             estadoComponentes(Estado.Deshabilitado);
+        }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                string ruta = open.FileName;
+                MessageBox.Show(ruta);
+
+                string conexion = "Provider=Microsoft.Jet.OleDb.4.0; Data Source= " +
+                    ruta + "; Extended Properties = \"Excel 8.0; HDR =Yes\"";
+                OleDbConnection origen = default(OleDbConnection);
+                origen = new OleDbConnection(conexion);
+
+                OleDbCommand seleccion = default(OleDbCommand);
+                seleccion = new OleDbCommand("Select * from [Hoja1$]", origen);
+
+                OleDbDataAdapter adaptador = new OleDbDataAdapter();
+                adaptador.SelectCommand = seleccion;
+
+                DataSet ds = new DataSet();
+                adaptador.Fill(ds);
+
+                dgvPrueba.DataSource = ds.Tables[0];
+
+                origen.Close();
+
+              
+
+
+
+            }
         }
     }
 }
