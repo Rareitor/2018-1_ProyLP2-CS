@@ -279,10 +279,13 @@ namespace Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+        
             if (txtID.Text != "")
             {
+                Orden oEliminar = new Orden();
+                oEliminar.Id = txtID.Text;
                 opcion = 3;
-                logicaOrden.gestionarOrden(orden, opcion);
+                logicaOrden.gestionarOrden(oEliminar, opcion);
                 MessageBox.Show("La orden ha sido eliminado satisfactoriamente");
 
            } else {
