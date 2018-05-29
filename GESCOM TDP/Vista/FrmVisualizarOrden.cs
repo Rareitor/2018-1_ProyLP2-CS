@@ -135,8 +135,7 @@ namespace Vista.Otros
 
         private void dgvRecord_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            String columna =  dgvRecord.Columns[e.ColumnIndex].Name;
-            dgvRecord.Sort(dgvRecord.Columns[columna], System.ComponentModel.ListSortDirection.Ascending);
+            dgvRecord.Sort(dgvRecord.Columns[e.ColumnIndex], System.ComponentModel.ListSortDirection.Ascending);
         }
     }
 }
