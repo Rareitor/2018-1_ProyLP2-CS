@@ -103,11 +103,13 @@
             this.cbCampo.Items.AddRange(new object[] {
             "<Todos>",
             "Canal",
+            "Producto",
             "Combo"});
             this.cbCampo.Location = new System.Drawing.Point(64, 50);
             this.cbCampo.Name = "cbCampo";
             this.cbCampo.Size = new System.Drawing.Size(121, 21);
             this.cbCampo.TabIndex = 3;
+            this.cbCampo.Text = "<Todos>";
             // 
             // FrmVisualizarComboProductos
             // 
