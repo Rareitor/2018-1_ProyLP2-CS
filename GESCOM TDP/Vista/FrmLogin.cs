@@ -5,6 +5,12 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Vista.Otros;
 
+//Para Loguear:
+//Admin:        20090380    contraseña: pucp
+//Gerente:      88888888    contraseña:pucp123
+//Jefe:         12345678    contraseña:peru2019
+//Comisionista: 65897421    contraseña:2018pucp
+
 namespace Vista
 {
     public partial class FrmLogin : Form

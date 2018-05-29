@@ -58,7 +58,7 @@ namespace AccesoDatos
             con.Open();
 
             comando.Connection = con;
-            comando.CommandText = "SELECT*FROM Producto";
+            comando.CommandText = "SELECT*FROM Producto WHERE isVisible=0";
 
             MySqlDataReader rs = comando.ExecuteReader();
 
@@ -69,9 +69,8 @@ namespace AccesoDatos
                 p.IdProducto = rs.GetString("idproducto");
                 p.Nombre = rs.GetString("nombre");
                 p.Tipo = rs.GetString("tipo");
-                p.IsVisible = rs.GetBoolean(rs.GetOrdinal("isVisible"));
 
-                if(!p.IsVisible) listaProducto.Add(p);
+                listaProducto.Add(p);
             }
             con.Close();
 

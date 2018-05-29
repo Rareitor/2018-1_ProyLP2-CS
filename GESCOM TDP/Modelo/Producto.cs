@@ -15,7 +15,6 @@ namespace Modelo
         private String marca;
         private string idProducto;
         private string tipo;
-        private bool isVisible;
 
     //métodos
         //constructores
@@ -32,7 +31,6 @@ namespace Modelo
         protected float PrecioEstandar { get => precioEstandar; set => precioEstandar = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         protected string Marca { get => marca; set => marca = value; }
-        public bool IsVisible { get => isVisible; set => isVisible = value; }
 
         //métodos adicionales
 
