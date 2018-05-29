@@ -173,5 +173,24 @@ namespace Vista
         {
             if (e.KeyChar == 13) button1_Click(sender, e);
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form claves = new Form();
+            claves.Text = "Usuarios y claves";
+            RichTextBox txt = new RichTextBox();
+            txt.Text =
+                "Admin:\t\t20090380\tpucp\n" +
+                "Gerente:\t\t88888888\tpucp123\n" +
+                "Jefe:\t\t12345678\tperu2019\n" +
+                "Comisionista:\t65897421\t2018pucp";
+            txt.Width = 310;
+            txt.Height = 70;
+            claves.Controls.Add(txt);
+
+            claves.AutoSize = true;
+            claves.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            claves.ShowDialog();
+        }
     }
 }
