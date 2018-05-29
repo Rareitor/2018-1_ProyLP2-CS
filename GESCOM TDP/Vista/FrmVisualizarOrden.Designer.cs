@@ -91,6 +91,7 @@
             // 
             // dgvRecord
             // 
+            this.dgvRecord.AllowUserToOrderColumns = true;
             this.dgvRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idOrden,
@@ -104,6 +105,7 @@
             this.dgvRecord.Name = "dgvRecord";
             this.dgvRecord.Size = new System.Drawing.Size(788, 332);
             this.dgvRecord.TabIndex = 3;
+            this.dgvRecord.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRecord_ColumnHeaderMouseClick);
             // 
             // idOrden
             // 

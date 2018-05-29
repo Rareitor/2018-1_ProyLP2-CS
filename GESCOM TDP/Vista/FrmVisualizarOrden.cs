@@ -16,16 +16,21 @@ namespace Vista.Otros
     {
         private OrdenBL logicaNegocio;
         BindingList<Orden> listaOrdenes;
+        SortableBindingList<Orden> listaOrdenada;
         private string puesto;
         private string idPayee;
 
         public FrmVisualizarOrden(string puesto, string idPayee)
         {
             InitializeComponent();
+            cbCampo.Text = "<Todos>";
             this.puesto = puesto;
+            this.idPayee = idPayee;
             logicaNegocio = new OrdenBL();
             listaOrdenes = new BindingList<Orden>();
             dgvRecord.AutoGenerateColumns = false;
+
+            listaOrdenada = new SortableBindingList<Orden>();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -40,20 +45,35 @@ namespace Vista.Otros
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            
+            foreach (DataGridViewColumn column in dgvRecord.Columns)
+            {
+
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
             buscar();
+            popularListaOrdenada();
             filtrar();
+        }
+
+        private void popularListaOrdenada()
+        {
+            foreach (Orden orden in listaOrdenes)
+            {
+                listaOrdenada.Add(orden);
+            }
         }
 
         private void filtrar()
         {
-            BindingList<Orden> listaAux = new BindingList<Orden>();
+            SortableBindingList<Orden> listaAux = new SortableBindingList<Orden>();
             string filtro = cbCampo.Text;
             string field = tbFiltro.Text;
 
 
             Boolean cumple = false;
             Double monto = 0.0;
-            foreach (Orden orden in listaOrdenes)
+            foreach (Orden orden in listaOrdenada)
             {
                 switch (filtro)
                 {
@@ -64,7 +84,7 @@ namespace Vista.Otros
                                 || orden.NombreCanal.Contains(field)
                                 || orden.Distrito.Contains(field);
                         break;
-                    case "Comisionsita":
+                    case "Comisionista":
                         cumple = orden.NombreTrabajadorCompleto.Contains(field);
                         break;
                     case "Producto":
@@ -108,14 +128,15 @@ namespace Vista.Otros
             }
             subtotal = listaOrdenes.Sum(Orden => Orden.Monto);
             textBoxTotal.Text = subtotal.ToString();
-            dgvRecord.DataSource = listaOrdenes;
-            dgvRecord.Refresh();
             cbCampo.Enabled = true;
-
             tbFiltro.Enabled = true;
             buttonBuscar.Enabled = true;
-            cbCampo.Text = "<Todos>";
         }
-       
+
+        private void dgvRecord_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            String columna =  dgvRecord.Columns[e.ColumnIndex].Name;
+            dgvRecord.Sort(dgvRecord.Columns[columna], System.ComponentModel.ListSortDirection.Ascending);
+        }
     }
 }

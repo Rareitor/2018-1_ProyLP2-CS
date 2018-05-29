@@ -264,6 +264,7 @@
     <Compile Include="FrmVentanaAdministracion.Designer.cs">
       <DependentUpon>FrmVentanaAdministracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="SortableBindingList.cs" />
     <EmbeddedResource Include="FrmAdministrarCuenta.resx">
       <DependentUpon>FrmAdministrarCuenta.cs</DependentUpon>
     </EmbeddedResource>
