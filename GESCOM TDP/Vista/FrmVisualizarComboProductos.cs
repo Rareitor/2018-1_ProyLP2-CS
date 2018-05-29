@@ -17,6 +17,7 @@ namespace Vista
         DateTime fecha;
         ComboBL logicaCombo = new ComboBL();
         ComboProducto objetoSeleccionado = new ComboProducto();
+        List<ComboProducto> lista;
 
         public FrmVisualizarComboProductos(DateTime fechaVenta)
         {
@@ -40,10 +41,9 @@ namespace Vista
                 fePeriodo = year.ToString() + mes.ToString();
             }
 
-           List<ComboProducto> lista = logicaCombo.listarComboProductos(fePeriodo);
+            lista = logicaCombo.listarComboProductos(fePeriodo);
             dgvComboProducto.AutoGenerateColumns = false;
             dgvComboProducto.DataSource = lista;
-            
 
         }
 
@@ -55,6 +55,26 @@ namespace Vista
 
         private void dgvComboProducto_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void filtrar()
+        {
+            string filtro = cbCampo.Text;
+            lista = new BindingList<Combo>();
+            foreach (Producto producto in listaOriginal)
+            {
+                if (filtro.Equals("<Todos>") || producto.Tipo == filtro)
+                {
+                    listaFiltrada.Add(producto);
+                }
+            }
+            dgvProducto.DataSource = listaFiltrada;
+            dgvProducto.Refresh();
         }
     }
 }

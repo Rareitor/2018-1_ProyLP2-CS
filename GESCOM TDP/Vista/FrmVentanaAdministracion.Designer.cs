@@ -537,7 +537,7 @@
             this.btnProductosGestion.Name = "btnProductosGestion";
             this.btnProductosGestion.Size = new System.Drawing.Size(150, 25);
             this.btnProductosGestion.TabIndex = 10;
-            this.btnProductosGestion.Text = "Productos";
+            this.btnProductosGestion.Text = "ComboProductos";
             this.btnProductosGestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductosGestion.UseVisualStyleBackColor = false;
             this.btnProductosGestion.Click += new System.EventHandler(this.button3_Click);
