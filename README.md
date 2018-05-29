@@ -1,6 +1,6 @@
 # 2018-1_ProyLP2-CS
 Falta:
-  - Visualizar ComboProducto
-  - Gestionar Productos no funciona
-  - Gestionar ComboProducto
-  - Recuperar ComboProducto
+  - Visualizar ComboProducto ----> Sebastián
+  - Gestionar Productos no funciona ----> Oscar
+  - Gestionar ComboProducto  ----> Oscar
+  - Recuperar ComboProducto ----> Carlos
