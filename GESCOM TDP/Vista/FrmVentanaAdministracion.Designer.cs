@@ -71,6 +71,7 @@
             this.iconRestaurar = new System.Windows.Forms.PictureBox();
             this.iconMinimize = new System.Windows.Forms.PictureBox();
             this.pnlContenedor = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblMenuVertical.SuspendLayout();
             this.pnlVisualizar.SuspendLayout();
             this.pnlOtro.SuspendLayout();
@@ -84,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
+            this.pnlContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMenuVertical
@@ -750,12 +752,31 @@
             // 
             // pnlContenedor
             // 
+            this.pnlContenedor.Controls.Add(this.button1);
             this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedor.Location = new System.Drawing.Point(200, 50);
             this.pnlContenedor.Name = "pnlContenedor";
             this.pnlContenedor.Size = new System.Drawing.Size(1100, 600);
             this.pnlContenedor.TabIndex = 2;
             this.pnlContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenedor_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Navy;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 276);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 25);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "ComboProductos";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // FrmVentanaAdministracion
             // 
@@ -784,6 +805,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
+            this.pnlContenedor.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -832,5 +854,6 @@
         private System.Windows.Forms.Button btnGestionarJefeCom;
         private System.Windows.Forms.Button btnOtrosJefeCom;
         private System.Windows.Forms.Button btnMapa2;
+        private System.Windows.Forms.Button button1;
     }
 }

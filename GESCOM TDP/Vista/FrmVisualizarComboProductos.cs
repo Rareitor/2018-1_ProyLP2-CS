@@ -57,7 +57,6 @@ namespace Vista
 
             foreach (DataGridViewColumn column in dgvComboProducto.Columns)
             {
-
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
         }
@@ -83,16 +82,17 @@ namespace Vista
             string campo = cbCampo.Text;
             string filtro = txtFiltro.Text;
             listaFiltrada = new SortableBindingList<ComboProducto>();
-            foreach (ComboProducto combo in lista)
+            foreach (ComboProducto combo in listaOrdenada)
             {
-                if (filtro.Equals("<Todos>")
+                if ((campo.Equals("<Todos>") && (combo.NombreProducto.Contains(filtro) || combo.NombreCanal.Contains(filtro) || combo.NombreCombo.Contains(filtro)))
+                    || campo.Equals("Producto") && combo.NombreProducto.Contains(filtro)
                     || campo.Equals("Canal") && combo.NombreCanal.Contains(filtro)
                     || campo.Equals("Combo") && combo.NombreCombo.Contains(filtro))
                 {
-                    listaOrdenada.Add(combo);
+                    listaFiltrada.Add(combo);
                 }
             }
-            dgvComboProducto.DataSource = listaOrdenada;
+            dgvComboProducto.DataSource = listaFiltrada;
             dgvComboProducto.Refresh();
         }
     }

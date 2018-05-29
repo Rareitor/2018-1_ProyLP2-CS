@@ -241,8 +241,7 @@ namespace Vista
 
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            //AbrirFormInPanel(new FrmVisualizarCanalVenta());
-            AbrirFormInPanel(new FrmVisualizarComboProductos());
+            AbrirFormInPanel(new FrmVisualizarCanalVenta());
         }
 
 
@@ -673,6 +672,13 @@ namespace Vista
         private void lblCargo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            pnlVisualizar.Hide();
+            estadoInicial(tipoUsu);
+            AbrirFormInPanel(new FrmVisualizarComboProductos());
         }
     }
 }
