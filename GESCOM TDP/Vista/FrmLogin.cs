@@ -136,7 +136,11 @@ namespace Vista
 
                if (existeUsu == 1 && errorContra == 0)
                 {
-                      ven = new FrmVentanaAdministracion(respuesta,usuario,id_usuario, nombreUsu, apellidoPat);
+                    Console.WriteLine("1....");
+                    Console.WriteLine("puesto: ", usuario);
+                    Console.WriteLine("idPayee: ", this, id_usuario);
+
+                    ven = new FrmVentanaAdministracion(respuesta,usuario,id_usuario, nombreUsu, apellidoPat);
                    
                         
                     ven.Show();

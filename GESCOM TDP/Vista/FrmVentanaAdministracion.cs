@@ -16,7 +16,6 @@ namespace Vista
     public partial class FrmVentanaAdministracion : Form
     {
         private string tipoUsu;
-        private string usuarioIngresado;
         private string idPayee;
         private TrabajadorBL logicaTrabajador = new TrabajadorBL();
         public FrmVentanaAdministracion()
@@ -31,9 +30,13 @@ namespace Vista
         {
             InitializeComponent();
             AbrirFormInPanel(new FrmInicio());
-            this.usuarioIngresado = id_usuario;
-            this.tipoUsu = tipoUsuario;
             this.idPayee = id_usuario;
+            this.tipoUsu = tipoUsuario;
+
+            Console.WriteLine("5...");
+            Console.WriteLine(id_usuario);
+            Console.WriteLine(tipoUsu);
+
             estadoInicial(tipoUsuario);
             lblCargo.Text = tipoUsuario;
             lblNombreUsu.Text = nombreUsu + " " + apellidoPat;
@@ -194,7 +197,7 @@ namespace Vista
             pnlGestion.Hide();
             estadoInicial(tipoUsu);
             //pnlGestion.Visible = false;
-            AbrirFormInPanel(new FrmGestionarOrden(tipoUsu, usuarioIngresado));
+            AbrirFormInPanel(new FrmGestionarOrden(tipoUsu, idPayee));
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -232,8 +235,7 @@ namespace Vista
         {
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            
-            AbrirFormInPanel(new FrmVisualizarOrden(tipoUsu,idPayee));
+            AbrirFormInPanel(new FrmVisualizarOrden(this.tipoUsu,this.idPayee));
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -301,14 +303,14 @@ namespace Vista
         {
             pnlOtro.Hide();
             estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmReportarInfraccion(usuarioIngresado));
+            AbrirFormInPanel(new FrmReportarInfraccion(idPayee));
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             pnlOtro.Hide();
             estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmAñadirNoticia(usuarioIngresado));
+            AbrirFormInPanel(new FrmAñadirNoticia(idPayee));
         }
 
         private void btnOtros_Click(object sender, EventArgs e)
@@ -655,7 +657,7 @@ namespace Vista
         {
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            FrmVisualizarUsuario frmVisualizarUsuario = new FrmVisualizarUsuario("Jefe",usuarioIngresado, tipoUsu);
+            FrmVisualizarUsuario frmVisualizarUsuario = new FrmVisualizarUsuario("Jefe",idPayee, tipoUsu);
             frmVisualizarUsuario.ocultarSeleccionar();
             AbrirFormInPanel(frmVisualizarUsuario);
         }
@@ -664,7 +666,7 @@ namespace Vista
         {
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            FrmVisualizarUsuario frmVisualizarUsuario = new FrmVisualizarUsuario("Comisionista", usuarioIngresado, tipoUsu);
+            FrmVisualizarUsuario frmVisualizarUsuario = new FrmVisualizarUsuario("Comisionista", idPayee, tipoUsu);
             frmVisualizarUsuario.ocultarSeleccionar();
             AbrirFormInPanel(frmVisualizarUsuario);
         }

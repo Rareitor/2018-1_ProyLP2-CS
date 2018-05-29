@@ -419,7 +419,6 @@ namespace AccesoDatos
                             case "JEFE":
                                 con.Close();
                                 return "Jefe";
-
                             case "COMISIONISTA":
                                 con.Close();
                                 return "Comisionista";
@@ -455,14 +454,11 @@ namespace AccesoDatos
             comando.Parameters.Add("_usuario", MySqlDbType.VarChar).Value = usuario;
 
             MySqlDataReader rs = comando.ExecuteReader();
+            rs.Read();
+            id_usuario = rs.GetString("idPayee");
+            nombreUsu = rs.GetString("nombre");
+            apellidoPat = rs.GetString("apellidoPaterno");
 
-            while (rs.Read())
-            {
-                id_usuario = rs.GetString("idPayee");
-                nombreUsu = rs.GetString("nombre");
-                apellidoPat = rs.GetString("apellidoPaterno");
-            }
-           
 
             con.Close();
         }

@@ -148,7 +148,6 @@ namespace AccesoDatos
             comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = idPayee;
             comando.Parameters.Add("fecha1", MySqlDbType.Date).Value = fecha1;
             comando.Parameters.Add("fecha2", MySqlDbType.Date).Value = fecha2;
-
             MySqlDataReader rs = comando.ExecuteReader();
             while (rs.Read())
             {

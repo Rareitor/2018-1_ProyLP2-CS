@@ -81,7 +81,6 @@ namespace Controlador
         public string existeUsuarioyContraseña(string usuario, string contraseña, ref int existeUsu,ref int errorContra
             ,ref string id_usuario, ref string nombreUsu, ref string apellidoPat)
         {
-
             return accesoTrabajador.login(usuario, contraseña, ref existeUsu, ref errorContra, ref id_usuario, ref nombreUsu, ref apellidoPat);
         }
 

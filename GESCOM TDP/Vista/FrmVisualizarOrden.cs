@@ -26,6 +26,8 @@ namespace Vista.Otros
             cbCampo.Text = "<Todos>";
             this.puesto = puesto;
             this.idPayee = idPayee;
+           
+
             logicaNegocio = new OrdenBL();
             listaOrdenes = new BindingList<Orden>();
             dgvRecord.AutoGenerateColumns = false;
@@ -45,10 +47,8 @@ namespace Vista.Otros
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
             foreach (DataGridViewColumn column in dgvRecord.Columns)
             {
-
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
             buscar();
@@ -114,7 +114,7 @@ namespace Vista.Otros
             DateTime fecha1 = dtpFechaInicio.Value;
             DateTime fecha2 = dtpFechaFin.Value;
             Double subtotal;
-            switch (puesto)
+            switch (this.puesto)
             {
                 case "Comisionista":
                     listaOrdenes = logicaNegocio.listarOrdenesComisionista(this.idPayee, fecha1, fecha2);
