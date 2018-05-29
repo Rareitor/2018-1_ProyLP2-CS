@@ -20,6 +20,7 @@ namespace Vista
         TrabajadorBL logicaTrabajador = new TrabajadorBL();
         Trabajador objetoSeleccionado = new Trabajador();
         private string idSupSup;
+        private SortableBindingList<Trabajador> listaOriginal;
 
         //por defecto 1: crear un usuario, 2:actualizar un usuario
         int opcion=1;
@@ -34,7 +35,7 @@ namespace Vista
             estadoComponentes(Estado.Inicial);
             llenarComboBox();
             pnlBusqueda.Visible = false;
-
+            cmbCampo.Text = "<Todos>";
         }
 
 
@@ -185,18 +186,10 @@ namespace Vista
             {
                 pnlBusqueda.Visible = true;
                 BindingList<Trabajador> lista = logicaTrabajador.busquedaPersonalizada(frmBusPer.Dni, frmBusPer.Nombre, frmBusPer.ApellidoPat, frmBusPer.ApellidMat, frmBusPer.Correo);
+                listaOriginal = new SortableBindingList<Trabajador>(lista);
                 dgvBusqueda.AutoGenerateColumns = false;
-
-                dgvBusqueda.DataSource = lista;
-                
-
-
+                dgvBusqueda.DataSource = listaOriginal;
             }
-        }
-
-        private void frmGestionarUsuarios_Load(object sender, EventArgs e)
-        {
-
         }
 
   
@@ -488,6 +481,59 @@ namespace Vista
         {
             estadoComponentes(Estado.Deshabilitado);
             pnlBusqueda.Visible = false;
+        }
+
+        private void tbFiltro_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrar();
+        }
+
+        private void filtrar()
+        {
+
+            string campo = cmbCampo.Text;
+            string filtro = tbFiltro.Text;
+            SortableBindingList<Trabajador> listaFiltrada = new SortableBindingList<Trabajador>();
+            bool cumple;
+            foreach (Trabajador trabajador in listaOriginal)
+            {
+                switch (campo)
+                {
+                    case "<Todos>":
+                        cumple = trabajador.IdTrabajador.Contains(filtro)
+                                || trabajador.Dni.Contains(filtro)
+                                || trabajador.Nombre.Contains(filtro)
+                                || trabajador.ApellidoPaterno.Contains(filtro)
+                                || trabajador.ApellidoMaterno.Contains(filtro)
+                                || trabajador.Email.Contains(filtro);
+                        break;
+                    case "ID Trabajador":
+                        cumple = trabajador.IdTrabajador.Contains(filtro);
+                        break;
+                    case "DNI":
+                        cumple = trabajador.Dni.Contains(filtro);
+                        break;
+                    case "Nombre":
+                        cumple = trabajador.Nombre.Contains(filtro);
+                        break;
+                    case "Apellido Paterno":
+                        cumple = trabajador.ApellidoPaterno.Contains(filtro);
+                        break;
+                    case "Apellido Materno":
+                        cumple = trabajador.ApellidoMaterno.Contains(filtro);
+                        break;
+                    case "Email":
+                        cumple = trabajador.Email.Contains(filtro);
+                        break;
+                    default:
+                        cumple = false;
+                        break;
+                }
+                if (!cumple) continue;
+                listaFiltrada.Add(trabajador);
+            }
+            dgvBusqueda.DataSource = listaFiltrada;
+            dgvBusqueda.Refresh();
         }
     }
 }

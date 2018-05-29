@@ -74,6 +74,8 @@
             this.ApellidoPat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoMat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbCampo = new System.Windows.Forms.ComboBox();
+            this.tbFiltro = new System.Windows.Forms.TextBox();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -453,12 +455,14 @@
             // 
             // pnlBusqueda
             // 
+            this.pnlBusqueda.Controls.Add(this.cmbCampo);
+            this.pnlBusqueda.Controls.Add(this.tbFiltro);
             this.pnlBusqueda.Controls.Add(this.btnSeleccionar);
             this.pnlBusqueda.Controls.Add(this.label12);
             this.pnlBusqueda.Controls.Add(this.dgvBusqueda);
             this.pnlBusqueda.Location = new System.Drawing.Point(451, 50);
             this.pnlBusqueda.Name = "pnlBusqueda";
-            this.pnlBusqueda.Size = new System.Drawing.Size(636, 327);
+            this.pnlBusqueda.Size = new System.Drawing.Size(636, 388);
             this.pnlBusqueda.TabIndex = 20;
             // 
             // btnSeleccionar
@@ -491,7 +495,7 @@
             this.ApellidoPat,
             this.ApellidoMat,
             this.Email});
-            this.dgvBusqueda.Location = new System.Drawing.Point(17, 65);
+            this.dgvBusqueda.Location = new System.Drawing.Point(17, 143);
             this.dgvBusqueda.Name = "dgvBusqueda";
             this.dgvBusqueda.Size = new System.Drawing.Size(616, 222);
             this.dgvBusqueda.TabIndex = 0;
@@ -544,6 +548,31 @@
             this.Email.ReadOnly = true;
             this.Email.Width = 140;
             // 
+            // cmbCampo
+            // 
+            this.cmbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCampo.FormattingEnabled = true;
+            this.cmbCampo.Items.AddRange(new object[] {
+            "<Todos>",
+            "ID Trabajador",
+            "DNI",
+            "Nombre",
+            "Apellido Paterno",
+            "Apellido Materno",
+            "Email"});
+            this.cmbCampo.Location = new System.Drawing.Point(51, 79);
+            this.cmbCampo.Name = "cmbCampo";
+            this.cmbCampo.Size = new System.Drawing.Size(130, 21);
+            this.cmbCampo.TabIndex = 6;
+            // 
+            // tbFiltro
+            // 
+            this.tbFiltro.Location = new System.Drawing.Point(232, 79);
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Size = new System.Drawing.Size(122, 20);
+            this.tbFiltro.TabIndex = 5;
+            this.tbFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltro_KeyUp);
+            // 
             // FrmGestionarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,7 +584,6 @@
             this.Controls.Add(this.tsMenu);
             this.Name = "FrmGestionarUsuario";
             this.Text = "Gestionar Usuarios";
-            this.Load += new System.EventHandler(this.frmGestionarUsuarios_Load);
             this.tsMenu.ResumeLayout(false);
             this.tsMenu.PerformLayout();
             this.gbGenerales.ResumeLayout(false);
@@ -616,5 +644,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoMat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.ToolStripButton btnCancelar;
+        private System.Windows.Forms.ComboBox cmbCampo;
+        private System.Windows.Forms.TextBox tbFiltro;
     }
 }

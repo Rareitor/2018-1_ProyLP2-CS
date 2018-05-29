@@ -75,9 +75,9 @@
             this.correo,
             this.jefeDir,
             this.tipoUsu});
-            this.dgvUsuarios.Location = new System.Drawing.Point(12, 220);
+            this.dgvUsuarios.Location = new System.Drawing.Point(12, 281);
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(881, 295);
+            this.dgvUsuarios.Size = new System.Drawing.Size(881, 315);
             this.dgvUsuarios.TabIndex = 43;
             // 
             // idUsuario
@@ -139,7 +139,6 @@
             this.btnBuscar.TabIndex = 42;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-           
             // 
             // btnSeleccionar
             // 
@@ -239,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 450);
+            this.ClientSize = new System.Drawing.Size(917, 639);
             this.Controls.Add(this.cmbDNI);
             this.Controls.Add(this.lblDNI);
             this.Controls.Add(this.cmbCorreo);
