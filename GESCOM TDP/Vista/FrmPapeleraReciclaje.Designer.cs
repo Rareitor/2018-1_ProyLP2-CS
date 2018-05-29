@@ -29,49 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPapeleraReciclaje));
-            this.picUsuario = new System.Windows.Forms.PictureBox();
-            this.picProducto = new System.Windows.Forms.PictureBox();
-            this.picOrden = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblProductos = new System.Windows.Forms.Label();
             this.lblOrden = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProducto)).BeginInit();
+            this.picOrden = new System.Windows.Forms.PictureBox();
+            this.picProducto = new System.Windows.Forms.PictureBox();
+            this.picUsuario = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picOrden)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picUsuario
-            // 
-            this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
-            this.picUsuario.Location = new System.Drawing.Point(21, 126);
-            this.picUsuario.Name = "picUsuario";
-            this.picUsuario.Size = new System.Drawing.Size(255, 215);
-            this.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picUsuario.TabIndex = 46;
-            this.picUsuario.TabStop = false;
-            this.picUsuario.Click += new System.EventHandler(this.picUsuario_Click);
-            // 
-            // picProducto
-            // 
-            this.picProducto.Image = ((System.Drawing.Image)(resources.GetObject("picProducto.Image")));
-            this.picProducto.Location = new System.Drawing.Point(353, 126);
-            this.picProducto.Name = "picProducto";
-            this.picProducto.Size = new System.Drawing.Size(264, 215);
-            this.picProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picProducto.TabIndex = 47;
-            this.picProducto.TabStop = false;
-            this.picProducto.Click += new System.EventHandler(this.picProducto_Click);
-            // 
-            // picOrden
-            // 
-            this.picOrden.Image = global::Vista.Properties.Resources.ordenes;
-            this.picOrden.Location = new System.Drawing.Point(689, 126);
-            this.picOrden.Name = "picOrden";
-            this.picOrden.Size = new System.Drawing.Size(300, 215);
-            this.picOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picOrden.TabIndex = 48;
-            this.picOrden.TabStop = false;
             // 
             // lblUsuario
             // 
@@ -104,6 +72,7 @@
             this.lblOrden.Size = new System.Drawing.Size(88, 25);
             this.lblOrden.TabIndex = 51;
             this.lblOrden.Text = "Órdenes";
+            this.lblOrden.Click += new System.EventHandler(this.lblOrden_Click);
             // 
             // btnCancelar
             // 
@@ -114,6 +83,39 @@
             this.btnCancelar.Text = "Regresar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // picOrden
+            // 
+            this.picOrden.Image = global::Vista.Properties.Resources.ordenes;
+            this.picOrden.Location = new System.Drawing.Point(689, 126);
+            this.picOrden.Name = "picOrden";
+            this.picOrden.Size = new System.Drawing.Size(300, 215);
+            this.picOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picOrden.TabIndex = 48;
+            this.picOrden.TabStop = false;
+            this.picOrden.Click += new System.EventHandler(this.picOrden_Click);
+            // 
+            // picProducto
+            // 
+            this.picProducto.Image = ((System.Drawing.Image)(resources.GetObject("picProducto.Image")));
+            this.picProducto.Location = new System.Drawing.Point(353, 126);
+            this.picProducto.Name = "picProducto";
+            this.picProducto.Size = new System.Drawing.Size(264, 215);
+            this.picProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProducto.TabIndex = 47;
+            this.picProducto.TabStop = false;
+            this.picProducto.Click += new System.EventHandler(this.picProducto_Click);
+            // 
+            // picUsuario
+            // 
+            this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
+            this.picUsuario.Location = new System.Drawing.Point(21, 126);
+            this.picUsuario.Name = "picUsuario";
+            this.picUsuario.Size = new System.Drawing.Size(255, 215);
+            this.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUsuario.TabIndex = 46;
+            this.picUsuario.TabStop = false;
+            this.picUsuario.Click += new System.EventHandler(this.picUsuario_Click);
             // 
             // FrmPapeleraReciclaje
             // 
@@ -129,9 +131,9 @@
             this.Controls.Add(this.btnCancelar);
             this.Name = "FrmPapeleraReciclaje";
             this.Text = "Papelera Reciclaje";
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrden)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
