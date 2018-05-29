@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExportarExcel.cs" />
     <Compile Include="FrmAdministrarCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
