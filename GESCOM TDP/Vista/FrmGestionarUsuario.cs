@@ -36,6 +36,11 @@ namespace Vista
             llenarComboBox();
             pnlBusqueda.Visible = false;
             cmbCampo.Text = "<Todos>";
+            foreach (DataGridViewColumn column in dgvBusqueda.Columns)
+            {
+
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
 
 
@@ -534,6 +539,11 @@ namespace Vista
             }
             dgvBusqueda.DataSource = listaFiltrada;
             dgvBusqueda.Refresh();
+        }
+
+        private void dgvBusqueda_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvBusqueda.Sort(dgvBusqueda.Columns[e.ColumnIndex], System.ComponentModel.ListSortDirection.Ascending);
         }
     }
 }

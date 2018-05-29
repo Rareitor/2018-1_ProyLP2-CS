@@ -487,6 +487,7 @@
             // 
             // dgvBusqueda
             // 
+            this.dgvBusqueda.AllowUserToOrderColumns = true;
             this.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBusqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Trabajador,
@@ -499,6 +500,7 @@
             this.dgvBusqueda.Name = "dgvBusqueda";
             this.dgvBusqueda.Size = new System.Drawing.Size(616, 222);
             this.dgvBusqueda.TabIndex = 0;
+            this.dgvBusqueda.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBusqueda_ColumnHeaderMouseClick);
             // 
             // ID_Trabajador
             // 
