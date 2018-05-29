@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvCanalVenta = new System.Windows.Forms.DataGridView();
+            this.idCanal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNombreCanal = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.idCanal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCanalVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +49,20 @@
             this.dgvCanalVenta.Size = new System.Drawing.Size(514, 186);
             this.dgvCanalVenta.TabIndex = 1;
             // 
+            // idCanal
+            // 
+            this.idCanal.DataPropertyName = "idCanal";
+            this.idCanal.HeaderText = "idCanal";
+            this.idCanal.Name = "idCanal";
+            this.idCanal.Width = 150;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.Width = 200;
+            // 
             // lblNombreCanal
             // 
             this.lblNombreCanal.AutoSize = true;
@@ -60,7 +74,7 @@
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(438, 42);
+            this.btnRegresar.Location = new System.Drawing.Point(447, 311);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(75, 23);
             this.btnRegresar.TabIndex = 7;
@@ -85,25 +99,11 @@
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             // 
-            // idCanal
-            // 
-            this.idCanal.DataPropertyName = "idCanal";
-            this.idCanal.HeaderText = "idCanal";
-            this.idCanal.Name = "idCanal";
-            this.idCanal.Width = 150;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "Nombre";
-            this.nombre.HeaderText = "nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 200;
-            // 
             // FrmVisualizarCanalVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 316);
+            this.ClientSize = new System.Drawing.Size(560, 346);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnRegresar);

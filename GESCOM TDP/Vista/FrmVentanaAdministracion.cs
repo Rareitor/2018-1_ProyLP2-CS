@@ -239,10 +239,11 @@ namespace Vista
 
         private void button8_Click(object sender, EventArgs e)
         {
-
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmVisualizarCanalVenta());
+            FrmVisualizarCanalVenta frmVisualizarCanalVenta = new FrmVisualizarCanalVenta();
+            frmVisualizarCanalVenta.ocultarSeleccionar();
+            AbrirFormInPanel(frmVisualizarCanalVenta);
         }
 
 
@@ -648,9 +649,11 @@ namespace Vista
 
         private void btnMapa2_Click(object sender, EventArgs e)
         {
-
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
+            FrmVisualizarComboProductos frmVisualizarComboProductos = new FrmVisualizarComboProductos();
+            frmVisualizarComboProductos.ocultarSeleccionar();
+            AbrirFormInPanel(frmVisualizarComboProductos);
         }
 
         private void btnJefes_Click(object sender, EventArgs e)
@@ -674,13 +677,6 @@ namespace Vista
         private void lblCargo_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            pnlVisualizar.Hide();
-            estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmVisualizarComboProductos());
         }
     }
 }

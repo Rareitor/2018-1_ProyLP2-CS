@@ -95,5 +95,15 @@ namespace Vista
             dgvComboProducto.DataSource = listaFiltrada;
             dgvComboProducto.Refresh();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        public void ocultarSeleccionar()
+        {
+            btnSeleccionar.Visible = false;
+        }
     }
 }

@@ -35,6 +35,7 @@
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.cbCampo = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComboProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.NombreProducto,
             this.NombreCanal,
             this.NombreCombo});
-            this.dgvComboProducto.Location = new System.Drawing.Point(12, 107);
+            this.dgvComboProducto.Location = new System.Drawing.Point(12, 117);
             this.dgvComboProducto.Name = "dgvComboProducto";
             this.dgvComboProducto.Size = new System.Drawing.Size(750, 219);
             this.dgvComboProducto.TabIndex = 0;
@@ -81,7 +82,7 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(657, 11);
+            this.btnSeleccionar.Location = new System.Drawing.Point(662, 60);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 1;
@@ -111,11 +112,22 @@
             this.cbCampo.TabIndex = 3;
             this.cbCampo.Text = "<Todos>";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(649, 366);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Regresar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmVisualizarComboProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 411);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cbCampo);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnSeleccionar);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCombo;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.ComboBox cbCampo;
+        private System.Windows.Forms.Button button1;
     }
 }
