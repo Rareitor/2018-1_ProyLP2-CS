@@ -626,6 +626,7 @@
             this.lblCerrarSesion.Size = new System.Drawing.Size(86, 17);
             this.lblCerrarSesion.TabIndex = 0;
             this.lblCerrarSesion.Text = "Cerrar Sesión";
+            this.lblCerrarSesion.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // picCerrarSesion
             // 
@@ -647,6 +648,7 @@
             this.lblNombreUsu.Size = new System.Drawing.Size(136, 20);
             this.lblNombreUsu.TabIndex = 18;
             this.lblNombreUsu.Text = "Nombre, Apellido";
+            this.lblNombreUsu.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // lblCargo
             // 

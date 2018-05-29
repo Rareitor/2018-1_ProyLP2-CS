@@ -136,10 +136,9 @@ namespace Vista
 
                if (existeUsu == 1 && errorContra == 0)
                 {
-                      ven = new FrmVentanaAdministracion(respuesta,usuario,id_usuario, nombreUsu, apellidoPat);
-                   
-                        
+                    ven = new FrmVentanaAdministracion(respuesta,usuario,id_usuario, nombreUsu, apellidoPat);
                     ven.Show();
+                    this.Hide();
                 }
                 else if (existeUsu ==1 && errorContra == 1)
                 {
@@ -155,8 +154,6 @@ namespace Vista
                     return;
                 } 
             }
-
-
         }
 
         private void txtContraseña_TextChanged(object sender, EventArgs e)

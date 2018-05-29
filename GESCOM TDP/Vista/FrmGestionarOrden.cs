@@ -24,7 +24,8 @@ namespace Vista
         ProductoBL logicaProducto = new ProductoBL();
         Orden orden = new Orden();
         Orden objetoSeleccionado = new Orden();
-        private BindingList<Orden> listaOrd;
+        private BindingList<Orden> listaOriginal;
+        private SortableBindingList<Orden> listaOrdenada;
 
         private int opcion =1;
         private string tipoUsuario;
@@ -47,6 +48,11 @@ namespace Vista
                 txtIDComisionista.Enabled = false;
             }
             cmbCampo.Text = "<Todos>";
+            foreach (DataGridViewColumn column in dgvBusqueda.Columns)
+            {
+
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
 
         public void estadoComponentes(Estado estado)
@@ -306,13 +312,12 @@ namespace Vista
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
             opcion = 2;
-            listaOrd = logicaOrden.listarOrden();
+            listaOriginal = logicaOrden.listarOrden();
+            listaOrdenada = new SortableBindingList<Orden>(listaOriginal);
             pnlBusqueda.Visible = true;
  
-                dgvBusqueda.AutoGenerateColumns = false;
-                dgvBusqueda.DataSource = listaOrd;
-
-
+            dgvBusqueda.AutoGenerateColumns = false;
+            dgvBusqueda.DataSource = listaOrdenada;
             //pnlBusqueda.Visible = false;
         }
 
@@ -373,7 +378,7 @@ namespace Vista
             StreamReader lector = new StreamReader(archivo);
             string TextLine;
             char delimitador = ';';
-            listaOrd = new BindingList<Orden>();
+            listaOrdenada = new SortableBindingList<Orden>();
             lector.ReadLine();
 
             while (lector.Peek() != -1)
@@ -393,11 +398,10 @@ namespace Vista
                 o.Producto.IdProducto = substrings[5];
                 o.Monto = Convert.ToDouble(substrings[6]);
 
-                listaOrd.Add(o);
-
+                listaOrdenada.Add(o);
             }
 
-            return listaOrd;
+            return listaOrdenada;
         }
 
         private void button1_Click_2(object sender, EventArgs e)
@@ -425,7 +429,7 @@ namespace Vista
             string filtro = tbFiltro.Text;
             BindingList<Orden> listaFiltrada = new BindingList<Orden>();
             bool cumple;
-            foreach (Orden orden in listaOrd)
+            foreach (Orden orden in listaOrdenada)
             {
                 switch (campo)
                 {
@@ -457,6 +461,11 @@ namespace Vista
             }
             dgvBusqueda.DataSource = listaFiltrada;
             dgvBusqueda.Refresh();
+        }
+
+        private void dgvBusqueda_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvBusqueda.Sort(dgvBusqueda.Columns[e.ColumnIndex], System.ComponentModel.ListSortDirection.Ascending);
         }
     }
 }
