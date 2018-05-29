@@ -71,6 +71,7 @@
             this.iconRestaurar = new System.Windows.Forms.PictureBox();
             this.iconMinimize = new System.Windows.Forms.PictureBox();
             this.pnlContenedor = new System.Windows.Forms.Panel();
+            this.pictureCampana = new System.Windows.Forms.PictureBox();
             this.lblMenuVertical.SuspendLayout();
             this.pnlVisualizar.SuspendLayout();
             this.pnlOtro.SuspendLayout();
@@ -84,11 +85,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCampana)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMenuVertical
             // 
             this.lblMenuVertical.BackColor = System.Drawing.Color.Navy;
+            this.lblMenuVertical.Controls.Add(this.pictureCampana);
             this.lblMenuVertical.Controls.Add(this.btnCalculoAdmin);
             this.lblMenuVertical.Controls.Add(this.pnlVisualizar);
             this.lblMenuVertical.Controls.Add(this.pnlOtro);
@@ -759,6 +762,17 @@
             this.pnlContenedor.TabIndex = 2;
             this.pnlContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenedor_Paint);
             // 
+            // pictureCampana
+            // 
+            this.pictureCampana.Image = ((System.Drawing.Image)(resources.GetObject("pictureCampana.Image")));
+            this.pictureCampana.Location = new System.Drawing.Point(162, 618);
+            this.pictureCampana.Name = "pictureCampana";
+            this.pictureCampana.Size = new System.Drawing.Size(32, 27);
+            this.pictureCampana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCampana.TabIndex = 21;
+            this.pictureCampana.TabStop = false;
+            this.pictureCampana.Visible = false;
+            // 
             // FrmVentanaAdministracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -786,6 +800,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCampana)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -834,5 +849,6 @@
         private System.Windows.Forms.Button btnGestionarJefeCom;
         private System.Windows.Forms.Button btnOtrosJefeCom;
         private System.Windows.Forms.Button btnMapa2;
+        private System.Windows.Forms.PictureBox pictureCampana;
     }
 }

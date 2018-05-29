@@ -107,6 +107,7 @@ namespace Vista
                     btnCalculoAdmin.Hide();
                     btnOtrosJefeCom.Location = new Point(0, 140);
                     btnVisuGere.Location = new Point(0, 180);
+                    pictureCampana.Visible = true;
                     break;
 
             }
