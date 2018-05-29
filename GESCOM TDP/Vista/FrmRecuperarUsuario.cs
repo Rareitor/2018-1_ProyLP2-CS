@@ -30,5 +30,15 @@ namespace Vista
                 dgvUsuariosRec.Rows.RemoveAt(fila.Index);
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgvUsuariosRec_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

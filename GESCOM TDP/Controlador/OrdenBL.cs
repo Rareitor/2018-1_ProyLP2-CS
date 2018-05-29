@@ -36,6 +36,16 @@ namespace Controlador
             return respuesta;
         }
 
+        public void recuperarOrden(Orden ord)
+        {
+            accesoOrden.recuperarOrden(ord);
+        }
+
+        public BindingList<Orden> listarOrdenPapelera()
+        {
+            return accesoOrden.listarOrdenPapelera();
+        }
+
         public BindingList<Orden> listarOrden()
         {
             return accesoOrden.listarOrden();

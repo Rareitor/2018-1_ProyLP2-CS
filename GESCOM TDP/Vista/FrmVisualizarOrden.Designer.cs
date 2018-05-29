@@ -39,7 +39,6 @@
             this.Canal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MontoVendido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblFechaFin = new System.Windows.Forms.Label();
@@ -49,13 +48,13 @@
             this.labelTotal = new System.Windows.Forms.Label();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbnPdf = new System.Windows.Forms.RadioButton();
+            this.rbnExcel = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.cbCampo = new System.Windows.Forms.ComboBox();
             this.tbFiltro = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.rbnExcel = new System.Windows.Forms.RadioButton();
-            this.rbnPdf = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -153,15 +152,6 @@
             this.MontoVendido.HeaderText = "MontoVendido";
             this.MontoVendido.Name = "MontoVendido";
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Location = new System.Drawing.Point(791, 94);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(75, 23);
-            this.btnImprimir.TabIndex = 4;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
             // btnExportar
             // 
             this.btnExportar.Location = new System.Drawing.Point(31, 63);
@@ -246,6 +236,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exportar";
             // 
+            // rbnPdf
+            // 
+            this.rbnPdf.AutoSize = true;
+            this.rbnPdf.Location = new System.Drawing.Point(64, 28);
+            this.rbnPdf.Name = "rbnPdf";
+            this.rbnPdf.Size = new System.Drawing.Size(46, 17);
+            this.rbnPdf.TabIndex = 7;
+            this.rbnPdf.TabStop = true;
+            this.rbnPdf.Text = "PDF";
+            this.rbnPdf.UseVisualStyleBackColor = true;
+            // 
+            // rbnExcel
+            // 
+            this.rbnExcel.AutoSize = true;
+            this.rbnExcel.Location = new System.Drawing.Point(7, 26);
+            this.rbnExcel.Name = "rbnExcel";
+            this.rbnExcel.Size = new System.Drawing.Size(51, 17);
+            this.rbnExcel.TabIndex = 6;
+            this.rbnExcel.TabStop = true;
+            this.rbnExcel.Text = "Excel";
+            this.rbnExcel.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -301,35 +313,12 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // rbnExcel
-            // 
-            this.rbnExcel.AutoSize = true;
-            this.rbnExcel.Location = new System.Drawing.Point(7, 26);
-            this.rbnExcel.Name = "rbnExcel";
-            this.rbnExcel.Size = new System.Drawing.Size(51, 17);
-            this.rbnExcel.TabIndex = 6;
-            this.rbnExcel.TabStop = true;
-            this.rbnExcel.Text = "Excel";
-            this.rbnExcel.UseVisualStyleBackColor = true;
-            // 
-            // rbnPdf
-            // 
-            this.rbnPdf.AutoSize = true;
-            this.rbnPdf.Location = new System.Drawing.Point(64, 28);
-            this.rbnPdf.Name = "rbnPdf";
-            this.rbnPdf.Size = new System.Drawing.Size(46, 17);
-            this.rbnPdf.TabIndex = 7;
-            this.rbnPdf.TabStop = true;
-            this.rbnPdf.Text = "PDF";
-            this.rbnPdf.UseVisualStyleBackColor = true;
-            // 
             // FrmVisualizarOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 623);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.tbFiltro);
             this.Controls.Add(this.cbCampo);
@@ -362,7 +351,6 @@
         private System.Windows.Forms.RadioButton rdoMensual;
         private System.Windows.Forms.RadioButton rdoDiario;
         private System.Windows.Forms.DataGridView dgvRecord;
-        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label lblFechaFin;

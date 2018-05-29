@@ -42,9 +42,62 @@ namespace AccesoDatos
             
         }
 
+        public void recuperarOrden(Orden ord)
+        {
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                   "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "UPDATE Orden SET isVisible=1 WHERE idOrden=\"" + ord.Id + "\"";
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public BindingList<Orden> listarOrdenPapelera()
+        {
+            BindingList<Orden> listaOrdenBorradas = new BindingList<Orden>();
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+               "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "LISTAR_ORDENES_BORRADAS";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            MySqlDataReader rs = comando.ExecuteReader();
+            while (rs.Read())
+            {
+                Orden o = new Orden();
+                o.Canal = new Canal();
+                o.Canal.IdCanal = rs.GetString("idCanal");
+                o.Canal.Nombre = rs.GetString("nombreCanal");
+                o.Combo = new Combo();
+                o.Combo.IdCombo = rs.GetString("idCombo");
+                o.Combo.Nombre = rs.GetString("nombreCombo");
+                o.Producto = new Producto();
+                o.Producto.IdProducto = rs.GetString("idProducto");
+                o.Producto.Nombre = rs.GetString("nombreProducto");
+                o.Monto = rs.GetFloat("monto");
+                o.Trabajador = new Trabajador();
+                o.Trabajador.IdTrabajador = rs.GetString("idPayee");
+                o.Id = rs.GetString("idOrden");
+                o.FechaVenta = rs.GetDateTime("fechaVenta");
+                listaOrdenBorradas.Add(o);
+            }
+            con.Close();
+            return listaOrdenBorradas;
+        }
+
         public void modificarOrden(Orden o)
         {
-
+           
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
                 "port=3306;password=4LDJZU;SslMode=none;" + " ";
 
@@ -88,6 +141,7 @@ namespace AccesoDatos
             comando.ExecuteNonQuery();
 
             con.Close();
+
         }
 
         public BindingList<Orden> listarOrden()
