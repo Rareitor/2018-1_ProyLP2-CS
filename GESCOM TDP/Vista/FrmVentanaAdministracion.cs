@@ -601,18 +601,18 @@ namespace Vista
                 {
                     btnJefes.Hide();
                     btnComisionista.Hide();
-                    btnMapa2.Hide();
+                    btnMapa2.Location = new Point(0, 75);
                     btnInfracciones.Hide();
-                    btnNoticiasVisu.Location  = new Point(0, 75);
-                    btnPersonalCargo.Location = new Point(0, 100);
+                    btnNoticiasVisu.Location  = new Point(0, 100);
+                    btnPersonalCargo.Location = new Point(0, 125);
                 } else if (tipoUsu == "Comisionista")
                 {
                     btnPersonalCargo.Hide();
-                    btnMapa2.Hide();
+                    btnMapa2.Location = new Point(0, 75);
                     btnJefes.Hide();
                     btnComisionista.Hide();
                     btnInfracciones.Hide();
-                    btnNoticiasVisu.Location = new Point(0, 75);
+                    btnNoticiasVisu.Location = new Point(0, 100);
 
                 }
 
