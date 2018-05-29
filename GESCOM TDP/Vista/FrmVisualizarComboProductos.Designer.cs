@@ -1,0 +1,112 @@
+﻿namespace Vista
+{
+    partial class FrmVisualizarComboProductos
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.dgvComboProducto = new System.Windows.Forms.DataGridView();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCanal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCombo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComboProducto)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgvComboProducto
+            // 
+            this.dgvComboProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComboProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreProducto,
+            this.NombreCanal,
+            this.NombreCombo});
+            this.dgvComboProducto.Location = new System.Drawing.Point(26, 40);
+            this.dgvComboProducto.Name = "dgvComboProducto";
+            this.dgvComboProducto.Size = new System.Drawing.Size(750, 219);
+            this.dgvComboProducto.TabIndex = 0;
+            this.dgvComboProducto.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvComboProducto_ColumnHeaderMouseClick);
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Location = new System.Drawing.Point(657, 11);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
+            this.btnSeleccionar.TabIndex = 1;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.DataPropertyName = "NombreProducto";
+            this.NombreProducto.FillWeight = 250F;
+            this.NombreProducto.HeaderText = "Nombre Producto";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.NombreProducto.Width = 200;
+            // 
+            // NombreCanal
+            // 
+            this.NombreCanal.DataPropertyName = "NombreCanal";
+            this.NombreCanal.FillWeight = 250F;
+            this.NombreCanal.HeaderText = "Nombre Canal";
+            this.NombreCanal.Name = "NombreCanal";
+            this.NombreCanal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.NombreCanal.Width = 250;
+            // 
+            // NombreCombo
+            // 
+            this.NombreCombo.DataPropertyName = "NombreCombo";
+            this.NombreCombo.FillWeight = 250F;
+            this.NombreCombo.HeaderText = "Nombre Combo";
+            this.NombreCombo.Name = "NombreCombo";
+            this.NombreCombo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.NombreCombo.Width = 250;
+            // 
+            // FrmVisualizarComboProductos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSeleccionar);
+            this.Controls.Add(this.dgvComboProducto);
+            this.Name = "FrmVisualizarComboProductos";
+            this.Text = "FrmVisualizarComboProductos";
+            this.Load += new System.EventHandler(this.FrmVisualizarComboProductos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComboProducto)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView dgvComboProducto;
+        private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCanal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCombo;
+    }
+}
