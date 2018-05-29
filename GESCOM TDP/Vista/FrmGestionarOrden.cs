@@ -427,7 +427,7 @@ namespace Vista
         {
             string campo = cmbCampo.Text;
             string filtro = tbFiltro.Text;
-            BindingList<Orden> listaFiltrada = new BindingList<Orden>();
+            SortableBindingList<Orden> listaFiltrada = new SortableBindingList<Orden>();
             bool cumple;
             foreach (Orden orden in listaOrdenada)
             {
