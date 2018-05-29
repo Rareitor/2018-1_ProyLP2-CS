@@ -54,6 +54,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtIDComisionista = new System.Windows.Forms.TextBox();
             this.pnlBusqueda = new System.Windows.Forms.Panel();
+            this.cmbCampo = new System.Windows.Forms.ComboBox();
+            this.tbFiltro = new System.Windows.Forms.TextBox();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvBusqueda = new System.Windows.Forms.DataGridView();
@@ -322,17 +324,42 @@
             // 
             // pnlBusqueda
             // 
+            this.pnlBusqueda.Controls.Add(this.cmbCampo);
+            this.pnlBusqueda.Controls.Add(this.tbFiltro);
             this.pnlBusqueda.Controls.Add(this.btnSeleccionar);
             this.pnlBusqueda.Controls.Add(this.label12);
             this.pnlBusqueda.Controls.Add(this.dgvBusqueda);
             this.pnlBusqueda.Location = new System.Drawing.Point(414, 31);
             this.pnlBusqueda.Name = "pnlBusqueda";
-            this.pnlBusqueda.Size = new System.Drawing.Size(636, 327);
+            this.pnlBusqueda.Size = new System.Drawing.Size(636, 365);
             this.pnlBusqueda.TabIndex = 21;
+            // 
+            // cmbCampo
+            // 
+            this.cmbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCampo.FormattingEnabled = true;
+            this.cmbCampo.Items.AddRange(new object[] {
+            "<Todos>",
+            "ID",
+            "ID Comisionista",
+            "Fecha",
+            "Canal"});
+            this.cmbCampo.Location = new System.Drawing.Point(63, 24);
+            this.cmbCampo.Name = "cmbCampo";
+            this.cmbCampo.Size = new System.Drawing.Size(130, 21);
+            this.cmbCampo.TabIndex = 4;
+            // 
+            // tbFiltro
+            // 
+            this.tbFiltro.Location = new System.Drawing.Point(244, 24);
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Size = new System.Drawing.Size(122, 20);
+            this.tbFiltro.TabIndex = 3;
+            this.tbFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltro_KeyUp);
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(480, 28);
+            this.btnSeleccionar.Location = new System.Drawing.Point(480, 75);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 2;
@@ -344,7 +371,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(14, 28);
+            this.label12.Location = new System.Drawing.Point(14, 75);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(249, 18);
             this.label12.TabIndex = 1;
@@ -359,7 +386,7 @@
             this.Fecha,
             this.NombreCanal,
             this.Monto});
-            this.dgvBusqueda.Location = new System.Drawing.Point(17, 65);
+            this.dgvBusqueda.Location = new System.Drawing.Point(17, 112);
             this.dgvBusqueda.Name = "dgvBusqueda";
             this.dgvBusqueda.Size = new System.Drawing.Size(616, 222);
             this.dgvBusqueda.TabIndex = 0;
@@ -462,5 +489,7 @@
         private System.Windows.Forms.ToolStripButton btnImportar;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnComboProducto;
+        private System.Windows.Forms.ComboBox cmbCampo;
+        private System.Windows.Forms.TextBox tbFiltro;
     }
 }

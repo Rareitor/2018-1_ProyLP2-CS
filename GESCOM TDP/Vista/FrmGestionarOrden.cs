@@ -24,6 +24,8 @@ namespace Vista
         ProductoBL logicaProducto = new ProductoBL();
         Orden orden = new Orden();
         Orden objetoSeleccionado = new Orden();
+        private BindingList<Orden> listaOrd;
+
         private int opcion =1;
         private string tipoUsuario;
 
@@ -44,6 +46,7 @@ namespace Vista
                 btnBuscarComisionista.Enabled = false;
                 txtIDComisionista.Enabled = false;
             }
+            cmbCampo.Text = "<Todos>";
         }
 
         public void estadoComponentes(Estado estado)
@@ -303,7 +306,7 @@ namespace Vista
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
             opcion = 2;
-            BindingList<Orden> listaOrd = logicaOrden.listarOrden();
+            listaOrd = logicaOrden.listarOrden();
             pnlBusqueda.Visible = true;
  
                 dgvBusqueda.AutoGenerateColumns = false;
@@ -370,7 +373,7 @@ namespace Vista
             StreamReader lector = new StreamReader(archivo);
             string TextLine;
             char delimitador = ';';
-            BindingList<Orden> listaOrd = new BindingList<Orden>();
+            listaOrd = new BindingList<Orden>();
             lector.ReadLine();
 
             while (lector.Peek() != -1)
@@ -409,6 +412,51 @@ namespace Vista
                 cmbProducto.Text = frmVisualComProd.ObjetoSeleccionado.Producto.Nombre;
 
             }
+        }
+
+        private void tbFiltro_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrar();
+        }
+
+        private void filtrar()
+        {
+            string campo = cmbCampo.Text;
+            string filtro = tbFiltro.Text;
+            BindingList<Orden> listaFiltrada = new BindingList<Orden>();
+            bool cumple;
+            foreach (Orden orden in listaOrd)
+            {
+                switch (campo)
+                {
+                    case "<Todos>":
+                        cumple = orden.Id.Contains(filtro)
+                                || orden.IdComisionista.Contains(filtro)
+                                || orden.FechaVenta.ToString().Contains(filtro)
+                                || orden.NombreCanal.Contains(filtro);    
+                        break;
+                    case "ID":
+                        cumple = orden.Id.Contains(filtro);
+                        break;
+                    case "ID Comisionista":
+                        cumple = orden.IdComisionista.Contains(filtro);
+                        break;
+                    case "Fecha":
+                        cumple = orden.FechaVenta.ToString().Contains(filtro);
+                        break;
+                    case "Canal":
+                        cumple = orden.NombreCanal.Contains(filtro);  
+                        break;
+                    default:
+                        cumple = false;
+                        break;
+                }
+                if (!cumple) continue;
+                listaFiltrada.Add(orden);
+                
+            }
+            dgvBusqueda.DataSource = listaFiltrada;
+            dgvBusqueda.Refresh();
         }
     }
 }
