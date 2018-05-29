@@ -155,6 +155,12 @@
     <Compile Include="FrmTipoUsuario.Designer.cs">
       <DependentUpon>FrmTipoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVisualizarCombo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarCombo.Designer.cs">
+      <DependentUpon>FrmVisualizarCombo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVisualizarGerente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTipoUsuario.resx">
       <DependentUpon>FrmTipoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarCombo.resx">
+      <DependentUpon>FrmVisualizarCombo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVisualizarGerente.resx">
       <DependentUpon>FrmVisualizarGerente.cs</DependentUpon>

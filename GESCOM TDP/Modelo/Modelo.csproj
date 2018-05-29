@@ -64,7 +64,6 @@
     <Compile Include="Bono.cs" />
     <Compile Include="Canal.cs" />
     <Compile Include="Combo.cs" />
-    <Compile Include="ComboProducto.cs" />
     <Compile Include="Comision.cs" />
     <Compile Include="Comisionista.cs" />
     <Compile Include="Entidad.cs" />
