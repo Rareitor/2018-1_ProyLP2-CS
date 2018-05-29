@@ -303,21 +303,12 @@ namespace Vista
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
             opcion = 2;
-
+            BindingList<Orden> listaOrd = logicaOrden.listarOrden();
             pnlBusqueda.Visible = true;
-            FrmGestionarOrdenAdmin frmBusPer = new FrmGestionarOrdenAdmin();
-            if (frmBusPer.ShowDialog() == DialogResult.OK)
-            {
-                pnlBusqueda.Visible = true;
-                BindingList<Orden> lista = frmBusPer.ListaEnviar;
-
+ 
                 dgvBusqueda.AutoGenerateColumns = false;
-                dgvBusqueda.DataSource = lista;
-             
+                dgvBusqueda.DataSource = listaOrd;
 
-
-
-            }
 
             //pnlBusqueda.Visible = false;
         }
