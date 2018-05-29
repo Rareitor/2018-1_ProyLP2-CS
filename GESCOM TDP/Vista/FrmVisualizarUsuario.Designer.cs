@@ -44,13 +44,18 @@
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbnPdf = new System.Windows.Forms.RadioButton();
+            this.rbnExcel = new System.Windows.Forms.RadioButton();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.pnlIngreseDato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(662, 132);
+            this.btnSeleccionar.Location = new System.Drawing.Point(411, 132);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 4;
@@ -185,7 +190,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(807, 132);
+            this.btnCancelar.Location = new System.Drawing.Point(536, 132);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 36;
@@ -193,11 +198,56 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbnPdf);
+            this.groupBox1.Controls.Add(this.rbnExcel);
+            this.groupBox1.Controls.Add(this.btnExportar);
+            this.groupBox1.Location = new System.Drawing.Point(454, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(136, 98);
+            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Exportar";
+            // 
+            // rbnPdf
+            // 
+            this.rbnPdf.AutoSize = true;
+            this.rbnPdf.Location = new System.Drawing.Point(64, 28);
+            this.rbnPdf.Name = "rbnPdf";
+            this.rbnPdf.Size = new System.Drawing.Size(46, 17);
+            this.rbnPdf.TabIndex = 7;
+            this.rbnPdf.TabStop = true;
+            this.rbnPdf.Text = "PDF";
+            this.rbnPdf.UseVisualStyleBackColor = true;
+            // 
+            // rbnExcel
+            // 
+            this.rbnExcel.AutoSize = true;
+            this.rbnExcel.Location = new System.Drawing.Point(7, 26);
+            this.rbnExcel.Name = "rbnExcel";
+            this.rbnExcel.Size = new System.Drawing.Size(51, 17);
+            this.rbnExcel.TabIndex = 6;
+            this.rbnExcel.TabStop = true;
+            this.rbnExcel.Text = "Excel";
+            this.rbnExcel.UseVisualStyleBackColor = true;
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Location = new System.Drawing.Point(31, 63);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(75, 23);
+            this.btnExportar.TabIndex = 5;
+            this.btnExportar.Text = "Generar";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // FrmVisualizarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 484);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.pnlIngreseDato);
@@ -210,6 +260,8 @@
             this.pnlIngreseDato.ResumeLayout(false);
             this.pnlIngreseDato.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +284,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn distrito;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbnPdf;
+        private System.Windows.Forms.RadioButton rbnExcel;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

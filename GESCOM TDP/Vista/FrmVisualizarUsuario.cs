@@ -154,5 +154,21 @@ namespace Vista.Otros
         {
 
         }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            if (rbnExcel.Checked == true)
+            {
+                ExportarExcel excel = new ExportarExcel(dgvUsuarios);
+                excel.GenerarExcel();
+                MessageBox.Show("Se ha generado correctamente el archivo excel");
+            }
+            else if (rbnPdf.Checked == true)
+            {
+                ExportarPdf pdf = new ExportarPdf(dgvUsuarios);
+                pdf.ExportarDataGridViewPdf();
+                MessageBox.Show("Se ha generado correctamente el archivo pdf");
+            }
+        }
     }
 }
