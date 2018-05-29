@@ -3,4 +3,4 @@ Falta:
   - Visualizar ComboProducto ----> Sebastián
   - Gestionar Productos no funciona ----> Oscar
   - Gestionar ComboProducto  ----> Oscar
-  - Recuperar ComboProducto ----> Carlos
+  - Recuperar Comisiones ----> Carlos  (ya está)
