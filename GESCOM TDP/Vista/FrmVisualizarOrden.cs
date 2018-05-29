@@ -35,10 +35,21 @@ namespace Vista.Otros
 
         private void tbFiltro_KeyUp(object sender, KeyEventArgs e)
         {
+            filtrar();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            buscar();
+            filtrar();
+        }
+
+        private void filtrar()
+        {
             BindingList<Orden> listaAux = new BindingList<Orden>();
             string filtro = cbCampo.Text;
             string field = tbFiltro.Text;
-            
+
 
             Boolean cumple = false;
             Double monto = 0.0;
@@ -76,11 +87,6 @@ namespace Vista.Otros
             dgvRecord.DataSource = listaAux;
             dgvRecord.Refresh();
             textBoxTotal.Text = monto.ToString("0.00");
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            buscar();
         }
 
         private void buscar()
