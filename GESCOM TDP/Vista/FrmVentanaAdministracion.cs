@@ -240,8 +240,9 @@ namespace Vista
         {
 
             pnlVisualizar.Hide();
-            estadoInicial(tipoUsu); 
-            AbrirFormInPanel(new FrmVisualizarCanalVenta());
+            estadoInicial(tipoUsu);
+            //AbrirFormInPanel(new FrmVisualizarCanalVenta());
+            AbrirFormInPanel(new FrmVisualizarComboProductos());
         }
 
 

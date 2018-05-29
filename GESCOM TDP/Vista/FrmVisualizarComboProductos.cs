@@ -18,11 +18,19 @@ namespace Vista
         ComboBL logicaCombo = new ComboBL();
         ComboProducto objetoSeleccionado = new ComboProducto();
         List<ComboProducto> lista;
+        SortableBindingList<ComboProducto> listaOrdenada;
+        SortableBindingList<ComboProducto> listaFiltrada;
 
         public FrmVisualizarComboProductos(DateTime fechaVenta)
         {
             InitializeComponent();
             fecha = fechaVenta;
+        }
+
+        public FrmVisualizarComboProductos()
+        {
+            InitializeComponent();
+            fecha = DateTime.Now;
         }
 
         public ComboProducto ObjetoSeleccionado { get => objetoSeleccionado; set => objetoSeleccionado = value; }
@@ -42,9 +50,16 @@ namespace Vista
             }
 
             lista = logicaCombo.listarComboProductos(fePeriodo);
-            dgvComboProducto.AutoGenerateColumns = false;
-            dgvComboProducto.DataSource = lista;
+            listaOrdenada = new SortableBindingList<ComboProducto>(lista);
 
+            dgvComboProducto.AutoGenerateColumns = false;
+            dgvComboProducto.DataSource = listaOrdenada;
+
+            foreach (DataGridViewColumn column in dgvComboProducto.Columns)
+            {
+
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
@@ -55,26 +70,30 @@ namespace Vista
 
         private void dgvComboProducto_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            dgvComboProducto.Sort(dgvComboProducto.Columns[e.ColumnIndex], System.ComponentModel.ListSortDirection.Ascending);
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
-
+            filtrar();
         }
 
         private void filtrar()
         {
-            string filtro = cbCampo.Text;
-            lista = new BindingList<Combo>();
-            foreach (Producto producto in listaOriginal)
+            string campo = cbCampo.Text;
+            string filtro = txtFiltro.Text;
+            listaFiltrada = new SortableBindingList<ComboProducto>();
+            foreach (ComboProducto combo in lista)
             {
-                if (filtro.Equals("<Todos>") || producto.Tipo == filtro)
+                if (filtro.Equals("<Todos>")
+                    || campo.Equals("Canal") && combo.NombreCanal.Contains(filtro)
+                    || campo.Equals("Combo") && combo.NombreCombo.Contains(filtro))
                 {
-                    listaFiltrada.Add(producto);
+                    listaOrdenada.Add(combo);
                 }
             }
-            dgvProducto.DataSource = listaFiltrada;
-            dgvProducto.Refresh();
+            dgvComboProducto.DataSource = listaOrdenada;
+            dgvComboProducto.Refresh();
         }
     }
 }
