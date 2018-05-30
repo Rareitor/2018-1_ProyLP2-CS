@@ -296,7 +296,7 @@ namespace Vista
         {
             pnlOtro.Hide();
             estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmVisualizarMapa());
+            AbrirFormInPanel(new FrmVisualizarManual());
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -457,10 +457,10 @@ namespace Vista
                 if (tipoUsu == "Administrador")
                 {
                     btnReportarInfraccion.Hide();
-                    btnMapa.Hide();
-                    btnAñadirNoticias.Location = new Point(0, 75);
+                    btnMapa.Location = new Point(0, 75);
+                    btnAñadirNoticias.Location = new Point(0, 100);
                     pnlOtro.Size = new System.Drawing.Size(180, 100);
-                    cant = 4;
+                    cant = 5;
                 }
                 else if (tipoUsu == "Gerente")
                 {
@@ -480,9 +480,9 @@ namespace Vista
                     btnPapelera.Hide();
                     btnEnviarRecomend.Hide();
                     btnAñadirNoticias.Hide();
-                    btnReportarInfraccion.Location = new Point(0, 0);
-                    btnMapa.Location = new Point(0, 25);
-                    pnlOtro.Size = new System.Drawing.Size(180, 25);
+                    btnReportarInfraccion.Location = new Point(0, -5);
+                    btnMapa.Location = new Point(0, 20);
+                    pnlOtro.Size = new System.Drawing.Size(180, 50);
                     cant = 1;
                 }
 
