@@ -15,14 +15,20 @@ namespace Vista.Otros
     public partial class FrmVisualizarCanalVenta : Form
     {
         private CanalBL logicaNegocio;
-        private BindingList<Canal> listaOriginal;
+        private SortableBindingList<Canal> listaOriginal;
         public FrmVisualizarCanalVenta()
         {
             InitializeComponent();
             logicaNegocio = new CanalBL();
-            listaOriginal = logicaNegocio.listarCanal();
+            BindingList<Canal> lista = logicaNegocio.listarCanal();
+            listaOriginal = new SortableBindingList<Canal>(lista);
             dgvCanalVenta.AutoGenerateColumns = false;
             dgvCanalVenta.DataSource = listaOriginal;
+            foreach (DataGridViewColumn column in dgvCanalVenta.Columns)
+            {
+
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
 
 
@@ -49,17 +55,21 @@ namespace Vista.Otros
         private void filtrar()
         {
             string filtro = textBox1.Text;
-            BindingList<Canal> listaFiltrada = new BindingList<Canal>();
+            SortableBindingList<Canal> listaFiltrada = new SortableBindingList<Canal>();
             foreach (Canal canal in listaOriginal)
             {
-                if (canal.Nombre.Contains(filtro.ToLower()) ||
-                    canal.Nombre.Contains(filtro.ToUpper()))
+                if (canal.Nombre.ToUpper().Contains(filtro.ToUpper()))
                 {
                     listaFiltrada.Add(canal);
                 }
             }
             dgvCanalVenta.DataSource = listaFiltrada;
             dgvCanalVenta.Refresh();
+        }
+
+        private void dgvCanalVenta_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvCanalVenta.Sort(dgvCanalVenta.Columns[e.ColumnIndex], System.ComponentModel.ListSortDirection.Ascending);
         }
     }
 }

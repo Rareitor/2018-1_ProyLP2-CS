@@ -16,8 +16,8 @@ namespace Vista.Otros
     public partial class FrmVisualizarProducto : Form
     {
         private ProductoBL logicaNegocio;
-        private BindingList<Producto> listaOriginal;
-        private BindingList<Producto> listaFiltrada;
+        private SortableBindingList<Producto> listaOriginal;
+        private SortableBindingList<Producto> listaFiltrada;
         private bool papelera;
 
         public bool Papelera { get => papelera; set => papelera = value; }
@@ -27,10 +27,15 @@ namespace Vista.Otros
             InitializeComponent();
             papelera = false;
             logicaNegocio = new ProductoBL();
-            listaOriginal = new BindingList<Producto>();
-            listaFiltrada = new BindingList<Producto>();
+            listaOriginal = new SortableBindingList<Producto>();
+            listaFiltrada = new SortableBindingList<Producto>();
             dgvProducto.AutoGenerateColumns = false;
             btnRecuperar.Visible = false;
+            foreach (DataGridViewColumn column in dgvProducto.Columns)
+            {
+
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
 
         public FrmVisualizarProducto(bool papelera)
@@ -38,8 +43,8 @@ namespace Vista.Otros
             InitializeComponent();
             this.papelera = papelera;
             logicaNegocio = new ProductoBL();
-            listaOriginal = new BindingList<Producto>();
-            listaFiltrada = new BindingList<Producto>();
+            listaOriginal = new SortableBindingList<Producto>();
+            listaFiltrada = new SortableBindingList<Producto>();
             dgvProducto.AutoGenerateColumns = false;
         }
 
@@ -66,14 +71,16 @@ namespace Vista.Otros
 
         private void cargarLista()
         {
+            BindingList<Producto> lista;
             if (papelera)
             {
-                listaOriginal = logicaNegocio.listarProductosPapelera();
+                lista = logicaNegocio.listarProductosPapelera();
             }
             else
             {
-                listaOriginal = logicaNegocio.listarProductos();
+                lista = logicaNegocio.listarProductos();
             }
+            listaOriginal = new SortableBindingList<Producto>(lista);
             dgvProducto.DataSource = listaOriginal;
         }
 
@@ -99,10 +106,12 @@ namespace Vista.Otros
         private void filtrar()
         {
             string filtro = cmbTipoProducto.Text;
-            listaFiltrada = new BindingList<Producto>();
+            string filtroNombre = textBox1.Text;
+            listaFiltrada = new SortableBindingList<Producto>();
             foreach (Producto producto in listaOriginal)
             {
-                if(filtro.Equals("<Todos>") || producto.Tipo == filtro)
+                if((filtro.Equals("<Todos>") || producto.Tipo == filtro)
+                    && producto.Nombre.ToUpper().Contains(filtroNombre.ToUpper()))
                 {
                     listaFiltrada.Add(producto);
                 }
@@ -111,5 +120,14 @@ namespace Vista.Otros
             dgvProducto.Refresh();
         }
 
+        private void dgvProducto_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvProducto.Sort(dgvProducto.Columns[e.ColumnIndex], System.ComponentModel.ListSortDirection.Ascending);
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrar();
+        }
     }
 }

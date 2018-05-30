@@ -35,6 +35,7 @@ namespace Vista
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.cmbCombo = new System.Windows.Forms.ComboBox();
             this.cmbCanal = new System.Windows.Forms.ComboBox();
@@ -50,7 +51,6 @@ namespace Vista
             this.rbnComision = new System.Windows.Forms.RadioButton();
             this.rbnBono = new System.Windows.Forms.RadioButton();
             this.rbnPenalidad = new System.Windows.Forms.RadioButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,8 +94,18 @@ namespace Vista
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(117, 22);
+            this.toolStripButton1.Text = "Importar Archivo";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
             // cmbProducto
             // 
+            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProducto.FormattingEnabled = true;
             this.cmbProducto.Location = new System.Drawing.Point(166, 126);
@@ -105,6 +115,7 @@ namespace Vista
             // 
             // cmbCombo
             // 
+            this.cmbCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCombo.FormattingEnabled = true;
             this.cmbCombo.Location = new System.Drawing.Point(166, 88);
@@ -114,6 +125,7 @@ namespace Vista
             // 
             // cmbCanal
             // 
+            this.cmbCanal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCanal.FormattingEnabled = true;
             this.cmbCanal.Location = new System.Drawing.Point(166, 47);
@@ -173,6 +185,7 @@ namespace Vista
             // 
             // cmbMesPeriodo
             // 
+            this.cmbMesPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMesPeriodo.FormattingEnabled = true;
             this.cmbMesPeriodo.Items.AddRange(new object[] {
             "Enero",
@@ -204,6 +217,7 @@ namespace Vista
             // 
             // cmbAñoPeriodo
             // 
+            this.cmbAñoPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAñoPeriodo.FormattingEnabled = true;
             this.cmbAñoPeriodo.Items.AddRange(new object[] {
             "2016",
@@ -265,15 +279,6 @@ namespace Vista
             this.rbnPenalidad.TabStop = true;
             this.rbnPenalidad.Text = "Penalidad";
             this.rbnPenalidad.UseVisualStyleBackColor = true;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(117, 22);
-            this.toolStripButton1.Text = "Importar Archivo";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // FrmGestionarComboProducto
             // 

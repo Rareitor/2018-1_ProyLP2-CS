@@ -14,7 +14,7 @@ namespace Vista.Otros
 {
     public partial class FrmVisualizarUsuario : Form
     {
-        private BindingList<Trabajador> listaOriginal;
+        private SortableBindingList<Trabajador> listaOriginal;
         private TrabajadorBL logicaNegocio;
         String puesto;
 
@@ -23,6 +23,11 @@ namespace Vista.Otros
             InitializeComponent();
             dgvUsuarios.AutoGenerateColumns = false;
             cmbCampo.Text = "<Todos>";
+            foreach (DataGridViewColumn column in dgvUsuarios.Columns)
+            {
+
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
 
         public FrmVisualizarUsuario(String cargoListar, String idPayee, String puesto)
@@ -33,20 +38,20 @@ namespace Vista.Otros
 
             this.puesto = puesto;
             logicaNegocio = new TrabajadorBL();
-            listaOriginal = new BindingList<Trabajador>();
+            BindingList<Trabajador> lista = new BindingList<Trabajador>();
             switch (this.puesto)
             {
                 case "Administrador":
                     switch (cargoListar)
                     {
                         case "Gerente":
-                            listaOriginal = logicaNegocio.listarGerentes();
+                            lista = logicaNegocio.listarGerentes();
                             break;
                         case "Jefe":
-                            listaOriginal = logicaNegocio.listarJefes();
+                            lista = logicaNegocio.listarJefes();
                             break;
                         case "Comisionista":
-                            listaOriginal = logicaNegocio.listarComisionistas();
+                            lista = logicaNegocio.listarComisionistas();
                             break;
                     }
                     break;
@@ -54,10 +59,10 @@ namespace Vista.Otros
                     switch (cargoListar)
                     {
                         case "Jefe":
-                            listaOriginal = logicaNegocio.listarMisJefes(idPayee);
+                            lista = logicaNegocio.listarMisJefes(idPayee);
                             break;
                         case "Comisionista":
-                            listaOriginal = logicaNegocio.listarComisionistas();
+                            lista = logicaNegocio.listarComisionistas();
                             break;
                     }
                     break;
@@ -65,7 +70,7 @@ namespace Vista.Otros
                     switch (cargoListar)
                     {
                         case "Comisionista":
-                            listaOriginal = logicaNegocio.listarMisComisionistas(idPayee);
+                            lista = logicaNegocio.listarMisComisionistas(idPayee);
                             break;
                     }
                     break;
@@ -74,6 +79,7 @@ namespace Vista.Otros
                     break;
 
             }
+            listaOriginal = new SortableBindingList<Trabajador>(lista);
             dgvUsuarios.DataSource = listaOriginal;
         }
 
@@ -82,7 +88,7 @@ namespace Vista.Otros
             string filtro = cmbCampo.Text;
             string field = txtDato.Text;
 
-            BindingList<Trabajador> listaAux = new BindingList<Trabajador>();
+            SortableBindingList<Trabajador> listaAux = new SortableBindingList<Trabajador>();
 
             Boolean cumple = false;
             foreach (Trabajador trabajador in listaOriginal){
@@ -169,6 +175,11 @@ namespace Vista.Otros
                 pdf.ExportarDataGridViewPdf();
                 MessageBox.Show("Se ha generado correctamente el archivo pdf");
             }
+        }
+
+        private void dgvUsuarios_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvUsuarios.Sort(dgvUsuarios.Columns[e.ColumnIndex], System.ComponentModel.ListSortDirection.Ascending);
         }
     }
 }

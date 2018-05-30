@@ -48,6 +48,7 @@
             this.dgvCanalVenta.Name = "dgvCanalVenta";
             this.dgvCanalVenta.Size = new System.Drawing.Size(514, 186);
             this.dgvCanalVenta.TabIndex = 1;
+            this.dgvCanalVenta.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCanalVenta_ColumnHeaderMouseClick);
             // 
             // idCanal
             // 

@@ -7,9 +7,9 @@ using Vista.Otros;
 
 //Para Loguear:
 //Admin:        20090380    contraseña: pucp
-//Gerente:      88888888    contraseña:pucp123
-//Jefe:         12345678    contraseña:peru2019
-//Comisionista: 65897421    contraseña:2018pucp
+//Gerente:      20176455    contraseña: pucp123
+//Jefe:         20175863    contraseña: rodri12
+//Comisionista: -    contraseña: -
 
 namespace Vista
 {
@@ -178,8 +178,8 @@ namespace Vista
             RichTextBox txt = new RichTextBox();
             txt.Text =
                 "Admin:\t\t20090380\tpucp\n" +
-                "Gerente:\t\t88888888\tpucp123\n" +
-                "Jefe:\t\t12345678\tperu2019\n" +
+                "Gerente:\t\t20176455\tpucp123\n" +
+                "Jefe:\t\t20175863\trodri12\n" +
                 "Comisionista:\t65897421\t2018pucp";
             txt.Width = 310;
             txt.Height = 70;
