@@ -18,5 +18,9 @@ namespace Controlador
         {
            return accesoCanal.ListarCanales();
         }
+        public void cargarCanal(Canal c)
+        {
+             accesoCanal.cargarCanal(c);
+        }
     }
 }

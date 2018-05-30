@@ -18,15 +18,20 @@ namespace Controlador
             return accesoCombo.ListarCombos();
         }
 
-        public string agregarComboProducto(ComboProducto cp, string fePeriodo)
+        public string agregarComboProducto(ComboProducto cp)
         {
-            return accesoCombo.agregarComboProducto(cp,fePeriodo);
+            return accesoCombo.agregarComboProducto(cp);
 
         }
 
         public List<ComboProducto> listarComboProductos(string fePeriodo)
         {
             return accesoCombo.listarComboProductos(fePeriodo);
+        }
+
+        public void cargarCombo(Combo c)
+        {
+            accesoCombo.cargarCombo(c);
         }
 
     }

@@ -32,6 +32,9 @@ namespace Controlador
         {
             accesoDatos.recuperarProducto(producto);
         }
-
+        public void cargarProducto(Producto p)
+        {
+            accesoDatos.cargarProducto(p);
+        }
     }
 }

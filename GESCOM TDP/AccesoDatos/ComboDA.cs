@@ -44,7 +44,7 @@ namespace AccesoDatos
 
         }
            
-        public string agregarComboProducto(ComboProducto cp, string fePeriodo)
+        public string agregarComboProducto(ComboProducto cp)
         {
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
                   "port=3306;password=4LDJZU;SslMode=none;" + " ";
@@ -62,27 +62,10 @@ namespace AccesoDatos
             comando.Parameters.Add("_idCanal", MySqlDbType.VarChar).Value = cp.Canal1.IdCanal;
             comando.Parameters.Add("_fechaInicio", MySqlDbType.Date).Value = cp.FechaInicio1;
             comando.Parameters.Add("_fechaFin", MySqlDbType.Date).Value = cp.FechaFin1;
-            comando.Parameters.Add("_fePeriodo", MySqlDbType.VarChar).Value = fePeriodo;
+            comando.Parameters.Add("_fePeriodo", MySqlDbType.VarChar).Value = cp.FePeriodo;
             comando.Parameters.Add("_tipo", MySqlDbType.VarChar).Value = cp.Tipo;
+            comando.Parameters.Add("_idFormula", MySqlDbType.Int32).Value = cp.Formula;
 
-            int idFormula = 1;
-            if (cp.Producto.IdProducto == "AFIL")
-            {
-                idFormula = 1;
-            } else if (cp.Producto.IdProducto == "BAJ")
-            {
-                idFormula = 2;
-            } else if (cp.Producto.IdProducto == "DUO")
-            {
-                idFormula = 3;
-
-            } else if (cp.Producto.IdProducto == "TRI")
-            {
-                idFormula = 1;
-            }
-
-
-            comando.Parameters.Add("_idFormula", MySqlDbType.Int32).Value = idFormula;
 
             comando.ExecuteNonQuery();
             con.Close();
@@ -134,5 +117,25 @@ namespace AccesoDatos
             con.Close();
             return lista;
         }
+
+        public void cargarCombo(Combo c)
+        {
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "INSERT INTO Combo values ('" + c.IdCombo + "','"
+                + c.Nombre + "','" + c.Tipo + "', 1);";
+            comando.ExecuteNonQuery();
+
+            con.Close();
+        }
+
+
     }
 }

@@ -16,6 +16,8 @@ namespace Modelo
         private DateTime fechaFin;
         private string tipo;
         private string periodo;
+        private int formula;
+        private string fePeriodo;
 
         public Canal Canal1 { get => canal; set => canal = value; }
         public Combo Combo1 { get => combo; set => combo = value; }
@@ -29,6 +31,8 @@ namespace Modelo
         public String NombreCombo { get => combo.Nombre; }
 
         public string NombreProducto { get => producto.Nombre; }
+        public int Formula { get => formula; set => formula = value; }
+        public string FePeriodo { get => fePeriodo; set => fePeriodo = value; }
 
         //métodos
         //constructores

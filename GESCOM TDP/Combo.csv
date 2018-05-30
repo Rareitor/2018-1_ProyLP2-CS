@@ -1,0 +1,124 @@
+idCombo;nombre;tipo
+M-BCA;Bono de Cartera (Factor de Bono Base);BONO
+M-BCOI;Bono por Cumplimiento de Objetivo de Ingresos (Altas Comisionadas);BONO
+M-BCP;Bono Calidad Altas Postpago;BONO
+M-BCR1;Bono Calidad Primer Recibo;BONO
+M-BCR2;Bono Calidad Segundo Recibo;BONO
+M-BCS;Bono Calidad (Factor Cargo Fijo);BONO
+M-BCV;Bono Calidad de Voz;BONO
+M-BEC;Bono Extra Calidad;BONO
+M-BECF;Bono por Cumplimiento de Efectividad - Factor de Cargo Fijo;BONO
+M-BECO;Bono por Cumplimiento de Efectividad - Factor de Cargo Fijo y Oferta Sugerida;BONO
+M-BEFC;Bono por Efectividades - Factor de Comision;BONO
+M-BEGO;Bono por Cumplimiento de Efectividad - Factor de Cargo Fijo por Rangos GAP con Oferta Sugerida;BONO
+M-BFT;Bono por Mejor Ratio en la Fuga de Terminales;BONO
+M-BGN;Bono de Ganancia Neta;BONO
+M-BIN;Bono por Ingresos (Factor de Bono Base);BONO
+M-BMA;Bono Mensual de Aportacion;BONO
+M-BNF;Bono NPNF;BONO
+M-BOA;Bono por Objetivo Mínimo de Altas (Flat por Rangos);BONO
+M-BOC;Bono por Cumplimiento de Objetivos y Calidad;BONO
+M-BOM;Bono por Objetivos M7;BONO
+M-BOP;Bono por Cumplimiento de Objetivos Portabilidad;BONO
+M-BPD;Bono por Desempeño - Factor del Bono de Cumplimiento de Efectividad;BONO
+M-BPE;Bono por Efectividades;BONO
+M-BPO;Bono por Objetivos;BONO
+M-BPP;Bono Por Permanencia;BONO
+M-BPS;Bono por Servicio - Factor del Bono de Cumplimiento de Efectividad;BONO
+M-BPV;Bono por Precio de Venta;BONO
+M-BQP;Bono por Q de altas móviles en PORTABILIDAD;BONO
+M-BRE;Bono por Retenciones (Factor de Bono Base);BONO
+M-BSP;Bono SP3F;BONO
+M-BTQ;Bono por tamaño de Operación en Q de altas;BONO
+M-BVA;Bono Valor Agregado;BONO
+M-CVC;Bono Caribu;BONO
+N-BAS;Bono Agente Smart;BONO
+N-BMS;Bono MultiSkill;BONO
+M-ANP;Multiplicador de Cargo Fijo para Alta No Portada;COMISION
+M-ANP1;Multiplicador de Cargo Fijo para Alta No Portada 1er Pago;COMISION
+M-ANP1CR;Multiplicador de Cargo Fijo para Alta No Portada 1er Pago Con Ruc 20;COMISION
+M-ANP1SR;Multiplicador de Cargo Fijo para Alta No Portada 1er Pago Sin Ruc 20;COMISION
+M-ANP2;Multiplicador de Cargo Fijo para Alta No Portada 2do Pago;COMISION
+M-ANP2CR;Multiplicador de Cargo Fijo para Alta No Portada 2do Pago Con Ruc 20;COMISION
+M-ANP2SR;Multiplicador de Cargo Fijo para Alta No Portada 2do Pago Sin Ruc 20;COMISION
+M-ANPCR;Multiplicador de Cargo Fijo para Alta No Portada Con Ruc 20;COMISION
+M-ANPSR;Multiplicador de Cargo Fijo para Alta No Portada Sin Ruc 20;COMISION
+M-APP;Multiplicador de Cargo Fijo para Alta Portada;COMISION
+M-APP1;Multiplicador de Cargo Fijo para Alta Portada 1er Pago;COMISION
+M-APP1CR;Multiplicador de Cargo Fijo para Alta Portada 1er Pago Con Ruc 20;COMISION
+M-APP1SR;Multiplicador de Cargo Fijo para Alta Portada 1er Pago Sin Ruc 20;COMISION
+M-APP2;Multiplicador de Cargo Fijo para Alta Portada 2do Pago;COMISION
+M-APP2CR;Multiplicador de Cargo Fijo para Alta Portada 2do Pago Con Ruc 20;COMISION
+M-APP2SR;Multiplicador de Cargo Fijo para Alta Portada 2do Pago Sin Ruc 20;COMISION
+M-APPCR;Multiplicador de Cargo Fijo para Alta Portada Con Ruc 20;COMISION
+M-APPSR;Multiplicador de Cargo Fijo para Alta Portada Sin Ruc 20;COMISION
+M-CFAP;Multiplicador de Cargo Fijo por Rangos - Consultor APP;COMISION
+M-CFCUP;Multiplicador de CF Con Upsell;COMISION
+M-CFD;Multiplicador de Cargo Fijo Dentro de Segmento;COMISION
+M-CFF;Multiplicador de Cargo Fijo Fuera de Segmento;COMISION
+M-CFG;Constante + Factor Multiplicador GAP;COMISION
+M-CFGC;Multiplicador de Cargo Fijo por Rangos - Gerente Cuenta;COMISION
+M-CFM2;Multiplicador de Cargo Fijo por Rangos - Consultor M2M;COMISION
+M-CFSUP;Multiplicador de CF Sin Upsell;COMISION
+M-COCUP;Multiplicador de Cargo Fijo CON Oferta Sugeridas y CON Upsell;COMISION
+M-COSUP;Multiplicador de Cargo Fijo CON Oferta Sugeridas y SIN Upsell;COMISION
+M-CUP;Comision Upselling;COMISION
+M-FLT;Flat;COMISION
+M-FNP;Flat con Alta No Portada;COMISION
+M-FPR;Factor por Recarga;COMISION
+M-FPRA;Factor por Recarga - Alta;COMISION
+M-FPRP;Factor por Recarga - Portada;COMISION
+M-FPV;Factor de Precio de Venta;COMISION
+M-FPVA;Factor de Precio de Venta - Alta;COMISION
+M-FPVP;Factor de Precio de Venta - Portada;COMISION
+M-FRG;Flat con Rangos GAP;COMISION
+M-FST;Multiplicador de Cargo Fijo (CF) por Segmentación y tipo Transacción;COMISION
+M-FTP;Flat con Alta Portada;COMISION
+M-MCF;Multiplicador de Cargo Fijo (CF);COMISION
+M-MCFDC;Multiplicador de Cargo Fijo (CF) Dentro de Cartera;COMISION
+M-MCFDCA;Multiplicador de Cargo Fijo (CF) Dentro de Cartera Alta Nueva;COMISION
+M-MCFDCP;Multiplicador de Cargo Fijo (CF) Dentro de Cartera Alta Portada;COMISION
+M-MCFFC;Multiplicador de Cargo Fijo (CF) Fuera de Cartera;COMISION
+M-MCFFCA;Multiplicador de Cargo Fijo (CF) Fuera de Cartera Alta Nueva;COMISION
+M-MCFFCP;Multiplicador de Cargo Fijo (CF) Fuera de Cartera Alta Portada;COMISION
+M-MGP;Multiplicador de GAP (Arpu);COMISION
+M-MRG;Multiplicador por Rango GAP Arpu;COMISION
+M-PVR;Factor de Precio de Ventas por Rangos;COMISION
+M-RCF;Multiplicador de Cargo Fijo por Rangos;COMISION
+M-RCG;Multiplicador de Cargo Fijo por Rangos GAP Arpu;COMISION
+M-SDA;Multiplicador de Cargo Fijo (CF) por Segmentación y tipo Transacción Dentro de Segmento Alta Nueva;COMISION
+M-SDAJ;Factor de Cargo Fijo por Segmentación y tipo Trans. Dentro de Segmento Alta Nueva RUC 20;COMISION
+M-SDAO;Factor de Cargo Fijo por Segmentación y tipo Trans. Dentro de Segmento Alta Nueva RUC 10, 15 y 17;COMISION
+M-SDP;Multiplicador de Cargo Fijo (CF) por Segmentación y tipo Transacción Dentro de Segmento Portabilidad;COMISION
+M-SDPJ;Factor de Cargo Fijo por Segmentación y tipo Trans. Dentro de Segmento Portabilidad RUC 20;COMISION
+M-SDPO;Factor de Cargo Fijo por Segmentación y tipo Trans. Dentro de Segmento Portabilidad RUC 10, 15 y 17;COMISION
+M-SFA;Multiplicador de Cargo Fijo (CF) por Segmentación y tipo Transacción Fuera de Segmento Alta Nueva;COMISION
+M-SFAO;Factor de Cargo Fijo por Segmentación y tipo Trans. Fuera de Segmento Alta Nueva RUC 10, 15 y 17;COMISION
+M-SFP;Multiplicador de Cargo Fijo (CF) por Segmentación y tipo Transacción Fuera de Segmento Portabilidad;COMISION
+M-SFPO;Factor de Cargo Fijo por Segmentación y tipo Trans. Fuera de Segmento Portabilidad RUC 10, 15 y 17;COMISION
+M-SOCUP;Multiplicador de Cargo Fijo Sin Oferta Con Upsell;COMISION
+M-SOSUP;Multiplicador de Cargo Fijo Sin Oferta Sin Upsell;COMISION
+N-MRM;Multiplicador de Cargo Fijo por Rango de Meses;COMISION
+F-PFL;Penalidad Flat;PENALIDAD
+F-RPV;Penalidad Reversión de Precio de Venta;PENALIDAD
+M-CL4;Penalidad Corte por Línea M4;PENALIDAD
+M-CLC4;Penalidad Corte por Linea del Cliente M4;PENALIDAD
+M-CLCP;Penalidad Corte por Linea del Cliente PostPago;PENALIDAD
+M-CLP;Penalidad Corte por Línea PostPago;PENALIDAD
+M-FE4;Q de facturas emitidas M4;PENALIDAD
+M-FEP;Q de facturas emitidas Combo;PENALIDAD
+M-NP2F4;Penalidad NP2F - M4;PENALIDAD
+M-NP2FP;Penalidad NP2F - PostPago;PENALIDAD
+M-NP4;Penalidad NPNF M4;PENALIDAD
+M-NPP;Penalidad NPNF Postpago Combo;PENALIDAD
+M-PCU;Chargeback de Upsell;PENALIDAD
+M-PDW;Penalidad Downselling;PENALIDAD
+M-PFL;Penalidad Flat;PENALIDAD
+M-RBO;Penalidad Reversion de Bono;PENALIDAD
+M-RCB;Factor de Reversión de Comisión + Bono;PENALIDAD
+M-RCBND;Reversion de Comision mas Bono para NP2F y Downsell;PENALIDAD
+M-RCO;Penalidad Reversión de Comisión;PENALIDAD
+M-RCSB;Reversion de Comision Sin Upsell y Baja;PENALIDAD
+M-RCUB;Reversion de Comision Con Upsell y Baja;PENALIDAD
+M-RCUD;Reversion de Comision Con Upsell y Downsell;PENALIDAD
+M-RFA;Factor de Reversión de Facturación;PENALIDAD

@@ -1,0 +1,274 @@
+idProducto;nombre;tipo
+BO-BAP-APORTACIONMOVIL;Bono de Aportacion FFVV Movil;BONO
+BO-BAS-AGENTESMART;Bono AgenteSmart;BONO
+BO-BAS-DESCUENTO;Bono Descuento;BONO
+BO-BAS-FIJA;Bono Fija nuFlat;BONO
+BO-BAS-MOVSEGURO;Bono MovistarSeguro;BONO
+BO-BAS-POSTPAGO;Bono PostpagoAlta;BONO
+BO-BCA-PENETRACARTERA;Bono de Cartera (Factor de Bono Base);BONO
+BO-BCOI-M4COMBO;Bono por Cumplimiento de Objetivo de Ingresos - M4 y Combo;BONO
+BO-BCOI-M4COMBO-PORT;Bono por Cumplimiento de Objetivo de Ingresos - M4 y Combo Portado;BONO
+BO-BCP-ALTASPOSTPAGO;Bono por Calidad de Altas PostPago;BONO
+BO-BCR1A-BONOCALIDADRECIBOALTA1;Bono Calidad Recibo Alta 1;BONO
+BO-BCR1P-BONOCALIDADRECIBOPORTADO1;Bono Calidad Recibo Portado 1;BONO
+BO-BCR2A-BONOCALIDADRECIBOALTA2;Bono Calidad Recibo Alta 2;BONO
+BO-BCR2P-BONOCALIDADRECIBOPORTADO2;Bono Calidad Recibo Portado 2;BONO
+BO-BCS-SUPERCHIP;Bono Calidad (Factor Cargo Fijo);BONO
+BO-BCS-SUPERCHIP29;Bono Calidad (Factor Cargo Fijo);BONO
+BO-BCS-SUPERCHIP39;Bono Calidad (Factor Cargo Fijo);BONO
+BO-BCS-SUPERCHIP45;Bono Calidad (Factor Cargo Fijo);BONO
+BO-BCS-SUPERCHIP60;Bono Calidad (Factor Cargo Fijo);BONO
+BO-BEFC-POSTPAGO;Bono por Efectividades - Factor de Comision Postpago;BONO
+BO-BEFC-PREPAGO;Bono por Efectividades - Factor de Comision Prepago;BONO
+BO-BFT-COMBO;Bono por Mejor Ratio en la Fuga de Terminales - Combo;BONO
+BO-BFT-M4;Bono por Mejor Ratio en la Fuga de Terminales - M4;BONO
+BO-BGN-INGRESOSCFRECUERRENTE;Bono por Ganancia Neta - Ingresos por CF Recurrente;BONO
+BO-BMA-MENSAPORTA;Bono Mensual de Aportacion;BONO
+BO-BMS-MULTISKILL;Bono MultiSkill;BONO
+BO-BOA-CAEQPOSTPAGO;CAEQ Postpago;BONO
+BO-BOA-CAPL;CAPL Con o Sin Oferta Sugerida;BONO
+BO-BOA-CARIBU;Migraciones Carib?;BONO
+BO-BOA-COMBOPOSTPAGO;Bono por Gestión Combo Postpago;BONO
+BO-BOA-COMBOPREPAGO;Bono por Gestión Combo Prepago;BONO
+BO-BOA-GESTION;Bono por Objetivo de Mínimo de Altas;BONO
+BO-BOA-M4;Bono por Gestión M4;BONO
+BO-BOA-M4COMBO;Alta Nueva M4 + Combo Postpago;BONO
+BO-BOA-M7;Bono por Gestión M7;BONO
+BO-BOA-MIGRAPREPOS;Migracion Prepago a Postpago;BONO
+BO-BOA-MOVILES;Bono por Gestión Móviles;BONO
+BO-BOA-PORTABILIDAD;PORTABILIDAD M4 + COMBO POSTPAGO;BONO
+BO-BOA-SUPERCHIP;Bono por Gestión Superchip;BONO
+BO-BOA-TRIANGULADO;Bono por Gestión Alta Combo Prepago Triangulado;BONO
+BO-BOA-TUENTI;Bono por Gestión Tuenti;BONO
+BO-BOC-MIGRACIONCARIBU;Bono por Cumplimiento de Objetivos y Calidad Caribu;BONO
+BO-BOC-UPSELLMOVIL;Bono por Cumplimiento de Objetivos y Calidad Upsell;BONO
+BO-BOM-MIG7;Bono por Objetivos M7;BONO
+BO-BOP-M4COMBO-ATENTO;Bono por Cumplimiento de Objetivos Portabilidad Atento;BONO
+BO-BOP-M4COMBO-GLOBALSALES;Bono por Cumplimiento de Objetivos Portabilidad Global Sales;BONO
+BO-BPE-RETENCIONES-B;Bono por Retenciones Bajas;BONO
+BO-BPE-RETENCIONES-B-NEGOCIOS;Bono por Retenciones Bajas Negocios;BONO
+BO-BPE-RETENCIONES-M;Bono por Retenciones Migras;BONO
+BO-BPE-RETENCIONES-M-NEGOCIOS;Bono por Retenciones Migras Negocios;BONO
+BO-BPO-CARIBUNUEMOD;Bono por Objetivos;BONO
+BO-BPO-COMBO;Bono por Objetivos;BONO
+BO-BPO-M4;Bono por Objetivos;BONO
+BO-BPO-MOVSEG;Bono por Objetivos;BONO
+BO-BPO-PAQREC;Bono por Objetivos;BONO
+BO-BPO-PORTABILIDAD;Bono por Objetivos;BONO
+BO-BPO-SUPERCHIP;Bono por Objetivos;BONO
+BO-BPO-SUPERCHIP39;Bono por Objetivos;BONO
+BO-BPO-UPSELL;Bono por Objetivos;BONO
+BO-BPV-TC;Bono por Tarjeta Visa y Mastercard;BONO
+BO-BQP-MMAYOROBJETIVO;Bono por Q de portabilidad (mayor);BONO
+BO-BQP-MMENOROBJETIVO;Bono por Q de portabilidad (menor);BONO
+BO-BRE-RETENCIONES;Bono por Retenciones;BONO
+BO-BSP-COMBO;Bono SP3F;BONO
+BO-BSP-M4;Bono SP3F;BONO
+BO-BTQ-MPRODMOV;Bono por tamaño de operación en altas;BONO
+BO-CVC-CAEQ;CVC-CAEQ;BONO
+BO-CVC-CARIBU;Bono Caribu;BONO
+BO-CVC-COMBO;CVC-COMBO;BONO
+BO-CVC-M4;CVC-M4;BONO
+BO-CVC-UPSELL;Bono Upsell;BONO
+CAAE;Afiliaciones Aqui Estoy;COMISION
+CACP;Campaña Activacion y Cesion Combo Prepago;COMISION
+CAEQA;CAEQ Postpago;COMISION
+CAEQ-AD;Cambio de Equipo - Anulacion de Venta DOA;COMISION
+CAEQ-AN;Cambio de Equipo por Inconformidad Proveniente de una Alta Nueva;COMISION
+CAEQAP;CAEQ Postpago con origen prepago;COMISION
+CAEQAPP;CAEQ Postpago con origen postpago;COMISION
+CAEQOPO;CAEQ Postpago con origen postpago;COMISION
+CAEQOPR;CAEQ Postpago con origen prepago;COMISION
+CAEQR;CAEQ Postpago - Reconexión;COMISION
+CAEQU;CAEQ Universidades;COMISION
+CAFB;Afiliaciones Sobre Bolsa;COMISION
+CAFP;Afiliaciones Sobre Planes;COMISION
+CAPL;Aplicaciones;COMISION
+CASI-SIS5;Cambio de Simcard Prepago 5;COMISION
+CASI-SIS5E;Cambio de Simcard Prepago 8 Combo;COMISION
+CASI-SIS8;Cambio de Simcard Prepago 8;COMISION
+CBAF4G;Planes BAF4G;COMISION
+CCAAM;Caribu Antiguo Modelo;COMISION
+CCACO;Caribu Competencia;COMISION
+CCANM;Caribu Nuevo Modelo;COMISION
+CCARE;Caribu Migraciones Programa Retiro;COMISION
+CCPA;Combo Prepago Alta;COMISION
+CCPC;CAEQ Prepago;COMISION
+CCPLA;Cambio Plan;COMISION
+CCPMN;Combo Prepago Mi Numero;COMISION
+CCPT;Combo Triangulado;COMISION
+CFYA;Fonoya sin Internet;COMISION
+CFYI;Fonoya con Internet;COMISION
+CM7013;Mig 7 de 0.13;COMISION
+CM71;Mig 7 de 1;COMISION
+CM714;Mig 7 de 14;COMISION
+CM715;Mig 7 de 15;COMISION
+CM730;Mig 7 de 30;COMISION
+CM75;Mig 7 de 5;COMISION
+CM76;Mig 7 de 6;COMISION
+CM77;Mig 7 de 7;COMISION
+CM78;Mig 7 de 8;COMISION
+CM7ED;Equipo Desbloqueado;COMISION
+CM7ED1;Equipo Desbloqueado de 1;COMISION
+CM7ED4;Equipo Desbloqueado de 4;COMISION
+CM7EDT1;Equipo Desbloqueado Tuenti de 1;COMISION
+CM7MN;Mig 7 Mi Numero de 8;COMISION
+CM7T;Mig 7 Tuenti;COMISION
+CM7T013;Mig 7 Tuenti de 0.13;COMISION
+CM7T1;Mig 7 Tuenti de 1;COMISION
+CM7T5;Mig 7 Tuenti de 5;COMISION
+CM7T7;Mig 7 Tuenti de 7;COMISION
+CM7T8;Mig 7 Tuenti de 8;COMISION
+CMIGRA;Migra;COMISION
+CMNT;Mi Numero Triangulado;COMISION
+CMR;Monitor Riesgo;COMISION
+CPB4;Planes Bolsa M4;COMISION
+CPBE;Planes Bolsa Combo;COMISION
+CPCAR;Planta Caribu;COMISION
+CPCD4;Planes Colectivos Datos M4;COMISION
+CPCDE;Planes Colectivos Datos Combo;COMISION
+CPCV;Central Virtual;COMISION
+CPCV4;Planes Colectivos Voz M4;COMISION
+CPCVE;Planes Colectivos Voz Combo;COMISION
+CPD4;Planes Datos M4;COMISION
+CPDE;Planes Datos Combo;COMISION
+CPFU;Planes Fusion;COMISION
+CPG;Geogestion;COMISION
+CPIK;Planes Internet Killer;COMISION
+CPIM;Planes Internet Movil;COMISION
+CPIME;Planes Internet Movil Combo;COMISION
+CPINT;Planes integrales;COMISION
+CPM2MC;Planes M2M Conectividad;COMISION
+CPM2ML;Planes M2M Localiza;COMISION
+CPMS;Planes Movistar Seguro;COMISION
+CPNC;Plan Postpago No Comisiona;COMISION
+CPO365;OFFICE 365;COMISION
+CPOS;Postpago Semanal;COMISION
+CPPD4;Planes Packet Data M4;COMISION
+CPPDE;Planes Packet Data Combo;COMISION
+CPQD;Paquete de Datos - Recurrente;COMISION
+CPQDOS;Paquete de Datos - One Shot;COMISION
+CPQDR;Paquete de Datos - Recurrente;COMISION
+CPQV;Paquetes de Voz - Recurrente;COMISION
+CPQVOS;Paquetes de Voz - One Shot;COMISION
+CPQVR;Paquetes de Voz - Recurrente;COMISION
+CPRS;Prepago Semanal;COMISION
+CPRSC;Prepago Semanal - Canje;COMISION
+CPRSR;Prepago Semanal - Recarga;COMISION
+CPSB;SMS Bulk;COMISION
+CPSIM;Cambio Simcard;COMISION
+CPSIMA;Cambio de SIMCARD;COMISION
+CPSIMR;Cambio Simcard - Reconexión;COMISION
+CPSM2M;SMART M2M;COMISION
+CPST;Seguridad Total;COMISION
+CPTRA;Planta Tradicional;COMISION
+CPV4;Planes Voz M4;COMISION
+CPVE;Planes Voz Combo;COMISION
+CREA;Alta Postpago Universidades;COMISION
+CSCHIP;Superchip;COMISION
+CSCHIP29;Superchip de S/29.90;COMISION
+CSCHIP29+;Superchip de S/29.90;COMISION
+CSCHIP39;Superchip de S/39;COMISION
+CSCHIP39+;Superchip de S/39;COMISION
+CSCHIP45;Superchip de S/45;COMISION
+CSCHIP45+;Superchip de S/45.00;COMISION
+CSCHIP60;Superchip de S/60;COMISION
+CSIP1;Cambio de SIMCARD de S/. 1.00;COMISION
+CSIP5;Cambio de SIMCARD de S/. 5.00;COMISION
+CSIP7;Cambio de SIMCARD de S/. 7.00;COMISION
+CSIP8;Cambio de SIMCARD de S/. 8.00;COMISION
+CSIPR;Cambio de Simcard Prepago;COMISION
+CSIPT;Cambio de SIMCARD Triangulado;COMISION
+CTCREQ;Cambio de Titularidad CREQ;COMISION
+CTCREQE;Cambio de Titularidad CREQ Combo;COMISION
+CUPCAR;Upsell Caribu;COMISION
+CUPCON;Upsel Control;COMISION
+CUPPQD;Upsell Paquete de Datos;COMISION
+CUPPQV;Upsell Paquete de Voz;COMISION
+GDOW;Gestión Downsell;COMISION
+GRET;Gestión Retención;COMISION
+GRETB;Gestion Retencion Baja;COMISION
+GRETM;Gestion Retencion Migracion;COMISION
+HP;Hora Posicion;COMISION
+LSPR;Suspension por Perdida o Robo;COMISION
+LSPRE;Reconexión por Perdida o Robo Combo;COMISION
+MCM7ED4;Migración Equipo Desbloqueado de 4;COMISION
+MCPB4;Migración Planes Bolsa M4;COMISION
+MCPCD4;Migración Planes Colectivos Datos M4;COMISION
+MCPCV4;Migración Planes Colectivos Voz M4;COMISION
+MCPD4;Migración Planes Datos M4;COMISION
+MCPV4;Migración Planes Voz M4;COMISION
+MCSCHIP;Migración Superchip;COMISION
+MCSCHIP60;Migración Superchip de S/60;COMISION
+MPAP;Migracion Prepago a Postpago;COMISION
+MPRPO;Migración Prepago a Postpago;COMISION
+NOMBAJAS;BAJAS;COMISION
+OFF365;Office 365;COMISION
+RCCPT;Recarga Combo Triangulado;COMISION
+RCM7013;Recarga Mig 7 de 0.13;COMISION
+RCMNT;Recarga Mi Numero Triangulado;COMISION
+RCPA;Recarga Combo Prepago Alta;COMISION
+RCPC;RECARGA CAEQ PREPAGO;COMISION
+RCPMN;Recarga Combo Prepago Mi Numero;COMISION
+RCSIP1;Recarga Cambio de SIMCARD de S/. 1.00;COMISION
+RCSIP5;Recarga Cambio de SIMCARD de S/. 5.00;COMISION
+RCSIP7;Recarga Cambio de SIMCARD de S/. 7.00;COMISION
+RCSIP8;Recarga Cambio de SIMCARD de S/. 8.00;COMISION
+RLPR;Reconexión por Perdida o Robo;COMISION
+RM7013;Recarga Mig 7 de 0.13;COMISION
+RM71;Recarga Mig 7 de 1;COMISION
+RM714;Recarga Mig 7 de 14;COMISION
+RM715;Recarga Mig 7 de 15;COMISION
+RM75;Recarga Mig 7 de 5;COMISION
+RM76;Recarga Mig 7 de 6;COMISION
+RM77;Recarga Mig 7 de 7;COMISION
+RM78;Recarga Mig 7 de 8;COMISION
+RM7EDT1;Recarga Migracion 7;COMISION
+RM7T;Recarga Mig 7 Tuenti;COMISION
+RM7T013;Recarga Mig 7 Tuenti de 0.13;COMISION
+RM7T1;Recarga Mig 7 Tuenti de 1;COMISION
+RM7T5;Recarga Mig 7 Tuenti de 5;COMISION
+RM7T7;Recarga Mig 7 Tuenti de 7;COMISION
+RSCREQ;Reconexión de Servicio CREQ;COMISION
+RSCREQE;Suspension por Perdida o Robo Combo;COMISION
+RSIPR;Recarga Cambio de Simcard Prepago;COMISION
+11;Altas sin expediente;PENALIDAD
+12;AQGB;PENALIDAD
+13;Chargeback;PENALIDAD
+14;Cliente con Restriccion;PENALIDAD
+15;Corte por Linea;PENALIDAD
+16;Corte por Robo;PENALIDAD
+17;Desfase de activacion;PENALIDAD
+18;Extemporaneidad;PENALIDAD
+19;Fraude;PENALIDAD
+20;NPNF;PENALIDAD
+21;Observacion;PENALIDAD
+22;Permanencia;PENALIDAD
+23;Prepago y Mi Numero;PENALIDAD
+25;Liquidación por Venta de Terminal;PENALIDAD
+26;Alta Postpago Combo Sin Experto;PENALIDAD
+28;Incumplimiento de plazo Liquidacion;PENALIDAD
+34;Biometria Postpago;PENALIDAD
+35;Biometria Prepago;PENALIDAD
+38;Altas sin expediente Prepago;PENALIDAD
+39;Extemporaneidad Prepago;PENALIDAD
+40;Observacion Prepago - Biometria;PENALIDAD
+41;Observacion Prepago - Sin firma;PENALIDAD
+43;No uso de la Biometria GS - Postpago;PENALIDAD
+44;No uso de la Biometria GS - Prepago;PENALIDAD
+45;Incumplimiento o No corresponde Firma/Huella - Postpago;PENALIDAD
+47;Mal Uso Para Marcas y Distintivos (Movil);PENALIDAD
+53;Intromision en Carteras Cerradas (Movil);PENALIDAD
+55;Intromision en Clientes Mayoristas (Movil);PENALIDAD
+56;Chargeback de Upsell;PENALIDAD
+57;Incumplimiento de procedimientos y Normativas;PENALIDAD
+58;NP2F;PENALIDAD
+59;NP2F;PENALIDAD
+60;Baja o Down de CAEQ;PENALIDAD
+61;NP2NF CAEQ;PENALIDAD
+62;Penalidad Downsell y NP2F de Cambio de Plan;PENALIDAD
+64;Penalidad Incumplimiento de condiciones de la campaña;PENALIDAD
+65;Penalidad Fuga Terminales;PENALIDAD
+66;Penalidad por Evaluacion Crediticia;PENALIDAD
+68;Penalidad Por Permanencia ABD - Postpago;PENALIDAD
+69;Penalidad Por Permanencia ABD - Prepago;PENALIDAD

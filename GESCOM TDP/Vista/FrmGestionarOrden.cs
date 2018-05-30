@@ -354,9 +354,11 @@ namespace Vista
             try
             {
                 OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "Excel (*.csv)|*.csv";
                 if (open.ShowDialog() == DialogResult.OK)
                 {
                     string ruta = open.FileName;
+
                     BindingList<Orden> listaCargar = cargarArchivo(ruta);
 
                     foreach (Orden o in listaCargar)
@@ -364,6 +366,24 @@ namespace Vista
                         logicaOrden.gestionarOrden(o, 1);
                     }
 
+                    //Cargar archivo de canales
+                    //BindingList<Canal> listaCargar = cargarArchivo2(ruta);
+                    //foreach(Canal c in listaCargar)
+                    //{
+                    //    logicaCanal.cargarCanal(c);
+                    //}
+                    //Cargar archivos de combos
+                    //BindingList<Combo> listaCargar = cargarArchivos3(ruta);
+                    //foreach(Combo c in listaCargar)
+                    //{
+                    //    logicaCombo.cargarCombo(c);
+                    //}
+
+                    //BindingList<Producto> listaCargar = cargarArchivos4(ruta);
+                    //foreach(Producto p in listaCargar)
+                    //{
+                    //    logicaProducto.cargarProducto(p);
+                    //}
 
                 }
                 MessageBox.Show("Se ha cargado los datos correctamente");
@@ -405,6 +425,77 @@ namespace Vista
             }
 
             return listaOrdenada;
+        }
+        public BindingList<Canal> cargarArchivo2(string ruta)
+        {
+            BindingList<Canal> lista = new BindingList<Canal>();
+            FileStream archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+            StreamReader lector = new StreamReader(archivo);
+            string TextLine;
+            char delimitador = ';';
+            listaOrdenada = new SortableBindingList<Orden>();
+            lector.ReadLine();
+
+            while (lector.Peek() != -1)
+            {
+                Canal c = new Canal();
+                TextLine = lector.ReadLine();
+                String[] substrings = TextLine.Split(delimitador);
+                c.IdCanal = substrings[0];
+                c.Nombre = substrings[1];
+
+                lista.Add(c);
+            }
+
+            return lista;
+        }
+        public BindingList<Combo> cargarArchivos3(string ruta)
+        {
+            BindingList<Combo> lista = new BindingList<Combo>();
+            FileStream archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+            StreamReader lector = new StreamReader(archivo);
+            string TextLine;
+            char delimitador = ';';
+            listaOrdenada = new SortableBindingList<Orden>();
+            lector.ReadLine();
+
+            while (lector.Peek() != -1)
+            {
+                Combo c = new Combo();
+                TextLine = lector.ReadLine();
+                String[] substrings = TextLine.Split(delimitador);
+                c.IdCombo = substrings[0];
+                c.Nombre = substrings[1];
+                c.Tipo = substrings[2];
+
+                lista.Add(c);
+            }
+
+            return lista;
+        }
+        public BindingList<Producto> cargarArchivos4(string ruta)
+        {
+            BindingList<Producto> lista = new BindingList<Producto>();
+            FileStream archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+            StreamReader lector = new StreamReader(archivo);
+            string TextLine;
+            char delimitador = ';';
+            listaOrdenada = new SortableBindingList<Orden>();
+            lector.ReadLine();
+
+            while (lector.Peek() != -1)
+            {
+                Producto p = new Producto();
+                TextLine = lector.ReadLine();
+                String[] substrings = TextLine.Split(delimitador);
+                p.IdProducto = substrings[0];
+                p.Nombre = substrings[1];
+                p.Tipo = substrings[2];
+
+                lista.Add(p);
+            }
+
+            return lista;
         }
 
         private void button1_Click_2(object sender, EventArgs e)

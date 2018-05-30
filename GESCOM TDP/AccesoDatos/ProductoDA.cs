@@ -125,5 +125,23 @@ namespace AccesoDatos
 
         }
 
+        public void cargarProducto(Producto p)
+        {
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "INSERT INTO Producto values ('" + p.IdProducto + "','"
+                  + p.Nombre + "','" + p.Tipo + "', 1);";
+            comando.ExecuteNonQuery();
+
+            con.Close();
+        }
+
     }
 }

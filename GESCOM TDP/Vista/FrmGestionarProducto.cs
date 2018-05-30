@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -238,10 +239,10 @@ namespace Vista
             cProducto.Combo1 = new Combo();
             cProducto.Combo1.IdCombo = idCombo;
             cProducto.Combo1.Nombre = cmbCombo.Text;
-
+            cProducto.FePeriodo = fePeriodo;
             cProducto.FechaInicio1 = fechaInicio;
             cProducto.FechaFin1 = fechaFin;
-            string rpta =logicaCombo.agregarComboProducto(cProducto, fePeriodo);
+            string rpta =logicaCombo.agregarComboProducto(cProducto);
             if (rpta == "Correcto")
             {
                 MessageBox.Show("Se ha agregado correctamente el combo producto");
@@ -259,6 +260,66 @@ namespace Vista
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             estadoComponentes(Estado.Deshabilitado);
+        }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "Excel (*.csv)|*.csv";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    string ruta = open.FileName;
+
+                    BindingList<ComboProducto> listaCargar = cargarArchivo(ruta);
+
+                    foreach (ComboProducto o in listaCargar)
+                    {
+                        logicaCombo.agregarComboProducto(o);
+                    }
+
+
+                }
+                MessageBox.Show("Se ha cargado los datos correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
+        private SortableBindingList<ComboProducto> listaOrdenada;
+        private BindingList<ComboProducto> cargarArchivo(string ruta)
+        {
+            
+              FileStream archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+            StreamReader lector = new StreamReader(archivo);
+            string TextLine;
+            char delimitador = ';';
+            listaOrdenada = new SortableBindingList<ComboProducto>();
+            lector.ReadLine();
+
+            while (lector.Peek() != -1)
+            {
+                ComboProducto cp = new ComboProducto();
+                TextLine = lector.ReadLine();
+                String[] substrings = TextLine.Split(delimitador);
+                cp.FechaFin1 = Convert.ToDateTime(substrings[3]) ;
+                cp.FechaInicio1 = Convert.ToDateTime(substrings[4]); ;
+                cp.Canal1 = new Canal();
+                cp.Canal1.IdCanal = substrings[2];
+                cp.FePeriodo = substrings[5];
+                cp.Tipo = substrings[6];
+                cp.Formula = Convert.ToInt32(substrings[7]);
+                cp.Combo1 = new Combo();
+                cp.Combo1.IdCombo = substrings[1];
+                cp.Producto = new Producto();
+                cp.Producto.IdProducto = substrings[0];
+                listaOrdenada.Add(cp);
+            }
+
+            return listaOrdenada;
         }
     }
 }

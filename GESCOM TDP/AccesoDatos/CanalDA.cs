@@ -42,5 +42,23 @@ namespace AccesoDatos
             return listaCanales;
 
         }
+
+        public void cargarCanal(Canal c)
+        {
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "INSERT INTO Canal values ('"+ c.IdCanal + "','"
+                + c.Nombre +"', 1);";
+            comando.ExecuteNonQuery();
+
+            con.Close();
+        }
     }
 }
