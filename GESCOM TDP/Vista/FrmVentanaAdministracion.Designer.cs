@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVentanaAdministracion));
             this.lblMenuVertical = new System.Windows.Forms.Panel();
-            this.btnCalculoAdmin = new System.Windows.Forms.Button();
             this.pnlVisualizar = new System.Windows.Forms.Panel();
             this.btnMapa2 = new System.Windows.Forms.Button();
             this.btnJefes = new System.Windows.Forms.Button();
@@ -48,44 +47,45 @@
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnPapelera = new System.Windows.Forms.Button();
             this.btnEnviarRecomend = new System.Windows.Forms.Button();
-            this.btnVisuGere = new System.Windows.Forms.Button();
             this.pnlCalculo = new System.Windows.Forms.Panel();
             this.btnComisionCalculo = new System.Windows.Forms.Button();
             this.btnFijarPeri = new System.Windows.Forms.Button();
-            this.btnGestionarJefeCom = new System.Windows.Forms.Button();
             this.pnlGestion = new System.Windows.Forms.Panel();
             this.btnProductosGestion = new System.Windows.Forms.Button();
             this.btnOrdenes = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnOtrosJefeCom = new System.Windows.Forms.Button();
-            this.btnMiCuenta = new System.Windows.Forms.Button();
             this.lblCerrarSesion = new System.Windows.Forms.Label();
-            this.picCerrarSesion = new System.Windows.Forms.PictureBox();
             this.lblNombreUsu = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
-            this.picUsu = new System.Windows.Forms.PictureBox();
-            this.picLogoTelef = new System.Windows.Forms.PictureBox();
             this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.iconMaximizar = new System.Windows.Forms.PictureBox();
             this.iconCerrar = new System.Windows.Forms.PictureBox();
             this.iconRestaurar = new System.Windows.Forms.PictureBox();
             this.iconMinimize = new System.Windows.Forms.PictureBox();
-            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pictureCampana = new System.Windows.Forms.PictureBox();
+            this.btnCalculoAdmin = new System.Windows.Forms.Button();
+            this.btnVisuGere = new System.Windows.Forms.Button();
+            this.btnGestionarJefeCom = new System.Windows.Forms.Button();
+            this.btnOtrosJefeCom = new System.Windows.Forms.Button();
+            this.btnMiCuenta = new System.Windows.Forms.Button();
+            this.picCerrarSesion = new System.Windows.Forms.PictureBox();
+            this.picUsu = new System.Windows.Forms.PictureBox();
+            this.picLogoTelef = new System.Windows.Forms.PictureBox();
             this.lblMenuVertical.SuspendLayout();
             this.pnlVisualizar.SuspendLayout();
             this.pnlOtro.SuspendLayout();
             this.pnlCalculo.SuspendLayout();
             this.pnlGestion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCerrarSesion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogoTelef)).BeginInit();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCampana)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCerrarSesion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoTelef)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMenuVertical
@@ -114,24 +114,6 @@
             this.lblMenuVertical.Size = new System.Drawing.Size(200, 650);
             this.lblMenuVertical.TabIndex = 0;
             this.lblMenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.menuVertical_Paint);
-            // 
-            // btnCalculoAdmin
-            // 
-            this.btnCalculoAdmin.BackColor = System.Drawing.Color.Navy;
-            this.btnCalculoAdmin.FlatAppearance.BorderSize = 0;
-            this.btnCalculoAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnCalculoAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculoAdmin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalculoAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnCalculoAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculoAdmin.Image")));
-            this.btnCalculoAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalculoAdmin.Location = new System.Drawing.Point(0, 140);
-            this.btnCalculoAdmin.Name = "btnCalculoAdmin";
-            this.btnCalculoAdmin.Size = new System.Drawing.Size(200, 40);
-            this.btnCalculoAdmin.TabIndex = 16;
-            this.btnCalculoAdmin.Text = "Cálculo";
-            this.btnCalculoAdmin.UseVisualStyleBackColor = false;
-            this.btnCalculoAdmin.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlVisualizar
             // 
@@ -375,7 +357,7 @@
             this.btnMapa.Name = "btnMapa";
             this.btnMapa.Size = new System.Drawing.Size(180, 25);
             this.btnMapa.TabIndex = 11;
-            this.btnMapa.Text = "Mapa";
+            this.btnMapa.Text = "Manual";
             this.btnMapa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMapa.UseVisualStyleBackColor = false;
             this.btnMapa.Click += new System.EventHandler(this.button14_Click);
@@ -434,24 +416,6 @@
             this.btnEnviarRecomend.UseVisualStyleBackColor = false;
             this.btnEnviarRecomend.Click += new System.EventHandler(this.button17_Click);
             // 
-            // btnVisuGere
-            // 
-            this.btnVisuGere.BackColor = System.Drawing.Color.Navy;
-            this.btnVisuGere.FlatAppearance.BorderSize = 0;
-            this.btnVisuGere.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnVisuGere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisuGere.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisuGere.ForeColor = System.Drawing.Color.White;
-            this.btnVisuGere.Image = ((System.Drawing.Image)(resources.GetObject("btnVisuGere.Image")));
-            this.btnVisuGere.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVisuGere.Location = new System.Drawing.Point(3, 224);
-            this.btnVisuGere.Name = "btnVisuGere";
-            this.btnVisuGere.Size = new System.Drawing.Size(200, 45);
-            this.btnVisuGere.TabIndex = 5;
-            this.btnVisuGere.Text = "Visualizar";
-            this.btnVisuGere.UseVisualStyleBackColor = false;
-            this.btnVisuGere.Click += new System.EventHandler(this.btnVisuGere_Click);
-            // 
             // pnlCalculo
             // 
             this.pnlCalculo.Controls.Add(this.btnComisionCalculo);
@@ -497,24 +461,6 @@
             this.btnFijarPeri.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFijarPeri.UseVisualStyleBackColor = false;
             this.btnFijarPeri.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // btnGestionarJefeCom
-            // 
-            this.btnGestionarJefeCom.BackColor = System.Drawing.Color.Navy;
-            this.btnGestionarJefeCom.FlatAppearance.BorderSize = 0;
-            this.btnGestionarJefeCom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnGestionarJefeCom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionarJefeCom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionarJefeCom.ForeColor = System.Drawing.Color.White;
-            this.btnGestionarJefeCom.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarJefeCom.Image")));
-            this.btnGestionarJefeCom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionarJefeCom.Location = new System.Drawing.Point(0, 100);
-            this.btnGestionarJefeCom.Name = "btnGestionarJefeCom";
-            this.btnGestionarJefeCom.Size = new System.Drawing.Size(200, 40);
-            this.btnGestionarJefeCom.TabIndex = 2;
-            this.btnGestionarJefeCom.Text = "Gestionar";
-            this.btnGestionarJefeCom.UseVisualStyleBackColor = false;
-            this.btnGestionarJefeCom.Click += new System.EventHandler(this.btnGestionarJefeCom_Click);
             // 
             // pnlGestion
             // 
@@ -581,42 +527,6 @@
             this.btnUsuarios.UseVisualStyleBackColor = false;
             this.btnUsuarios.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // btnOtrosJefeCom
-            // 
-            this.btnOtrosJefeCom.BackColor = System.Drawing.Color.Navy;
-            this.btnOtrosJefeCom.FlatAppearance.BorderSize = 0;
-            this.btnOtrosJefeCom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnOtrosJefeCom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOtrosJefeCom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOtrosJefeCom.ForeColor = System.Drawing.Color.White;
-            this.btnOtrosJefeCom.Image = ((System.Drawing.Image)(resources.GetObject("btnOtrosJefeCom.Image")));
-            this.btnOtrosJefeCom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOtrosJefeCom.Location = new System.Drawing.Point(0, 180);
-            this.btnOtrosJefeCom.Name = "btnOtrosJefeCom";
-            this.btnOtrosJefeCom.Size = new System.Drawing.Size(200, 45);
-            this.btnOtrosJefeCom.TabIndex = 6;
-            this.btnOtrosJefeCom.Text = "Otros";
-            this.btnOtrosJefeCom.UseVisualStyleBackColor = false;
-            this.btnOtrosJefeCom.Click += new System.EventHandler(this.btnOtrosJefeCom_Click);
-            // 
-            // btnMiCuenta
-            // 
-            this.btnMiCuenta.BackColor = System.Drawing.Color.Navy;
-            this.btnMiCuenta.FlatAppearance.BorderSize = 0;
-            this.btnMiCuenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnMiCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMiCuenta.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMiCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnMiCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnMiCuenta.Image")));
-            this.btnMiCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMiCuenta.Location = new System.Drawing.Point(0, 515);
-            this.btnMiCuenta.Name = "btnMiCuenta";
-            this.btnMiCuenta.Size = new System.Drawing.Size(200, 45);
-            this.btnMiCuenta.TabIndex = 7;
-            this.btnMiCuenta.Text = "Mi Cuenta";
-            this.btnMiCuenta.UseVisualStyleBackColor = false;
-            this.btnMiCuenta.Click += new System.EventHandler(this.button18_Click_1);
-            // 
             // lblCerrarSesion
             // 
             this.lblCerrarSesion.AutoSize = true;
@@ -628,17 +538,6 @@
             this.lblCerrarSesion.TabIndex = 0;
             this.lblCerrarSesion.Text = "Cerrar Sesión";
             this.lblCerrarSesion.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // picCerrarSesion
-            // 
-            this.picCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("picCerrarSesion.Image")));
-            this.picCerrarSesion.Location = new System.Drawing.Point(3, 618);
-            this.picCerrarSesion.Name = "picCerrarSesion";
-            this.picCerrarSesion.Size = new System.Drawing.Size(39, 29);
-            this.picCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCerrarSesion.TabIndex = 20;
-            this.picCerrarSesion.TabStop = false;
-            this.picCerrarSesion.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // lblNombreUsu
             // 
@@ -662,29 +561,6 @@
             this.lblCargo.Text = "Cargo";
             this.lblCargo.Click += new System.EventHandler(this.lblCargo_Click);
             // 
-            // picUsu
-            // 
-            this.picUsu.BackColor = System.Drawing.Color.Navy;
-            this.picUsu.Image = ((System.Drawing.Image)(resources.GetObject("picUsu.Image")));
-            this.picUsu.Location = new System.Drawing.Point(0, 566);
-            this.picUsu.Name = "picUsu";
-            this.picUsu.Size = new System.Drawing.Size(48, 52);
-            this.picUsu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picUsu.TabIndex = 14;
-            this.picUsu.TabStop = false;
-            this.picUsu.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            // 
-            // picLogoTelef
-            // 
-            this.picLogoTelef.BackColor = System.Drawing.Color.Navy;
-            this.picLogoTelef.Image = ((System.Drawing.Image)(resources.GetObject("picLogoTelef.Image")));
-            this.picLogoTelef.Location = new System.Drawing.Point(22, 9);
-            this.picLogoTelef.Name = "picLogoTelef";
-            this.picLogoTelef.Size = new System.Drawing.Size(155, 64);
-            this.picLogoTelef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogoTelef.TabIndex = 0;
-            this.picLogoTelef.TabStop = false;
-            // 
             // pnlSuperior
             // 
             this.pnlSuperior.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -699,6 +575,15 @@
             this.pnlSuperior.Size = new System.Drawing.Size(1100, 50);
             this.pnlSuperior.TabIndex = 1;
             this.pnlSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperior_MouseDown);
+            // 
+            // pnlContenedor
+            // 
+            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContenedor.Location = new System.Drawing.Point(200, 50);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(1100, 600);
+            this.pnlContenedor.TabIndex = 2;
+            this.pnlContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenedor_Paint);
             // 
             // iconMaximizar
             // 
@@ -753,15 +638,6 @@
             this.iconMinimize.TabStop = false;
             this.iconMinimize.Click += new System.EventHandler(this.iconMinimize_Click);
             // 
-            // pnlContenedor
-            // 
-            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenedor.Location = new System.Drawing.Point(200, 50);
-            this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(1100, 600);
-            this.pnlContenedor.TabIndex = 2;
-            this.pnlContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenedor_Paint);
-            // 
             // pictureCampana
             // 
             this.pictureCampana.Image = ((System.Drawing.Image)(resources.GetObject("pictureCampana.Image")));
@@ -772,6 +648,130 @@
             this.pictureCampana.TabIndex = 21;
             this.pictureCampana.TabStop = false;
             this.pictureCampana.Visible = false;
+            // 
+            // btnCalculoAdmin
+            // 
+            this.btnCalculoAdmin.BackColor = System.Drawing.Color.Navy;
+            this.btnCalculoAdmin.FlatAppearance.BorderSize = 0;
+            this.btnCalculoAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCalculoAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculoAdmin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalculoAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnCalculoAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculoAdmin.Image")));
+            this.btnCalculoAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalculoAdmin.Location = new System.Drawing.Point(0, 140);
+            this.btnCalculoAdmin.Name = "btnCalculoAdmin";
+            this.btnCalculoAdmin.Size = new System.Drawing.Size(200, 40);
+            this.btnCalculoAdmin.TabIndex = 16;
+            this.btnCalculoAdmin.Text = "Cálculo";
+            this.btnCalculoAdmin.UseVisualStyleBackColor = false;
+            this.btnCalculoAdmin.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnVisuGere
+            // 
+            this.btnVisuGere.BackColor = System.Drawing.Color.Navy;
+            this.btnVisuGere.FlatAppearance.BorderSize = 0;
+            this.btnVisuGere.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnVisuGere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisuGere.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisuGere.ForeColor = System.Drawing.Color.White;
+            this.btnVisuGere.Image = ((System.Drawing.Image)(resources.GetObject("btnVisuGere.Image")));
+            this.btnVisuGere.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVisuGere.Location = new System.Drawing.Point(3, 224);
+            this.btnVisuGere.Name = "btnVisuGere";
+            this.btnVisuGere.Size = new System.Drawing.Size(200, 45);
+            this.btnVisuGere.TabIndex = 5;
+            this.btnVisuGere.Text = "Visualizar";
+            this.btnVisuGere.UseVisualStyleBackColor = false;
+            this.btnVisuGere.Click += new System.EventHandler(this.btnVisuGere_Click);
+            // 
+            // btnGestionarJefeCom
+            // 
+            this.btnGestionarJefeCom.BackColor = System.Drawing.Color.Navy;
+            this.btnGestionarJefeCom.FlatAppearance.BorderSize = 0;
+            this.btnGestionarJefeCom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnGestionarJefeCom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarJefeCom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarJefeCom.ForeColor = System.Drawing.Color.White;
+            this.btnGestionarJefeCom.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarJefeCom.Image")));
+            this.btnGestionarJefeCom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarJefeCom.Location = new System.Drawing.Point(0, 100);
+            this.btnGestionarJefeCom.Name = "btnGestionarJefeCom";
+            this.btnGestionarJefeCom.Size = new System.Drawing.Size(200, 40);
+            this.btnGestionarJefeCom.TabIndex = 2;
+            this.btnGestionarJefeCom.Text = "Gestionar";
+            this.btnGestionarJefeCom.UseVisualStyleBackColor = false;
+            this.btnGestionarJefeCom.Click += new System.EventHandler(this.btnGestionarJefeCom_Click);
+            // 
+            // btnOtrosJefeCom
+            // 
+            this.btnOtrosJefeCom.BackColor = System.Drawing.Color.Navy;
+            this.btnOtrosJefeCom.FlatAppearance.BorderSize = 0;
+            this.btnOtrosJefeCom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnOtrosJefeCom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOtrosJefeCom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOtrosJefeCom.ForeColor = System.Drawing.Color.White;
+            this.btnOtrosJefeCom.Image = ((System.Drawing.Image)(resources.GetObject("btnOtrosJefeCom.Image")));
+            this.btnOtrosJefeCom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOtrosJefeCom.Location = new System.Drawing.Point(0, 180);
+            this.btnOtrosJefeCom.Name = "btnOtrosJefeCom";
+            this.btnOtrosJefeCom.Size = new System.Drawing.Size(200, 45);
+            this.btnOtrosJefeCom.TabIndex = 6;
+            this.btnOtrosJefeCom.Text = "Otros";
+            this.btnOtrosJefeCom.UseVisualStyleBackColor = false;
+            this.btnOtrosJefeCom.Click += new System.EventHandler(this.btnOtrosJefeCom_Click);
+            // 
+            // btnMiCuenta
+            // 
+            this.btnMiCuenta.BackColor = System.Drawing.Color.Navy;
+            this.btnMiCuenta.FlatAppearance.BorderSize = 0;
+            this.btnMiCuenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnMiCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMiCuenta.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMiCuenta.ForeColor = System.Drawing.Color.White;
+            this.btnMiCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnMiCuenta.Image")));
+            this.btnMiCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMiCuenta.Location = new System.Drawing.Point(0, 515);
+            this.btnMiCuenta.Name = "btnMiCuenta";
+            this.btnMiCuenta.Size = new System.Drawing.Size(200, 45);
+            this.btnMiCuenta.TabIndex = 7;
+            this.btnMiCuenta.Text = "Mi Cuenta";
+            this.btnMiCuenta.UseVisualStyleBackColor = false;
+            this.btnMiCuenta.Click += new System.EventHandler(this.button18_Click_1);
+            // 
+            // picCerrarSesion
+            // 
+            this.picCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("picCerrarSesion.Image")));
+            this.picCerrarSesion.Location = new System.Drawing.Point(3, 618);
+            this.picCerrarSesion.Name = "picCerrarSesion";
+            this.picCerrarSesion.Size = new System.Drawing.Size(39, 29);
+            this.picCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCerrarSesion.TabIndex = 20;
+            this.picCerrarSesion.TabStop = false;
+            this.picCerrarSesion.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // picUsu
+            // 
+            this.picUsu.BackColor = System.Drawing.Color.Navy;
+            this.picUsu.Image = ((System.Drawing.Image)(resources.GetObject("picUsu.Image")));
+            this.picUsu.Location = new System.Drawing.Point(0, 566);
+            this.picUsu.Name = "picUsu";
+            this.picUsu.Size = new System.Drawing.Size(48, 52);
+            this.picUsu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUsu.TabIndex = 14;
+            this.picUsu.TabStop = false;
+            this.picUsu.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // picLogoTelef
+            // 
+            this.picLogoTelef.BackColor = System.Drawing.Color.Navy;
+            this.picLogoTelef.Image = ((System.Drawing.Image)(resources.GetObject("picLogoTelef.Image")));
+            this.picLogoTelef.Location = new System.Drawing.Point(22, 9);
+            this.picLogoTelef.Name = "picLogoTelef";
+            this.picLogoTelef.Size = new System.Drawing.Size(155, 64);
+            this.picLogoTelef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogoTelef.TabIndex = 0;
+            this.picLogoTelef.TabStop = false;
             // 
             // FrmVentanaAdministracion
             // 
@@ -792,15 +792,15 @@
             this.pnlOtro.ResumeLayout(false);
             this.pnlCalculo.ResumeLayout(false);
             this.pnlGestion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picCerrarSesion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogoTelef)).EndInit();
             this.pnlSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCampana)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCerrarSesion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoTelef)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -52,6 +52,7 @@
     <Compile Include="CanalBL.cs" />
     <Compile Include="ComboBL.cs" />
     <Compile Include="InfraccionBL.cs" />
+    <Compile Include="ManualBL.cs" />
     <Compile Include="NoticiaBL.cs" />
     <Compile Include="OrdenBL.cs" />
     <Compile Include="PersonaBL.cs" />

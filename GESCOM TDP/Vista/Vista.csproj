@@ -195,6 +195,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVisualizarManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarManual.Designer.cs">
+      <DependentUpon>FrmVisualizarManual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -359,6 +365,9 @@
     <EmbeddedResource Include="FrmVisualizarGerente.resx">
       <DependentUpon>FrmVisualizarGerente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarManual.resx">
+      <DependentUpon>FrmVisualizarManual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmVisualizarRecomendacion.resx">
       <DependentUpon>FrmVisualizarRecomendacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -461,6 +470,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ordenes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

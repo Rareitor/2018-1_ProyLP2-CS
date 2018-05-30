@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AccesoDatos
 {
@@ -381,7 +382,7 @@ namespace AccesoDatos
 
             existeUsu = 0;
             errorContra = 1;
-
+            
             MySqlConnection con = new MySqlConnection(cadena);
             MySqlCommand comando = new MySqlCommand();
             con.Open();

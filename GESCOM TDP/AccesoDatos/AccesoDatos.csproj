@@ -68,6 +68,7 @@
     <Compile Include="CanalDA.cs" />
     <Compile Include="ComboDA.cs" />
     <Compile Include="InfraccionDA.cs" />
+    <Compile Include="ManualDA.cs" />
     <Compile Include="NoticiaDA.cs" />
     <Compile Include="OrdenDA.cs" />
     <Compile Include="PersonaDA.cs" />
