@@ -72,6 +72,11 @@ namespace Controlador
             return accesoTrabajador.listar("JEFE", idPayee);
         }
 
+        public BindingList<Trabajador> listarPayees()
+        {
+            return accesoTrabajador.listarPayees();
+        }
+
         public BindingList<Trabajador> listarMisComisionistas(String idPayee)
         {
             return accesoTrabajador.listar("COMISIONISTA", idPayee);

@@ -187,6 +187,8 @@ namespace Vista
 
             claves.AutoSize = true;
             claves.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            claves.StartPosition = FormStartPosition.Manual;
+            claves.Location = new Point(500, 510);
             claves.ShowDialog();
         }
 

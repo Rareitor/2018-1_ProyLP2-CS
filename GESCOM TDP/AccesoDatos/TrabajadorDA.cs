@@ -439,6 +439,42 @@ namespace AccesoDatos
             return "";
         }
 
+        public BindingList<Trabajador> listarPayees()
+        {
+            BindingList<Trabajador> lista = new BindingList<Trabajador>();
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+            comando.Connection = con;
+            comando.CommandText = "LISTAR_PAYEE";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            MySqlDataReader rs = comando.ExecuteReader();
+            while (rs.Read())
+            {
+                Trabajador t = new Trabajador();
+
+                t.ApellidoMaterno = rs.GetString("apellidoMaterno");
+                t.ApellidoPaterno = rs.GetString("apellidoPaterno");
+                t.Dni = rs.GetString("dni");
+                t.Email = rs.GetString("email");
+                t.Nombre = rs.GetString("nombre");
+                t.FechaIngreso = rs.GetDateTime("fechaIngreso");
+                t.UserName = rs.GetString("username");
+                t.Password = rs.GetString("password");
+                t.Locacion = new Sede();
+                t.Locacion.IdLocal = rs.GetInt32("idUbicacion");
+                t.Locacion.Distrito = rs.GetString("distrito");
+                //t.Locacion.Direccion = rs.GetString("direccion");
+                t.IdTrabajador = rs.GetString("idPayee");
+                lista.Add(t);
+            }
+            con.Close();
+            return lista;
+        }
+
         public void obtenerDatos(string usuario, ref string id_usuario, ref string nombreUsu, ref string apellidoPat)
         {
 

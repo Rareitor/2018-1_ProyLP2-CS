@@ -186,15 +186,11 @@ namespace Vista
             txtID.Enabled = false;
             opcion = 2;
 
-            FrmBusquedaUsuarioPersonalizada frmBusPer = new FrmBusquedaUsuarioPersonalizada();
-            if (frmBusPer.ShowDialog()== DialogResult.OK)
-            {
-                pnlBusqueda.Visible = true;
-                BindingList<Trabajador> lista = logicaTrabajador.busquedaPersonalizada(frmBusPer.Dni, frmBusPer.Nombre, frmBusPer.ApellidoPat, frmBusPer.ApellidMat, frmBusPer.Correo);
-                listaOriginal = new SortableBindingList<Trabajador>(lista);
-                dgvBusqueda.AutoGenerateColumns = false;
-                dgvBusqueda.DataSource = listaOriginal;
-            }
+            pnlBusqueda.Visible = true;
+            BindingList<Trabajador> lista = logicaTrabajador.listarPayees();
+            listaOriginal = new SortableBindingList<Trabajador>(lista);
+            dgvBusqueda.AutoGenerateColumns = false;
+            dgvBusqueda.DataSource = listaOriginal;
         }
 
   
