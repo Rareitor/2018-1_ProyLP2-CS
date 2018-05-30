@@ -21,9 +21,12 @@ namespace Vista
         Trabajador objetoSeleccionado = new Trabajador();
         private string idSupSup;
         private SortableBindingList<Trabajador> listaOriginal;
-
+        BindingList<String> listaCorreos = new BindingList<string>();
+        BindingList<String> listaDni = new BindingList<string>();
         //por defecto 1: crear un usuario, 2:actualizar un usuario
         int opcion=1;
+        int validoCorreo = 0;
+        int validoDni = 0;
         public enum Estado
         {
             Inicial, Nuevo, Deshabilitado
@@ -54,10 +57,13 @@ namespace Vista
                     btnBusqueda.Enabled = false;
                     btnEliminar.Enabled = false;
                     btnCancelar.Enabled = false;
+                    labelDni.Visible = false;
                     txtID.Enabled = false;
                     txtDNI.Enabled = false;
                     txtNombre.Enabled = false;
                     dateIngreso.Enabled = false;
+                    MensajeCorreo.Visible = false;
+                    pictureCheked.Visible = false;
                     txtApellidoPat.Enabled = false;
                     txtApellidoPat.Enabled = false;
                     rbnComisionista.Enabled = false;
@@ -105,7 +111,11 @@ namespace Vista
                     txtNombre.Enabled = false;
                     dateIngreso.Enabled = false;
                     txtApellidoPat.Enabled = false;
+
+                    labelDni.Visible = false;
                     txtApellidoMat.Enabled = false;
+                    MensajeCorreo.Visible = false;
+                    pictureCheked.Visible = false;
                     rbnComisionista.Enabled = false;
                     rbnGerente.Enabled = false;
                     rbnJefe.Enabled = false;
@@ -184,8 +194,7 @@ namespace Vista
         private void toolStripButton3_Click_1(object sender, EventArgs e)
         {
             txtID.Enabled = false;
-            opcion = 2;
-
+            labelDni.Visible = false;
             pnlBusqueda.Visible = true;
             BindingList<Trabajador> lista = logicaTrabajador.listarPayees();
             listaOriginal = new SortableBindingList<Trabajador>(lista);
@@ -254,7 +263,33 @@ namespace Vista
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (rbnComisionista.Checked == false && rbnJefe.Checked == false && rbnGerente.Checked== false)
+            int validarTodo = 0;
+            if (opcion == 1)
+            {
+                if (validoCorreo == 1 && validoDni ==1)
+                {
+                    if (rbnComisionista.Checked == false && rbnJefe.Checked == false && rbnGerente.Checked == false)
+                    {
+                        validarTodo = 0;
+                    } else
+                    {
+                        validarTodo = 1;
+                    }
+                   
+                }
+            } else if (opcion == 2)
+            {
+                if (rbnComisionista.Checked == false && rbnJefe.Checked == false && rbnGerente.Checked == false)
+                {
+                    validarTodo = 0;
+                }
+                else
+                {
+                    validarTodo = 1;
+                }
+            }
+
+            if (validarTodo == 0)
             {
                 MessageBox.Show("Ingrese datos de un usuario valido");
             }
@@ -305,6 +340,9 @@ namespace Vista
                 {
                     txtID.Text = idUsuario;
                     MessageBox.Show("Se ha registrado correctamente");
+
+                    listaCorreos = logicaTrabajador.listarCorreos();
+                    listaDni = logicaTrabajador.listarDni();
                 }
                 else if (idUsuario == "Correcto")
                 {
@@ -373,6 +411,7 @@ namespace Vista
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+            opcion = 2;
             rbnGerente.Enabled = false;
             rbnComisionista.Enabled = false;
             rbnJefe.Enabled = false;
@@ -540,6 +579,86 @@ namespace Vista
         private void dgvBusqueda_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             dgvBusqueda.Sort(dgvBusqueda.Columns[e.ColumnIndex], System.ComponentModel.ListSortDirection.Ascending);
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            string texto = txtCorreo.Text + e.KeyChar;
+ 
+
+            if (texto.Contains('@'))
+            {
+                int valido = 1;
+                foreach (String s in listaCorreos)
+                {
+                    if (s == texto)
+                    {
+                        valido = 0;
+                        break;
+                    }
+                }
+                if (valido == 0)
+                {
+                    MensajeCorreo.Visible = true;
+                    pictureCheked.Visible = false;
+                    validoCorreo = 0;
+                } else
+                {
+                    MensajeCorreo.Visible = false;
+                    pictureCheked.Visible = true;
+                    validoCorreo = 1;
+                }
+               
+            } else
+            {
+                MensajeCorreo.Visible = true;
+                MensajeCorreo.Text = "Ingrese un correo valido";
+                pictureCheked.Visible = false;
+            }
+            
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmGestionarUsuario_Load(object sender, EventArgs e)
+        {
+             listaCorreos = logicaTrabajador.listarCorreos();
+             listaDni = logicaTrabajador.listarDni();
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string dniP = txtDNI.Text + e.KeyChar;
+            int cant = dniP.Length;
+
+            labelDni.Visible = false;
+            if (cant == 8)
+            {
+                int valido = 1;
+                foreach (String s in listaDni)
+                {
+                    
+                    if (s == dniP)
+                    {
+                        valido = 0;
+                        break;
+                    }
+                }
+                    if (valido == 0)
+                    {
+                        labelDni.Visible = true;
+                        validoDni = 0;
+                    } else
+                    {
+                        labelDni.Visible = false;
+                        validoDni = 1;
+                    }
+                
+            }
         }
     }
 }

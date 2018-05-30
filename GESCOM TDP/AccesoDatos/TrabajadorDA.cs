@@ -440,6 +440,50 @@ namespace AccesoDatos
             return "";
         }
 
+        public BindingList<String> listarCorreos()
+        {
+            BindingList<String> lista = new BindingList<string>();
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+            comando.Connection = con;
+            comando.CommandText = "select email from Payee";
+            MySqlDataReader rs = comando.ExecuteReader();
+            while (rs.Read())
+            {
+                string cor = rs.GetString("email");
+                lista.Add(cor);
+            }
+            con.Close();
+
+
+            return lista;
+        }
+        public BindingList<String> listarDni()
+        {
+            BindingList<String> lista = new BindingList<string>();
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+            comando.Connection = con;
+            comando.CommandText = "select dni from Payee";
+            MySqlDataReader rs = comando.ExecuteReader();
+            while (rs.Read())
+            {
+                string cor = rs.GetString("dni");
+                lista.Add(cor);
+            }
+            con.Close();
+
+
+            return lista;
+        }
         public BindingList<Trabajador> listarPayees()
         {
             BindingList<Trabajador> lista = new BindingList<Trabajador>();

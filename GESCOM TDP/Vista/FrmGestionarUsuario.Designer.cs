@@ -65,6 +65,8 @@
             this.btnSuperior = new System.Windows.Forms.Button();
             this.txtIDSuperior = new System.Windows.Forms.TextBox();
             this.pnlBusqueda = new System.Windows.Forms.Panel();
+            this.cmbCampo = new System.Windows.Forms.ComboBox();
+            this.tbFiltro = new System.Windows.Forms.TextBox();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvBusqueda = new System.Windows.Forms.DataGridView();
@@ -74,13 +76,15 @@
             this.ApellidoPat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoMat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbCampo = new System.Windows.Forms.ComboBox();
-            this.tbFiltro = new System.Windows.Forms.TextBox();
+            this.pictureCheked = new System.Windows.Forms.PictureBox();
+            this.MensajeCorreo = new System.Windows.Forms.Label();
+            this.labelDni = new System.Windows.Forms.Label();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCheked)).BeginInit();
             this.SuspendLayout();
             // 
             // tsMenu
@@ -146,6 +150,7 @@
             // 
             // gbGenerales
             // 
+            this.gbGenerales.Controls.Add(this.labelDni);
             this.gbGenerales.Controls.Add(this.txtContraseña);
             this.gbGenerales.Controls.Add(this.label7);
             this.gbGenerales.Controls.Add(this.txtUsuario);
@@ -174,7 +179,7 @@
             // txtContraseña
             // 
             this.txtContraseña.Enabled = false;
-            this.txtContraseña.Location = new System.Drawing.Point(167, 254);
+            this.txtContraseña.Location = new System.Drawing.Point(167, 263);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(204, 26);
             this.txtContraseña.TabIndex = 18;
@@ -183,7 +188,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(15, 256);
+            this.label7.Location = new System.Drawing.Point(15, 265);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 20);
             this.label7.TabIndex = 17;
@@ -192,7 +197,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Enabled = false;
-            this.txtUsuario.Location = new System.Drawing.Point(167, 221);
+            this.txtUsuario.Location = new System.Drawing.Point(167, 230);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(204, 26);
             this.txtUsuario.TabIndex = 16;
@@ -201,7 +206,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(15, 223);
+            this.label6.Location = new System.Drawing.Point(15, 232);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 20);
             this.label6.TabIndex = 15;
@@ -210,15 +215,16 @@
             // dateIngreso
             // 
             this.dateIngreso.Enabled = false;
-            this.dateIngreso.Location = new System.Drawing.Point(167, 188);
+            this.dateIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateIngreso.Location = new System.Drawing.Point(167, 197);
             this.dateIngreso.Name = "dateIngreso";
-            this.dateIngreso.Size = new System.Drawing.Size(204, 26);
+            this.dateIngreso.Size = new System.Drawing.Size(204, 23);
             this.dateIngreso.TabIndex = 14;
             // 
             // txtApellidoMat
             // 
             this.txtApellidoMat.Enabled = false;
-            this.txtApellidoMat.Location = new System.Drawing.Point(167, 153);
+            this.txtApellidoMat.Location = new System.Drawing.Point(167, 162);
             this.txtApellidoMat.Name = "txtApellidoMat";
             this.txtApellidoMat.Size = new System.Drawing.Size(204, 26);
             this.txtApellidoMat.TabIndex = 13;
@@ -227,7 +233,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(15, 155);
+            this.label5.Location = new System.Drawing.Point(15, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 20);
             this.label5.TabIndex = 12;
@@ -246,17 +252,18 @@
             // txtDNI
             // 
             this.txtDNI.Enabled = false;
-            this.txtDNI.Location = new System.Drawing.Point(167, 56);
+            this.txtDNI.Location = new System.Drawing.Point(167, 52);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(204, 26);
             this.txtDNI.TabIndex = 10;
             this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(15, 188);
+            this.label3.Location = new System.Drawing.Point(15, 197);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 20);
             this.label3.TabIndex = 8;
@@ -265,7 +272,7 @@
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(167, 24);
+            this.txtID.Location = new System.Drawing.Point(167, 18);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(204, 26);
@@ -274,7 +281,7 @@
             // txtApellidoPat
             // 
             this.txtApellidoPat.Enabled = false;
-            this.txtApellidoPat.Location = new System.Drawing.Point(167, 122);
+            this.txtApellidoPat.Location = new System.Drawing.Point(167, 129);
             this.txtApellidoPat.Name = "txtApellidoPat";
             this.txtApellidoPat.Size = new System.Drawing.Size(204, 26);
             this.txtApellidoPat.TabIndex = 6;
@@ -293,7 +300,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(15, 125);
+            this.label2.Location = new System.Drawing.Point(15, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 20);
             this.label2.TabIndex = 5;
@@ -303,7 +310,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNombre.Location = new System.Drawing.Point(15, 93);
+            this.lblNombre.Location = new System.Drawing.Point(15, 100);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(76, 20);
             this.lblNombre.TabIndex = 3;
@@ -312,13 +319,15 @@
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
-            this.txtNombre.Location = new System.Drawing.Point(167, 89);
+            this.txtNombre.Location = new System.Drawing.Point(167, 96);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(204, 26);
             this.txtNombre.TabIndex = 4;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.MensajeCorreo);
+            this.groupBox1.Controls.Add(this.pictureCheked);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.rbnGerente);
@@ -337,6 +346,7 @@
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Corporativos:";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label8
             // 
@@ -375,7 +385,7 @@
             // 
             this.cmbSede.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cmbSede.FormattingEnabled = true;
-            this.cmbSede.Location = new System.Drawing.Point(167, 148);
+            this.cmbSede.Location = new System.Drawing.Point(167, 155);
             this.cmbSede.Name = "cmbSede";
             this.cmbSede.Size = new System.Drawing.Size(204, 23);
             this.cmbSede.TabIndex = 39;
@@ -400,6 +410,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(204, 26);
             this.txtCorreo.TabIndex = 38;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // label10
             // 
@@ -464,6 +475,31 @@
             this.pnlBusqueda.Name = "pnlBusqueda";
             this.pnlBusqueda.Size = new System.Drawing.Size(636, 388);
             this.pnlBusqueda.TabIndex = 20;
+            // 
+            // cmbCampo
+            // 
+            this.cmbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCampo.FormattingEnabled = true;
+            this.cmbCampo.Items.AddRange(new object[] {
+            "<Todos>",
+            "ID Trabajador",
+            "DNI",
+            "Nombre",
+            "Apellido Paterno",
+            "Apellido Materno",
+            "Email"});
+            this.cmbCampo.Location = new System.Drawing.Point(51, 79);
+            this.cmbCampo.Name = "cmbCampo";
+            this.cmbCampo.Size = new System.Drawing.Size(130, 21);
+            this.cmbCampo.TabIndex = 6;
+            // 
+            // tbFiltro
+            // 
+            this.tbFiltro.Location = new System.Drawing.Point(232, 79);
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Size = new System.Drawing.Size(122, 20);
+            this.tbFiltro.TabIndex = 5;
+            this.tbFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltro_KeyUp);
             // 
             // btnSeleccionar
             // 
@@ -550,30 +586,37 @@
             this.Email.ReadOnly = true;
             this.Email.Width = 140;
             // 
-            // cmbCampo
+            // pictureCheked
             // 
-            this.cmbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCampo.FormattingEnabled = true;
-            this.cmbCampo.Items.AddRange(new object[] {
-            "<Todos>",
-            "ID Trabajador",
-            "DNI",
-            "Nombre",
-            "Apellido Paterno",
-            "Apellido Materno",
-            "Email"});
-            this.cmbCampo.Location = new System.Drawing.Point(51, 79);
-            this.cmbCampo.Name = "cmbCampo";
-            this.cmbCampo.Size = new System.Drawing.Size(130, 21);
-            this.cmbCampo.TabIndex = 6;
+            this.pictureCheked.Image = ((System.Drawing.Image)(resources.GetObject("pictureCheked.Image")));
+            this.pictureCheked.Location = new System.Drawing.Point(347, 108);
+            this.pictureCheked.Name = "pictureCheked";
+            this.pictureCheked.Size = new System.Drawing.Size(24, 22);
+            this.pictureCheked.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCheked.TabIndex = 41;
+            this.pictureCheked.TabStop = false;
             // 
-            // tbFiltro
+            // MensajeCorreo
             // 
-            this.tbFiltro.Location = new System.Drawing.Point(232, 79);
-            this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Size = new System.Drawing.Size(122, 20);
-            this.tbFiltro.TabIndex = 5;
-            this.tbFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltro_KeyUp);
+            this.MensajeCorreo.AutoSize = true;
+            this.MensajeCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.MensajeCorreo.ForeColor = System.Drawing.Color.Red;
+            this.MensajeCorreo.Location = new System.Drawing.Point(175, 134);
+            this.MensajeCorreo.Name = "MensajeCorreo";
+            this.MensajeCorreo.Size = new System.Drawing.Size(169, 13);
+            this.MensajeCorreo.TabIndex = 42;
+            this.MensajeCorreo.Text = "El correo ya se encuentra utilizado";
+            // 
+            // labelDni
+            // 
+            this.labelDni.AutoSize = true;
+            this.labelDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.labelDni.ForeColor = System.Drawing.Color.Red;
+            this.labelDni.Location = new System.Drawing.Point(183, 80);
+            this.labelDni.Name = "labelDni";
+            this.labelDni.Size = new System.Drawing.Size(164, 13);
+            this.labelDni.TabIndex = 43;
+            this.labelDni.Text = "El DNI ya se encuentra registrado";
             // 
             // FrmGestionarUsuario
             // 
@@ -586,6 +629,7 @@
             this.Controls.Add(this.tsMenu);
             this.Name = "FrmGestionarUsuario";
             this.Text = "Gestionar Usuarios";
+            this.Load += new System.EventHandler(this.FrmGestionarUsuario_Load);
             this.tsMenu.ResumeLayout(false);
             this.tsMenu.PerformLayout();
             this.gbGenerales.ResumeLayout(false);
@@ -595,6 +639,7 @@
             this.pnlBusqueda.ResumeLayout(false);
             this.pnlBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCheked)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,5 +693,8 @@
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.ComboBox cmbCampo;
         private System.Windows.Forms.TextBox tbFiltro;
+        private System.Windows.Forms.Label MensajeCorreo;
+        private System.Windows.Forms.PictureBox pictureCheked;
+        private System.Windows.Forms.Label labelDni;
     }
 }

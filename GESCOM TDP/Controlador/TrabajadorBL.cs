@@ -105,5 +105,14 @@ namespace Controlador
             return accesoTrabajador.listarTrabajadorPapelera();
         }
 
+        public BindingList<String> listarCorreos()
+        {
+            return accesoTrabajador.listarCorreos();
+        }
+
+        public BindingList<String> listarDni()
+        {
+            return accesoTrabajador.listarDni();
+        }
     }
 }
