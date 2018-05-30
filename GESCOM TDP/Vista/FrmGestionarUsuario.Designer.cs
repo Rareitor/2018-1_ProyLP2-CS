@@ -589,7 +589,7 @@
             // pictureCheked
             // 
             this.pictureCheked.Image = ((System.Drawing.Image)(resources.GetObject("pictureCheked.Image")));
-            this.pictureCheked.Location = new System.Drawing.Point(347, 108);
+            this.pictureCheked.Location = new System.Drawing.Point(377, 110);
             this.pictureCheked.Name = "pictureCheked";
             this.pictureCheked.Size = new System.Drawing.Size(24, 22);
             this.pictureCheked.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

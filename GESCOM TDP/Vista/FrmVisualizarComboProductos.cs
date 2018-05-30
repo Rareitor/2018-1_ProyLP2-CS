@@ -53,7 +53,7 @@ namespace Vista
             listaOrdenada = new SortableBindingList<ComboProducto>(lista);
 
             dgvComboProducto.AutoGenerateColumns = false;
-            dgvComboProducto.DataSource = listaOrdenada;
+            dgvComboProducto.DataSource = lista;
 
             foreach (DataGridViewColumn column in dgvComboProducto.Columns)
             {

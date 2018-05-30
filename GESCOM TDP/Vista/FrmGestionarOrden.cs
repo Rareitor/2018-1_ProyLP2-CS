@@ -505,9 +505,9 @@ namespace Vista
 
             if (frmVisualComProd.ShowDialog() == DialogResult.OK)
             {
-                cmbCanal.Text = frmVisualComProd.ObjetoSeleccionado.Canal1.Nombre;
-                cmbCombo.Text = frmVisualComProd.ObjetoSeleccionado.Combo1.Nombre;
-                cmbProducto.Text = frmVisualComProd.ObjetoSeleccionado.Producto.Nombre;
+                cmbCanal.SelectedValue = frmVisualComProd.ObjetoSeleccionado.Canal1.IdCanal;
+                cmbCombo.SelectedValue = frmVisualComProd.ObjetoSeleccionado.Combo1.IdCombo;
+                cmbProducto.SelectedValue = frmVisualComProd.ObjetoSeleccionado.Producto.IdProducto;
 
             }
         }
