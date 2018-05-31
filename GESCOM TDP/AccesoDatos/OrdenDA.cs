@@ -13,7 +13,7 @@ namespace AccesoDatos
 {
     public class OrdenDA
     {
-        public string registrarOrden(Orden o)
+        public string registrarOrden(Orden o, string tipo)
         {
 
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
@@ -34,6 +34,17 @@ namespace AccesoDatos
             comando.Parameters.Add("_idCombo", MySqlDbType.VarChar).Value = o.Combo.IdCombo;
             comando.Parameters.Add("_idCanal", MySqlDbType.VarChar).Value = o.Canal.IdCanal;
             comando.Parameters.Add("_idOrden", MySqlDbType.VarChar).Direction = System.Data.ParameterDirection.Output;
+
+            if (tipo == "ARCH")
+            {
+                comando.Parameters.Add("_tipo", MySqlDbType.VarChar).Value = o.Producto.Tipo;
+
+            }
+            else
+            {
+                comando.Parameters.Add("_tipo", MySqlDbType.VarChar).Value = tipo;
+            }
+
             comando.ExecuteNonQuery();
             string idOrden = comando.Parameters["_idOrden"].Value.ToString();
      
@@ -95,7 +106,7 @@ namespace AccesoDatos
             return listaOrdenBorradas;
         }
 
-        public void modificarOrden(Orden o)
+        public void modificarOrden(Orden o, string tipo)
         {
            
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
@@ -103,9 +114,29 @@ namespace AccesoDatos
 
             MySqlConnection con = new MySqlConnection(cadena);
             MySqlCommand comando = new MySqlCommand();
-            con.Open();
-
             comando.Connection = con;
+            con.Open();
+            string fePeriodo;
+
+            int mes = o.FechaVenta.Month;
+            int year = o.FechaVenta.Year;
+
+            if (mes <= 9)
+            {
+                fePeriodo = year.ToString() + "0" + mes.ToString();
+            } else
+            {
+                fePeriodo = year.ToString() + mes.ToString();
+            }
+
+     
+
+            comando.CommandText = "UPDATE Retribucion SET idProducto = '" + o.Producto.IdProducto +
+                "', idCombo = '" + o.Combo.IdCombo + "' ,idCanal = '" + o.Canal.IdCanal +
+                "' ,tipo = '" + tipo + "' , monto = " + o.Monto + ", fePeriodo = '" +
+                fePeriodo + "' where idOrden = " + o.Id + ";";
+            comando.ExecuteNonQuery();
+
             comando.CommandText = "MODIFICAR_ORDEN";
             comando.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -115,12 +146,15 @@ namespace AccesoDatos
             comando.Parameters.Add("_idProducto", MySqlDbType.VarChar).Value = o.Producto.IdProducto;
             comando.Parameters.Add("_idCombo", MySqlDbType.VarChar).Value = o.Combo.IdCombo;
             comando.Parameters.Add("_idCanal", MySqlDbType.VarChar).Value = o.Canal.IdCanal;
-            comando.Parameters.Add("_idOrden", MySqlDbType.VarChar).Direction = System.Data.ParameterDirection.Output;
+            comando.Parameters.Add("_idOrden", MySqlDbType.VarChar).Value = o.Id;
+            comando.Parameters.Add("_tipo", MySqlDbType.VarChar).Value = tipo;
+
             comando.ExecuteNonQuery();
-            string idOrden = comando.Parameters["_idOrden"].Value.ToString();
+
+           // string idOrden = comando.Parameters["_idOrden"].Value.ToString();
 
             con.Close();
-           
+            
         }
 
         public void eliminarOrden(Orden o)
@@ -172,7 +206,8 @@ namespace AccesoDatos
                 o.Producto = new Producto();
                 o.Producto.IdProducto = rs.GetString("idProducto");
                 o.Producto.Nombre = rs.GetString("nombreProducto");
-                o.Monto = rs.GetFloat("monto");
+                o.Producto.Tipo = rs.GetString("tipo");
+                o.Monto = rs.GetFloat("montoPago");
                 o.Trabajador = new Trabajador();
                 o.Trabajador.IdTrabajador = rs.GetString("idPayee");
                 o.Id = rs.GetString("idOrden");

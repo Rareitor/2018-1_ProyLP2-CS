@@ -26,7 +26,7 @@ namespace Vista
         Orden objetoSeleccionado = new Orden();
         private BindingList<Orden> listaOriginal;
         private SortableBindingList<Orden> listaOrdenada;
-
+        private string tipoOrden = "COMISION";
         private int opcion =1;
         private string tipoUsuario;
 
@@ -232,7 +232,7 @@ namespace Vista
                 orden.Canal = new Canal();
                 orden.Canal.IdCanal = idCanal;
                 orden.Canal.Nombre = cmbCanal.Text;
-
+                orden.Id = txtID.Text;
                 orden.Producto = new Producto();
                 orden.Producto.IdProducto = idProducto;
                 orden.Producto.Nombre = cmbProducto.Text;
@@ -246,7 +246,7 @@ namespace Vista
                 orden.Trabajador.IdTrabajador = txtIDComisionista.Text;
 
 
-                string respuesta = logicaOrden.gestionarOrden(orden, opcion);
+                string respuesta = logicaOrden.gestionarOrden(orden, opcion,tipoOrden);
                 if (respuesta != "Correcta")
                 {
                     txtID.Text = respuesta;
@@ -285,7 +285,7 @@ namespace Vista
                 Orden oEliminar = new Orden();
                 oEliminar.Id = txtID.Text;
                 opcion = 3;
-                logicaOrden.gestionarOrden(oEliminar, opcion);
+                logicaOrden.gestionarOrden(oEliminar, opcion,tipoOrden);
                 MessageBox.Show("La orden ha sido eliminado satisfactoriamente");
 
            } else {
@@ -336,10 +336,10 @@ namespace Vista
             txtPago.Text = objetoSeleccionado.Monto.ToString();
             txtIDComisionista.Text = objetoSeleccionado.Trabajador.IdTrabajador;
             txtID.Text = objetoSeleccionado.Id;
-            cmbCanal.Text = objetoSeleccionado.Canal.Nombre;
-            cmbCombo.Text = objetoSeleccionado.Combo.Nombre;
-            cmbProducto.Text = objetoSeleccionado.Producto.Nombre;
-
+            cmbCanal.SelectedValue = objetoSeleccionado.Canal.IdCanal;
+            cmbCombo.SelectedValue = objetoSeleccionado.Combo.IdCombo;
+            cmbProducto.SelectedValue = objetoSeleccionado.Producto.IdProducto;
+            tipoOrden = objetoSeleccionado.Producto.Tipo;
 
         }
 
@@ -363,7 +363,7 @@ namespace Vista
 
                     foreach (Orden o in listaCargar)
                     {
-                        logicaOrden.gestionarOrden(o, 1);
+                        logicaOrden.GestionarOrden(o, 1,"ARCH");
                     }
 
                     //Cargar archivo de canales
@@ -419,7 +419,8 @@ namespace Vista
                 o.Canal.IdCanal = substrings[3];
                 o.Combo.IdCombo = substrings[4];
                 o.Producto.IdProducto = substrings[5];
-                o.Monto = Convert.ToDouble(substrings[6]);
+                o.Producto.Tipo = substrings[6];
+                o.Monto = Convert.ToDouble(substrings[7]);
 
                 listaOrdenada.Add(o);
             }
@@ -508,7 +509,7 @@ namespace Vista
                 cmbCanal.SelectedValue = frmVisualComProd.ObjetoSeleccionado.Canal1.IdCanal;
                 cmbCombo.SelectedValue = frmVisualComProd.ObjetoSeleccionado.Combo1.IdCombo;
                 cmbProducto.SelectedValue = frmVisualComProd.ObjetoSeleccionado.Producto.IdProducto;
-
+                tipoOrden = frmVisualComProd.ObjetoSeleccionado.Producto.Tipo;
             }
         }
 

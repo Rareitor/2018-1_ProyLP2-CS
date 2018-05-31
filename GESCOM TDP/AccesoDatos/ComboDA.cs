@@ -108,6 +108,7 @@ namespace AccesoDatos
                 cp.Canal1.Nombre = rs.GetString("nombreCanal");
                 cp.Combo1.Nombre = rs.GetString("nombreCombo");
                 cp.Producto.Nombre = rs.GetString("nombreProducto");
+                cp.Producto.Tipo = rs.GetString("tipo");
 
                 lista.Add(cp);
 

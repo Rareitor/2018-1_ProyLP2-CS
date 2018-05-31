@@ -14,17 +14,17 @@ namespace Controlador
     {
         OrdenDA accesoOrden = new OrdenDA();
 
-        public string gestionarOrden(Orden o, int opcion)
+        public string gestionarOrden(Orden o, int opcion, string tipoProducto)
         {
             string respuesta= "";
             if (opcion == 1)
             {
                 //registrar una orden
-               respuesta = accesoOrden.registrarOrden(o);
+               respuesta = accesoOrden.registrarOrden(o, tipoProducto);
             } else if(opcion == 2)
             {
                 //modificar una orden
-                accesoOrden.modificarOrden(o);
+                accesoOrden.modificarOrden(o,tipoProducto);
                 respuesta= "Correcta";
             } else if (opcion == 3)
             {
@@ -36,6 +36,27 @@ namespace Controlador
             return respuesta;
         }
 
+         public string GestionarOrden(Orden o, int opcion, string tipoProducto)
+        {
+            string respuesta= "";
+            if (opcion == 1)
+            {
+                //registrar una orden
+               respuesta = accesoOrden.registrarOrden(o, tipoProducto);
+            } else if(opcion == 2)
+            {
+                //modificar una orden
+                accesoOrden.modificarOrden(o,tipoProducto);
+                respuesta= "Correcta";
+            } else if (opcion == 3)
+            {
+                //eliminar una orden
+                accesoOrden.eliminarOrden(o);
+                respuesta = "Correcta";
+            }
+
+            return respuesta;
+        }
         public void recuperarOrden(Orden ord)
         {
             accesoOrden.recuperarOrden(ord);
