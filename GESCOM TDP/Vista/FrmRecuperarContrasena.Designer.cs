@@ -37,7 +37,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(201, 41);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(338, 23);
             this.txtUsuario.TabIndex = 0;
@@ -58,7 +58,7 @@
             // btnRecuperarContra
             // 
             this.btnRecuperarContra.Location = new System.Drawing.Point(345, 87);
-            this.btnRecuperarContra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRecuperarContra.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecuperarContra.Name = "btnRecuperarContra";
             this.btnRecuperarContra.Size = new System.Drawing.Size(196, 28);
             this.btnRecuperarContra.TabIndex = 2;
@@ -69,11 +69,10 @@
             // txtRespuesta
             // 
             this.txtRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRespuesta.Location = new System.Drawing.Point(39, 87);
-            this.txtRespuesta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRespuesta.Location = new System.Drawing.Point(65, 87);
+            this.txtRespuesta.Margin = new System.Windows.Forms.Padding(4);
             this.txtRespuesta.Multiline = true;
             this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.ReadOnly = true;
             this.txtRespuesta.Size = new System.Drawing.Size(272, 94);
             this.txtRespuesta.TabIndex = 4;
             this.txtRespuesta.Text = " ";
@@ -88,7 +87,7 @@
             this.Controls.Add(this.lblIngreseCorreo);
             this.Controls.Add(this.txtUsuario);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRecuperarContrasena";
             this.Text = "Recuperar Contraseña";
             this.ResumeLayout(false);
