@@ -28,7 +28,6 @@ namespace Vista.Otros
             cmbCampo.Text = "<Todos>";
             foreach (DataGridViewColumn column in dgvUsuarios.Columns)
             {
-
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
         }
@@ -74,7 +73,7 @@ namespace Vista.Otros
                             lista = logicaNegocio.listarMisJefes(idPayee);
                             break;
                         case "Comisionista":
-                            lista = logicaNegocio.listarComisionistas();
+                            lista = logicaNegocio.listarMisComisionistas(idPayee);
                             break;
                     }
                     break;
