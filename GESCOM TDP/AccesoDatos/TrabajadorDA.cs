@@ -283,12 +283,12 @@ namespace AccesoDatos
                 else if (tipoUsu == "JEFE")
                 {
                     comando.CommandText = "LISTAR_JEFES";
-                    comando.Parameters.Add("idPayee", MySqlDbType.VarChar).Value = "ALL";
+                    comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = "ALL";
                 }
                 else if (tipoUsu == "COMISIONISTA")
                 {
                     comando.CommandText = "LISTAR_COMISIONISTAS";
-                    comando.Parameters.Add("idPayee", MySqlDbType.VarChar).Value = "ALL";
+                    comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = "ALL";
                 }
             }
             else
@@ -301,12 +301,12 @@ namespace AccesoDatos
                 else if (tipoUsu == "JEFE")
                 {
                     comando.CommandText = "LISTAR_JEFES";
-                    comando.Parameters.Add("idPayee", MySqlDbType.VarChar).Value = idPayee;
+                    comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = idPayee;
                 }
                 else if (tipoUsu == "COMISIONISTA")
                 {
                     comando.CommandText = "LISTAR_COMISIONISTAS";
-                    comando.Parameters.Add("idPayee", MySqlDbType.VarChar).Value = idPayee;
+                    comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = idPayee;
                 }
             }
             
