@@ -205,7 +205,7 @@
             this.groupBox1.Controls.Add(this.rbnPdf);
             this.groupBox1.Controls.Add(this.rbnExcel);
             this.groupBox1.Controls.Add(this.btnExportar);
-            this.groupBox1.Location = new System.Drawing.Point(454, 12);
+            this.groupBox1.Location = new System.Drawing.Point(457, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(136, 98);
             this.groupBox1.TabIndex = 37;

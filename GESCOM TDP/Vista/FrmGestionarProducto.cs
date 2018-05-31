@@ -32,6 +32,7 @@ namespace Vista
         {
             InitializeComponent();
             llenarComboBox();
+            estadoComponentes(Estado.Inicial);
         }
         public void estadoComponentes(Estado estado)
         {

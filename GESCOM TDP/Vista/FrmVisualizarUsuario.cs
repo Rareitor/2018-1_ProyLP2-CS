@@ -41,9 +41,11 @@ namespace Vista.Otros
             if (extra == 1)
             {
                 btnSeleccionar.Visible = true;
+                groupBox1.Visible = false;
             } else
             {
                 btnSeleccionar.Visible = false;
+                groupBox1.Visible = true;
             }
 
             this.puesto = puesto;
