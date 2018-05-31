@@ -253,9 +253,10 @@
             // 
             this.dateIngreso.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dateIngreso.Enabled = false;
+            this.dateIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dateIngreso.Location = new System.Drawing.Point(167, 58);
             this.dateIngreso.Name = "dateIngreso";
-            this.dateIngreso.Size = new System.Drawing.Size(204, 26);
+            this.dateIngreso.Size = new System.Drawing.Size(204, 23);
             this.dateIngreso.TabIndex = 14;
             // 
             // label5

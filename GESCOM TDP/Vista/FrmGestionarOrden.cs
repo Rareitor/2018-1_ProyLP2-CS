@@ -85,10 +85,15 @@ namespace Vista
                     pnlBusqueda.Visible = false;          
                     txtID.Enabled = false;
                     btnComboProducto.Enabled = true;
+                    if (tipoUsuario != "Comisionista")
+                    {
+                        txtIDComisionista.Enabled = false;
+                        btnBuscarComisionista.Enabled = true;
+                    }
                     if (tipoUsuario == "Administrador")
                     {
-                        txtIDComisionista.Enabled = true;
-                        btnBuscarComisionista.Enabled = true;
+                        
+                       
                         btnBusqueda.Enabled = true;
                         btnEliminar.Enabled = true;
                         btnImportar.Enabled = true;
@@ -142,19 +147,20 @@ namespace Vista
             cmbCanal.DataSource = ds;
             cmbCanal.DisplayMember = "nombre";
             cmbCanal.ValueMember = "idCanal";
+            cmbCanal.SelectedItem = -1;
 
             BindingList<Combo> listaCombo = logicaCombo.listarCombos();
 
             cmbCombo.DataSource = listaCombo;
             cmbCombo.DisplayMember = "nombre";
             cmbCombo.ValueMember ="idCombo";
-
+            cmbCombo.SelectedItem = -1;
             BindingList<Producto> listaProducto = logicaProducto.listarProductos();
 
             cmbProducto.DataSource = listaProducto;
             cmbProducto.DisplayMember = "nombre";
             cmbProducto.ValueMember = "idProducto";
-
+            cmbProducto.SelectedItem = -1;
 
 
         }
@@ -269,17 +275,35 @@ namespace Vista
         {
             if (tipoUsuario == "Jefe")
             {
-                FrmVisualizarUsuario busqUsuario = new FrmVisualizarUsuario("Comisionista", idUsuario, "Jefe",1);
-                if(busqUsuario.ShowDialog() == DialogResult.OK)
+                FrmVisualizarUsuario busqUsuario = new FrmVisualizarUsuario("Comisionista", idUsuario, "Jefe", 1);
+                if (busqUsuario.ShowDialog() == DialogResult.OK)
                 {
-                   txtIDComisionista.Text = busqUsuario.ObjetoSeleccionado1.IdTrabajador;
+                    txtIDComisionista.Text = busqUsuario.ObjetoSeleccionado1.IdTrabajador;
 
                 }
             }
-            else
+            else if (tipoUsuario == "Administrador")
             {
+                FrmVisualizarUsuario busqUsuario = new FrmVisualizarUsuario("Comisionista", idUsuario, "Administrador", 1);
+                if (busqUsuario.ShowDialog() == DialogResult.OK)
+                {
+                    txtIDComisionista.Text = busqUsuario.ObjetoSeleccionado1.IdTrabajador;
+
+                }
+            }
+            else if (tipoUsuario == "Gerente")
+            {
+                FrmVisualizarUsuario busqUsuario = new FrmVisualizarUsuario("Comisionista", idUsuario, "Gerente", 1);
+                if (busqUsuario.ShowDialog() == DialogResult.OK)
+                {
+                    txtIDComisionista.Text = busqUsuario.ObjetoSeleccionado1.IdTrabajador;
+
+                }
+            }
 
 
+
+            else { 
                 frmBuscarSuperior busqSup = new frmBuscarSuperior("COMISIONISTA");
                 if (busqSup.ShowDialog() == DialogResult.OK)
                 {

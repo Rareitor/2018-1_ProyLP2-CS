@@ -35,7 +35,7 @@ namespace Vista
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnImportar = new System.Windows.Forms.ToolStripButton();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.cmbCombo = new System.Windows.Forms.ComboBox();
             this.cmbCanal = new System.Windows.Forms.ComboBox();
@@ -60,7 +60,7 @@ namespace Vista
             this.btnNuevo,
             this.btnGuardar,
             this.btnCancelar,
-            this.toolStripButton1});
+            this.btnImportar});
             this.tsMenu.Location = new System.Drawing.Point(0, 0);
             this.tsMenu.Name = "tsMenu";
             this.tsMenu.Size = new System.Drawing.Size(681, 25);
@@ -94,18 +94,17 @@ namespace Vista
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // toolStripButton1
+            // btnImportar
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(117, 22);
-            this.toolStripButton1.Text = "Importar Archivo";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            this.btnImportar.Image = ((System.Drawing.Image)(resources.GetObject("btnImportar.Image")));
+            this.btnImportar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(117, 22);
+            this.btnImportar.Text = "Importar Archivo";
+            this.btnImportar.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // cmbProducto
             // 
-            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProducto.FormattingEnabled = true;
             this.cmbProducto.Location = new System.Drawing.Point(166, 126);
@@ -115,7 +114,6 @@ namespace Vista
             // 
             // cmbCombo
             // 
-            this.cmbCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCombo.FormattingEnabled = true;
             this.cmbCombo.Location = new System.Drawing.Point(166, 88);
@@ -125,7 +123,6 @@ namespace Vista
             // 
             // cmbCanal
             // 
-            this.cmbCanal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCanal.FormattingEnabled = true;
             this.cmbCanal.Location = new System.Drawing.Point(166, 47);
@@ -185,7 +182,6 @@ namespace Vista
             // 
             // cmbMesPeriodo
             // 
-            this.cmbMesPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMesPeriodo.FormattingEnabled = true;
             this.cmbMesPeriodo.Items.AddRange(new object[] {
             "Enero",
@@ -204,6 +200,7 @@ namespace Vista
             this.cmbMesPeriodo.Name = "cmbMesPeriodo";
             this.cmbMesPeriodo.Size = new System.Drawing.Size(121, 21);
             this.cmbMesPeriodo.TabIndex = 31;
+            this.cmbMesPeriodo.SelectedIndexChanged += new System.EventHandler(this.cmbMesPeriodo_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -217,7 +214,6 @@ namespace Vista
             // 
             // cmbAñoPeriodo
             // 
-            this.cmbAñoPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAñoPeriodo.FormattingEnabled = true;
             this.cmbAñoPeriodo.Items.AddRange(new object[] {
             "2016",
@@ -332,6 +328,6 @@ namespace Vista
         private RadioButton rbnComision;
         private RadioButton rbnBono;
         private RadioButton rbnPenalidad;
-        private ToolStripButton toolStripButton1;
+        private ToolStripButton btnImportar;
     }
 }

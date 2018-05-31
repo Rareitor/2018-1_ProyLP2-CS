@@ -47,7 +47,7 @@ namespace Vista
                     rbnComision.Enabled = false;
                     rbnPenalidad.Enabled = false;
 
-
+                    btnImportar.Enabled = false;
                     btnCancelar.Enabled = false;
                     cmbCanal.Enabled = false;
                     cmbCombo.Enabled = false;
@@ -57,6 +57,7 @@ namespace Vista
                 case Estado.Nuevo:
                     btnNuevo.Enabled = false;
                     btnGuardar.Enabled = true;
+                    btnImportar.Enabled = true;
                     cmbCanal.Enabled = true;
                     cmbCombo.Enabled = true;
                     cmbProducto.Enabled = true;
@@ -321,6 +322,11 @@ namespace Vista
             }
 
             return listaOrdenada;
+        }
+
+        private void cmbMesPeriodo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
