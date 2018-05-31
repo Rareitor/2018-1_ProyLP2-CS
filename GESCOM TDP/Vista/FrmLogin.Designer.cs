@@ -38,7 +38,6 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.picMaximizar = new System.Windows.Forms.PictureBox();
             this.picMinimizar = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlAzul.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTelefonica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMaximizar)).BeginInit();
@@ -160,23 +159,12 @@
             this.picMinimizar.TabStop = false;
             this.picMinimizar.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(646, 252);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Claves";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(764, 291);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.picMinimizar);
             this.Controls.Add(this.picMaximizar);
             this.Controls.Add(this.txtContraseña);
@@ -212,6 +200,5 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.PictureBox picMaximizar;
         private System.Windows.Forms.PictureBox picMinimizar;
-        private System.Windows.Forms.Button button1;
     }
 }
