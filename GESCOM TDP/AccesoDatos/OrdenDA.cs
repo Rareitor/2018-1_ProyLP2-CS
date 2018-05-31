@@ -101,6 +101,8 @@ namespace AccesoDatos
                 o.Id = rs.GetString("idOrden");
                 o.FechaVenta = rs.GetDateTime("fechaVenta");
                 listaOrdenBorradas.Add(o);
+
+                Console.WriteLine(o.Trabajador.IdTrabajador);
             }
             con.Close();
             return listaOrdenBorradas;
