@@ -64,7 +64,17 @@ namespace AccesoDatos
             comando.Parameters.Add("_fechaFin", MySqlDbType.Date).Value = cp.FechaFin1;
             comando.Parameters.Add("_fePeriodo", MySqlDbType.VarChar).Value = cp.FePeriodo;
             comando.Parameters.Add("_tipo", MySqlDbType.VarChar).Value = cp.Tipo;
-            comando.Parameters.Add("_idFormula", MySqlDbType.Int32).Value = cp.Formula;
+            if (cp.Tipo == "COMISION")
+            {
+                comando.Parameters.Add("_idFormula", MySqlDbType.Int32).Value =1;
+            } else if (cp.Tipo == "BONO")
+            {
+                comando.Parameters.Add("_idFormula", MySqlDbType.Int32).Value = 2;
+            } else if (cp.Tipo == "PENALIDAD")
+            {
+                comando.Parameters.Add("_idFormula", MySqlDbType.Int32).Value = 3;
+            }
+            
 
 
             comando.ExecuteNonQuery();
