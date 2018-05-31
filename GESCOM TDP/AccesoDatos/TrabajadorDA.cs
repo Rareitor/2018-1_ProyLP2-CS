@@ -500,6 +500,27 @@ namespace AccesoDatos
             while (rs.Read())
             {
                 Trabajador t = new Trabajador();
+                string tipoUsu = rs.GetString("cargo");
+
+                if (tipoUsu == "GERENTE")
+                {
+                    Gerente g = new Gerente();
+                    t = (Trabajador)g;
+
+                }
+                else if (tipoUsu == "COMISIONISTA")
+                {
+                    Comisionista c = new Comisionista();
+                    t = (Trabajador)c;
+                    t.Superior = rs.GetString("jefe");
+                }
+                else if (tipoUsu == "JEFE")
+                {
+                    Jefe j = new Jefe();
+                    t = (Trabajador)j;
+                    t.Superior = rs.GetString("gerente");
+                }
+
 
                 t.ApellidoMaterno = rs.GetString("apellidoMaterno");
                 t.ApellidoPaterno = rs.GetString("apellidoPaterno");

@@ -193,6 +193,7 @@ namespace Vista
 
         private void toolStripButton3_Click_1(object sender, EventArgs e)
         {
+            btnSeleccionar.Enabled = true;
             txtID.Enabled = false;
             labelDni.Visible = false;
             pnlBusqueda.Visible = true;
@@ -411,8 +412,7 @@ namespace Vista
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            if (dgvBusqueda.Rows.Count == 0) return;
-
+            
             opcion = 2;
             rbnGerente.Enabled = false;
             rbnComisionista.Enabled = false;
@@ -420,7 +420,9 @@ namespace Vista
 
             objetoSeleccionado = (Trabajador)dgvBusqueda.CurrentRow.DataBoundItem;
 
-            if (objetoSeleccionado.GetType().ToString() == "Modelo.Gerente")
+            string cad = objetoSeleccionado.IdTrabajador.Substring(0, 3);
+
+            if (cad == "GRT")
             {
                 rbnGerente.Checked = true;
                
@@ -429,20 +431,21 @@ namespace Vista
                 t = objetoSeleccionado;
 
             }
-            else if (objetoSeleccionado.GetType().ToString() == "Modelo.Jefe")
+            else if (cad == "JEF")
             {
                 Jefe j = new Jefe();
                 t = (Trabajador)j;
                 t = objetoSeleccionado;
+                idSupSup = t.Superior;
                 rbnJefe.Checked = true;
                 btnSuperior.Enabled = true;
             }
-            else if (objetoSeleccionado.GetType().ToString() == "Modelo.Comisionista")
+            else if (cad == "COM")
             {
                 Comisionista c = new Comisionista();
                 t = (Trabajador)c;
                 t = objetoSeleccionado;
-
+                idSupSup = t.Superior;
                 rbnComisionista.Checked = true;
                 btnSuperior.Enabled = true;
             }
@@ -528,6 +531,14 @@ namespace Vista
         private void tbFiltro_KeyUp(object sender, KeyEventArgs e)
         {
             filtrar();
+            if (dgvBusqueda.RowCount == 1)
+            {
+                btnSeleccionar.Enabled = false;
+            }
+            else
+            {
+                btnSeleccionar.Enabled = true;
+            }
         }
 
         private void filtrar()

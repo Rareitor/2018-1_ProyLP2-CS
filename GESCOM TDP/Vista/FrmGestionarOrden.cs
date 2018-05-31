@@ -533,12 +533,12 @@ namespace Vista
         private void tbFiltro_KeyUp(object sender, KeyEventArgs e)
         {
             filtrar();
-           if  (dgvBusqueda.RowCount == 0)
-            {
-                btnSeleccionar.Enabled = true;
-            } else
+           if  (dgvBusqueda.RowCount == 1)
             {
                 btnSeleccionar.Enabled = false;
+            } else
+            {
+                btnSeleccionar.Enabled = true;
             }
         }
 
