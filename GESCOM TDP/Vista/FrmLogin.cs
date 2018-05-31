@@ -172,7 +172,7 @@ namespace Vista
             RichTextBox txt = new RichTextBox();
             txt.Text =
                 "Admin:\t\t20090380\tpucp\n" +
-                "Gerente:\t\t20176455\tpucp123\n" +
+                "Gerente:\t\t20176288\troder628\n" +
                 "Jefe:\t\t20175863\trodri12\n" +
                 "Comisionista:\t20175581\tvictor558";
             txt.Width = 310;
