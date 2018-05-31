@@ -331,6 +331,8 @@ namespace Vista
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+            if (dgvBusqueda.Rows.Count == 0) return;
+
             objetoSeleccionado =(Orden) dgvBusqueda.CurrentRow.DataBoundItem;
 
             txtPago.Text = objetoSeleccionado.Monto.ToString();

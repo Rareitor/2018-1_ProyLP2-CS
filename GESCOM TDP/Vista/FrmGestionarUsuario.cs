@@ -411,6 +411,8 @@ namespace Vista
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+            if (dgvBusqueda.Rows.Count == 0) return;
+
             opcion = 2;
             rbnGerente.Enabled = false;
             rbnComisionista.Enabled = false;
