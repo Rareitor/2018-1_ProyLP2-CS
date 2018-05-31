@@ -294,7 +294,7 @@ namespace AccesoDatos
             return listaOrden;
         }
 
-        public BindingList<Orden> listarOrdenesGerente(DateTime fecha1, DateTime fecha2)
+        public BindingList<Orden> listarOrdenesGerente(string idGerente, DateTime fecha1, DateTime fecha2)
         {
             BindingList<Orden> listaOrden = new BindingList<Orden>();
 
@@ -308,6 +308,7 @@ namespace AccesoDatos
             comando.Connection = con;
             comando.CommandText = "LISTAR_ORDENES_GERENTE";
             comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("_idGerente", MySqlDbType.VarChar).Value = idGerente;
             comando.Parameters.Add("fecha1", MySqlDbType.Date).Value = fecha1;
             comando.Parameters.Add("fecha2", MySqlDbType.Date).Value = fecha2;
 
