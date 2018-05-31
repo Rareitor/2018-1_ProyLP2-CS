@@ -613,9 +613,11 @@ namespace Vista
                 }
                 if (valido == 0)
                 {
+                    MensajeCorreo.Text = "El correo ya se encuentra utilizado";
                     MensajeCorreo.Visible = true;
                     pictureCheked.Visible = false;
                     validoCorreo = 0;
+
                 } else
                 {
                     MensajeCorreo.Visible = false;
