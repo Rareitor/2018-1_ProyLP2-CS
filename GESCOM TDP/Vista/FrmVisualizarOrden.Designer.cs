@@ -337,6 +337,7 @@
             this.Controls.Add(this.lblTipoReporte);
             this.Name = "FrmVisualizarOrden";
             this.Text = "Visualizar Record Vendido";
+            this.Load += new System.EventHandler(this.FrmVisualizarOrden_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -41,7 +41,18 @@ namespace Modelo
         public bool IsVisible { get => isVisible; set => isVisible = value; }
         internal TipoRegimen Regimen { get => regimen; set => regimen = value; }
 
+        //public string NombreTrabajadorCompleto()
+        //{
+        //    return this.ApellidoPaterno + " " + this.ApellidoMaterno + ", " + this.Nombre;
+        //}
+
         //métodos adicionales
         //public  void emitirReporte();
-}
+
+        public override string ToString()
+        {
+
+            return idTrabajador;
+        }
+    }
 }

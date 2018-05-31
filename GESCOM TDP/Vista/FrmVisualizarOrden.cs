@@ -159,9 +159,9 @@ namespace Vista.Otros
             
         }
 
+        private void FrmVisualizarOrden_Load(object sender, EventArgs e)
+        {
 
-       
-
-      
+        }
     }
 }
