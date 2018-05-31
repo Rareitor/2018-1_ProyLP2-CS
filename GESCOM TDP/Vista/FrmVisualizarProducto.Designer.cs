@@ -31,13 +31,13 @@
             this.lblProducto = new System.Windows.Forms.Label();
             this.cmbTipoProducto = new System.Windows.Forms.ComboBox();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnRecuperar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,24 +73,6 @@
             this.dgvProducto.Size = new System.Drawing.Size(666, 316);
             this.dgvProducto.TabIndex = 11;
             this.dgvProducto.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProducto_ColumnHeaderMouseClick);
-            // 
-            // idProducto
-            // 
-            this.idProducto.DataPropertyName = "IdProducto";
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.Name = "idProducto";
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "Nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // tipo
-            // 
-            this.tipo.DataPropertyName = "Tipo";
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
             // 
             // btnRegresar
             // 
@@ -129,6 +111,27 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Nombre del Producto:";
             // 
+            // idProducto
+            // 
+            this.idProducto.DataPropertyName = "IdProducto";
+            this.idProducto.FillWeight = 120F;
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.Name = "idProducto";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.Width = 200;
+            // 
+            // tipo
+            // 
+            this.tipo.DataPropertyName = "Tipo";
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.Width = 130;
+            // 
             // FrmVisualizarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,11 +158,11 @@
         private System.Windows.Forms.ComboBox cmbTipoProducto;
         private System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.Button btnRecuperar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
     }
 }

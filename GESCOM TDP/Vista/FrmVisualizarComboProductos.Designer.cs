@@ -36,6 +36,7 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.cbCampo = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComboProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.NombreProducto,
             this.NombreCanal,
             this.NombreCombo});
-            this.dgvComboProducto.Location = new System.Drawing.Point(12, 117);
+            this.dgvComboProducto.Location = new System.Drawing.Point(26, 117);
             this.dgvComboProducto.Name = "dgvComboProducto";
             this.dgvComboProducto.Size = new System.Drawing.Size(750, 219);
             this.dgvComboProducto.TabIndex = 0;
@@ -92,25 +93,25 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(234, 51);
+            this.txtFiltro.Location = new System.Drawing.Point(274, 65);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(100, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(125, 20);
             this.txtFiltro.TabIndex = 2;
             this.txtFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // cbCampo
             // 
+            this.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCampo.FormattingEnabled = true;
             this.cbCampo.Items.AddRange(new object[] {
             "<Todos>",
             "Canal",
             "Producto",
             "Combo"});
-            this.cbCampo.Location = new System.Drawing.Point(64, 50);
+            this.cbCampo.Location = new System.Drawing.Point(121, 62);
             this.cbCampo.Name = "cbCampo";
             this.cbCampo.Size = new System.Drawing.Size(121, 21);
             this.cbCampo.TabIndex = 3;
-            this.cbCampo.Text = "<Todos>";
             // 
             // button1
             // 
@@ -122,11 +123,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(47, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Filtrar por:";
+            // 
             // FrmVisualizarComboProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 411);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbCampo);
             this.Controls.Add(this.txtFiltro);
@@ -151,5 +162,6 @@
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.ComboBox cbCampo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }
