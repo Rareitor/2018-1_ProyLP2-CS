@@ -271,7 +271,7 @@ namespace AccesoDatos
             comando.Connection = con;
             comando.CommandText = "LISTAR_ORDENES_JEFE";
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = idPayee;
+            comando.Parameters.Add("_idJefe", MySqlDbType.VarChar).Value = idPayee;
             comando.Parameters.Add("fecha1", MySqlDbType.Date).Value = fecha1;
             comando.Parameters.Add("fecha2", MySqlDbType.Date).Value = fecha2;
 
