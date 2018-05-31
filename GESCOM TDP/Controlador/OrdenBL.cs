@@ -82,9 +82,9 @@ namespace Controlador
             return accesoOrden.listarOrdenesJefe(idPayee, fecha1, fecha2);
         }
 
-        public BindingList<Orden> listarOrdenesGerente(DateTime fecha1, DateTime fecha2)
+        public BindingList<Orden> listarOrdenesGerente(string idGerente, DateTime fecha1, DateTime fecha2)
         {
-            return accesoOrden.listarOrdenesGerente(fecha1, fecha2);
+            return accesoOrden.listarOrdenesGerente(idGerente,fecha1, fecha2);
         }
 
        

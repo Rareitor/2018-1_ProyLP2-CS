@@ -120,6 +120,9 @@ namespace Vista.Otros
             Double subtotal;
             switch (puesto)
             {
+                case "Gerente":
+                    listaOrdenes = logicaNegocio.listarOrdenesGerente(this.idPayee, fecha1, fecha2);
+                    break;
                 case "Comisionista":
                     listaOrdenes = logicaNegocio.listarOrdenesComisionista(this.idPayee, fecha1, fecha2);
                     break;
@@ -127,7 +130,6 @@ namespace Vista.Otros
                     listaOrdenes = logicaNegocio.listarOrdenesJefe(this.idPayee, fecha1, fecha2);
                     break;
                 default:
-                    listaOrdenes = logicaNegocio.listarOrdenesGerente(fecha1, fecha2);
                     break;
             }
             subtotal = listaOrdenes.Sum(Orden => Orden.Monto);
@@ -157,9 +159,9 @@ namespace Vista.Otros
             
         }
 
+        private void FrmVisualizarOrden_Load(object sender, EventArgs e)
+        {
 
-       
-
-      
+        }
     }
 }

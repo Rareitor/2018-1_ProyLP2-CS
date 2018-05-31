@@ -36,7 +36,6 @@
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Canal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MontoVendido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrden)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +70,6 @@
             this.producto,
             this.Fecha,
             this.Canal,
-            this.distrito,
             this.MontoVendido});
             this.dgvOrden.Location = new System.Drawing.Point(25, 59);
             this.dgvOrden.Name = "dgvOrden";
@@ -86,7 +84,7 @@
             // 
             // nombreComisionista
             // 
-            this.nombreComisionista.DataPropertyName = "NombreTrabajadorCompleto";
+            this.nombreComisionista.DataPropertyName = "Trabajador";
             this.nombreComisionista.HeaderText = "Comisionista";
             this.nombreComisionista.MinimumWidth = 150;
             this.nombreComisionista.Name = "nombreComisionista";
@@ -109,12 +107,6 @@
             this.Canal.DataPropertyName = "NombreCanal";
             this.Canal.HeaderText = "Canal";
             this.Canal.Name = "Canal";
-            // 
-            // distrito
-            // 
-            this.distrito.DataPropertyName = "Distrito";
-            this.distrito.HeaderText = "Distrito";
-            this.distrito.Name = "distrito";
             // 
             // MontoVendido
             // 
@@ -148,7 +140,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Canal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn distrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn MontoVendido;
     }
 }
