@@ -25,12 +25,14 @@ namespace Vista
         {
             InitializeComponent();
             fecha = fechaVenta;
+            cbCampo.Text = "<Todos>";
         }
 
         public FrmVisualizarComboProductos()
         {
             InitializeComponent();
             fecha = DateTime.Now;
+            cbCampo.Text = "<Todos>";
         }
 
         public ComboProducto ObjetoSeleccionado { get => objetoSeleccionado; set => objetoSeleccionado = value; }

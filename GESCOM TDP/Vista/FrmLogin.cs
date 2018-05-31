@@ -5,12 +5,6 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Vista.Otros;
 
-//Para Loguear:
-//Admin:        20090380    contraseña: pucp
-//Gerente:      20176455    contraseña: pucp123
-//Jefe:         20175863    contraseña: rodri12
-//Comisionista: -    contraseña: -
-
 namespace Vista
 {
     public partial class FrmLogin : Form
@@ -180,7 +174,7 @@ namespace Vista
                 "Admin:\t\t20090380\tpucp\n" +
                 "Gerente:\t\t20176455\tpucp123\n" +
                 "Jefe:\t\t20175863\trodri12\n" +
-                "Comisionista:\t65897421\t2018pucp";
+                "Comisionista:\t20175581\tvictor558";
             txt.Width = 310;
             txt.Height = 70;
             claves.Controls.Add(txt);
@@ -189,7 +183,7 @@ namespace Vista
             claves.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             claves.StartPosition = FormStartPosition.Manual;
             claves.Location = new Point(500, 510);
-            claves.ShowDialog();
+            claves.Show();
         }
 
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
