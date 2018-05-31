@@ -82,19 +82,15 @@ namespace Vista
                 case Estado.Nuevo:
                     btnNuevo.Enabled = false;
                     btnGuardar.Enabled = true;
-                    btnBusqueda.Enabled = true;
-                    pnlBusqueda.Visible = false;
-                    btnEliminar.Enabled = true;
-                   
+                    pnlBusqueda.Visible = false;          
                     txtID.Enabled = false;
                     btnComboProducto.Enabled = true;
-                    if (tipoUsuario != "Comisionista")
+                    if (tipoUsuario == "Administrador")
                     {
                         txtIDComisionista.Enabled = true;
                         btnBuscarComisionista.Enabled = true;
-                    }
-                    if (tipoUsuario == "Administrador")
-                    {
+                        btnBusqueda.Enabled = true;
+                        btnEliminar.Enabled = true;
                         btnImportar.Enabled = true;
                     }
                   
