@@ -22,6 +22,7 @@ namespace Vista.Otros
         public FrmRecuperarContrasena()
         {
             InitializeComponent();
+            txtRespuesta.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,16 +39,20 @@ namespace Vista.Otros
                 t = logicaTrabajador.correoycontaseña(txtUsuario.Text);
                 if (t == null)
                 {
-                    MessageBox.Show("El usuario no se encuentra registrado");
+                    //txtRespuesta.Visible = true;
+                    MessageBox.Show("El usuario no existe");
                 } else if (txtUsuario.Text == t.UserName)
                 {
                     enviarMensaje(t);
-                    MessageBox.Show("Su contraseña se ha enviado satisfactoriamente al correo");
+                    //txtRespuesta.Visible = true;
+                    MessageBox.Show( "Se ha enviado su contraseña a su correo " +
+                        t.Email + ". Por favor revise su bandeja de entrada");
+                    this.Close();
                 }
                 
                 
                 
-                this.Close();
+                
             }
         }
 
