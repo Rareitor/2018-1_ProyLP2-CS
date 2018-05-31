@@ -56,7 +56,7 @@ namespace AccesoDatos
                 Infraccion i = new Infraccion();
                 i.Fecha = rs.GetDateTime("fechaPublicado");
                 i.IdInfraccion = rs.GetInt32("idInfraccion");
-                i.IdPayeeReportador = rs.GetString("idPayeeReportador");
+                i.IdPayeeReportador = rs.GetString("idPayee");
                 i.Texto = rs.GetString("texto");
                 lista.Add(i);
             }

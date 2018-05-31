@@ -174,7 +174,7 @@
         }
 
         #endregion
-
+  
         private AxAcroPDFLib.AxAcroPDF axAcroPDF1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton nuevoToolStripButton;
