@@ -17,6 +17,9 @@ namespace Vista.Otros
         private SortableBindingList<Trabajador> listaOriginal;
         private TrabajadorBL logicaNegocio;
         String puesto;
+        private Trabajador ObjetoSeleccionado = new Trabajador();
+
+        public Trabajador ObjetoSeleccionado1 { get => ObjetoSeleccionado; set => ObjetoSeleccionado = value; }
 
         public FrmVisualizarUsuario()
         {
@@ -30,11 +33,18 @@ namespace Vista.Otros
             }
         }
 
-        public FrmVisualizarUsuario(String cargoListar, String idPayee, String puesto)
+        public FrmVisualizarUsuario(String cargoListar, String idPayee, String puesto, int extra)
         {
             InitializeComponent();
             dgvUsuarios.AutoGenerateColumns = false;
             cmbCampo.Text = "<Todos>";
+            if (extra == 1)
+            {
+                btnSeleccionar.Visible = true;
+            } else
+            {
+                btnSeleccionar.Visible = false;
+            }
 
             this.puesto = puesto;
             logicaNegocio = new TrabajadorBL();
@@ -148,7 +158,8 @@ namespace Vista.Otros
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-
+            ObjetoSeleccionado = (Trabajador)dgvUsuarios.CurrentRow.DataBoundItem;
+            this.DialogResult = DialogResult.OK;
         }
 
         private void txtDato_KeyUp(object sender, KeyEventArgs e)

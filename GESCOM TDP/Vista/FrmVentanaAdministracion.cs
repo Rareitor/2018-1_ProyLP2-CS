@@ -660,7 +660,7 @@ namespace Vista
         {
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            FrmVisualizarUsuario frmVisualizarUsuario = new FrmVisualizarUsuario("Jefe",usuarioIngresado, tipoUsu);
+            FrmVisualizarUsuario frmVisualizarUsuario = new FrmVisualizarUsuario("Jefe",usuarioIngresado, tipoUsu,0);
             frmVisualizarUsuario.ocultarSeleccionar();
             AbrirFormInPanel(frmVisualizarUsuario);
         }
@@ -669,7 +669,7 @@ namespace Vista
         {
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            FrmVisualizarUsuario frmVisualizarUsuario = new FrmVisualizarUsuario("Comisionista", usuarioIngresado, tipoUsu);
+            FrmVisualizarUsuario frmVisualizarUsuario = new FrmVisualizarUsuario("Comisionista", usuarioIngresado, tipoUsu,0);
             frmVisualizarUsuario.ocultarSeleccionar();
             AbrirFormInPanel(frmVisualizarUsuario);
         }

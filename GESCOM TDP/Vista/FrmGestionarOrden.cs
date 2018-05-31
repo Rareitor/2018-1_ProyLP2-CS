@@ -29,7 +29,7 @@ namespace Vista
         private string tipoOrden = "COMISION";
         private int opcion =1;
         private string tipoUsuario;
-
+        public string idUsuario;
         public enum Estado
         {
             Inicial, Nuevo, Deshabilitado
@@ -39,6 +39,7 @@ namespace Vista
         {
             InitializeComponent();
             tipoUsuario = tipoUsu;
+            this.idUsuario = idUsuario;
             estadoComponentes(Estado.Inicial);
             llenarComboBox();
             if (tipoUsu == "Comisionista")
@@ -270,10 +271,24 @@ namespace Vista
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frmBuscarSuperior busqSup = new frmBuscarSuperior("COMISIONISTA");
-            if (busqSup.ShowDialog() == DialogResult.OK)
+            if (tipoUsuario == "Jefe")
             {
-                txtIDComisionista.Text = busqSup.ObjetoSeleccionado.IdTrabajador;
+                FrmVisualizarUsuario busqUsuario = new FrmVisualizarUsuario("Comisionista", idUsuario, "Jefe",1);
+                if(busqUsuario.ShowDialog() == DialogResult.OK)
+                {
+                   txtIDComisionista.Text = busqUsuario.ObjetoSeleccionado1.IdTrabajador;
+
+                }
+            }
+            else
+            {
+
+
+                frmBuscarSuperior busqSup = new frmBuscarSuperior("COMISIONISTA");
+                if (busqSup.ShowDialog() == DialogResult.OK)
+                {
+                    txtIDComisionista.Text = busqSup.ObjetoSeleccionado.IdTrabajador;
+                }
             }
         }
 
@@ -516,6 +531,13 @@ namespace Vista
         private void tbFiltro_KeyUp(object sender, KeyEventArgs e)
         {
             filtrar();
+           if  (dgvBusqueda.RowCount == 0)
+            {
+                btnSeleccionar.Enabled = true;
+            } else
+            {
+                btnSeleccionar.Enabled = false;
+            }
         }
 
         private void filtrar()
