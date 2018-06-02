@@ -78,8 +78,8 @@ namespace Vista.Otros
             Correo.From = new MailAddress("grupo8lp2@gmail.com");
             Correo.To.Add(t.Email);
             Correo.Subject = ("Recuperar Contraseña");
-            Correo.Body = "Hola " + t.Nombre + " " + t.ApellidoPaterno +
-                " Usted solicito recuperar contraseña\n Su contraseña es: " + t.Password;
+            Correo.Body = "Hola, " + t.Nombre + " " + t.ApellidoPaterno +
+                ":\n Usted solicitó recuperar contraseña.\n Su contraseña es: " + t.Password;
             Correo.Priority = MailPriority.Normal;
             SmtpClient ServerMail = new SmtpClient();
             ServerMail.Host = "smtp.gmail.com";
@@ -101,6 +101,11 @@ namespace Vista.Otros
                 ServerMail.Dispose();
 
             }
+
+        }
+
+        private void txtRespuesta_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

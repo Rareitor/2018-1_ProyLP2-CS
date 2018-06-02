@@ -10,10 +10,14 @@ namespace Vista
     public partial class FrmLogin : Form
     {
         TrabajadorBL logicaTrabajador = new TrabajadorBL();
+        string id_usuario_ant;
+        int entradas;
         private FrmVentanaAdministracion ven;
         public FrmLogin()
         {
             InitializeComponent();
+            id_usuario_ant = "";
+            entradas = 0;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -105,6 +109,8 @@ namespace Vista
             String usuario = txtUsuario.Text;
             String contra = txtContraseña.Text;
             string nombreUsu="", apellidoPat="", id_usuario="";
+            int bloqueado=0;
+            
             if (usuario == "USUARIO")
             {
                 MessageBox.Show("Por favor, ingrese un usuario", "Ingresar usuario");
@@ -126,21 +132,41 @@ namespace Vista
                 usuario = usuario.Trim();
                 int existeUsu=0, errorContra=0;
                 string respuesta = logicaTrabajador.existeUsuarioyContraseña(usuario, contra, ref existeUsu, ref errorContra,
-                    ref id_usuario, ref nombreUsu, ref apellidoPat);
+                    ref id_usuario, ref nombreUsu, ref apellidoPat, ref bloqueado);
 
-               if (existeUsu == 1 && errorContra == 0)
+                if(existeUsu == 1 && bloqueado == 1)
+                {
+                    MessageBox.Show("Usuario bloqueado");
+                }
+                else if (existeUsu == 1 && errorContra == 0 && bloqueado == 0)
                 {
                     ven = new FrmVentanaAdministracion(respuesta,usuario,id_usuario, nombreUsu, apellidoPat);
                     ven.Show();
                     this.Hide();
                 }
-                else if (existeUsu ==1 && errorContra == 1)
+                else if (existeUsu ==1 && errorContra == 1 && bloqueado == 0)
                 {
-                    MessageBox.Show("Contraseña errónea, vuelva a ingresar la contraseña");
+                    if (usuario != id_usuario_ant)
+                    {
+                        id_usuario_ant = usuario;
+                        entradas = 0;
+                    }   
+                    entradas++;
+                    if (entradas == 3)
+                    {
+                        logicaTrabajador.bloquearUsuario(id_usuario_ant);
+                        MessageBox.Show("Usuario bloqueado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña errónea, vuelva a ingresar la contraseña");
+                    }
+                    
                     txtContraseña.Text = "CONTRASEÑA";
                     txtContraseña.ForeColor = Color.Black;
                     txtContraseña.UseSystemPasswordChar = false;
-                } else if (existeUsu == 0)
+                }
+                else if (existeUsu == 0)
                 {
                     MessageBox.Show("Por favor, ingrese un usuario válido", "Ingresar usuario");
                     txtUsuario.Text = "USUARIO";

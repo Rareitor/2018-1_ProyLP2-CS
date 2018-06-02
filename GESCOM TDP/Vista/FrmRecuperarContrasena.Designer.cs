@@ -36,10 +36,10 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(201, 41);
+            this.txtUsuario.Location = new System.Drawing.Point(211, 41);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(338, 23);
+            this.txtUsuario.Size = new System.Drawing.Size(190, 23);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -47,7 +47,7 @@
             // 
             this.lblIngreseCorreo.AutoSize = true;
             this.lblIngreseCorreo.Cursor = System.Windows.Forms.Cursors.No;
-            this.lblIngreseCorreo.Location = new System.Drawing.Point(62, 41);
+            this.lblIngreseCorreo.Location = new System.Drawing.Point(39, 41);
             this.lblIngreseCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIngreseCorreo.Name = "lblIngreseCorreo";
             this.lblIngreseCorreo.Size = new System.Drawing.Size(131, 17);
@@ -57,7 +57,7 @@
             // 
             // btnRecuperarContra
             // 
-            this.btnRecuperarContra.Location = new System.Drawing.Point(345, 87);
+            this.btnRecuperarContra.Location = new System.Drawing.Point(129, 84);
             this.btnRecuperarContra.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecuperarContra.Name = "btnRecuperarContra";
             this.btnRecuperarContra.Size = new System.Drawing.Size(196, 28);
@@ -69,19 +69,20 @@
             // txtRespuesta
             // 
             this.txtRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRespuesta.Location = new System.Drawing.Point(65, 87);
+            this.txtRespuesta.Location = new System.Drawing.Point(104, 120);
             this.txtRespuesta.Margin = new System.Windows.Forms.Padding(4);
             this.txtRespuesta.Multiline = true;
             this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(272, 94);
+            this.txtRespuesta.Size = new System.Drawing.Size(272, 61);
             this.txtRespuesta.TabIndex = 4;
             this.txtRespuesta.Text = " ";
+            this.txtRespuesta.TextChanged += new System.EventHandler(this.txtRespuesta_TextChanged);
             // 
             // FrmRecuperarContrasena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 208);
+            this.ClientSize = new System.Drawing.Size(468, 208);
             this.Controls.Add(this.txtRespuesta);
             this.Controls.Add(this.btnRecuperarContra);
             this.Controls.Add(this.lblIngreseCorreo);

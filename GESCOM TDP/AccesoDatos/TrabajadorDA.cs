@@ -374,8 +374,27 @@ namespace AccesoDatos
             con.Close();
         }
 
+        public void bloquearUsuario(string usuario)
+        {
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                  "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "BLOQUEAR_USUARIO";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("_username", MySqlDbType.VarChar).Value = usuario;
+
+            comando.ExecuteNonQuery();
+
+            con.Close();
+
+        }
         public string login(string usuario, string contraseña, ref int existeUsu, ref int errorContra,
-            ref string id_usuario, ref string nombreUsu, ref string apellidoPat)
+            ref string id_usuario, ref string nombreUsu, ref string apellidoPat, ref int bloqueado)
         {
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
                  "port=3306;password=4LDJZU;SslMode=none;" + " ";
@@ -398,10 +417,12 @@ namespace AccesoDatos
                 string user=  rs.GetString("username");
                 string pass = rs.GetString("password");
                 string tipo = rs.GetString("cargo");
+                
 
                 if (user == usuario)
                 {
                     existeUsu = 1;
+                    bloqueado = rs.GetInt32("isBlocked");
                     if (pass == contraseña)
                     {
                         errorContra = 0;
@@ -431,7 +452,6 @@ namespace AccesoDatos
                         
                     }
                 }
-
             }
 
             con.Close();

@@ -84,15 +84,19 @@ namespace Controlador
         }
         
         public string existeUsuarioyContraseña(string usuario, string contraseña, ref int existeUsu,ref int errorContra
-            ,ref string id_usuario, ref string nombreUsu, ref string apellidoPat)
+            ,ref string id_usuario, ref string nombreUsu, ref string apellidoPat, ref int bloqueado)
         {
 
-            return accesoTrabajador.login(usuario, contraseña, ref existeUsu, ref errorContra, ref id_usuario, ref nombreUsu, ref apellidoPat);
+            return accesoTrabajador.login(usuario, contraseña, ref existeUsu, ref errorContra, ref id_usuario, ref nombreUsu, ref apellidoPat, ref bloqueado);
         }
 
         public void obtenerDatos(string usuario, ref string id_usuario, ref string nombreUsu, ref string apellidoPat)
         {
             accesoTrabajador.obtenerDatos(usuario, ref id_usuario, ref nombreUsu, ref apellidoPat);
+        }
+        public void bloquearUsuario(string usuario)
+        {
+            accesoTrabajador.bloquearUsuario(usuario);
         }
 
         public Trabajador correoycontaseña(string dato)
