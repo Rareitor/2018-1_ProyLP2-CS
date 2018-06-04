@@ -398,12 +398,16 @@ namespace AccesoDatos
         {
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
                  "port=3306;password=4LDJZU;SslMode=none;" + " ";
-
+            string devolver = "";
             existeUsu = 0;
             errorContra = 1;
             
             MySqlConnection con = new MySqlConnection(cadena);
             MySqlCommand comando = new MySqlCommand();
+
+            MySqlConnection con2 = new MySqlConnection(cadena);
+            MySqlCommand comando2 = new MySqlCommand();
+
             con.Open();
 
             comando.Connection = con;
@@ -423,41 +427,62 @@ namespace AccesoDatos
                 {
                     existeUsu = 1;
                     bloqueado = rs.GetInt32("isBlocked");
+                    id_usuario = rs.GetString("idPayee");
                     if (pass == contraseña)
                     {
                         errorContra = 0;
-                        id_usuario = rs.GetString("idPayee");
+                       
                         nombreUsu = rs.GetString("nombre");
                         apellidoPat = rs.GetString("apellidoPaterno");
 
                         switch (tipo)
                         {
                             case "ADMINISTRADOR":
-                                con.Close();
-                                return "Administrador";
+                                
+                                devolver = "Administrador";
+                                break;
                             case "GERENTE":
-                                con.Close();
-                                return "Gerente";
+                                devolver = "Gerente";
+                                break;
                             case "JEFE":
-                                con.Close();
-                                return "Jefe";
-
+                                
+                                devolver = "Jefe";
+                                break;
                             case "COMISIONISTA":
-                                con.Close();
-                                return "Comisionista";
+                                devolver = "Comisionista";
+                                break;
                         }
-
-                        con.Close();
-                        return "";
-                        
                     }
                 }
             }
-
             con.Close();
 
+            con2.Open();
+            comando2.Connection = con2;
+            comando2.CommandText = "MODIFICAR_INGRESOS";
+            comando2.CommandType = System.Data.CommandType.StoredProcedure;
+            if (devolver !=  "" && errorContra ==0 && existeUsu ==1 ) {
 
-            return "";
+                
+                comando2.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = id_usuario;
+                comando2.Parameters.Add("situacion", MySqlDbType.VarChar).Value = "ACCESO";
+
+                comando2.ExecuteNonQuery();
+            
+
+            } else if (devolver == "" && errorContra == 1 && existeUsu == 1)
+            {
+                comando2.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = id_usuario;
+                comando2.Parameters.Add("situacion", MySqlDbType.VarChar).Value = "ERROR";
+
+                comando2.ExecuteNonQuery();
+      
+            }
+            con2.Close();
+
+
+
+            return devolver;
         }
 
         public BindingList<String> listarCorreos()
