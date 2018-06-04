@@ -17,12 +17,17 @@ namespace Vista.Otros
     {
         private NoticiaBL logicaNoticias = new NoticiaBL();
         BindingList<Noticia> listaNoticia;
-        public FrmNoticias()
-        {
+        BindingList<int> listaV = new BindingList<int>();
+        string idUsuario = "";
+        public FrmNoticias(string idPayee, BindingList<Noticia> listaNoticia, 
+            ref BindingList<int> listaVisitada)
+        { 
+        
             InitializeComponent();
-
-            listaNoticia= logicaNoticias.listarNoticias();
+            idUsuario = idPayee;
+            this.listaNoticia= listaNoticia;
             lBNoticias.DataSource = listaNoticia;
+            listaV = listaVisitada;
             lBNoticias.DisplayMember = "mostrar";
             lBNoticias.ValueMember ="id";
 
@@ -36,13 +41,30 @@ namespace Vista.Otros
         private void lBNoticias_Click(object sender, EventArgs e)
         {
             // Noticia n = lBNoticias.SelectedValue();
-
+            int visitada;
             int index = Int32.Parse(lBNoticias.SelectedValue.ToString());
             string titulo = "";
             string texto = obtenerNoticia(index,ref titulo);
-
+            visitada = verificarSiFueVisitada(index);
+            if (visitada == 0)
+            {
+                logicaNoticias.registrarVisita(index, idUsuario);
+                listaV.Add(index);
+            }
+            
             MessageBox.Show(texto, titulo);
 
+        }
+        public int verificarSiFueVisitada(int idNoticia)
+        {
+            foreach(int e in listaV)
+            {
+                if (e == idNoticia)
+                {
+                    return 1;
+                }
+            }
+            return 0;
         }
 
         private string obtenerNoticia(int i, ref string titulo)
@@ -56,6 +78,11 @@ namespace Vista.Otros
                 }
             }
             return "";
+        }
+
+        private void FrmNoticias_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
         }
     }
 }

@@ -89,6 +89,7 @@
             this.Controls.Add(this.lblNoticiasRecientes);
             this.Name = "FrmNoticias";
             this.Text = "Noticias";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmNoticias_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.picNoticias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

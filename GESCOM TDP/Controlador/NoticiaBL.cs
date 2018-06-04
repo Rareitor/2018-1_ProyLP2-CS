@@ -22,5 +22,15 @@ namespace Controlador
         {
             return accesoNoticias.listarNoticias();
         }
+
+        public void registrarVisita(int index, string idUsuario)
+        {
+            accesoNoticias.registrarVistaNoticia(idUsuario, index);
+        }
+
+        public BindingList<int> listarVisitadas(string idUsuario, int maximo)
+        {
+            return accesoNoticias.listarVisitadas(idUsuario, maximo);
+        }
     }
 }

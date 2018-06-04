@@ -46,7 +46,8 @@ namespace Vista.Otros
                     enviarMensaje(t);
                     //txtRespuesta.Visible = true;
                     MessageBox.Show( "Se ha enviado su contraseña a su correo " +
-                        t.Email + ". Por favor revise su bandeja de entrada");
+                        t.Email + ".\n Por favor revise su bandeja de entrada \n" +
+                        "En caso no tenga acceso a dicho email. Contactarse con el administrador Freddy Paz");
                     this.Close();
                 }
                 

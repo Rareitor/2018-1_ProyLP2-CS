@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Vista.Otros;
 using Controlador;
+using Modelo;
 
 namespace Vista
 {
@@ -18,7 +19,11 @@ namespace Vista
         private string tipoUsu;
         private string usuarioIngresado;
         private string idPayee;
+        private NoticiaBL logicaNoticia = new NoticiaBL();
+        public BindingList<Noticia> listaNoticia = new BindingList<Noticia>();
         private TrabajadorBL logicaTrabajador = new TrabajadorBL();
+        public BindingList<int> listaVisitada = new BindingList<int>();
+        int maximo;
         public FrmVentanaAdministracion()
         {
             InitializeComponent();
@@ -36,7 +41,25 @@ namespace Vista
             this.idPayee = id_usuario;
             estadoInicial(tipoUsuario);
             lblCargo.Text = tipoUsuario;
+            listaNoticia = logicaNoticia.listarNoticias();
+            maximo = cantidadMaxima(listaNoticia);
             lblNombreUsu.Text = nombreUsu + " " + apellidoPat;
+            if (tipoUsu != "Administrador")
+            {
+                listaVisitada = logicaNoticia.listarVisitadas(idPayee, maximo);
+            }
+            
+        }
+
+        private int cantidadMaxima(BindingList<Noticia>listaNoticia)
+        {
+            int max = 0;
+            foreach (Noticia n in listaNoticia)
+            {
+                if (n.Id > max) max = n.Id;
+            }
+
+            return max;
         }
 
 
@@ -256,10 +279,10 @@ namespace Vista
 
         private void button11_Click(object sender, EventArgs e)
         {
-
+           
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmNoticias());
+            AbrirFormInPanel(new FrmNoticias(idPayee, listaNoticia,ref listaVisitada));
         }
 
         private void btnVisualizar_Click(object sender, EventArgs e)
@@ -677,6 +700,18 @@ namespace Vista
         private void lblCargo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureCampana_MouseHover(object sender, EventArgs e)
+        {
+            int falta  = 5- listaVisitada.Count;
+            txtFaltantes.Text = falta.ToString();
+            txtFaltantes.Visible = true;
+        }
+
+        private void pictureCampana_MouseLeave(object sender, EventArgs e)
+        {
+            txtFaltantes.Visible = false;
         }
     }
 }

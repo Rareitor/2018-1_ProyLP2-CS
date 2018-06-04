@@ -70,5 +70,51 @@ namespace AccesoDatos
             con.Close();
             return listaNoticia;
         }
+
+        public void registrarVistaNoticia(string idPayee, int idNoticia)
+        {
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                  "port=3306;password=4LDJZU;Ssl Mode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "insert into NoticiasVisitadas(idNoticia, idPayee) values ( " +
+                idNoticia + ", '" + idPayee + "');";
+            comando.ExecuteNonQuery();
+
+            con.Close();
+
+        }
+
+        public BindingList<int> listarVisitadas(string idPayee, int maximo)
+        {
+            BindingList<int> lista = new BindingList<int>();
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                  "port=3306;password=4LDJZU;Ssl Mode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "LISTAR_VISITAS";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = idPayee;
+            comando.Parameters.Add("cant", MySqlDbType.Int32).Value = maximo;
+            MySqlDataReader rs = comando.ExecuteReader();
+            while (rs.Read())
+            {
+                lista.Add(rs.GetInt32("idNoticia"));
+
+            }
+
+            con.Close();
+            return lista;
+        }
+
+       
     }
 }

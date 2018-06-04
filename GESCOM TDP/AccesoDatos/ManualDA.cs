@@ -29,5 +29,30 @@ namespace AccesoDatos
             con.Close();
 
         }
+
+        //public byte [] BajarManual()
+        //{
+        //    string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+        //          "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+        //    MySqlConnection con = new MySqlConnection(cadena);
+        //    MySqlCommand comando = new MySqlCommand();
+        //    con.Open();
+            
+
+        //    comando.Connection = con;
+        //    comando.CommandText = "BAJAR_PDF";
+        //    comando.CommandType = System.Data.CommandType.StoredProcedure;
+        //    comando.Parameters.Add("arch", MySqlDbType.Blob).Direction = System.Data.ParameterDirection.Output;
+        //    MySqlDataReader rs = comando.ExecuteReader();
+        //    while (rs.Read())
+        //    {
+              
+        //    }
+
+
+            
+        //    con.Close();
+        //}
     }
 }

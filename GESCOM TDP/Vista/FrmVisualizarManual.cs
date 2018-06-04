@@ -16,10 +16,17 @@ namespace Vista
     {
         string ruta="";
         ManualBL logicaManual = new ManualBL();
-
+        string fullPath;
+        string ruta2;
         public FrmVisualizarManual()
         {
+
             InitializeComponent();
+            
+            ruta2 = "C:\\Users\\Oscar\\Documents\\GitHub\\2018-1_ProyLP2-CS\\GESCOM TDP\\Manual.pdf";
+            axAcroPDF1.src = ruta2;
+            toolStrip1.Visible = false;
+
         }
 
         private static byte[] GetPhoto(string filePath)
@@ -36,6 +43,22 @@ namespace Vista
             return photo;
         }
 
+        public void bajarBits()
+        {
+            //byte[] a = encoding.GetBytes(strHTML);
+            //MemoryStream m = new MemoryStream(a);
+            //Response.Clear();
+            //Response.AddHeader("Content-Length", a.Length.ToString());
+            //Response.ContentType = "application/pdf";
+            //Response.AddHeader("Expires", "0");
+            //Response.AddHeader("Cache-Control", "must-revalidate, post-check=0, pre-check=0");
+            //Response.AddHeader("Pragma", "public");
+            //Response.AddHeader("Content-Disposition", "attachment; filename=sample.pdf");
+            //Response.BinaryWrite(a);
+            //Response.Flush();
+            //Response.End();
+        }
+
             private void abrirToolStripButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog archivo = new OpenFileDialog();
@@ -46,6 +69,7 @@ namespace Vista
                 if (archivo.ShowDialog() == DialogResult.OK)
                 {
                     ruta = archivo.FileName;
+                    Console.WriteLine(ruta);
                     axAcroPDF1.src = archivo.FileName;
 
                     byte[] bits = GetPhoto(ruta);

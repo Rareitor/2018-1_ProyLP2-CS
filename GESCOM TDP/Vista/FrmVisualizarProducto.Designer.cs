@@ -31,13 +31,13 @@
             this.lblProducto = new System.Windows.Forms.Label();
             this.cmbTipoProducto = new System.Windows.Forms.ComboBox();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnRecuperar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             // 
             this.cmbTipoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoProducto.FormattingEnabled = true;
-            this.cmbTipoProducto.Location = new System.Drawing.Point(110, 15);
+            this.cmbTipoProducto.Location = new System.Drawing.Point(135, 15);
             this.cmbTipoProducto.Name = "cmbTipoProducto";
             this.cmbTipoProducto.Size = new System.Drawing.Size(143, 21);
             this.cmbTipoProducto.TabIndex = 6;
@@ -73,6 +73,27 @@
             this.dgvProducto.Size = new System.Drawing.Size(666, 316);
             this.dgvProducto.TabIndex = 11;
             this.dgvProducto.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProducto_ColumnHeaderMouseClick);
+            // 
+            // idProducto
+            // 
+            this.idProducto.DataPropertyName = "IdProducto";
+            this.idProducto.FillWeight = 120F;
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.Name = "idProducto";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.Width = 200;
+            // 
+            // tipo
+            // 
+            this.tipo.DataPropertyName = "Tipo";
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.Width = 130;
             // 
             // btnRegresar
             // 
@@ -96,9 +117,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 63);
+            this.textBox1.Location = new System.Drawing.Point(135, 63);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
+            this.textBox1.Size = new System.Drawing.Size(143, 20);
             this.textBox1.TabIndex = 15;
             this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
@@ -110,27 +131,6 @@
             this.label1.Size = new System.Drawing.Size(110, 13);
             this.label1.TabIndex = 16;
             this.label1.Text = "Nombre del Producto:";
-            // 
-            // idProducto
-            // 
-            this.idProducto.DataPropertyName = "IdProducto";
-            this.idProducto.FillWeight = 120F;
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.Name = "idProducto";
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "Nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 200;
-            // 
-            // tipo
-            // 
-            this.tipo.DataPropertyName = "Tipo";
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            this.tipo.Width = 130;
             // 
             // FrmVisualizarProducto
             // 

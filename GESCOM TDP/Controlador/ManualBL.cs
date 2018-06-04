@@ -15,5 +15,9 @@ namespace Controlador
         {
             accesoManual.cargarArchivo(archivo);
         }
+        //public byte[] bajarArchivo()
+        //{
+        //    return accesoManual.bajarArchivo();
+        //}
     }
 }
