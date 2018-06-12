@@ -63,7 +63,8 @@ namespace Vista
                 case Estado.Inicial:
                     btnNuevo.Enabled = true;
                     btnGuardar.Enabled = false;
-                    btnBusqueda.Enabled = false;
+                    btnBusqueda.Enabled = true;
+                    txtCodigo.Enabled = false;
                     btnEliminar.Enabled = false;
                     btnCancelar.Enabled = false;
                     btnComboProducto.Enabled = false;
@@ -84,6 +85,7 @@ namespace Vista
                     btnGuardar.Enabled = true;
                     pnlBusqueda.Visible = false;          
                     txtID.Enabled = false;
+                    txtCodigo.Enabled = true;
                     btnComboProducto.Enabled = true;
                     if (tipoUsuario != "Comisionista")
                     {
@@ -236,6 +238,7 @@ namespace Vista
                 orden.Canal.IdCanal = idCanal;
                 orden.Canal.Nombre = cmbCanal.Text;
                 orden.Id = txtID.Text;
+                orden.Codigo = txtCodigo.Text;
                 orden.Producto = new Producto();
                 orden.Producto.IdProducto = idProducto;
                 orden.Producto.Nombre = cmbProducto.Text;
@@ -349,7 +352,7 @@ namespace Vista
 
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
-            opcion = 2;
+           
             listaOriginal = logicaOrden.listarOrden();
             listaOrdenada = new SortableBindingList<Orden>(listaOriginal);
             pnlBusqueda.Visible = true;
@@ -367,7 +370,8 @@ namespace Vista
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             if (dgvBusqueda.Rows.Count == 0) return;
-
+            opcion = 2;
+            estadoComponentes(Estado.Nuevo);
             objetoSeleccionado =(Orden) dgvBusqueda.CurrentRow.DataBoundItem;
 
             txtPago.Text = objetoSeleccionado.Monto.ToString();
@@ -375,6 +379,7 @@ namespace Vista
             txtID.Text = objetoSeleccionado.Id;
             cmbCanal.SelectedValue = objetoSeleccionado.Canal.IdCanal;
             cmbCombo.SelectedValue = objetoSeleccionado.Combo.IdCombo;
+            txtCodigo.Text = objetoSeleccionado.Codigo;
             cmbProducto.SelectedValue = objetoSeleccionado.Producto.IdProducto;
             tipoOrden = objetoSeleccionado.Producto.Tipo;
 

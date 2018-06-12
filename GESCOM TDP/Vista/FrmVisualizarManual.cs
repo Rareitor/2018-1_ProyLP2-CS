@@ -23,7 +23,7 @@ namespace Vista
 
             InitializeComponent();
             
-            ruta2 = "C:\\Users\\Oscar\\Documents\\GitHub\\2018-1_ProyLP2-CS\\GESCOM TDP\\Manual.pdf";
+            ruta2 = "C:.\\Manual.pdf";
             axAcroPDF1.src = ruta2;
             toolStrip1.Visible = false;
 

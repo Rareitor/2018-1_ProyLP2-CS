@@ -17,6 +17,7 @@ namespace Modelo
         private Retribucion retribucion;
         private Combo combo;
         private double monto;
+        private string codigo;
 
         private string nombreTrabajadorCompleto;
         private string distrito;
@@ -42,6 +43,7 @@ namespace Modelo
         public string NombreCombo { get => combo.Nombre; }
         public string NombreTrabajadorCompleto { get => nombreTrabajadorCompleto; set => nombreTrabajadorCompleto = value; }
         public string Distrito { get => distrito; set => distrito = value; }
+        public string Codigo { get => codigo; set => codigo = value; }
 
         //métodos dicionales
         //no implementado hasta definir casteo y/o polimorfismo

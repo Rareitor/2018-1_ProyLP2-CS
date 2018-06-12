@@ -54,7 +54,7 @@ namespace Vista
                 case Estado.Inicial:
                     btnNuevo.Enabled = true;
                     btnGuardar.Enabled = false;
-                    btnBusqueda.Enabled = false;
+                    btnBusqueda.Enabled = true;
                     btnEliminar.Enabled = false;
                     btnCancelar.Enabled = false;
                     labelDni.Visible = false;
@@ -103,7 +103,7 @@ namespace Vista
                 case Estado.Deshabilitado:
                     btnNuevo.Enabled = true;
                     btnGuardar.Enabled = false;
-                    btnBusqueda.Enabled = false;
+                    btnBusqueda.Enabled = true;
                     btnEliminar.Enabled = false;
                     btnCancelar.Enabled = false;
                     txtID.Enabled = false;
@@ -412,7 +412,7 @@ namespace Vista
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            
+            estadoComponentes(Estado.Nuevo);
             opcion = 2;
             rbnGerente.Enabled = false;
             rbnComisionista.Enabled = false;

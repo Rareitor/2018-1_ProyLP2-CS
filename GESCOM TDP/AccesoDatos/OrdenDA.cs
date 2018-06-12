@@ -23,6 +23,7 @@ namespace AccesoDatos
             MySqlCommand comando = new MySqlCommand();
             con.Open();
 
+
             comando.Connection = con;
             comando.CommandText = "AGREGAR_ORDEN";
             comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -34,7 +35,7 @@ namespace AccesoDatos
             comando.Parameters.Add("_idCombo", MySqlDbType.VarChar).Value = o.Combo.IdCombo;
             comando.Parameters.Add("_idCanal", MySqlDbType.VarChar).Value = o.Canal.IdCanal;
             comando.Parameters.Add("_idOrden", MySqlDbType.VarChar).Direction = System.Data.ParameterDirection.Output;
-
+            comando.Parameters.Add("_codigo", MySqlDbType.VarChar).Value = o.Codigo;
             if (tipo == "ARCH")
             {
                 comando.Parameters.Add("_tipo", MySqlDbType.VarChar).Value = o.Producto.Tipo;
@@ -100,6 +101,7 @@ namespace AccesoDatos
                 o.Trabajador.IdTrabajador = rs.GetString("idPayee");
                 o.Id = rs.GetString("idOrden");
                 o.FechaVenta = rs.GetDateTime("fechaVenta");
+                o.Codigo = rs.GetString("codigo");
                 listaOrdenBorradas.Add(o);
 
                 Console.WriteLine(o.Trabajador.IdTrabajador);
@@ -131,13 +133,6 @@ namespace AccesoDatos
                 fePeriodo = year.ToString() + mes.ToString();
             }
 
-     
-
-            comando.CommandText = "UPDATE Retribucion SET idProducto = '" + o.Producto.IdProducto +
-                "', idCombo = '" + o.Combo.IdCombo + "' ,idCanal = '" + o.Canal.IdCanal +
-                "' ,tipo = '" + tipo + "' , monto = " + o.Monto + ", fePeriodo = '" +
-                fePeriodo + "' where idOrden = " + o.Id + ";";
-            comando.ExecuteNonQuery();
 
             comando.CommandText = "MODIFICAR_ORDEN";
             comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -150,7 +145,7 @@ namespace AccesoDatos
             comando.Parameters.Add("_idCanal", MySqlDbType.VarChar).Value = o.Canal.IdCanal;
             comando.Parameters.Add("_idOrden", MySqlDbType.VarChar).Value = o.Id;
             comando.Parameters.Add("_tipo", MySqlDbType.VarChar).Value = tipo;
-
+            comando.Parameters.Add("_codigo", MySqlDbType.VarChar).Value = o.Codigo; 
             comando.ExecuteNonQuery();
 
            // string idOrden = comando.Parameters["_idOrden"].Value.ToString();
@@ -213,6 +208,10 @@ namespace AccesoDatos
                 o.Trabajador = new Trabajador();
                 o.Trabajador.IdTrabajador = rs.GetString("idPayee");
                 o.Id = rs.GetString("idOrden");
+                
+                    o.Codigo = rs.GetString("codigo");
+                
+                
                 o.FechaVenta = rs.GetDateTime("fechaVenta");
                 listaOrden.Add(o);
 
@@ -253,6 +252,7 @@ namespace AccesoDatos
                 o.Canal.Nombre = rs.GetString("nombreCanal");
                 o.Distrito = rs.GetString("distrito");
                 o.Monto = rs.GetFloat("monto");
+                o.Codigo = rs.GetString("codigo");
                 listaOrden.Add(o);
             }
             con.Close();
@@ -290,6 +290,7 @@ namespace AccesoDatos
                 o.Canal.Nombre = rs.GetString("nombreCanal");
                 o.Distrito = rs.GetString("distrito");
                 o.Monto = rs.GetFloat("monto");
+                o.Codigo = rs.GetString("codigo");
                 listaOrden.Add(o);
             }
             con.Close();
@@ -327,6 +328,7 @@ namespace AccesoDatos
                 o.Canal.Nombre = rs.GetString("nombreCanal");
                 o.Distrito = rs.GetString("distrito");
                 o.Monto = rs.GetFloat("monto");
+                o.Codigo = rs.GetString("codigo");
                 listaOrden.Add(o);
             }
             con.Close();

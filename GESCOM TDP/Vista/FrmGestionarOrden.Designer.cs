@@ -59,12 +59,14 @@
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvBusqueda = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.ID_Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Comisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCanal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.pnlBusqueda.SuspendLayout();
@@ -143,6 +145,8 @@
             // 
             // gbGenerales
             // 
+            this.gbGenerales.Controls.Add(this.label4);
+            this.gbGenerales.Controls.Add(this.txtCodigo);
             this.gbGenerales.Controls.Add(this.btnComboProducto);
             this.gbGenerales.Controls.Add(this.btnBuscarComisionista);
             this.gbGenerales.Controls.Add(this.cmbProducto);
@@ -162,7 +166,7 @@
             this.gbGenerales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.gbGenerales.Location = new System.Drawing.Point(0, 31);
             this.gbGenerales.Name = "gbGenerales";
-            this.gbGenerales.Size = new System.Drawing.Size(433, 284);
+            this.gbGenerales.Size = new System.Drawing.Size(433, 345);
             this.gbGenerales.TabIndex = 19;
             this.gbGenerales.TabStop = false;
             this.gbGenerales.Text = "Datos Generales";
@@ -170,7 +174,7 @@
             // btnComboProducto
             // 
             this.btnComboProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComboProducto.Location = new System.Drawing.Point(378, 127);
+            this.btnComboProducto.Location = new System.Drawing.Point(378, 161);
             this.btnComboProducto.Name = "btnComboProducto";
             this.btnComboProducto.Size = new System.Drawing.Size(30, 23);
             this.btnComboProducto.TabIndex = 23;
@@ -181,7 +185,7 @@
             // btnBuscarComisionista
             // 
             this.btnBuscarComisionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarComisionista.Location = new System.Drawing.Point(378, 89);
+            this.btnBuscarComisionista.Location = new System.Drawing.Point(378, 123);
             this.btnBuscarComisionista.Name = "btnBuscarComisionista";
             this.btnBuscarComisionista.Size = new System.Drawing.Size(30, 23);
             this.btnBuscarComisionista.TabIndex = 22;
@@ -194,7 +198,7 @@
             this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Location = new System.Drawing.Point(167, 206);
+            this.cmbProducto.Location = new System.Drawing.Point(167, 240);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(204, 23);
             this.cmbProducto.TabIndex = 21;
@@ -204,7 +208,7 @@
             this.cmbCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCombo.FormattingEnabled = true;
-            this.cmbCombo.Location = new System.Drawing.Point(167, 168);
+            this.cmbCombo.Location = new System.Drawing.Point(167, 202);
             this.cmbCombo.Name = "cmbCombo";
             this.cmbCombo.Size = new System.Drawing.Size(204, 23);
             this.cmbCombo.TabIndex = 20;
@@ -214,7 +218,7 @@
             this.cmbCanal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCanal.FormattingEnabled = true;
-            this.cmbCanal.Location = new System.Drawing.Point(167, 127);
+            this.cmbCanal.Location = new System.Drawing.Point(167, 161);
             this.cmbCanal.Name = "cmbCanal";
             this.cmbCanal.Size = new System.Drawing.Size(204, 23);
             this.cmbCanal.TabIndex = 19;
@@ -223,7 +227,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(15, 207);
+            this.label7.Location = new System.Drawing.Point(15, 241);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 20);
             this.label7.TabIndex = 17;
@@ -232,7 +236,7 @@
             // txtPago
             // 
             this.txtPago.Enabled = false;
-            this.txtPago.Location = new System.Drawing.Point(167, 245);
+            this.txtPago.Location = new System.Drawing.Point(167, 279);
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(204, 26);
             this.txtPago.TabIndex = 16;
@@ -243,7 +247,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(15, 246);
+            this.label6.Location = new System.Drawing.Point(15, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 20);
             this.label6.TabIndex = 15;
@@ -254,7 +258,7 @@
             this.dateIngreso.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dateIngreso.Enabled = false;
             this.dateIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateIngreso.Location = new System.Drawing.Point(167, 58);
+            this.dateIngreso.Location = new System.Drawing.Point(167, 60);
             this.dateIngreso.Name = "dateIngreso";
             this.dateIngreso.Size = new System.Drawing.Size(204, 23);
             this.dateIngreso.TabIndex = 14;
@@ -263,7 +267,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(15, 170);
+            this.label5.Location = new System.Drawing.Point(15, 204);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 12;
@@ -273,7 +277,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(15, 58);
+            this.label3.Location = new System.Drawing.Point(15, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 20);
             this.label3.TabIndex = 8;
@@ -302,7 +306,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(15, 130);
+            this.label2.Location = new System.Drawing.Point(15, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 5;
@@ -312,7 +316,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNombre.Location = new System.Drawing.Point(15, 93);
+            this.lblNombre.Location = new System.Drawing.Point(15, 127);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(140, 20);
             this.lblNombre.TabIndex = 3;
@@ -321,7 +325,7 @@
             // txtIDComisionista
             // 
             this.txtIDComisionista.Enabled = false;
-            this.txtIDComisionista.Location = new System.Drawing.Point(167, 89);
+            this.txtIDComisionista.Location = new System.Drawing.Point(167, 123);
             this.txtIDComisionista.Name = "txtIDComisionista";
             this.txtIDComisionista.Size = new System.Drawing.Size(204, 26);
             this.txtIDComisionista.TabIndex = 4;
@@ -397,6 +401,28 @@
             this.dgvBusqueda.TabIndex = 0;
             this.dgvBusqueda.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBusqueda_ColumnHeaderMouseClick);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(14, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Código:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Location = new System.Drawing.Point(166, 87);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(204, 26);
+            this.txtCodigo.TabIndex = 25;
+            // 
             // ID_Orden
             // 
             this.ID_Orden.DataPropertyName = "Id";
@@ -421,8 +447,8 @@
             // 
             // NombreCanal
             // 
-            this.NombreCanal.DataPropertyName = "NombreCanal";
-            this.NombreCanal.HeaderText = "Canal";
+            this.NombreCanal.DataPropertyName = "NombreProducto";
+            this.NombreCanal.HeaderText = "Producto";
             this.NombreCanal.Name = "NombreCanal";
             // 
             // Monto
@@ -430,10 +456,6 @@
             this.Monto.DataPropertyName = "Monto";
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // FrmGestionarOrden
             // 
@@ -487,15 +509,17 @@
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dgvBusqueda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Orden;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Comisionista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCanal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
         private System.Windows.Forms.ToolStripButton btnImportar;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnComboProducto;
         private System.Windows.Forms.ComboBox cmbCampo;
         private System.Windows.Forms.TextBox tbFiltro;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Orden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Comisionista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCanal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
     }
 }
