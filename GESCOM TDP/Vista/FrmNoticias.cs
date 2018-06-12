@@ -28,9 +28,28 @@ namespace Vista.Otros
             this.listaNoticia= listaNoticia;
             lBNoticias.DataSource = listaNoticia;
             listaV = listaVisitada;
+            lBNoticias.DrawMode = DrawMode.OwnerDrawFixed;
+            lBNoticias.DrawItem += listBox_DrawItem;
             lBNoticias.DisplayMember = "mostrar";
             lBNoticias.ValueMember ="id";
 
+        }
+        private void listBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            Graphics g = e.Graphics;
+            ListBox lb = (ListBox)sender;
+            e.Graphics.FillRectangle(Brushes.SkyBlue, e.Bounds);
+            foreach (int i in listaV)
+            {
+                if(i == ((Noticia)lb.Items[e.Index]).Id)
+                {
+                    e.Graphics.FillRectangle(Brushes.White, e.Bounds);
+                    break;
+                }
+            }
+            g.DrawString(lb.Items[e.Index].ToString(), e.Font, new SolidBrush(Color.Black), new PointF(e.Bounds.X, e.Bounds.Y));
+            e.DrawFocusRectangle();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,6 +102,11 @@ namespace Vista.Otros
         private void FrmNoticias_FormClosing(object sender, FormClosingEventArgs e)
         {
            
+        }
+
+        private void lBNoticias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

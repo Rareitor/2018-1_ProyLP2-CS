@@ -60,9 +60,9 @@
             // picNoticias
             // 
             this.picNoticias.Image = ((System.Drawing.Image)(resources.GetObject("picNoticias.Image")));
-            this.picNoticias.Location = new System.Drawing.Point(736, 63);
+            this.picNoticias.Location = new System.Drawing.Point(736, 77);
             this.picNoticias.Name = "picNoticias";
-            this.picNoticias.Size = new System.Drawing.Size(190, 149);
+            this.picNoticias.Size = new System.Drawing.Size(155, 127);
             this.picNoticias.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNoticias.TabIndex = 17;
             this.picNoticias.TabStop = false;
@@ -77,6 +77,7 @@
             this.lBNoticias.Size = new System.Drawing.Size(654, 204);
             this.lBNoticias.TabIndex = 18;
             this.lBNoticias.Click += new System.EventHandler(this.lBNoticias_Click);
+            this.lBNoticias.SelectedIndexChanged += new System.EventHandler(this.lBNoticias_SelectedIndexChanged);
             // 
             // FrmNoticias
             // 

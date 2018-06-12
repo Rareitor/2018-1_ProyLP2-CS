@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVentanaAdministracion));
             this.lblMenuVertical = new System.Windows.Forms.Panel();
+            this.txtFaltantes = new System.Windows.Forms.Label();
             this.pictureCampana = new System.Windows.Forms.PictureBox();
             this.btnCalculoAdmin = new System.Windows.Forms.Button();
             this.pnlVisualizar = new System.Windows.Forms.Panel();
@@ -72,7 +73,6 @@
             this.iconRestaurar = new System.Windows.Forms.PictureBox();
             this.iconMinimize = new System.Windows.Forms.PictureBox();
             this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.txtFaltantes = new System.Windows.Forms.Label();
             this.lblMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCampana)).BeginInit();
             this.pnlVisualizar.SuspendLayout();
@@ -117,17 +117,33 @@
             this.lblMenuVertical.TabIndex = 0;
             this.lblMenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.menuVertical_Paint);
             // 
+            // txtFaltantes
+            // 
+            this.txtFaltantes.AutoSize = true;
+            this.txtFaltantes.BackColor = System.Drawing.Color.Red;
+            this.txtFaltantes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.txtFaltantes.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold);
+            this.txtFaltantes.ForeColor = System.Drawing.Color.Blue;
+            this.txtFaltantes.Location = new System.Drawing.Point(170, 613);
+            this.txtFaltantes.Name = "txtFaltantes";
+            this.txtFaltantes.Size = new System.Drawing.Size(24, 26);
+            this.txtFaltantes.TabIndex = 22;
+            this.txtFaltantes.Text = "4";
+            this.txtFaltantes.Visible = false;
+            this.txtFaltantes.Click += new System.EventHandler(this.txtFaltantes_Click);
+            // 
             // pictureCampana
             // 
             this.pictureCampana.BackColor = System.Drawing.Color.Red;
             this.pictureCampana.Image = ((System.Drawing.Image)(resources.GetObject("pictureCampana.Image")));
-            this.pictureCampana.Location = new System.Drawing.Point(144, 613);
+            this.pictureCampana.Location = new System.Drawing.Point(133, 613);
             this.pictureCampana.Name = "pictureCampana";
-            this.pictureCampana.Size = new System.Drawing.Size(50, 32);
+            this.pictureCampana.Size = new System.Drawing.Size(50, 26);
             this.pictureCampana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureCampana.TabIndex = 21;
             this.pictureCampana.TabStop = false;
             this.pictureCampana.Visible = false;
+            this.pictureCampana.Click += new System.EventHandler(this.pictureCampana_Click);
             this.pictureCampana.MouseLeave += new System.EventHandler(this.pictureCampana_MouseLeave);
             this.pictureCampana.MouseHover += new System.EventHandler(this.pictureCampana_MouseHover);
             // 
@@ -660,7 +676,7 @@
             // 
             this.lblNombreUsu.AutoSize = true;
             this.lblNombreUsu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNombreUsu.Location = new System.Drawing.Point(49, 576);
+            this.lblNombreUsu.Location = new System.Drawing.Point(54, 576);
             this.lblNombreUsu.Name = "lblNombreUsu";
             this.lblNombreUsu.Size = new System.Drawing.Size(136, 20);
             this.lblNombreUsu.TabIndex = 18;
@@ -671,7 +687,7 @@
             // 
             this.lblCargo.AutoSize = true;
             this.lblCargo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCargo.Location = new System.Drawing.Point(49, 556);
+            this.lblCargo.Location = new System.Drawing.Point(54, 556);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(56, 20);
             this.lblCargo.TabIndex = 15;
@@ -682,9 +698,9 @@
             // 
             this.picUsu.BackColor = System.Drawing.Color.Navy;
             this.picUsu.Image = ((System.Drawing.Image)(resources.GetObject("picUsu.Image")));
-            this.picUsu.Location = new System.Drawing.Point(0, 557);
+            this.picUsu.Location = new System.Drawing.Point(5, 555);
             this.picUsu.Name = "picUsu";
-            this.picUsu.Size = new System.Drawing.Size(48, 52);
+            this.picUsu.Size = new System.Drawing.Size(48, 56);
             this.picUsu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picUsu.TabIndex = 14;
             this.picUsu.TabStop = false;
@@ -777,20 +793,6 @@
             this.pnlContenedor.Size = new System.Drawing.Size(1100, 600);
             this.pnlContenedor.TabIndex = 2;
             this.pnlContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenedor_Paint);
-            // 
-            // txtFaltantes
-            // 
-            this.txtFaltantes.AutoSize = true;
-            this.txtFaltantes.BackColor = System.Drawing.Color.Transparent;
-            this.txtFaltantes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtFaltantes.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold);
-            this.txtFaltantes.ForeColor = System.Drawing.Color.Red;
-            this.txtFaltantes.Location = new System.Drawing.Point(170, 603);
-            this.txtFaltantes.Name = "txtFaltantes";
-            this.txtFaltantes.Size = new System.Drawing.Size(24, 26);
-            this.txtFaltantes.TabIndex = 22;
-            this.txtFaltantes.Text = "4";
-            this.txtFaltantes.Visible = false;
             // 
             // FrmVentanaAdministracion
             // 

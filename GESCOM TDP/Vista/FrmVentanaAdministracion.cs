@@ -48,7 +48,19 @@ namespace Vista
             {
                 listaVisitada = logicaNoticia.listarVisitadas(idPayee, maximo);
             }
-            
+            evaluarCampana();
+        }
+
+        private void evaluarCampana()
+        {
+            int falta = 5 - listaVisitada.Count;
+            txtFaltantes.Text = falta.ToString();
+            if (falta == 0)
+            {
+                pictureCampana.BackColor = Color.Transparent;
+                txtFaltantes.BackColor = Color.Transparent;
+                txtFaltantes.ForeColor = Color.White;
+            }
         }
 
         private int cantidadMaxima(BindingList<Noticia>listaNoticia)
@@ -704,14 +716,25 @@ namespace Vista
 
         private void pictureCampana_MouseHover(object sender, EventArgs e)
         {
-            int falta  = 5- listaVisitada.Count;
-            txtFaltantes.Text = falta.ToString();
+            evaluarCampana();
             txtFaltantes.Visible = true;
         }
 
         private void pictureCampana_MouseLeave(object sender, EventArgs e)
         {
             txtFaltantes.Visible = false;
+        }
+
+        private void pictureCampana_Click(object sender, EventArgs e)
+        {
+            pnlVisualizar.Hide();
+            estadoInicial(tipoUsu);
+            AbrirFormInPanel(new FrmNoticias(idPayee, listaNoticia, ref listaVisitada));
+        }
+
+        private void txtFaltantes_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
