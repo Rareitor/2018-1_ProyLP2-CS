@@ -40,8 +40,9 @@ namespace Vista
             InitializeComponent();
             tipoUsuario = tipoUsu;
             this.idUsuario = idUsuario;
-            estadoComponentes(Estado.Inicial);
             llenarComboBox();
+            estadoComponentes(Estado.Inicial);
+            
             if (tipoUsu == "Comisionista")
             {
                 txtIDComisionista.Text = idUsuario;
@@ -63,7 +64,14 @@ namespace Vista
                 case Estado.Inicial:
                     btnNuevo.Enabled = true;
                     btnGuardar.Enabled = false;
-                    btnBusqueda.Enabled = true;
+                    if (tipoUsuario == "Administrador")
+                    {
+                        btnBusqueda.Enabled = true;
+                    } else
+                    {
+                        btnBusqueda.Enabled = false;
+                    }
+                   
                     txtCodigo.Enabled = false;
                     btnEliminar.Enabled = false;
                     btnCancelar.Enabled = false;
@@ -111,7 +119,10 @@ namespace Vista
                     btnNuevo.Enabled = true;
                     btnImportar.Enabled = false;
                     btnGuardar.Enabled = false;
-                    btnBusqueda.Enabled = false;
+                    if (tipoUsuario == "Administrador")
+                    {
+                        btnBusqueda.Enabled = true;
+                    }
                     btnEliminar.Enabled = false;
                     btnCancelar.Enabled = false;
                     txtID.Enabled = false;
@@ -121,6 +132,7 @@ namespace Vista
                     txtPago.Enabled = false;
                     btnComboProducto.Enabled = false;
                     cmbCanal.Enabled = false;
+                    txtCodigo.Enabled = false;
                     cmbCombo.Enabled = false;
                     cmbProducto.Enabled = false;
                     pnlBusqueda.Visible = false;
@@ -137,9 +149,11 @@ namespace Vista
             
             dateIngreso.Value = DateTime.Now;
             txtPago.Text = "";
-            cmbCanal.SelectedItem = -1;
-            cmbCombo.SelectedItem = -1;
-            cmbProducto.SelectedItem = -1;
+            txtCodigo.Text = "";
+
+            cmbCanal.SelectedValue = "AD";
+            cmbCombo.SelectedValue = "M-MCF";
+            cmbProducto.SelectedValue = "CM7ED4";
         }
 
         private void llenarComboBox()
@@ -211,7 +225,6 @@ namespace Vista
             FrmBusquedaOrdenPersonalizada frmBusPer = new FrmBusquedaOrdenPersonalizada();
             frmBusPer.Show();
         }
-
         private void pnlIngreseDato_Paint(object sender, PaintEventArgs e)
         {
 
@@ -224,47 +237,56 @@ namespace Vista
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtIDComisionista.Text == "")
-            {
+            if (txtIDComisionista.Text == "" || txtPago.Text == "" ||
+                txtCodigo.Text== "") { 
+            
                 MessageBox.Show("Ingrese una orden valida");
+                
             }
             else
             {
-                orden.FechaVenta = dateIngreso.Value;
-                string idCanal = cmbCanal.SelectedValue.ToString();
-                string idCombo = cmbCombo.SelectedValue.ToString();
-                string idProducto = cmbProducto.SelectedValue.ToString();
-                orden.Canal = new Canal();
-                orden.Canal.IdCanal = idCanal;
-                orden.Canal.Nombre = cmbCanal.Text;
-                orden.Id = txtID.Text;
-                orden.Codigo = txtCodigo.Text;
-                orden.Producto = new Producto();
-                orden.Producto.IdProducto = idProducto;
-                orden.Producto.Nombre = cmbProducto.Text;
-
-                orden.Combo = new Combo();
-                orden.Combo.IdCombo = idCombo;
-                orden.Combo.Nombre = cmbCombo.Text;
-                orden.Monto = Double.Parse(txtPago.Text);
-
-                orden.Trabajador = (Trabajador)new Comisionista();
-                orden.Trabajador.IdTrabajador = txtIDComisionista.Text;
-
-
-                string respuesta = logicaOrden.gestionarOrden(orden, opcion,tipoOrden);
-                if (respuesta != "Correcta")
+                if (DateTime.Compare(dateIngreso.Value, DateTime.Now) > 0)
                 {
-                    txtID.Text = respuesta;
-                    MessageBox.Show("Se ha registrado la orden satisfactoriamente");
+                    MessageBox.Show("Error en la fecha de registro");
                 }
-                else if (respuesta == "Correcta")
+                else
                 {
-                    MessageBox.Show("Se ha actualizado la orden satisfactoriamente");
-                }
+                    orden.FechaVenta = dateIngreso.Value;
+                    string idCanal = cmbCanal.SelectedValue.ToString();
+                    string idCombo = cmbCombo.SelectedValue.ToString();
+                    string idProducto = cmbProducto.SelectedValue.ToString();
+                    orden.Canal = new Canal();
+                    orden.Canal.IdCanal = idCanal;
+                    orden.Canal.Nombre = cmbCanal.Text;
+                    orden.Id = txtID.Text;
+                    orden.Codigo = txtCodigo.Text;
+                    orden.Producto = new Producto();
+                    orden.Producto.IdProducto = idProducto;
+                    orden.Producto.Nombre = cmbProducto.Text;
 
-                opcion = 1;
-                estadoComponentes(Estado.Deshabilitado);
+                    orden.Combo = new Combo();
+                    orden.Combo.IdCombo = idCombo;
+                    orden.Combo.Nombre = cmbCombo.Text;
+                    orden.Monto = Double.Parse(txtPago.Text);
+
+                    orden.Trabajador = (Trabajador)new Comisionista();
+                    orden.Trabajador.IdTrabajador = txtIDComisionista.Text;
+
+
+                    string respuesta = logicaOrden.gestionarOrden(orden, opcion, tipoOrden);
+                    if (respuesta != "Correcta")
+                    {
+                        txtID.Text = respuesta;
+                        MessageBox.Show("Se ha registrado la orden satisfactoriamente");
+                    }
+                    else if (respuesta == "Correcta")
+                    {
+                        MessageBox.Show("Se ha actualizado la orden satisfactoriamente");
+                    }
+
+                    opcion = 1;
+                    estadoComponentes(Estado.Deshabilitado);
+                }
             }
         }
 
@@ -549,8 +571,11 @@ namespace Vista
             if (frmVisualComProd.ShowDialog() == DialogResult.OK)
             {
                 cmbCanal.SelectedValue = frmVisualComProd.ObjetoSeleccionado.Canal1.IdCanal;
+                Console.WriteLine(cmbCanal.SelectedValue);
                 cmbCombo.SelectedValue = frmVisualComProd.ObjetoSeleccionado.Combo1.IdCombo;
+                Console.WriteLine(cmbCombo.SelectedValue);
                 cmbProducto.SelectedValue = frmVisualComProd.ObjetoSeleccionado.Producto.IdProducto;
+                Console.WriteLine(cmbProducto.SelectedValue);
                 tipoOrden = frmVisualComProd.ObjetoSeleccionado.Producto.Tipo;
             }
         }
