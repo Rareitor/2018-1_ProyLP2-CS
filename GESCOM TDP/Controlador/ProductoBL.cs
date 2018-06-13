@@ -36,5 +36,20 @@ namespace Controlador
         {
             accesoDatos.cargarProducto(p);
         }
+
+        public BindingList<Producto> listarMenosVendidos(DateTime fecha)
+        {
+            int anho = fecha.Year;
+            int mes = fecha.Month;
+            string cadena;
+            if (mes >= 10)
+            {
+                cadena= anho.ToString() + mes.ToString();
+            } else
+            {
+                cadena = anho.ToString() + "0" + mes.ToString();
+            }
+            return accesoDatos.listarmenosvendidos(cadena);
+        }
     }
 }

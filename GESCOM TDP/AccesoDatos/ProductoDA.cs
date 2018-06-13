@@ -143,5 +143,34 @@ namespace AccesoDatos
             con.Close();
         }
 
+        public BindingList<Producto> listarmenosvendidos(string periodo)
+        {
+            BindingList<Producto> lista = new BindingList<Producto>();
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                   "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "RANKING_PRODUCTOS";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.Parameters.Add("_periodo", MySqlDbType.VarChar).Value = periodo;
+
+            MySqlDataReader rs = comando.ExecuteReader();
+
+            while (rs.Read())
+            {
+                Producto p = new Producto();
+                p.IdProducto = rs.GetString("idProducto");
+                p.Nombre = rs.GetString("nombre");
+                p.Tipo = rs.GetString("tipo");
+                lista.Add(p);
+            }
+
+            return lista;
+        }
     }
 }

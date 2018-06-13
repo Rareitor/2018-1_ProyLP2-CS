@@ -69,12 +69,12 @@
             // 
             // lBNoticias
             // 
-            this.lBNoticias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lBNoticias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lBNoticias.FormattingEnabled = true;
-            this.lBNoticias.ItemHeight = 20;
+            this.lBNoticias.ItemHeight = 16;
             this.lBNoticias.Location = new System.Drawing.Point(50, 53);
             this.lBNoticias.Name = "lBNoticias";
-            this.lBNoticias.Size = new System.Drawing.Size(654, 204);
+            this.lBNoticias.Size = new System.Drawing.Size(654, 196);
             this.lBNoticias.TabIndex = 18;
             this.lBNoticias.Click += new System.EventHandler(this.lBNoticias_Click);
             this.lBNoticias.SelectedIndexChanged += new System.EventHandler(this.lBNoticias_SelectedIndexChanged);

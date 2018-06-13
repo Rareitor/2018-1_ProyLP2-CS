@@ -18,16 +18,28 @@ namespace Vista.Otros
         private ProductoBL logicaNegocio;
         private SortableBindingList<Producto> listaOriginal;
         private SortableBindingList<Producto> listaFiltrada;
+        private BindingList<Producto> listaMenos = new BindingList<Producto>();
         private bool papelera;
+        private string idUsu;
 
         public bool Papelera { get => papelera; set => papelera = value; }
 
-        public FrmVisualizarProducto()
+        public FrmVisualizarProducto(string tipoUsuario, string idUsuario)
         {
             InitializeComponent();
+            idUsu = idUsuario;
             papelera = false;
             logicaNegocio = new ProductoBL();
             listaOriginal = new SortableBindingList<Producto>();
+            if (tipoUsuario == "Gerente")
+            {
+                btnMenos.Visible = true;
+                btnEnviar.Visible = true;
+            } else
+            {
+                btnMenos.Visible = false;
+                btnEnviar.Visible = false;
+            }
             listaFiltrada = new SortableBindingList<Producto>();
             dgvProducto.AutoGenerateColumns = false;
             btnRecuperar.Visible = false;
@@ -128,6 +140,39 @@ namespace Vista.Otros
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
             filtrar();
+        }
+
+        private void btnMenos_Click(object sender, EventArgs e)
+        {
+            labelFecha.Visible = true;
+            labelFecha.Text = "Los productos menos vendidos del presente mes son:";
+            listaMenos =logicaNegocio.listarMenosVendidos(DateTime.Now);
+            dgvProducto.AutoGenerateColumns = false;
+            dgvProducto.DataSource = listaMenos;
+            textBox1.Visible = false;
+            cmbTipoProducto.Visible = false;
+            label1.Visible = false;
+            lblProducto.Visible = false;
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            Noticia n = new Noticia();
+            NoticiaBL logicaNoticia = new NoticiaBL();
+            n.Fecha = DateTime.Now;
+            string texto = "Los productos menos vendidos del presente mes son: \n";
+            foreach (Producto p in listaMenos)
+            {
+                texto = texto + p.Nombre + " \n";
+            }
+             texto = texto + "Porfavor incrementar las ventas en estos productos";
+
+            n.Titulo = "Los 3 productos menos vendidos al: " + DateTime.Now.ToString();
+            n.Trabajador = new Trabajador();
+            n.Texto = texto;
+            n.Trabajador.IdTrabajador = idUsu;
+            logicaNoticia.registrarNoticia(n);
+            MessageBox.Show("Se ha registrado correctamente la noticia");
         }
     }
 }

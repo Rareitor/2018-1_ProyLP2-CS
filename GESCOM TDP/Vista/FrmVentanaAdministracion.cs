@@ -252,7 +252,7 @@ namespace Vista
 
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmVisualizarProducto());
+            AbrirFormInPanel(new FrmVisualizarProducto(tipoUsu,idPayee));
 
         }
 
@@ -291,7 +291,8 @@ namespace Vista
 
         private void button11_Click(object sender, EventArgs e)
         {
-           
+            listaNoticia = logicaNoticia.listarNoticias();
+            maximo = cantidadMaxima(listaNoticia);
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
             AbrirFormInPanel(new FrmNoticias(idPayee, listaNoticia,ref listaVisitada));

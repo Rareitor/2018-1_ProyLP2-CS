@@ -38,8 +38,9 @@
             this.btnRecuperar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnMenos = new System.Windows.Forms.Button();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.labelFecha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,31 +135,44 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Nombre del Producto:";
             // 
-            // button1
+            // btnMenos
             // 
-            this.button1.Location = new System.Drawing.Point(552, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Menos Vendidos";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMenos.Location = new System.Drawing.Point(552, 61);
+            this.btnMenos.Name = "btnMenos";
+            this.btnMenos.Size = new System.Drawing.Size(118, 23);
+            this.btnMenos.TabIndex = 17;
+            this.btnMenos.Text = "Menos Vendidos";
+            this.btnMenos.UseVisualStyleBackColor = true;
+            this.btnMenos.Click += new System.EventHandler(this.btnMenos_Click);
             // 
-            // button2
+            // btnEnviar
             // 
-            this.button2.Location = new System.Drawing.Point(543, 454);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Enviar Notificacion";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEnviar.Location = new System.Drawing.Point(543, 454);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(138, 23);
+            this.btnEnviar.TabIndex = 18;
+            this.btnEnviar.Text = "Enviar Notificacion";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
+            // labelFecha
+            // 
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Location = new System.Drawing.Point(15, 93);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(35, 13);
+            this.labelFecha.TabIndex = 19;
+            this.labelFecha.Text = "label2";
+            this.labelFecha.Visible = false;
             // 
             // FrmVisualizarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 489);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelFecha);
+            this.Controls.Add(this.btnEnviar);
+            this.Controls.Add(this.btnMenos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnRecuperar);
@@ -186,7 +200,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMenos;
+        private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.Label labelFecha;
     }
 }
