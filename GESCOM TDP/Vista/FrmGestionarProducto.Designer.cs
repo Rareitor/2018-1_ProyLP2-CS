@@ -105,6 +105,7 @@ namespace Vista
             // 
             // cmbProducto
             // 
+            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProducto.FormattingEnabled = true;
             this.cmbProducto.Location = new System.Drawing.Point(166, 126);
@@ -114,6 +115,7 @@ namespace Vista
             // 
             // cmbCombo
             // 
+            this.cmbCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCombo.FormattingEnabled = true;
             this.cmbCombo.Location = new System.Drawing.Point(166, 88);
@@ -124,6 +126,7 @@ namespace Vista
             // 
             // cmbCanal
             // 
+            this.cmbCanal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCanal.FormattingEnabled = true;
             this.cmbCanal.Location = new System.Drawing.Point(166, 47);
@@ -183,6 +186,7 @@ namespace Vista
             // 
             // cmbMesPeriodo
             // 
+            this.cmbMesPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMesPeriodo.FormattingEnabled = true;
             this.cmbMesPeriodo.Items.AddRange(new object[] {
             "Enero",
@@ -215,6 +219,7 @@ namespace Vista
             // 
             // cmbAñoPeriodo
             // 
+            this.cmbAñoPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAñoPeriodo.FormattingEnabled = true;
             this.cmbAñoPeriodo.Items.AddRange(new object[] {
             "2016",
