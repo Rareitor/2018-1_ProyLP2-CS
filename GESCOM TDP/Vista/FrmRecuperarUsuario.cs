@@ -14,6 +14,16 @@ namespace Vista
             logicaNegocio = new TrabajadorBL();
             dgvUsuariosRec.AutoGenerateColumns = false;
             dgvUsuariosRec.DataSource = logicaNegocio.listarTrabajadorPapelera();
+            dgvUsuariosRec.ReadOnly = true;
+            dgvUsuariosRec.AllowUserToAddRows = false;
+            if (dgvUsuariosRec.Rows.Count == 0)
+            {
+                btnSeleccionar.Enabled = false;
+                MessageBox.Show("No hay usuarios por restaurar");
+            }
+                
+
+
         }
 
         private void FrmRecuperarUsuario_Load(object sender, EventArgs e)

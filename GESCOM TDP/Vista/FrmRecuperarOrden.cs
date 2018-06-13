@@ -21,6 +21,15 @@ namespace Vista
             logicaNegocio = new OrdenBL();
             dgvOrden.AutoGenerateColumns = false;
             dgvOrden.DataSource = logicaNegocio.listarOrdenPapelera();
+            dgvOrden.ReadOnly = true;
+            dgvOrden.AllowUserToAddRows = false;
+            if (dgvOrden.Rows.Count == 0)
+            {
+                btnSeleccionar.Enabled = false;
+                MessageBox.Show("No hay órdenes por restaurar");
+            }
+
+
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
