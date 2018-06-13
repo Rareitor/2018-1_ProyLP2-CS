@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPapeleraReciclaje));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblOrden = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.picOrden = new System.Windows.Forms.PictureBox();
             this.picUsuario = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picOrden)).BeginInit();
@@ -42,7 +41,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(90, 368);
+            this.lblUsuario.Location = new System.Drawing.Point(106, 344);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(89, 25);
             this.lblUsuario.TabIndex = 49;
@@ -53,29 +52,19 @@
             // 
             this.lblOrden.AutoSize = true;
             this.lblOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrden.Location = new System.Drawing.Point(556, 368);
+            this.lblOrden.Location = new System.Drawing.Point(542, 344);
             this.lblOrden.Name = "lblOrden";
             this.lblOrden.Size = new System.Drawing.Size(88, 25);
             this.lblOrden.TabIndex = 51;
             this.lblOrden.Text = "Órdenes";
             this.lblOrden.Click += new System.EventHandler(this.lblOrden_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(700, 428);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 45;
-            this.btnCancelar.Text = "Regresar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // picOrden
             // 
-            this.picOrden.Image = global::Vista.Properties.Resources.ordenes;
-            this.picOrden.Location = new System.Drawing.Point(434, 126);
+            this.picOrden.Image = ((System.Drawing.Image)(resources.GetObject("picOrden.Image")));
+            this.picOrden.Location = new System.Drawing.Point(481, 126);
             this.picOrden.Name = "picOrden";
-            this.picOrden.Size = new System.Drawing.Size(300, 215);
+            this.picOrden.Size = new System.Drawing.Size(213, 215);
             this.picOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picOrden.TabIndex = 48;
             this.picOrden.TabStop = false;
@@ -84,9 +73,9 @@
             // picUsuario
             // 
             this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
-            this.picUsuario.Location = new System.Drawing.Point(21, 126);
+            this.picUsuario.Location = new System.Drawing.Point(51, 126);
             this.picUsuario.Name = "picUsuario";
-            this.picUsuario.Size = new System.Drawing.Size(255, 215);
+            this.picUsuario.Size = new System.Drawing.Size(213, 215);
             this.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picUsuario.TabIndex = 46;
             this.picUsuario.TabStop = false;
@@ -101,7 +90,6 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.picOrden);
             this.Controls.Add(this.picUsuario);
-            this.Controls.Add(this.btnCancelar);
             this.Name = "FrmPapeleraReciclaje";
             this.Text = "Papelera Reciclaje";
             ((System.ComponentModel.ISupportInitialize)(this.picOrden)).EndInit();
@@ -116,6 +104,5 @@
         private System.Windows.Forms.PictureBox picOrden;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblOrden;
-        private System.Windows.Forms.Button btnCancelar;
     }
 }
