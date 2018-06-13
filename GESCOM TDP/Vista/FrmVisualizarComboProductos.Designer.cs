@@ -144,7 +144,7 @@
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvComboProducto);
             this.Name = "FrmVisualizarComboProductos";
-            this.Text = "FrmVisualizarComboProductos";
+            this.Text = "Visualizar Combo Producto";
             this.Load += new System.EventHandler(this.FrmVisualizarComboProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComboProducto)).EndInit();
             this.ResumeLayout(false);

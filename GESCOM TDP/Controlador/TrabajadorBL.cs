@@ -13,6 +13,11 @@ namespace Controlador
     {
         TrabajadorDA accesoTrabajador = new TrabajadorDA();
 
+        public void mantenimiento(ref int estado, ref DateTime tiempo)
+        {
+            accesoTrabajador.mantenimiento(ref estado, ref tiempo);
+        }
+
         public string gestionarUsuarios(Trabajador t, string idSuperior, int opcion)
         {
             string idUsuario ="";
