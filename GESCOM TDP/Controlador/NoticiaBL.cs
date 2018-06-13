@@ -28,9 +28,9 @@ namespace Controlador
             accesoNoticias.registrarVistaNoticia(idUsuario, index);
         }
 
-        public BindingList<int> listarVisitadas(string idUsuario, int maximo)
+        public BindingList<int> listarVisitadas(string idUsuario)
         {
-            return accesoNoticias.listarVisitadas(idUsuario, maximo);
+            return accesoNoticias.listarVisitadas(idUsuario);
         }
     }
 }

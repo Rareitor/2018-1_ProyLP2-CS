@@ -46,14 +46,33 @@ namespace Vista
             lblNombreUsu.Text = nombreUsu + " " + apellidoPat;
             if (tipoUsu != "Administrador")
             {
-                listaVisitada = logicaNoticia.listarVisitadas(idPayee, maximo);
+                listaVisitada = logicaNoticia.listarVisitadas(idPayee);
             }
             evaluarCampana();
         }
 
         private void evaluarCampana()
         {
-            int falta = 5 - listaVisitada.Count;
+            int encontrado;
+            int falta=0;
+
+            foreach(Noticia n in listaNoticia)
+            {
+                encontrado = 0;
+                foreach(int i in listaVisitada)
+                {
+                    if (n.Id == i)
+                    {
+                        encontrado = 1;
+                        break;
+                    }
+                }
+                if (encontrado == 0)
+                {
+                    falta = falta + 1;
+                }
+            }
+
             txtFaltantes.Text = falta.ToString();
             if (falta == 0)
             {
@@ -265,8 +284,8 @@ namespace Vista
         {
             pnlCalculo.Hide();
             estadoInicial(tipoUsu);
-            
-            MessageBox.Show("Comision calculada");
+            AbrirFormInPanel(new FrmRanking(tipoUsu, idPayee));
+          
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -297,7 +316,7 @@ namespace Vista
         private void button11_Click(object sender, EventArgs e)
         {
             listaNoticia = logicaNoticia.listarNoticias();
-            listaVisitada = logicaNoticia.listarVisitadas(idPayee, maximo);
+            listaVisitada = logicaNoticia.listarVisitadas(idPayee);
             maximo = cantidadMaxima(listaNoticia);
             evaluarCampana();
             pnlVisualizar.Hide();

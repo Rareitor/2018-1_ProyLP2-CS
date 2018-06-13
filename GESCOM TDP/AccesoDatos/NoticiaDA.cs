@@ -89,7 +89,7 @@ namespace AccesoDatos
 
         }
 
-        public BindingList<int> listarVisitadas(string idPayee, int maximo)
+        public BindingList<int> listarVisitadas(string idPayee)
         {
             BindingList<int> lista = new BindingList<int>();
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
@@ -100,10 +100,8 @@ namespace AccesoDatos
             con.Open();
 
             comando.Connection = con;
-            comando.CommandText = "LISTAR_VISITAS";
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = idPayee;
-            comando.Parameters.Add("cant", MySqlDbType.Int32).Value = maximo;
+            comando.CommandText = "SELECT * from NoticiasVisitadas where idPayee= '" + idPayee + "';";
+
             MySqlDataReader rs = comando.ExecuteReader();
             while (rs.Read())
             {

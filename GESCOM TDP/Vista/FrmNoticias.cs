@@ -63,7 +63,7 @@ namespace Vista.Otros
             int visitada;
             int index = Int32.Parse(lBNoticias.SelectedValue.ToString());
             string titulo = "";
-            string texto = obtenerNoticia(index,ref titulo);
+                string texto = obtenerNoticia(index,ref titulo);
             visitada = verificarSiFueVisitada(index);
             if (visitada == 0)
             {

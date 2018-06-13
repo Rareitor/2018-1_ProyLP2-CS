@@ -153,6 +153,12 @@
     <Compile Include="FrmGestionarUsuario.Designer.cs">
       <DependentUpon>FrmGestionarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRanking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRanking.Designer.cs">
+      <DependentUpon>FrmRanking.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRecuperarOrden.cs">
       <SubType>Form</SubType>
     </Compile>
