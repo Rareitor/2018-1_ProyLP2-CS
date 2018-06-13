@@ -118,41 +118,39 @@ namespace Vista
             int mantenimiento = 0;
             DateTime tiempo = new DateTime();
             logicaTrabajador.mantenimiento(ref mantenimiento, ref tiempo);
-
-            if(mantenimiento == 0)
+            String usuario = txtUsuario.Text;
+            String contra = txtContraseña.Text;
+            string nombreUsu = "", apellidoPat = "", id_usuario = "";
+            int bloqueado = 2;
+            if (usuario == "USUARIO")
             {
-                String usuario = txtUsuario.Text;
-                String contra = txtContraseña.Text;
-                string nombreUsu = "", apellidoPat = "", id_usuario = "";
-                int bloqueado = 2;
+                MessageBox.Show("Por favor, ingrese un usuario", "Ingresara Usuario", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                txtUsuario.Text = "USUARIO";
+                txtUsuario.ForeColor = Color.Black;
+                return;
+            }
+            if (contra == "CONTRASEÑA")
+            {
+                txtContraseña.Text = "CONTRASEÑA";
+                MessageBox.Show("Por favor, ingrese la contraseña.", "Ingresar Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                txtContraseña.Text = "CONTRASEÑA";
+                txtContraseña.ForeColor = Color.Black;
+                txtContraseña.UseSystemPasswordChar = false;
+                return;
+            }
+            if (usuario != "USUARIO" && contra != "CONTRASEÑA")
+            {
+                usuario = usuario.Trim();
+                int existeUsu = 0, errorContra = 0;
+                string respuesta = logicaTrabajador.existeUsuarioyContraseña(usuario, contra, ref existeUsu, ref errorContra,
+                    ref id_usuario, ref nombreUsu, ref apellidoPat, ref bloqueado);
 
-                if (usuario == "USUARIO")
+                if(mantenimiento == 0 || (mantenimiento == 1 && respuesta == "Administrador"))
                 {
-                    MessageBox.Show("Por favor, ingrese un usuario", "INGRESAR USUARIO", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                    txtUsuario.Text = "USUARIO";
-                    txtUsuario.ForeColor = Color.Black;
-                    return;
-                }
-                if (contra == "CONTRASEÑA")
-                {
-                    txtContraseña.Text = "CONTRASEÑA";
-                    MessageBox.Show("Por favor, ingrese la contraseña.", "INGRESAR CONTRASEÑA", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                    txtContraseña.Text = "CONTRASEÑA";
-                    txtContraseña.ForeColor = Color.Black;
-                    txtContraseña.UseSystemPasswordChar = false;
-                    return;
-                }
-
-                if (usuario != "USUARIO" && contra != "CONTRASEÑA")
-                {
-
-                    usuario = usuario.Trim();
-                    int existeUsu = 0, errorContra = 0;
-                    string respuesta = logicaTrabajador.existeUsuarioyContraseña(usuario, contra, ref existeUsu, ref errorContra,
-                        ref id_usuario, ref nombreUsu, ref apellidoPat, ref bloqueado);
 
                     if (existeUsu == 1 && errorContra == 0 && bloqueado == 0)
                     {
+
                         ven = new FrmVentanaAdministracion(respuesta, usuario, id_usuario, nombreUsu, apellidoPat);
                         ven.Show();
                         this.Hide();
@@ -160,11 +158,11 @@ namespace Vista
                     else if (existeUsu == 1 && errorContra == 1)
                     {
 
-                        MessageBox.Show("Contraseña errónea, vuelva a ingresar la contraseña", "CONTRASEÑA INCORRECTA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Contraseña errónea, vuelva a ingresar la contraseña", "Contraseña Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         if (bloqueado == 1)
                         {
-                            MessageBox.Show("Su cuenta se encuentra bloqueada.\nPor favor comunicarse con el administrador Freddy.\nCorreo: fpaz@pucp.pe", "CUENTA BLOQUEADA",
+                            MessageBox.Show("Su cuenta se encuentra bloqueada.\nPor favor comunicarse con el administrador Freddy.\nCorreo: fpaz@pucp.pe", "Cuenta Bloqueada",
                             MessageBoxButtons.OK, MessageBoxIcon.Stop);
                             txtUsuario.Text = "USUARIO";
                             txtContraseña.Text = "CONTRASEÑA";
@@ -179,7 +177,7 @@ namespace Vista
                     }
                     else if (existeUsu == 0)
                     {
-                        MessageBox.Show("Por favor, ingrese un usuario válido", "INGRESAR USUARIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Por favor, ingrese un usuario válido", "Ingresar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtUsuario.Text = "USUARIO";
                         txtContraseña.Text = "CONTRASEÑA";
                         txtUsuario.ForeColor = Color.Black;
@@ -189,7 +187,7 @@ namespace Vista
                     }
                     else
                     {
-                        MessageBox.Show("Su cuenta se encuentra bloqueada.\nPor favor comunicarse con el administrador Freddy.\nCorreo: fpaz@pucp.pe", "CUENTA BLOQUEADA",
+                        MessageBox.Show("Su cuenta se encuentra bloqueada.\nPor favor comunicarse con el administrador Freddy.\nCorreo: fpaz@pucp.pe", "Cuenta Bloqueada",
                             MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         txtUsuario.Text = "USUARIO";
                         txtContraseña.Text = "CONTRASEÑA";
@@ -199,12 +197,11 @@ namespace Vista
                         return;
                     }
                 }
+                else
+                {
+                    MessageBox.Show("SISTEMA GESCOM TDP\n" + "En Mantenimiento hasta el " + tiempo.ToString("dd/MM/yyyy"), "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else
-            {
-                MessageBox.Show("SISTEMA GESCOM TDP\n"+ "En Mantenimiento hasta el " + tiempo.ToString(), "MANTENIMIENTO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
         }
 
         private void txtContraseña_TextChanged(object sender, EventArgs e)

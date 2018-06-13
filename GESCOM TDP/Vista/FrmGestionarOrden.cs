@@ -697,5 +697,10 @@ namespace Vista
         {
 
         }
+
+        private void dateIngreso_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

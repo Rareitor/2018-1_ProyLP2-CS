@@ -63,13 +63,13 @@
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvBusqueda = new System.Windows.Forms.DataGridView();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.ID_Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Comisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCanal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.pnlBusqueda.SuspendLayout();
@@ -297,6 +297,7 @@
             this.dateIngreso.Name = "dateIngreso";
             this.dateIngreso.Size = new System.Drawing.Size(204, 23);
             this.dateIngreso.TabIndex = 14;
+            this.dateIngreso.ValueChanged += new System.EventHandler(this.dateIngreso_ValueChanged);
             // 
             // label5
             // 
@@ -439,10 +440,6 @@
             this.dgvBusqueda.TabIndex = 0;
             this.dgvBusqueda.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBusqueda_ColumnHeaderMouseClick);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // ID_Orden
             // 
             this.ID_Orden.DataPropertyName = "Id";
@@ -487,6 +484,10 @@
             this.Monto.DataPropertyName = "Monto";
             this.Monto.HeaderText = "Monto (Soles)";
             this.Monto.Name = "Monto";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // FrmGestionarOrden
             // 

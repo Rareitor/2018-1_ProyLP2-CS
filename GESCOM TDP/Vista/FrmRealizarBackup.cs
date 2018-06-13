@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,29 +14,80 @@ namespace Vista.Otros
 {
     public partial class FrmRealizarBackup : Form
     {
+        TrabajadorBL logicaTrabajador = new TrabajadorBL();
         public FrmRealizarBackup()
         {
             InitializeComponent();
-         
-
+            int mantenimiento = 0;
+            DateTime tiempo = new DateTime();
+            logicaTrabajador.mantenimiento(ref mantenimiento, ref tiempo);
+            if(mantenimiento == 1)
+            {
+                dateIngreso.Enabled = false;
+                dateIngreso.Text = tiempo.ToString();
+                btnCancelar.Text = "Terminar";
+            }
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog
-            {
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal),
-                Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*"
-            };
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(btnCancelar.Text == "Registrar"){
+                DialogResult dialogResult = MessageBox.Show("Seguro de registrar mantenimiento", "Mantenimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if(dateIngreso.Value >= DateTime.Now)
+                    {
+                        logicaTrabajador.PonerMantenimiento(1, dateIngreso.Value);
+                        MessageBox.Show("Mantenimiento hasta el " + dateIngreso.Value.ToString("dd/MM/yyyy"), "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        dateIngreso.Enabled = false;
+                        btnCancelar.Text = "Terminar";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fecha inválida", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
+                }
+            }
+            else
+            {
+                
+                logicaTrabajador.PonerMantenimiento(0, dateIngreso.Value);
+                MessageBox.Show("Mantenimiento terminado", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dateIngreso.Enabled = true;
+                btnCancelar.Text = "Registrar";
+            }
+            
+        }
+
+        private void txtUbicacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIngreseUbicacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUbicacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateIngreso_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

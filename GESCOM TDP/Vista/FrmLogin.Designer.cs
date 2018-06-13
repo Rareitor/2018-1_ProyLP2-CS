@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.pnlAzul = new System.Windows.Forms.Panel();
+            this.lbFecha = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.picTelefonica = new System.Windows.Forms.PictureBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btnAcceder = new System.Windows.Forms.Button();
@@ -39,9 +41,7 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.picMaximizar = new System.Windows.Forms.PictureBox();
             this.picMinimizar = new System.Windows.Forms.PictureBox();
-            this.lblHora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbFecha = new System.Windows.Forms.Label();
             this.pnlAzul.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTelefonica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMaximizar)).BeginInit();
@@ -60,6 +60,28 @@
             this.pnlAzul.Size = new System.Drawing.Size(200, 291);
             this.pnlAzul.TabIndex = 0;
             this.pnlAzul.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // lbFecha
+            // 
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lbFecha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbFecha.Location = new System.Drawing.Point(12, 252);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(41, 15);
+            this.lbFecha.TabIndex = 2;
+            this.lbFecha.Text = "label1";
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lblHora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblHora.Location = new System.Drawing.Point(24, 208);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(79, 29);
+            this.lblHora.TabIndex = 1;
+            this.lblHora.Text = "label1";
             // 
             // picTelefonica
             // 
@@ -165,32 +187,10 @@
             this.picMinimizar.TabStop = false;
             this.picMinimizar.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.lblHora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblHora.Location = new System.Drawing.Point(42, 208);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(79, 29);
-            this.lblHora.TabIndex = 1;
-            this.lblHora.Text = "label1";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lbFecha
-            // 
-            this.lbFecha.AutoSize = true;
-            this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lbFecha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbFecha.Location = new System.Drawing.Point(5, 248);
-            this.lbFecha.Name = "lbFecha";
-            this.lbFecha.Size = new System.Drawing.Size(41, 15);
-            this.lbFecha.TabIndex = 2;
-            this.lbFecha.Text = "label1";
             // 
             // FrmLogin
             // 

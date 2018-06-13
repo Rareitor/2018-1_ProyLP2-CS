@@ -18,6 +18,10 @@ namespace Controlador
             accesoTrabajador.mantenimiento(ref estado, ref tiempo);
         }
 
+        public void PonerMantenimiento(int estado, DateTime tiempo)
+        {
+            accesoTrabajador.PonerMantenimiento(estado, tiempo);
+        }
         public string gestionarUsuarios(Trabajador t, string idSuperior, int opcion)
         {
             string idUsuario ="";
