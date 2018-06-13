@@ -228,6 +228,11 @@ namespace Vista
             {
                 cProducto.Tipo = "BONO";
             }
+
+            //VERIFICAR SI YA EXISTE EL COMBO PRODUCTO EN LA FECHA DETERMINADA
+            List<ComboProducto> listaActualizada = logicaCombo.listarComboProductos(fePeriodo);
+            
+
             DateTime fechaInicio = new DateTime(yearPeriodo,mesPeriodo, 1);
             DateTime fechaFin = new DateTime(yearPeriodo, mesPeriodo+ 1, 1).AddDays(-1);
 
@@ -248,13 +253,34 @@ namespace Vista
             cProducto.FePeriodo = fePeriodo;
             cProducto.FechaInicio1 = fechaInicio;
             cProducto.FechaFin1 = fechaFin;
-            string rpta =logicaCombo.agregarComboProducto(cProducto);
-            if (rpta == "Correcto")
-            {
-                MessageBox.Show("Se ha agregado correctamente el combo producto");
 
-                estadoComponentes(Estado.Deshabilitado);
+            int existeComboProd = 0;
+            foreach (ComboProducto cm in listaActualizada)
+            {
+                if (cm.Canal1.IdCanal == idCanal && cm.Combo1.IdCombo == idCombo && cm.Producto.IdProducto == idProducto)
+                {
+                    existeComboProd = 1;
+                    break;
+                }
+
             }
+
+            if (existeComboProd == 0)
+            {
+                string rpta = logicaCombo.agregarComboProducto(cProducto);
+                if (rpta == "Correcto")
+                {
+                    MessageBox.Show("Se ha agregado correctamente el combo producto");
+
+                    estadoComponentes(Estado.Deshabilitado);
+                }
+            } else
+            {
+                MessageBox.Show("El combo producto ya se encuentra registrado");
+            }
+
+
+            
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
