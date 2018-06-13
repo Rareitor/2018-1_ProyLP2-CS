@@ -441,10 +441,11 @@ namespace AccesoDatos
                 string user=  rs.GetString("username");
                 string pass = rs.GetString("password");
                 string tipo = rs.GetString("cargo");
-                 cant = rs.GetInt32("errores");
+                 
 
                 if (user == usuario)
                 {
+                    cant = rs.GetInt32("errores");
                     existeUsu = 1;
                     bloqueado = rs.GetInt32("isBlocked");
                     id_usuario = rs.GetString("idPayee");

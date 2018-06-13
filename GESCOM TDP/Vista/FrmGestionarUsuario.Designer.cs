@@ -36,6 +36,7 @@
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.gbGenerales = new System.Windows.Forms.GroupBox();
+            this.labelDni = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -53,6 +54,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.MensajeCorreo = new System.Windows.Forms.Label();
+            this.pictureCheked = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.rbnGerente = new System.Windows.Forms.RadioButton();
@@ -76,15 +79,12 @@
             this.ApellidoPat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoMat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureCheked = new System.Windows.Forms.PictureBox();
-            this.MensajeCorreo = new System.Windows.Forms.Label();
-            this.labelDni = new System.Windows.Forms.Label();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCheked)).BeginInit();
             this.pnlBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCheked)).BeginInit();
             this.SuspendLayout();
             // 
             // tsMenu
@@ -176,6 +176,17 @@
             this.gbGenerales.Text = "Datos Generales";
             this.gbGenerales.Enter += new System.EventHandler(this.gbGenerales_Enter);
             // 
+            // labelDni
+            // 
+            this.labelDni.AutoSize = true;
+            this.labelDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.labelDni.ForeColor = System.Drawing.Color.Red;
+            this.labelDni.Location = new System.Drawing.Point(183, 80);
+            this.labelDni.Name = "labelDni";
+            this.labelDni.Size = new System.Drawing.Size(164, 13);
+            this.labelDni.TabIndex = 43;
+            this.labelDni.Text = "El DNI ya se encuentra registrado";
+            // 
             // txtContraseña
             // 
             this.txtContraseña.Enabled = false;
@@ -258,6 +269,7 @@
             this.txtDNI.TabIndex = 10;
             this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
+            this.txtDNI.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDNI_KeyUp);
             // 
             // label3
             // 
@@ -347,6 +359,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Corporativos:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // MensajeCorreo
+            // 
+            this.MensajeCorreo.AutoSize = true;
+            this.MensajeCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.MensajeCorreo.ForeColor = System.Drawing.Color.Red;
+            this.MensajeCorreo.Location = new System.Drawing.Point(175, 134);
+            this.MensajeCorreo.Name = "MensajeCorreo";
+            this.MensajeCorreo.Size = new System.Drawing.Size(169, 13);
+            this.MensajeCorreo.TabIndex = 42;
+            this.MensajeCorreo.Text = "El correo ya se encuentra utilizado";
+            // 
+            // pictureCheked
+            // 
+            this.pictureCheked.Image = ((System.Drawing.Image)(resources.GetObject("pictureCheked.Image")));
+            this.pictureCheked.Location = new System.Drawing.Point(377, 110);
+            this.pictureCheked.Name = "pictureCheked";
+            this.pictureCheked.Size = new System.Drawing.Size(24, 22);
+            this.pictureCheked.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCheked.TabIndex = 41;
+            this.pictureCheked.TabStop = false;
             // 
             // label8
             // 
@@ -586,38 +619,6 @@
             this.Email.ReadOnly = true;
             this.Email.Width = 140;
             // 
-            // pictureCheked
-            // 
-            this.pictureCheked.Image = ((System.Drawing.Image)(resources.GetObject("pictureCheked.Image")));
-            this.pictureCheked.Location = new System.Drawing.Point(377, 110);
-            this.pictureCheked.Name = "pictureCheked";
-            this.pictureCheked.Size = new System.Drawing.Size(24, 22);
-            this.pictureCheked.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureCheked.TabIndex = 41;
-            this.pictureCheked.TabStop = false;
-            // 
-            // MensajeCorreo
-            // 
-            this.MensajeCorreo.AutoSize = true;
-            this.MensajeCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.MensajeCorreo.ForeColor = System.Drawing.Color.Red;
-            this.MensajeCorreo.Location = new System.Drawing.Point(175, 134);
-            this.MensajeCorreo.Name = "MensajeCorreo";
-            this.MensajeCorreo.Size = new System.Drawing.Size(169, 13);
-            this.MensajeCorreo.TabIndex = 42;
-            this.MensajeCorreo.Text = "El correo ya se encuentra utilizado";
-            // 
-            // labelDni
-            // 
-            this.labelDni.AutoSize = true;
-            this.labelDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.labelDni.ForeColor = System.Drawing.Color.Red;
-            this.labelDni.Location = new System.Drawing.Point(183, 80);
-            this.labelDni.Name = "labelDni";
-            this.labelDni.Size = new System.Drawing.Size(164, 13);
-            this.labelDni.TabIndex = 43;
-            this.labelDni.Text = "El DNI ya se encuentra registrado";
-            // 
             // FrmGestionarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -636,10 +637,10 @@
             this.gbGenerales.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCheked)).EndInit();
             this.pnlBusqueda.ResumeLayout(false);
             this.pnlBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCheked)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

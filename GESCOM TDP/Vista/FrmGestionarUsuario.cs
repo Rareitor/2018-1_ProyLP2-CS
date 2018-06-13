@@ -648,7 +648,12 @@ namespace Vista
 
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            string dniP = txtDNI.Text + e.KeyChar;
+            
+        }
+
+        private void txtDNI_KeyUp(object sender, KeyEventArgs e)
+        {
+            string dniP = txtDNI.Text;
             int cant = dniP.Length;
 
             labelDni.Visible = false;
@@ -657,23 +662,24 @@ namespace Vista
                 int valido = 1;
                 foreach (String s in listaDni)
                 {
-                    
+
                     if (s == dniP)
                     {
                         valido = 0;
                         break;
                     }
                 }
-                    if (valido == 0)
-                    {
-                        labelDni.Visible = true;
-                        validoDni = 0;
-                    } else
-                    {
-                        labelDni.Visible = false;
-                        validoDni = 1;
-                    }
-                
+                if (valido == 0)
+                {
+                    labelDni.Visible = true;
+                    validoDni = 0;
+                }
+                else
+                {
+                    labelDni.Visible = false;
+                    validoDni = 1;
+                }
+
             }
         }
     }
