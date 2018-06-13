@@ -12,6 +12,25 @@ namespace AccesoDatos
 {
     public class TrabajadorDA
     {
+        public void mantenimiento(ref int estado, ref DateTime tiempo)
+        {
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+            comando.Connection = con;
+            comando.CommandText = "MANTENIMIENTO";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            MySqlDataReader rs = comando.ExecuteReader();
+            rs.Read();
+            estado = rs.GetInt32("estado");
+            if(rs.GetDateTime("tiempo") != null)
+                tiempo = rs.GetDateTime("tiempo");
+
+        }
+
         public string insertarUsuario(Trabajador t, string idSuperior)
         {
 
