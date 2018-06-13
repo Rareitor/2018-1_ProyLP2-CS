@@ -77,7 +77,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.lblHora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblHora.Location = new System.Drawing.Point(24, 208);
+            this.lblHora.Location = new System.Drawing.Point(50, 208);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(79, 29);
             this.lblHora.TabIndex = 1;

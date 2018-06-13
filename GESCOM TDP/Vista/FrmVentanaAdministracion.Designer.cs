@@ -120,11 +120,11 @@
             // txtFaltantes
             // 
             this.txtFaltantes.AutoSize = true;
-            this.txtFaltantes.BackColor = System.Drawing.Color.Red;
+            this.txtFaltantes.BackColor = System.Drawing.Color.Transparent;
             this.txtFaltantes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtFaltantes.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold);
-            this.txtFaltantes.ForeColor = System.Drawing.Color.Blue;
-            this.txtFaltantes.Location = new System.Drawing.Point(170, 613);
+            this.txtFaltantes.ForeColor = System.Drawing.Color.Red;
+            this.txtFaltantes.Location = new System.Drawing.Point(179, 611);
             this.txtFaltantes.Name = "txtFaltantes";
             this.txtFaltantes.Size = new System.Drawing.Size(24, 26);
             this.txtFaltantes.TabIndex = 22;
@@ -136,9 +136,9 @@
             // 
             this.pictureCampana.BackColor = System.Drawing.Color.Red;
             this.pictureCampana.Image = ((System.Drawing.Image)(resources.GetObject("pictureCampana.Image")));
-            this.pictureCampana.Location = new System.Drawing.Point(133, 613);
+            this.pictureCampana.Location = new System.Drawing.Point(133, 610);
             this.pictureCampana.Name = "pictureCampana";
-            this.pictureCampana.Size = new System.Drawing.Size(50, 26);
+            this.pictureCampana.Size = new System.Drawing.Size(46, 30);
             this.pictureCampana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureCampana.TabIndex = 21;
             this.pictureCampana.TabStop = false;
