@@ -221,6 +221,34 @@ namespace AccesoDatos
             return listaOrden;
         }
 
+        public BindingList<String> listarOrdenCodigo()
+        {
+            BindingList<String> lista = new BindingList<String>();
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "LISTAR_ORDENES_ADMIN";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            MySqlDataReader rs = comando.ExecuteReader();
+            while (rs.Read())
+            {
+                
+                string codigo = rs.GetString("codigo");
+
+                lista.Add(codigo);
+            }
+            con.Close();
+            return lista;
+        }
+
+
         public BindingList<Orden> listarOrdenesComisionista(string idPayee, DateTime fecha1, DateTime fecha2)
         {
             BindingList<Orden> listaOrden = new BindingList<Orden>();

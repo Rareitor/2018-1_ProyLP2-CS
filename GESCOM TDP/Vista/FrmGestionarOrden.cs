@@ -25,9 +25,12 @@ namespace Vista
         Orden orden = new Orden();
         Orden objetoSeleccionado = new Orden();
         private BindingList<Orden> listaOriginal;
+        private int existeCodigo;
         private SortableBindingList<Orden> listaOrdenada;
         private string tipoOrden = "COMISION";
         private int opcion =1;
+        private BindingList<String> listaOrdenCodigo = new BindingList<string>();
+
         private string tipoUsuario;
         public string idUsuario;
         public enum Estado
@@ -42,7 +45,7 @@ namespace Vista
             this.idUsuario = idUsuario;
             llenarComboBox();
             estadoComponentes(Estado.Inicial);
-            
+            listaOrdenCodigo = logicaOrden.listarOrdenesCodigo();
             if (tipoUsu == "Comisionista")
             {
                 txtIDComisionista.Text = idUsuario;
@@ -238,7 +241,7 @@ namespace Vista
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtIDComisionista.Text == "" || txtPago.Text == "" ||
-                txtCodigo.Text== "") { 
+                txtCodigo.Text== "" || existeCodigo == 1) { 
             
                 MessageBox.Show("Ingrese una orden valida");
                 
@@ -286,6 +289,7 @@ namespace Vista
 
                     opcion = 1;
                     estadoComponentes(Estado.Deshabilitado);
+                    listaOrdenCodigo = logicaOrden.listarOrdenesCodigo();
                 }
             }
         }
@@ -415,6 +419,7 @@ namespace Vista
 
         private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
+            int encontrado = 0;
             try
             {
                 OpenFileDialog open = new OpenFileDialog();
@@ -424,10 +429,25 @@ namespace Vista
                     string ruta = open.FileName;
 
                     BindingList<Orden> listaCargar = cargarArchivo(ruta);
-
+                    int cantCargadas = 0;
                     foreach (Orden o in listaCargar)
                     {
-                        logicaOrden.GestionarOrden(o, 1,"ARCH");
+                        encontrado = 0;
+                        foreach(String orden in listaOrdenCodigo)
+                        {
+                            if (orden == o.Codigo)
+                            {
+                                encontrado = 1;
+                                break;
+                            }
+                        }
+                        if (encontrado == 0)
+                        {
+                            logicaOrden.GestionarOrden(o, 1, "ARCH");
+                            cantCargadas++;
+                            listaOrdenCodigo.Add(o.Codigo);
+                        }
+                        
                     }
 
                     //Cargar archivo de canales
@@ -448,7 +468,7 @@ namespace Vista
                     //{
                     //    logicaProducto.cargarProducto(p);
                     //}
-
+                    MessageBox.Show("Se ha cargado " + cantCargadas + " ordenes");
                 }
                 MessageBox.Show("Se ha cargado los datos correctamente");
             } catch (Exception ex)
@@ -464,7 +484,7 @@ namespace Vista
             FileStream archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read);
             StreamReader lector = new StreamReader(archivo);
             string TextLine;
-            char delimitador = ';';
+            char delimitador = ',';
             listaOrdenada = new SortableBindingList<Orden>();
             lector.ReadLine();
 
@@ -485,7 +505,7 @@ namespace Vista
                 o.Producto.IdProducto = substrings[5];
                 o.Producto.Tipo = substrings[6];
                 o.Monto = Convert.ToDouble(substrings[7]);
-
+                o.Codigo = substrings[8];
                 listaOrdenada.Add(o);
             }
 
@@ -635,6 +655,29 @@ namespace Vista
         private void dgvBusqueda_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             dgvBusqueda.Sort(dgvBusqueda.Columns[e.ColumnIndex], System.ComponentModel.ListSortDirection.Ascending);
+        }
+
+        private void txtCodigo_KeyUp(object sender, KeyEventArgs e)
+        {
+            existeCodigo = 0;
+            string cod = txtCodigo.Text;
+            foreach (String o in listaOrdenCodigo)
+            {
+                if (o == cod)
+                {
+                    existeCodigo = 1;
+                    break;
+                }
+            }
+                if (existeCodigo == 1)
+                {
+                    labelErrorCodigo.Visible = true;
+                } else
+                {
+                    labelErrorCodigo.Visible = false;
+                }
+            
+
         }
     }
 }

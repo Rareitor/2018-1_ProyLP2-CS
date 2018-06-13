@@ -401,7 +401,8 @@ namespace AccesoDatos
             string devolver = "";
             existeUsu = 0;
             errorContra = 1;
-            
+            int cant=0;
+
             MySqlConnection con = new MySqlConnection(cadena);
             MySqlCommand comando = new MySqlCommand();
 
@@ -421,7 +422,7 @@ namespace AccesoDatos
                 string user=  rs.GetString("username");
                 string pass = rs.GetString("password");
                 string tipo = rs.GetString("cargo");
-                
+                 cant = rs.GetInt32("errores");
 
                 if (user == usuario)
                 {
@@ -474,9 +475,9 @@ namespace AccesoDatos
             {
                 comando2.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = id_usuario;
                 comando2.Parameters.Add("situacion", MySqlDbType.VarChar).Value = "ERROR";
-
+                
                 comando2.ExecuteNonQuery();
-      
+                if (cant == 2) bloqueado = 1;
             }
             con2.Close();
 

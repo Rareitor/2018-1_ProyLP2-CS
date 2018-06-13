@@ -67,6 +67,7 @@
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCanal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelErrorCodigo = new System.Windows.Forms.Label();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.pnlBusqueda.SuspendLayout();
@@ -145,6 +146,7 @@
             // 
             // gbGenerales
             // 
+            this.gbGenerales.Controls.Add(this.labelErrorCodigo);
             this.gbGenerales.Controls.Add(this.label4);
             this.gbGenerales.Controls.Add(this.txtCodigo);
             this.gbGenerales.Controls.Add(this.btnComboProducto);
@@ -174,7 +176,7 @@
             // btnComboProducto
             // 
             this.btnComboProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComboProducto.Location = new System.Drawing.Point(378, 161);
+            this.btnComboProducto.Location = new System.Drawing.Point(378, 178);
             this.btnComboProducto.Name = "btnComboProducto";
             this.btnComboProducto.Size = new System.Drawing.Size(30, 23);
             this.btnComboProducto.TabIndex = 23;
@@ -185,7 +187,7 @@
             // btnBuscarComisionista
             // 
             this.btnBuscarComisionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarComisionista.Location = new System.Drawing.Point(378, 123);
+            this.btnBuscarComisionista.Location = new System.Drawing.Point(378, 140);
             this.btnBuscarComisionista.Name = "btnBuscarComisionista";
             this.btnBuscarComisionista.Size = new System.Drawing.Size(30, 23);
             this.btnBuscarComisionista.TabIndex = 22;
@@ -198,7 +200,7 @@
             this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Location = new System.Drawing.Point(167, 240);
+            this.cmbProducto.Location = new System.Drawing.Point(167, 257);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(204, 23);
             this.cmbProducto.TabIndex = 21;
@@ -208,7 +210,7 @@
             this.cmbCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCombo.FormattingEnabled = true;
-            this.cmbCombo.Location = new System.Drawing.Point(167, 202);
+            this.cmbCombo.Location = new System.Drawing.Point(167, 219);
             this.cmbCombo.Name = "cmbCombo";
             this.cmbCombo.Size = new System.Drawing.Size(204, 23);
             this.cmbCombo.TabIndex = 20;
@@ -218,7 +220,7 @@
             this.cmbCanal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCanal.FormattingEnabled = true;
-            this.cmbCanal.Location = new System.Drawing.Point(167, 161);
+            this.cmbCanal.Location = new System.Drawing.Point(167, 178);
             this.cmbCanal.Name = "cmbCanal";
             this.cmbCanal.Size = new System.Drawing.Size(204, 23);
             this.cmbCanal.TabIndex = 19;
@@ -227,7 +229,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(15, 241);
+            this.label7.Location = new System.Drawing.Point(15, 258);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 20);
             this.label7.TabIndex = 17;
@@ -236,7 +238,7 @@
             // txtPago
             // 
             this.txtPago.Enabled = false;
-            this.txtPago.Location = new System.Drawing.Point(167, 279);
+            this.txtPago.Location = new System.Drawing.Point(167, 296);
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(204, 26);
             this.txtPago.TabIndex = 16;
@@ -247,7 +249,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(15, 280);
+            this.label6.Location = new System.Drawing.Point(15, 297);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 20);
             this.label6.TabIndex = 15;
@@ -267,7 +269,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(15, 204);
+            this.label5.Location = new System.Drawing.Point(15, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 12;
@@ -306,7 +308,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(15, 164);
+            this.label2.Location = new System.Drawing.Point(15, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 5;
@@ -316,7 +318,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNombre.Location = new System.Drawing.Point(15, 127);
+            this.lblNombre.Location = new System.Drawing.Point(15, 144);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(140, 20);
             this.lblNombre.TabIndex = 3;
@@ -325,7 +327,7 @@
             // txtIDComisionista
             // 
             this.txtIDComisionista.Enabled = false;
-            this.txtIDComisionista.Location = new System.Drawing.Point(167, 123);
+            this.txtIDComisionista.Location = new System.Drawing.Point(167, 140);
             this.txtIDComisionista.Name = "txtIDComisionista";
             this.txtIDComisionista.Size = new System.Drawing.Size(204, 26);
             this.txtIDComisionista.TabIndex = 4;
@@ -422,6 +424,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(204, 26);
             this.txtCodigo.TabIndex = 25;
+            this.txtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyUp);
             // 
             // ID_Orden
             // 
@@ -456,6 +459,18 @@
             this.Monto.DataPropertyName = "Monto";
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
+            // 
+            // labelErrorCodigo
+            // 
+            this.labelErrorCodigo.AutoSize = true;
+            this.labelErrorCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.labelErrorCodigo.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorCodigo.Location = new System.Drawing.Point(179, 116);
+            this.labelErrorCodigo.Name = "labelErrorCodigo";
+            this.labelErrorCodigo.Size = new System.Drawing.Size(177, 13);
+            this.labelErrorCodigo.TabIndex = 26;
+            this.labelErrorCodigo.Text = "La orden ya se encuentra registrada";
+            this.labelErrorCodigo.Visible = false;
             // 
             // FrmGestionarOrden
             // 
@@ -521,5 +536,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCanal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.Label labelErrorCodigo;
     }
 }

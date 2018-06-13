@@ -290,7 +290,8 @@ namespace Vista
                 }
             }
 
-            if (validarTodo == 0)
+            if (validarTodo == 0 || txtApellidoMat.Text !="" ||
+                txtApellidoPat.Text != "" || txtNombre.Text != "")
             {
                 MessageBox.Show("Ingrese datos de un usuario valido");
             }

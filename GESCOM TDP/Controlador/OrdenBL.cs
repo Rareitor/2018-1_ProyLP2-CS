@@ -87,6 +87,10 @@ namespace Controlador
             return accesoOrden.listarOrdenesGerente(idGerente,fecha1, fecha2);
         }
 
-       
+        public BindingList<String> listarOrdenesCodigo()
+        {
+            return accesoOrden.listarOrdenCodigo();
+
+        }
     }
 }
