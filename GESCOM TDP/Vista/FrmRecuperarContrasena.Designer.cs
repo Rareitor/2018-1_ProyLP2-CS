@@ -57,7 +57,7 @@
             // 
             // btnRecuperarContra
             // 
-            this.btnRecuperarContra.Location = new System.Drawing.Point(129, 72);
+            this.btnRecuperarContra.Location = new System.Drawing.Point(129, 81);
             this.btnRecuperarContra.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecuperarContra.Name = "btnRecuperarContra";
             this.btnRecuperarContra.Size = new System.Drawing.Size(196, 28);

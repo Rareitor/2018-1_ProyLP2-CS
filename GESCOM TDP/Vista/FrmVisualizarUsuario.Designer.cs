@@ -215,7 +215,7 @@
             // rbnPdf
             // 
             this.rbnPdf.AutoSize = true;
-            this.rbnPdf.Location = new System.Drawing.Point(64, 28);
+            this.rbnPdf.Location = new System.Drawing.Point(79, 26);
             this.rbnPdf.Name = "rbnPdf";
             this.rbnPdf.Size = new System.Drawing.Size(46, 17);
             this.rbnPdf.TabIndex = 7;
@@ -226,7 +226,7 @@
             // rbnExcel
             // 
             this.rbnExcel.AutoSize = true;
-            this.rbnExcel.Location = new System.Drawing.Point(7, 26);
+            this.rbnExcel.Location = new System.Drawing.Point(22, 26);
             this.rbnExcel.Name = "rbnExcel";
             this.rbnExcel.Size = new System.Drawing.Size(51, 17);
             this.rbnExcel.TabIndex = 6;
@@ -236,7 +236,7 @@
             // 
             // btnExportar
             // 
-            this.btnExportar.Location = new System.Drawing.Point(31, 63);
+            this.btnExportar.Location = new System.Drawing.Point(35, 56);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 23);
             this.btnExportar.TabIndex = 5;
