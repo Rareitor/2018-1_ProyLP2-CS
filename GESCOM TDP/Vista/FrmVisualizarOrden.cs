@@ -72,33 +72,38 @@ namespace Vista.Otros
         {
             SortableBindingList<Orden> listaAux = new SortableBindingList<Orden>();
             string filtro = cbCampo.Text;
-            string field = tbFiltro.Text;
+            string field = tbFiltro.Text.ToLower();
 
 
             Boolean cumple = false;
             Double monto = 0.0;
             foreach (Orden orden in listaOrdenada)
             {
+                string nombreMin = orden.NombreTrabajadorCompleto.ToLower();
+                string nombreProdMin = orden.NombreProducto.ToLower();
+                string nombreCanalMin = orden.NombreCanal.ToLower();
+                string distritoMin = orden.Distrito.ToLower();
+
                 switch (filtro)
                 {
                     case "<Todos>":
                         cumple = orden.Id.Contains(field)
-                                || orden.NombreTrabajadorCompleto.Contains(field)
-                                || orden.NombreProducto.Contains(field)
-                                || orden.NombreCanal.Contains(field)
-                                || orden.Distrito.Contains(field);
+                                || nombreMin.Contains(field)
+                                || nombreProdMin.Contains(field)
+                                || nombreCanalMin.Contains(field)
+                                || distritoMin.Contains(field);
                         break;
                     case "Comisionista":
-                        cumple = orden.NombreTrabajadorCompleto.Contains(field);
+                        cumple = nombreMin.Contains(field);
                         break;
                     case "Producto":
-                        cumple = orden.NombreProducto.Contains(field);
+                        cumple = nombreProdMin.Contains(field);
                         break;
                     case "Canal":
-                        cumple = orden.NombreCanal.Contains(field);
+                        cumple = nombreCanalMin.Contains(field);
                         break;
                     case "Distrito":
-                        cumple = orden.Distrito.Contains(field);
+                        cumple = distritoMin.Contains(field);
                         break;
                     default:
                         cumple = true;

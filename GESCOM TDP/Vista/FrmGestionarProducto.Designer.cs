@@ -120,6 +120,7 @@ namespace Vista
             this.cmbCombo.Name = "cmbCombo";
             this.cmbCombo.Size = new System.Drawing.Size(240, 23);
             this.cmbCombo.TabIndex = 26;
+            this.cmbCombo.SelectedIndexChanged += new System.EventHandler(this.cmbCombo_SelectedIndexChanged);
             // 
             // cmbCanal
             // 

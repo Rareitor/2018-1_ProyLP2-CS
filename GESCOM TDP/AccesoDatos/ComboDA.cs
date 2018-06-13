@@ -11,10 +11,10 @@ namespace AccesoDatos
 {
     public class ComboDA
     {
-        public BindingList<Combo> ListarCombos()
+        public BindingList<Combo> ListarCombos(ref BindingList<String> listaComision, ref BindingList<String> listaBono, ref BindingList<String> listaPenalidad)
         {
             BindingList<Combo> listaCombos= new BindingList<Combo>();
-
+            
             string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
                     "port=3306;password=4LDJZU;SslMode=none;" + " ";
 
@@ -36,6 +36,16 @@ namespace AccesoDatos
                 c.Nombre = rs.GetString("nombre");
                 c.Tipo = rs.GetString("tipo");
 
+                if (c.Tipo == "COMISION")
+                {
+                    listaComision.Add(c.IdCombo);
+                } else if (c.Tipo == "BONO")
+                {
+                    listaBono.Add(c.IdCombo);
+                }else if (c.Tipo == "PENALIDAD")
+                {
+                    listaPenalidad.Add(c.IdCombo);
+                }
                 listaCombos.Add(c);
             }
             con.Close();

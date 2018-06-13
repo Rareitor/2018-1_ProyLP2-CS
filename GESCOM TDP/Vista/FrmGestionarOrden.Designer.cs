@@ -204,6 +204,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(204, 26);
             this.txtCodigo.TabIndex = 25;
+            this.txtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyUp_1);
             // 
             // btnComboProducto
             // 

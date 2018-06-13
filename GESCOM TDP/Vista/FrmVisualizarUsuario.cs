@@ -96,8 +96,8 @@ namespace Vista.Otros
 
         private void filtrar()
         {
-            string filtro = cmbCampo.Text.ToLower();
-            string field = txtDato.Text;
+            string filtro = cmbCampo.Text;
+            string field = txtDato.Text.ToLower();
 
             SortableBindingList<Trabajador> listaAux = new SortableBindingList<Trabajador>();
 

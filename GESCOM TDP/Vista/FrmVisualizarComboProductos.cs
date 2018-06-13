@@ -82,14 +82,18 @@ namespace Vista
         private void filtrar()
         {
             string campo = cbCampo.Text;
-            string filtro = txtFiltro.Text;
+            string filtro = txtFiltro.Text.ToLower();
             listaFiltrada = new SortableBindingList<ComboProducto>();
             foreach (ComboProducto combo in listaOrdenada)
             {
-                if ((campo.Equals("<Todos>") && (combo.NombreProducto.Contains(filtro) || combo.NombreCanal.Contains(filtro) || combo.NombreCombo.Contains(filtro)))
-                    || campo.Equals("Producto") && combo.NombreProducto.Contains(filtro)
-                    || campo.Equals("Canal") && combo.NombreCanal.Contains(filtro)
-                    || campo.Equals("Combo") && combo.NombreCombo.Contains(filtro))
+                string nombreProdMin = combo.NombreProducto.ToLower();
+                string nombreCanalMin = combo.NombreCanal.ToLower();
+                string nombreComboMin = combo.NombreCombo.ToLower();
+
+                if ((campo.Equals("<Todos>") && (nombreProdMin.Contains(filtro) || nombreCanalMin.Contains(filtro) || nombreComboMin.Contains(filtro)))
+                    || campo.Equals("Producto") && nombreProdMin.Contains(filtro)
+                    || campo.Equals("Canal") && nombreCanalMin.Contains(filtro)
+                    || campo.Equals("Combo") && nombreComboMin.Contains(filtro))
                 {
                     listaFiltrada.Add(combo);
                 }
