@@ -22,7 +22,10 @@ namespace Vista
         {
 
             InitializeComponent();
-            string ruta = Application.StartupPath;
+            string ruta = @".\Manual.pdf";
+            fullPath = Path.GetFullPath(ruta);
+
+            MessageBox.Show(fullPath);
 
             string ruta2 = Path.Combine(Application.StartupPath, "Manual.pdf");
            
