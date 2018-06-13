@@ -274,7 +274,17 @@ namespace Vista
                         validarTodo = 0;
                     } else
                     {
-                        validarTodo = 1;
+                        if (rbnJefe.Checked == true || rbnComisionista.Checked == true)
+                        {
+                            if (txtIDSuperior.Text == "")
+                            {
+                                validarTodo = 0;
+                            }
+                            else
+                            {
+                                validarTodo = 1;
+                            }
+                        }
                     }
                    
                 }
