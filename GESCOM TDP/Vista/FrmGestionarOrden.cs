@@ -30,6 +30,9 @@ namespace Vista
         private string tipoOrden = "COMISION";
         private int opcion =1;
         private BindingList<String> listaOrdenCodigo = new BindingList<string>();
+        BindingList<String> listaComision = new BindingList<string>();
+        BindingList<String> listaPenalidad = new BindingList<string>();
+        BindingList<String> listaBono = new BindingList<string>();
 
         private string tipoUsuario;
         public string idUsuario;
@@ -168,7 +171,7 @@ namespace Vista
             cmbCanal.ValueMember = "idCanal";
             cmbCanal.SelectedItem = -1;
 
-            BindingList<Combo> listaCombo = logicaCombo.listarCombos();
+            BindingList<Combo> listaCombo = logicaCombo.listarCombos(ref listaComision, ref listaBono, ref listaPenalidad);
 
             cmbCombo.DataSource = listaCombo;
             cmbCombo.DisplayMember = "nombre";
@@ -667,23 +670,7 @@ namespace Vista
 
         private void txtCodigo_KeyUp(object sender, KeyEventArgs e)
         {
-            existeCodigo = 0;
-            string cod = txtCodigo.Text;
-            foreach (String o in listaOrdenCodigo)
-            {
-                if (o == cod)
-                {
-                    existeCodigo = 1;
-                    break;
-                }
-            }
-                if (existeCodigo == 1)
-                {
-                    labelErrorCodigo.Visible = true;
-                } else
-                {
-                    labelErrorCodigo.Visible = false;
-                }
+            
             
 
         }
@@ -698,9 +685,32 @@ namespace Vista
 
         }
 
+<<<<<<< HEAD
         private void dateIngreso_ValueChanged(object sender, EventArgs e)
         {
 
+=======
+        private void txtCodigo_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            existeCodigo = 0;
+            string cod = txtCodigo.Text;
+            foreach (String o in listaOrdenCodigo)
+            {
+                if (o == cod)
+                {
+                    existeCodigo = 1;
+                    break;
+                }
+            }
+            if (existeCodigo == 1)
+            {
+                labelErrorCodigo.Visible = true;
+            }
+            else
+            {
+                labelErrorCodigo.Visible = false;
+            }
+>>>>>>> d042b4be90ef5f89897bb7fdc949bf7620707e7b
         }
     }
 }
