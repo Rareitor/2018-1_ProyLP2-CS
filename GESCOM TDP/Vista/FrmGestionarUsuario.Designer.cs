@@ -444,6 +444,7 @@
             this.txtCorreo.Size = new System.Drawing.Size(204, 26);
             this.txtCorreo.TabIndex = 38;
             this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
+            this.txtCorreo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCorreo_KeyUp);
             // 
             // label10
             // 

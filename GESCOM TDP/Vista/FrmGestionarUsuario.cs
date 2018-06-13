@@ -598,41 +598,7 @@ namespace Vista
         private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            string texto = txtCorreo.Text + e.KeyChar;
- 
-
-            if (texto.Contains('@'))
-            {
-                int valido = 1;
-                foreach (String s in listaCorreos)
-                {
-                    if (s == texto)
-                    {
-                        valido = 0;
-                        break;
-                    }
-                }
-                if (valido == 0)
-                {
-                    MensajeCorreo.Text = "El correo ya se encuentra utilizado";
-                    MensajeCorreo.Visible = true;
-                    pictureCheked.Visible = false;
-                    validoCorreo = 0;
-
-                } else
-                {
-                    MensajeCorreo.Visible = false;
-                    pictureCheked.Visible = true;
-                    validoCorreo = 1;
-                }
-               
-            } else
-            {
-                MensajeCorreo.Visible = true;
-                MensajeCorreo.Text = "Ingrese un correo valido";
-                pictureCheked.Visible = false;
-            }
-            
+          
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -681,6 +647,47 @@ namespace Vista
                 }
 
             }
+        }
+
+        private void txtCorreo_KeyUp(object sender, KeyEventArgs e)
+        {
+            string texto = txtCorreo.Text;
+
+
+            if (texto.Contains('@'))
+            {
+                int valido = 1;
+                foreach (String s in listaCorreos)
+                {
+                    if (s == texto)
+                    {
+                        valido = 0;
+                        break;
+                    }
+                }
+                if (valido == 0)
+                {
+                    MensajeCorreo.Text = "El correo ya se encuentra utilizado";
+                    MensajeCorreo.Visible = true;
+                    pictureCheked.Visible = false;
+                    validoCorreo = 0;
+
+                }
+                else
+                {
+                    MensajeCorreo.Visible = false;
+                    pictureCheked.Visible = true;
+                    validoCorreo = 1;
+                }
+
+            }
+            else
+            {
+                MensajeCorreo.Visible = true;
+                MensajeCorreo.Text = "Ingrese un correo valido";
+                pictureCheked.Visible = false;
+            }
+
         }
     }
 }
