@@ -37,6 +37,8 @@
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnImportar = new System.Windows.Forms.ToolStripButton();
             this.gbGenerales = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnComboProducto = new System.Windows.Forms.Button();
             this.btnBuscarComisionista = new System.Windows.Forms.Button();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
@@ -60,8 +62,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dgvBusqueda = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.ID_Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Comisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -172,6 +172,24 @@
             this.gbGenerales.TabIndex = 19;
             this.gbGenerales.TabStop = false;
             this.gbGenerales.Text = "Datos Generales";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(14, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Código:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Location = new System.Drawing.Point(166, 87);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(204, 26);
+            this.txtCodigo.TabIndex = 25;
             // 
             // btnComboProducto
             // 
@@ -407,6 +425,7 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+<<<<<<< HEAD
             // label4
             // 
             this.label4.AutoSize = true;
@@ -426,6 +445,8 @@
             this.txtCodigo.TabIndex = 25;
             this.txtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyUp);
             // 
+=======
+>>>>>>> c0adf690b265d6a4dbfc8f21ec1ba869ac7d99cc
             // ID_Orden
             // 
             this.ID_Orden.DataPropertyName = "Id";
@@ -457,8 +478,9 @@
             // Monto
             // 
             this.Monto.DataPropertyName = "Monto";
-            this.Monto.HeaderText = "Monto";
+            this.Monto.HeaderText = "Monto (Nuevo Soles)";
             this.Monto.Name = "Monto";
+            this.Monto.Width = 130;
             // 
             // labelErrorCodigo
             // 
