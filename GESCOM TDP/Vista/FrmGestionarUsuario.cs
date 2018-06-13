@@ -274,7 +274,17 @@ namespace Vista
                         validarTodo = 0;
                     } else
                     {
-                        validarTodo = 1;
+                        if (rbnJefe.Checked == true || rbnComisionista.Checked == true)
+                        {
+                            if (txtIDSuperior.Text == "")
+                            {
+                                validarTodo = 0;
+                            }
+                            else
+                            {
+                                validarTodo = 1;
+                            }
+                        }
                     }
                    
                 }
@@ -285,13 +295,24 @@ namespace Vista
                     validarTodo = 0;
                 }
                 else
-                {
-                    validarTodo = 1;
+                { 
+                    if (rbnJefe.Checked == true || rbnComisionista.Checked== true)
+                    {
+                        if (txtIDSuperior.Text == "")
+                        {
+                            validarTodo = 0;
+                        } else
+                        {
+                            validarTodo = 1;
+                        }
+                    }
+                    
                 }
             }
 
-            if (validarTodo == 0 || txtApellidoMat.Text !="" ||
-                txtApellidoPat.Text != "" || txtNombre.Text != "")
+            if (validarTodo == 0 || txtApellidoMat.Text =="" ||
+                txtApellidoPat.Text == "" || txtNombre.Text == "" ||
+                txtContraseña.Text == "")
             {
                 MessageBox.Show("Ingrese datos de un usuario valido");
             }
@@ -546,38 +567,43 @@ namespace Vista
         {
 
             string campo = cmbCampo.Text;
-            string filtro = tbFiltro.Text;
+            string filtro = tbFiltro.Text.ToLower() ;
             SortableBindingList<Trabajador> listaFiltrada = new SortableBindingList<Trabajador>();
             bool cumple;
             foreach (Trabajador trabajador in listaOriginal)
             {
+                string nombreMin = trabajador.Nombre.ToLower();
+                string apellidoPatMin = trabajador.ApellidoPaterno.ToLower();
+                string apellidoMatMin = trabajador.ApellidoMaterno.ToLower();
+                string emailMin = trabajador.Email.ToLower();
+                string idMin = trabajador.IdTrabajador.ToLower();
                 switch (campo)
                 {
                     case "<Todos>":
-                        cumple = trabajador.IdTrabajador.Contains(filtro)
+                        cumple = idMin.Contains(filtro)
                                 || trabajador.Dni.Contains(filtro)
-                                || trabajador.Nombre.Contains(filtro)
-                                || trabajador.ApellidoPaterno.Contains(filtro)
-                                || trabajador.ApellidoMaterno.Contains(filtro)
-                                || trabajador.Email.Contains(filtro);
+                                || nombreMin.Contains(filtro)
+                                || apellidoPatMin.Contains(filtro)
+                                || apellidoMatMin.Contains(filtro)
+                                || emailMin.Contains(filtro);
                         break;
                     case "ID Trabajador":
-                        cumple = trabajador.IdTrabajador.Contains(filtro);
+                        cumple = idMin.Contains(filtro);
                         break;
                     case "DNI":
                         cumple = trabajador.Dni.Contains(filtro);
                         break;
                     case "Nombre":
-                        cumple = trabajador.Nombre.Contains(filtro);
+                        cumple = nombreMin.Contains(filtro);
                         break;
                     case "Apellido Paterno":
-                        cumple = trabajador.ApellidoPaterno.Contains(filtro);
+                        cumple = apellidoPatMin.Contains(filtro);
                         break;
                     case "Apellido Materno":
-                        cumple = trabajador.ApellidoMaterno.Contains(filtro);
+                        cumple = apellidoMatMin.Contains(filtro);
                         break;
                     case "Email":
-                        cumple = trabajador.Email.Contains(filtro);
+                        cumple = emailMin.Contains(filtro);
                         break;
                     default:
                         cumple = false;
