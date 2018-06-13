@@ -16,20 +16,20 @@ namespace Vista
     {
         string ruta="";
         ManualBL logicaManual = new ManualBL();
-        string fullPath;
-        string ruta2;
+
         public FrmVisualizarManual()
         {
 
             InitializeComponent();
-            string ruta = @".\Manual.pdf";
-            fullPath = Path.GetFullPath(ruta);
 
-            MessageBox.Show(fullPath);
+            string ruta = Application.StartupPath;
+            int longitud = ruta.Length;
+            ruta = ruta.Remove(longitud - 15, 15);
 
-            string ruta2 = Path.Combine(Application.StartupPath, "Manual.pdf");
+            ruta = ruta + "\\Manual.pdf";
+            
            
-            axAcroPDF1.src = ruta2;
+            axAcroPDF1.src = ruta;
             toolStrip1.Visible = false;
 
         }
