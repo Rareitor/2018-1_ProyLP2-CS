@@ -226,10 +226,10 @@
             // dateIngreso
             // 
             this.dateIngreso.Enabled = false;
-            this.dateIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.dateIngreso.Location = new System.Drawing.Point(167, 197);
             this.dateIngreso.Name = "dateIngreso";
-            this.dateIngreso.Size = new System.Drawing.Size(204, 23);
+            this.dateIngreso.Size = new System.Drawing.Size(204, 20);
             this.dateIngreso.TabIndex = 14;
             // 
             // txtApellidoMat
@@ -417,6 +417,7 @@
             // 
             // cmbSede
             // 
+            this.cmbSede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSede.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cmbSede.FormattingEnabled = true;
             this.cmbSede.Location = new System.Drawing.Point(167, 155);
