@@ -716,6 +716,7 @@
             this.picLogoTelef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogoTelef.TabIndex = 0;
             this.picLogoTelef.TabStop = false;
+            this.picLogoTelef.Click += new System.EventHandler(this.picLogoTelef_Click);
             // 
             // pnlSuperior
             // 

@@ -108,5 +108,10 @@ namespace Vista.Otros
         {
 
         }
+
+        private void FrmNoticias_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
