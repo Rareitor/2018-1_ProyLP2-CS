@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionarOrden));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tsMenu = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
@@ -387,7 +387,7 @@
             "ID Comisionista",
             "Codigo",
             "Fecha",
-            "Canal"});
+            "Producto"});
             this.cmbCampo.Location = new System.Drawing.Point(63, 24);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(130, 21);
@@ -461,8 +461,8 @@
             // ID_Comisionista
             // 
             this.ID_Comisionista.DataPropertyName = "IdComisionista";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID_Comisionista.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID_Comisionista.DefaultCellStyle = dataGridViewCellStyle1;
             this.ID_Comisionista.HeaderText = "ID Comisionista";
             this.ID_Comisionista.Name = "ID_Comisionista";
             this.ID_Comisionista.Width = 80;
@@ -485,7 +485,7 @@
             // Monto
             // 
             this.Monto.DataPropertyName = "Monto";
-            this.Monto.HeaderText = "Monto (Nuevo Soles)";
+            this.Monto.HeaderText = "Monto (Soles)";
             this.Monto.Name = "Monto";
             // 
             // FrmGestionarOrden

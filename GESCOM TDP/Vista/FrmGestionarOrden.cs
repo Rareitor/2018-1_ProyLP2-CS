@@ -637,16 +637,16 @@ namespace Vista
                         cumple = orden.Id.Contains(filtro);
                         break;
                     case "Codigo":
-                        cumple = orden.Codigo.Contains(filtro);
+                        cumple = codigoMin.Contains(filtro);
                         break;
                     case "ID Comisionista":
-                        cumple = orden.IdComisionista.Contains(filtro);
+                        cumple = idMin.Contains(filtro);
                         break;
                     case "Fecha":
                         cumple = orden.FechaVenta.ToString().Contains(filtro);
                         break;
-                    case "Canal":
-                        cumple = orden.NombreCanal.Contains(filtro);  
+                    case "Producto":
+                        cumple = nombreMin.Contains(filtro);
                         break;
                     default:
                         cumple = false;
