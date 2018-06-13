@@ -406,6 +406,7 @@ namespace Vista
             cmbCanal.SelectedValue = objetoSeleccionado.Canal.IdCanal;
             cmbCombo.SelectedValue = objetoSeleccionado.Combo.IdCombo;
             txtCodigo.Text = objetoSeleccionado.Codigo;
+            dateIngreso.Value = objetoSeleccionado.FechaVenta;
             cmbProducto.SelectedValue = objetoSeleccionado.Producto.IdProducto;
             tipoOrden = objetoSeleccionado.Producto.Tipo;
 
@@ -615,21 +616,28 @@ namespace Vista
         private void filtrar()
         {
             string campo = cmbCampo.Text;
-            string filtro = tbFiltro.Text;
+            string filtro = tbFiltro.Text.ToLower();
             SortableBindingList<Orden> listaFiltrada = new SortableBindingList<Orden>();
             bool cumple;
             foreach (Orden orden in listaOrdenada)
             {
+                string nombreMin = orden.NombreProducto.ToLower();
+                string codigoMin = orden.Codigo.ToLower();
+                string idMin = orden.IdComisionista.ToLower();
                 switch (campo)
                 {
                     case "<Todos>":
                         cumple = orden.Id.Contains(filtro)
-                                || orden.IdComisionista.Contains(filtro)
+                                || idMin.Contains(filtro)
                                 || orden.FechaVenta.ToString().Contains(filtro)
-                                || orden.NombreCanal.Contains(filtro);    
+                                || nombreMin.Contains(filtro) ||
+                                codigoMin.Contains(filtro);    
                         break;
                     case "ID":
                         cumple = orden.Id.Contains(filtro);
+                        break;
+                    case "Codigo":
+                        cumple = orden.Codigo.Contains(filtro);
                         break;
                     case "ID Comisionista":
                         cumple = orden.IdComisionista.Contains(filtro);
@@ -681,6 +689,11 @@ namespace Vista
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

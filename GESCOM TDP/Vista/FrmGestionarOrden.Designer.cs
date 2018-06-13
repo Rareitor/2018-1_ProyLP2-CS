@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionarOrden));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tsMenu = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
@@ -62,12 +63,13 @@
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvBusqueda = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.ID_Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Comisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCanal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.pnlBusqueda.SuspendLayout();
@@ -228,31 +230,31 @@
             // cmbProducto
             // 
             this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.cmbProducto.FormattingEnabled = true;
             this.cmbProducto.Location = new System.Drawing.Point(167, 257);
             this.cmbProducto.Name = "cmbProducto";
-            this.cmbProducto.Size = new System.Drawing.Size(204, 23);
+            this.cmbProducto.Size = new System.Drawing.Size(204, 20);
             this.cmbProducto.TabIndex = 21;
             // 
             // cmbCombo
             // 
             this.cmbCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.cmbCombo.FormattingEnabled = true;
             this.cmbCombo.Location = new System.Drawing.Point(167, 219);
             this.cmbCombo.Name = "cmbCombo";
-            this.cmbCombo.Size = new System.Drawing.Size(204, 23);
+            this.cmbCombo.Size = new System.Drawing.Size(204, 20);
             this.cmbCombo.TabIndex = 20;
             // 
             // cmbCanal
             // 
             this.cmbCanal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.cmbCanal.FormattingEnabled = true;
             this.cmbCanal.Location = new System.Drawing.Point(167, 178);
             this.cmbCanal.Name = "cmbCanal";
-            this.cmbCanal.Size = new System.Drawing.Size(204, 23);
+            this.cmbCanal.Size = new System.Drawing.Size(204, 20);
             this.cmbCanal.TabIndex = 19;
             // 
             // label7
@@ -288,7 +290,7 @@
             // 
             // dateIngreso
             // 
-            this.dateIngreso.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateIngreso.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.dateIngreso.Enabled = false;
             this.dateIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dateIngreso.Location = new System.Drawing.Point(167, 60);
@@ -383,12 +385,14 @@
             "<Todos>",
             "ID",
             "ID Comisionista",
+            "Codigo",
             "Fecha",
             "Canal"});
             this.cmbCampo.Location = new System.Drawing.Point(63, 24);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(130, 21);
             this.cmbCampo.TabIndex = 4;
+            this.cmbCampo.SelectedIndexChanged += new System.EventHandler(this.cmbCampo_SelectedIndexChanged);
             // 
             // tbFiltro
             // 
@@ -424,6 +428,7 @@
             this.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBusqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Orden,
+            this.Codigo,
             this.ID_Comisionista,
             this.Fecha,
             this.NombreCanal,
@@ -434,19 +439,33 @@
             this.dgvBusqueda.TabIndex = 0;
             this.dgvBusqueda.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBusqueda_ColumnHeaderMouseClick);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // ID_Orden
             // 
             this.ID_Orden.DataPropertyName = "Id";
             this.ID_Orden.HeaderText = "ID_Orden";
             this.ID_Orden.Name = "ID_Orden";
             this.ID_Orden.ReadOnly = true;
-            this.ID_Orden.Width = 80;
+            this.ID_Orden.Width = 70;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 60;
             // 
             // ID_Comisionista
             // 
             this.ID_Comisionista.DataPropertyName = "IdComisionista";
-            this.ID_Comisionista.HeaderText = "ID_Comisionista";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID_Comisionista.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ID_Comisionista.HeaderText = "ID Comisionista";
             this.ID_Comisionista.Name = "ID_Comisionista";
+            this.ID_Comisionista.Width = 80;
             // 
             // Fecha
             // 
@@ -454,24 +473,20 @@
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 140;
+            this.Fecha.Width = 80;
             // 
             // NombreCanal
             // 
             this.NombreCanal.DataPropertyName = "NombreProducto";
             this.NombreCanal.HeaderText = "Producto";
             this.NombreCanal.Name = "NombreCanal";
+            this.NombreCanal.Width = 160;
             // 
             // Monto
             // 
             this.Monto.DataPropertyName = "Monto";
             this.Monto.HeaderText = "Monto (Nuevo Soles)";
             this.Monto.Name = "Monto";
-            this.Monto.Width = 130;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // FrmGestionarOrden
             // 
@@ -532,11 +547,12 @@
         private System.Windows.Forms.TextBox tbFiltro;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label labelErrorCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Orden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Comisionista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCanal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
-        private System.Windows.Forms.Label labelErrorCodigo;
     }
 }
