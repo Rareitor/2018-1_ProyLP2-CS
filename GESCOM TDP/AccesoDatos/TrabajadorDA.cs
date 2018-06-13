@@ -424,11 +424,17 @@ namespace AccesoDatos
 
             MySqlConnection con = new MySqlConnection(cadena);
             MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            //comando.Connection = con;
+            //comando.CommandText = "REINICIAR_SISTEMA";
+            //comando.CommandType = System.Data.CommandType.StoredProcedure;
+            //comando.ExecuteNonQuery();
 
             MySqlConnection con2 = new MySqlConnection(cadena);
             MySqlCommand comando2 = new MySqlCommand();
 
-            con.Open();
+           
 
             comando.Connection = con;
             comando.CommandText = "LISTAR_TRABAJADORES";

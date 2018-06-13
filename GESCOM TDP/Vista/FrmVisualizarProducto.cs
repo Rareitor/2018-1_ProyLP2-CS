@@ -34,7 +34,7 @@ namespace Vista.Otros
             if (tipoUsuario == "Gerente")
             {
                 btnMenos.Visible = true;
-                btnEnviar.Visible = true;
+                
             } else
             {
                 btnMenos.Visible = false;
@@ -145,6 +145,8 @@ namespace Vista.Otros
         private void btnMenos_Click(object sender, EventArgs e)
         {
             labelFecha.Visible = true;
+            btnEnviar.Visible = true;
+
             labelFecha.Text = "Los productos menos vendidos del presente mes son:";
             listaMenos =logicaNegocio.listarMenosVendidos(DateTime.Now);
             dgvProducto.AutoGenerateColumns = false;

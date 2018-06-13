@@ -667,23 +667,7 @@ namespace Vista
 
         private void txtCodigo_KeyUp(object sender, KeyEventArgs e)
         {
-            existeCodigo = 0;
-            string cod = txtCodigo.Text;
-            foreach (String o in listaOrdenCodigo)
-            {
-                if (o == cod)
-                {
-                    existeCodigo = 1;
-                    break;
-                }
-            }
-                if (existeCodigo == 1)
-                {
-                    labelErrorCodigo.Visible = true;
-                } else
-                {
-                    labelErrorCodigo.Visible = false;
-                }
+            
             
 
         }
@@ -696,6 +680,28 @@ namespace Vista
         private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCodigo_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            existeCodigo = 0;
+            string cod = txtCodigo.Text;
+            foreach (String o in listaOrdenCodigo)
+            {
+                if (o == cod)
+                {
+                    existeCodigo = 1;
+                    break;
+                }
+            }
+            if (existeCodigo == 1)
+            {
+                labelErrorCodigo.Visible = true;
+            }
+            else
+            {
+                labelErrorCodigo.Visible = false;
+            }
         }
     }
 }
