@@ -37,6 +37,7 @@
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnImportar = new System.Windows.Forms.ToolStripButton();
             this.gbGenerales = new System.Windows.Forms.GroupBox();
+            this.labelErrorCodigo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnComboProducto = new System.Windows.Forms.Button();
@@ -61,13 +62,12 @@
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvBusqueda = new System.Windows.Forms.DataGridView();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.ID_Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Comisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCanal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelErrorCodigo = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.pnlBusqueda.SuspendLayout();
@@ -173,6 +173,18 @@
             this.gbGenerales.TabStop = false;
             this.gbGenerales.Text = "Datos Generales";
             // 
+            // labelErrorCodigo
+            // 
+            this.labelErrorCodigo.AutoSize = true;
+            this.labelErrorCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.labelErrorCodigo.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorCodigo.Location = new System.Drawing.Point(179, 116);
+            this.labelErrorCodigo.Name = "labelErrorCodigo";
+            this.labelErrorCodigo.Size = new System.Drawing.Size(177, 13);
+            this.labelErrorCodigo.TabIndex = 26;
+            this.labelErrorCodigo.Text = "La orden ya se encuentra registrada";
+            this.labelErrorCodigo.Visible = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -256,9 +268,9 @@
             // txtPago
             // 
             this.txtPago.Enabled = false;
-            this.txtPago.Location = new System.Drawing.Point(167, 296);
+            this.txtPago.Location = new System.Drawing.Point(232, 296);
             this.txtPago.Name = "txtPago";
-            this.txtPago.Size = new System.Drawing.Size(204, 26);
+            this.txtPago.Size = new System.Drawing.Size(139, 26);
             this.txtPago.TabIndex = 16;
             this.txtPago.TextChanged += new System.EventHandler(this.txtPago_TextChanged);
             this.txtPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPago_KeyPress);
@@ -269,9 +281,10 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(15, 297);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 20);
+            this.label6.Size = new System.Drawing.Size(169, 20);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Monto de Pago:";
+            this.label6.Text = "Monto de Pago (S/):";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // dateIngreso
             // 
@@ -421,10 +434,6 @@
             this.dgvBusqueda.TabIndex = 0;
             this.dgvBusqueda.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBusqueda_ColumnHeaderMouseClick);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // ID_Orden
             // 
             this.ID_Orden.DataPropertyName = "Id";
@@ -460,17 +469,9 @@
             this.Monto.Name = "Monto";
             this.Monto.Width = 130;
             // 
-            // labelErrorCodigo
+            // openFileDialog1
             // 
-            this.labelErrorCodigo.AutoSize = true;
-            this.labelErrorCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.labelErrorCodigo.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorCodigo.Location = new System.Drawing.Point(179, 116);
-            this.labelErrorCodigo.Name = "labelErrorCodigo";
-            this.labelErrorCodigo.Size = new System.Drawing.Size(177, 13);
-            this.labelErrorCodigo.TabIndex = 26;
-            this.labelErrorCodigo.Text = "La orden ya se encuentra registrada";
-            this.labelErrorCodigo.Visible = false;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // FrmGestionarOrden
             // 
