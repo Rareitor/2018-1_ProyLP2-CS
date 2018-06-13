@@ -641,7 +641,7 @@
             this.btnMiCuenta.ForeColor = System.Drawing.Color.White;
             this.btnMiCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnMiCuenta.Image")));
             this.btnMiCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMiCuenta.Location = new System.Drawing.Point(0, 512);
+            this.btnMiCuenta.Location = new System.Drawing.Point(3, 507);
             this.btnMiCuenta.Name = "btnMiCuenta";
             this.btnMiCuenta.Size = new System.Drawing.Size(200, 45);
             this.btnMiCuenta.TabIndex = 7;
@@ -654,7 +654,7 @@
             this.lblCerrarSesion.AutoSize = true;
             this.lblCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCerrarSesion.Location = new System.Drawing.Point(41, 630);
+            this.lblCerrarSesion.Location = new System.Drawing.Point(41, 620);
             this.lblCerrarSesion.Name = "lblCerrarSesion";
             this.lblCerrarSesion.Size = new System.Drawing.Size(86, 17);
             this.lblCerrarSesion.TabIndex = 0;
@@ -664,7 +664,7 @@
             // picCerrarSesion
             // 
             this.picCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("picCerrarSesion.Image")));
-            this.picCerrarSesion.Location = new System.Drawing.Point(3, 618);
+            this.picCerrarSesion.Location = new System.Drawing.Point(3, 613);
             this.picCerrarSesion.Name = "picCerrarSesion";
             this.picCerrarSesion.Size = new System.Drawing.Size(39, 29);
             this.picCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -676,7 +676,7 @@
             // 
             this.lblNombreUsu.AutoSize = true;
             this.lblNombreUsu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNombreUsu.Location = new System.Drawing.Point(54, 576);
+            this.lblNombreUsu.Location = new System.Drawing.Point(58, 576);
             this.lblNombreUsu.Name = "lblNombreUsu";
             this.lblNombreUsu.Size = new System.Drawing.Size(136, 20);
             this.lblNombreUsu.TabIndex = 18;
@@ -687,7 +687,7 @@
             // 
             this.lblCargo.AutoSize = true;
             this.lblCargo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCargo.Location = new System.Drawing.Point(54, 556);
+            this.lblCargo.Location = new System.Drawing.Point(59, 555);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(56, 20);
             this.lblCargo.TabIndex = 15;
@@ -698,7 +698,7 @@
             // 
             this.picUsu.BackColor = System.Drawing.Color.Navy;
             this.picUsu.Image = ((System.Drawing.Image)(resources.GetObject("picUsu.Image")));
-            this.picUsu.Location = new System.Drawing.Point(5, 555);
+            this.picUsu.Location = new System.Drawing.Point(12, 551);
             this.picUsu.Name = "picUsu";
             this.picUsu.Size = new System.Drawing.Size(48, 56);
             this.picUsu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

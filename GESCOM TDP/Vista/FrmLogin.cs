@@ -128,23 +128,15 @@ namespace Vista
 
                 if (usuario == "USUARIO")
                 {
-                    MessageBox.Show("Por favor, ingrese un usuario", "Ingresar usuario");
+                    MessageBox.Show("Por favor, ingrese un usuario", "INGRESAR USUARIO", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     txtUsuario.Text = "USUARIO";
                     txtUsuario.ForeColor = Color.Black;
                     return;
                 }
                 if (contra == "CONTRASEÑA")
                 {
-                    if (bloqueado == 1)
-                    {
-                        MessageBox.Show("Su cuenta se encuentra bloqueada. Por favor comunicarse con el administrador Freddy", "ALERTA");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Contraseña errónea, vuelva a ingresar la contraseña");
-                    }
-                     txtContraseña.Text = "CONTRASEÑA";
-                    MessageBox.Show("Por favor, ingrese la contraseña.", "Ingresar contraseña");
+                    txtContraseña.Text = "CONTRASEÑA";
+                    MessageBox.Show("Por favor, ingrese la contraseña.", "INGRESAR CONTRASEÑA", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     txtContraseña.Text = "CONTRASEÑA";
                     txtContraseña.ForeColor = Color.Black;
                     txtContraseña.UseSystemPasswordChar = false;
@@ -167,13 +159,19 @@ namespace Vista
                     }
                     else if (existeUsu == 1 && errorContra == 1)
                     {
-                        
 
-                        MessageBox.Show("Contraseña errónea, vuelva a ingresar la contraseña");
+                        MessageBox.Show("Contraseña errónea, vuelva a ingresar la contraseña", "CONTRASEÑA INCORRECTA", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         if (bloqueado == 1)
                         {
-                            MessageBox.Show("Su cuenta se encuentra bloqueada. Por favor comunicarse con el administrador Freddy", "ALERTA");
+                            MessageBox.Show("Su cuenta se encuentra bloqueada.\nPor favor comunicarse con el administrador Freddy.\nCorreo: fpaz@pucp.pe", "CUENTA BLOQUEADA",
+                            MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            txtUsuario.Text = "USUARIO";
+                            txtContraseña.Text = "CONTRASEÑA";
+                            txtUsuario.ForeColor = Color.Black;
+                            txtContraseña.ForeColor = Color.Black;
+                            txtContraseña.UseSystemPasswordChar = false;
+                            return;
                         }
                         txtContraseña.Text = "CONTRASEÑA";
                         txtContraseña.ForeColor = Color.Black;
@@ -181,16 +179,23 @@ namespace Vista
                     }
                     else if (existeUsu == 0)
                     {
-                        MessageBox.Show("Por favor, ingrese un usuario válido", "Ingresar usuario");
+                        MessageBox.Show("Por favor, ingrese un usuario válido", "INGRESAR USUARIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtUsuario.Text = "USUARIO";
+                        txtContraseña.Text = "CONTRASEÑA";
                         txtUsuario.ForeColor = Color.Black;
+                        txtContraseña.ForeColor = Color.Black;
+                        txtContraseña.UseSystemPasswordChar = false;
                         return;
                     }
                     else
                     {
-                        MessageBox.Show("Su cuenta se encuentra bloqueada. Por favor comunicarse con el administrador Freddy", "ALERTA");
+                        MessageBox.Show("Su cuenta se encuentra bloqueada.\nPor favor comunicarse con el administrador Freddy.\nCorreo: fpaz@pucp.pe", "CUENTA BLOQUEADA",
+                            MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         txtUsuario.Text = "USUARIO";
+                        txtContraseña.Text = "CONTRASEÑA";
                         txtUsuario.ForeColor = Color.Black;
+                        txtContraseña.ForeColor = Color.Black;
+                        txtContraseña.UseSystemPasswordChar = false;
                         return;
                     }
                 }
@@ -206,7 +211,7 @@ namespace Vista
         {
             if (txtContraseña.Text != "CONTRASEÑA")
             {
-                
+            
                 txtContraseña.ForeColor = Color.Black;
                 txtContraseña.UseSystemPasswordChar = true;
             }
