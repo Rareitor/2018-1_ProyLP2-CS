@@ -45,6 +45,39 @@ namespace AccesoDatos
 
         }
 
+        public BindingList<Producto> listarProductos2(string tipo)
+        {
+            BindingList<Producto> listaProducto = new BindingList<Producto>();
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "SELECT * FROM Producto where isVisible = 1 and tipo = '" + tipo + "';";
+         
+
+            MySqlDataReader rs = comando.ExecuteReader();
+
+            while (rs.Read())
+            {
+                Producto p = new Producto();
+
+                p.IdProducto = rs.GetString("idproducto");
+
+                p.Nombre = rs.GetString("nombre");
+                p.Tipo = rs.GetString("tipo");
+
+                listaProducto.Add(p);
+            }
+            con.Close();
+
+            return listaProducto;
+
+        }
         public BindingList<Producto> listarProductosPapelera()
         {
 

@@ -153,6 +153,7 @@
             this.btnEnviar.TabIndex = 18;
             this.btnEnviar.Text = "Enviar Notificacion";
             this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Visible = false;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // labelFecha

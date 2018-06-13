@@ -20,6 +20,9 @@ namespace Vista
         ComboBL logicaCombo = new ComboBL();
         OrdenBL logicaOrden = new OrdenBL();
         ProductoBL logicaProducto = new ProductoBL();
+        BindingList<String> listaComision = new BindingList<string>();
+        BindingList<String> listaPenalidad = new BindingList<string>();
+        BindingList<String> listaBono= new BindingList<string>();
 
         ComboProducto cProducto = new ComboProducto();
         public enum Estado
@@ -46,6 +49,7 @@ namespace Vista
                     rbnBono.Enabled = false;
                     rbnComision.Enabled = false;
                     rbnPenalidad.Enabled = false;
+                    btnImportar.Visible = false;
 
                     btnImportar.Enabled = false;
                     btnCancelar.Enabled = false;
@@ -62,10 +66,10 @@ namespace Vista
                     cmbCombo.Enabled = true;
                     cmbProducto.Enabled = true;
                     btnCancelar.Enabled = true;
-                    rbnBono.Enabled = true;
-                    rbnComision.Enabled = true;
-                    rbnPenalidad.Enabled = true;
-                    rbnComision.Checked = true;
+                    //rbnBono.Enabled = true;
+                    //rbnComision.Enabled = true;
+                    //rbnPenalidad.Enabled = true;
+                    //rbnComision.Checked = true;
                     cmbMesPeriodo.Enabled = true;
                     cmbAñoPeriodo.Enabled = true;
                     limpiarComponentes();
@@ -74,9 +78,9 @@ namespace Vista
                     btnNuevo.Enabled = true;
                     btnGuardar.Enabled = false;
                     btnCancelar.Enabled = false;
-                    rbnBono.Enabled = false;
-                    rbnComision.Enabled = false;
-                    rbnPenalidad.Enabled = false;
+                    //rbnBono.Enabled = false;
+                    //rbnComision.Enabled = false;
+                    //rbnPenalidad.Enabled = false;
                     cmbMesPeriodo.Enabled = false;
                     cmbAñoPeriodo.Enabled = false;
                     cmbCanal.Enabled = false;
@@ -102,7 +106,7 @@ namespace Vista
             cmbCanal.DisplayMember = "nombre";
             cmbCanal.ValueMember = "idCanal";
 
-            BindingList<Combo> listaCombo = logicaCombo.listarCombos();
+            BindingList<Combo> listaCombo = logicaCombo.listarCombos(ref listaComision, ref listaBono, ref  listaPenalidad);
 
             cmbCombo.DataSource = listaCombo;
             cmbCombo.DisplayMember = "nombre";
@@ -327,6 +331,73 @@ namespace Vista
         private void cmbMesPeriodo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            string idCombo = cmbCombo.SelectedValue.ToString();
+            int encontrado = 0;
+            string tip = "";
+            foreach (String s in listaComision)
+            {
+                if (s == idCombo)
+                {
+                    encontrado = 1;
+                    tip = "COMISION";
+                    break;
+                }
+            }
+
+            if (encontrado == 0)
+            {
+                foreach (String s in listaPenalidad)
+                {
+                    if (s == idCombo)
+                    {
+                        encontrado = 1;
+                        tip = "PENALIDAD";
+                        break;
+                    }
+                }
+            }
+
+            if (encontrado == 0)
+            {
+                foreach (String s in listaBono)
+                {
+                    if (s == idCombo)
+                    {
+                        encontrado = 1;
+                        tip = "BONO";
+                        break;
+                    }
+                }
+            }
+
+            if (tip == "COMISION")
+            {
+                rbnComision.Checked = true;
+                rbnBono.Checked = false;
+                rbnPenalidad.Checked = false;
+            } else if (tip == "BONO")
+            {
+                rbnComision.Checked = false;
+                rbnBono.Checked = true;
+                rbnPenalidad.Checked = false;
+            } else
+            {
+                rbnComision.Checked = false;
+                rbnBono.Checked = false;
+                rbnPenalidad.Checked = true;
+            }
+
+
+            BindingList<Producto> listaProducto = logicaProducto.listarProductos2(tip);
+
+            cmbProducto.DataSource = listaProducto;
+            cmbProducto.DisplayMember = "nombre";
+            cmbProducto.ValueMember = "idProducto";
         }
     }
 }

@@ -23,6 +23,10 @@ namespace Controlador
             return accesoDatos.listarProductosPapelera();
         }
 
+        public BindingList<Producto> listarProductos2(string tipo)
+        {
+            return accesoDatos.listarProductos2(tipo);
+        }
         public BindingList<String> listarTiposProductos()
         {
             return accesoDatos.listarTiposProductos();

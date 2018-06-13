@@ -13,9 +13,9 @@ namespace Controlador
     {
         private ComboDA accesoCombo = new ComboDA();
 
-        public BindingList<Combo> listarCombos()
+        public BindingList<Combo> listarCombos(ref BindingList<String> listaComision, ref BindingList<String> listaBono, ref BindingList<String> listaPenalidad)
         {
-            return accesoCombo.ListarCombos();
+            return accesoCombo.ListarCombos(ref listaComision, ref  listaBono, ref  listaPenalidad);
         }
 
         public string agregarComboProducto(ComboProducto cp)
