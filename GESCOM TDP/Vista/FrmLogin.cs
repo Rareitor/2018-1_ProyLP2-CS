@@ -135,7 +135,6 @@ namespace Vista
                 }
                 if (contra == "CONTRASEÑA")
                 {
-<<<<<<< HEAD
                     if (bloqueado == 1)
                     {
                         MessageBox.Show("Su cuenta se encuentra bloqueada. Por favor comunicarse con el administrador Freddy", "ALERTA");
@@ -145,10 +144,8 @@ namespace Vista
                         MessageBox.Show("Contraseña errónea, vuelva a ingresar la contraseña");
                     }
                      txtContraseña.Text = "CONTRASEÑA";
-=======
                     MessageBox.Show("Por favor, ingrese la contraseña.", "Ingresar contraseña");
                     txtContraseña.Text = "CONTRASEÑA";
->>>>>>> c0adf690b265d6a4dbfc8f21ec1ba869ac7d99cc
                     txtContraseña.ForeColor = Color.Black;
                     txtContraseña.UseSystemPasswordChar = false;
                     return;
@@ -156,12 +153,7 @@ namespace Vista
 
                 if (usuario != "USUARIO" && contra != "CONTRASEÑA")
                 {
-<<<<<<< HEAD
-                    MessageBox.Show("Su cuenta se encuentra bloqueada. Por favor comunicarse con el administrador Freddy", "ALERTA");
-                    txtUsuario.Text = "USUARIO";
-                    txtUsuario.ForeColor = Color.Black;
-                    return;
-=======
+
                     usuario = usuario.Trim();
                     int existeUsu = 0, errorContra = 0;
                     string respuesta = logicaTrabajador.existeUsuarioyContraseña(usuario, contra, ref existeUsu, ref errorContra,
@@ -194,7 +186,6 @@ namespace Vista
                         txtUsuario.ForeColor = Color.Black;
                         return;
                     }
->>>>>>> c0adf690b265d6a4dbfc8f21ec1ba869ac7d99cc
                 }
             }
             else
