@@ -91,6 +91,7 @@
             this.Name = "FrmNoticias";
             this.Text = "Noticias";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmNoticias_FormClosing);
+            this.Load += new System.EventHandler(this.FrmNoticias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picNoticias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

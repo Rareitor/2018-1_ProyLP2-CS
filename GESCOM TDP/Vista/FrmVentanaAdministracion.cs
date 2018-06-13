@@ -90,6 +90,7 @@ namespace Vista
             fh.Dock = DockStyle.Fill;
             this.pnlContenedor.Controls.Add(fh);
             this.pnlContenedor.Tag = fh;
+            fh.FormBorderStyle = FormBorderStyle.None;
             fh.Show();
         }
 
@@ -735,6 +736,11 @@ namespace Vista
         private void txtFaltantes_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void picLogoTelef_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmInicio());
         }
     }
 }
