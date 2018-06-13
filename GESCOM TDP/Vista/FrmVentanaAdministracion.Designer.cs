@@ -161,7 +161,7 @@
             this.btnCalculoAdmin.Name = "btnCalculoAdmin";
             this.btnCalculoAdmin.Size = new System.Drawing.Size(200, 40);
             this.btnCalculoAdmin.TabIndex = 16;
-            this.btnCalculoAdmin.Text = "Cálculo";
+            this.btnCalculoAdmin.Text = "Calculos";
             this.btnCalculoAdmin.UseVisualStyleBackColor = false;
             this.btnCalculoAdmin.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -507,7 +507,7 @@
             this.btnComisionCalculo.Name = "btnComisionCalculo";
             this.btnComisionCalculo.Size = new System.Drawing.Size(150, 25);
             this.btnComisionCalculo.TabIndex = 9;
-            this.btnComisionCalculo.Text = "Comisiones";
+            this.btnComisionCalculo.Text = "Ranking";
             this.btnComisionCalculo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnComisionCalculo.UseVisualStyleBackColor = false;
             this.btnComisionCalculo.Click += new System.EventHandler(this.button5_Click);

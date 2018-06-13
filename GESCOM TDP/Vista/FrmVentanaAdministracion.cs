@@ -128,6 +128,7 @@ namespace Vista
                     btnVisuGere.Hide();
                     break;
                 case "Gerente":
+                    btnCalculoAdmin.Text = "Reporte";
                     btnGestionarJefeCom.Location = new Point(0, 100);
                     btnCalculoAdmin.Location = new Point(0, 140);
                     btnOtrosJefeCom.Location = new Point(0, 180);
