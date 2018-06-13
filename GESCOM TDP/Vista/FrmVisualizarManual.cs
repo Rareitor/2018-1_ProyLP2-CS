@@ -22,8 +22,10 @@ namespace Vista
         {
 
             InitializeComponent();
-            
-            ruta2 = "C:.\\Manual.pdf";
+            string ruta = Application.StartupPath;
+
+            string ruta2 = Path.Combine(Application.StartupPath, "Manual.pdf");
+           
             axAcroPDF1.src = ruta2;
             toolStrip1.Visible = false;
 
