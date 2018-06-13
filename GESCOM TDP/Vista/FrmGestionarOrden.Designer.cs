@@ -425,28 +425,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-<<<<<<< HEAD
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(14, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Código:";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(166, 87);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(204, 26);
-            this.txtCodigo.TabIndex = 25;
-            this.txtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyUp);
-            // 
-=======
->>>>>>> c0adf690b265d6a4dbfc8f21ec1ba869ac7d99cc
             // ID_Orden
             // 
             this.ID_Orden.DataPropertyName = "Id";
