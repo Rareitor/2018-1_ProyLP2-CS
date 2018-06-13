@@ -22,7 +22,7 @@ namespace Vista.Otros
         public FrmRecuperarContrasena()
         {
             InitializeComponent();
-            txtRespuesta.Visible = false;
+            txtRespuesta.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,15 +40,16 @@ namespace Vista.Otros
                 if (t == null)
                 {
                     //txtRespuesta.Visible = true;
-                    MessageBox.Show("El usuario no existe");
+                    txtRespuesta.Text = "El usuario no existe";
+                    //MessageBox.Show("El usuario no existe");
                 } else if (txtUsuario.Text == t.UserName)
                 {
                     enviarMensaje(t);
-                    //txtRespuesta.Visible = true;
-                    MessageBox.Show( "Se ha enviado su contraseña a su correo " +
-                        t.Email + ".\n Por favor revise su bandeja de entrada \n" +
-                        "En caso no tenga acceso a dicho email. Contactarse con el administrador Freddy Paz");
-                    this.Close();
+                    txtRespuesta.Text = "Se ha enviado su contraseña a su correo " +
+                         t.Email + ".\n Por favor revise su bandeja de entrada \n" +
+                         "En caso no tenga acceso a dicho email. Contactarse con el administrador Freddy Paz";
+
+                   
                 }
                 
                 

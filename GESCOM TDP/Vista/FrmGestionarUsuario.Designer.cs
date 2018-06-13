@@ -264,6 +264,7 @@
             // 
             this.txtDNI.Enabled = false;
             this.txtDNI.Location = new System.Drawing.Point(167, 52);
+            this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(204, 26);
             this.txtDNI.TabIndex = 10;

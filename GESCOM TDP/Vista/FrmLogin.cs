@@ -247,5 +247,11 @@ namespace Vista
         {
             if (e.KeyChar == 13) button1_Click(sender, e);
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lbFecha.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }

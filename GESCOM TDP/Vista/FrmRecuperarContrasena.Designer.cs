@@ -57,7 +57,7 @@
             // 
             // btnRecuperarContra
             // 
-            this.btnRecuperarContra.Location = new System.Drawing.Point(129, 84);
+            this.btnRecuperarContra.Location = new System.Drawing.Point(129, 72);
             this.btnRecuperarContra.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecuperarContra.Name = "btnRecuperarContra";
             this.btnRecuperarContra.Size = new System.Drawing.Size(196, 28);
@@ -69,14 +69,13 @@
             // txtRespuesta
             // 
             this.txtRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRespuesta.Location = new System.Drawing.Point(104, 120);
+            this.txtRespuesta.Location = new System.Drawing.Point(75, 117);
             this.txtRespuesta.Margin = new System.Windows.Forms.Padding(4);
             this.txtRespuesta.Multiline = true;
             this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(272, 61);
-            this.txtRespuesta.TabIndex = 4;
-            this.txtRespuesta.Text = " ";
-            this.txtRespuesta.TextChanged += new System.EventHandler(this.txtRespuesta_TextChanged);
+            this.txtRespuesta.ReadOnly = true;
+            this.txtRespuesta.Size = new System.Drawing.Size(314, 78);
+            this.txtRespuesta.TabIndex = 5;
             // 
             // FrmRecuperarContrasena
             // 

@@ -640,7 +640,19 @@ namespace Vista
 
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permite ingresar numeros");
+            }
         }
 
         private void txtDNI_KeyUp(object sender, KeyEventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.pnlAzul = new System.Windows.Forms.Panel();
             this.picTelefonica = new System.Windows.Forms.PictureBox();
@@ -38,6 +39,9 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.picMaximizar = new System.Windows.Forms.PictureBox();
             this.picMinimizar = new System.Windows.Forms.PictureBox();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbFecha = new System.Windows.Forms.Label();
             this.pnlAzul.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTelefonica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMaximizar)).BeginInit();
@@ -47,6 +51,8 @@
             // pnlAzul
             // 
             this.pnlAzul.BackColor = System.Drawing.Color.Navy;
+            this.pnlAzul.Controls.Add(this.lbFecha);
+            this.pnlAzul.Controls.Add(this.lblHora);
             this.pnlAzul.Controls.Add(this.picTelefonica);
             this.pnlAzul.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlAzul.Location = new System.Drawing.Point(0, 0);
@@ -58,7 +64,7 @@
             // picTelefonica
             // 
             this.picTelefonica.Image = ((System.Drawing.Image)(resources.GetObject("picTelefonica.Image")));
-            this.picTelefonica.Location = new System.Drawing.Point(12, 61);
+            this.picTelefonica.Location = new System.Drawing.Point(3, 30);
             this.picTelefonica.Name = "picTelefonica";
             this.picTelefonica.Size = new System.Drawing.Size(185, 145);
             this.picTelefonica.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -159,6 +165,33 @@
             this.picMinimizar.TabStop = false;
             this.picMinimizar.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lblHora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblHora.Location = new System.Drawing.Point(42, 208);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(79, 29);
+            this.lblHora.TabIndex = 1;
+            this.lblHora.Text = "label1";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbFecha
+            // 
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lbFecha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbFecha.Location = new System.Drawing.Point(5, 248);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(41, 15);
+            this.lbFecha.TabIndex = 2;
+            this.lbFecha.Text = "label1";
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,10 +210,11 @@
             this.Name = "FrmLogin";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login2";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Login2_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login2_MouseDown);
             this.pnlAzul.ResumeLayout(false);
+            this.pnlAzul.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTelefonica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimizar)).EndInit();
@@ -200,5 +234,8 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.PictureBox picMaximizar;
         private System.Windows.Forms.PictureBox picMinimizar;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbFecha;
     }
 }

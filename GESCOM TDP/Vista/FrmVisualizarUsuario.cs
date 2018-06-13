@@ -96,40 +96,48 @@ namespace Vista.Otros
 
         private void filtrar()
         {
-            string filtro = cmbCampo.Text;
+            string filtro = cmbCampo.Text.ToLower();
             string field = txtDato.Text;
 
             SortableBindingList<Trabajador> listaAux = new SortableBindingList<Trabajador>();
 
             Boolean cumple = false;
             foreach (Trabajador trabajador in listaOriginal){
+
+                string emailMin = trabajador.Email.ToLower();
+                string usernameMin = trabajador.UserName.ToLower();
+                string nombreMin = trabajador.Nombre.ToLower();
+                string apellidoPatMin = trabajador.ApellidoPaterno.ToLower();
+                string apellidoMatMin = trabajador.ApellidoMaterno.ToLower();
+                string idTrabajadorMin = trabajador.IdTrabajador.ToLower();
+                string distritoMin = trabajador.Distrito.ToLower();
+
                 switch (filtro)
                 {
                     case "<Todos>":
-                        cumple = trabajador.IdTrabajador.Contains(field)
+                        cumple = idTrabajadorMin.Contains(field)
                                 || trabajador.Dni.Contains(field)
-                                || trabajador.Email.Contains(field)
-                                || trabajador.UserName.Contains(field)
-                                || trabajador.Nombre.Contains(field)
-                                || trabajador.ApellidoPaterno.Contains(field)
-                                || trabajador.ApellidoMaterno.Contains(field)
-                                || trabajador.IdTrabajador.Contains(field)
-                                || trabajador.Distrito.Contains(field);
+                                || emailMin.Contains(field)
+                                || usernameMin.Contains(field)
+                                || nombreMin.Contains(field)
+                                || apellidoPatMin.Contains(field)
+                                || apellidoMatMin.Contains(field)
+                                || distritoMin.Contains(field);
                         break;
                     case "ID":
-                        cumple = trabajador.IdTrabajador.Contains(field);
+                        cumple = idTrabajadorMin.Contains(field);
                         break;
                     case "Nombre":
-                        cumple = trabajador.Nombre.Contains(field);
+                        cumple = nombreMin.Contains(field);
                         break;
                     case "Apellido Paterno":
-                        trabajador.ApellidoPaterno.Contains(field);
+                        cumple = apellidoPatMin.Contains(field);
                         break;
                     case "Apellido Materno":
-                        trabajador.ApellidoMaterno.Contains(field);
+                        cumple = apellidoMatMin.Contains(field);
                         break;
                     case "Distrito":
-                        cumple = trabajador.Distrito.Contains(field);
+                        cumple = distritoMin.Contains(field);
                         break;
                     default:
                         cumple = true;

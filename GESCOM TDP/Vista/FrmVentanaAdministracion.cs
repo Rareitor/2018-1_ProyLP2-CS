@@ -124,6 +124,7 @@ namespace Vista
                     btnGestionarJefeCom.Location = new Point(0, 100);
                     btnCalculoAdmin.Location = new Point(0, 140);
                     btnOtrosJefeCom.Location = new Point(0, 180);
+
                     btnVisuGere.Hide();
                     break;
                 case "Gerente":
@@ -131,12 +132,14 @@ namespace Vista
                     btnCalculoAdmin.Location = new Point(0, 140);
                     btnOtrosJefeCom.Location = new Point(0, 180);
                     btnVisuGere.Location = new Point(0, 220);
+                    pictureCampana.Visible = true;
                     break;
                 case "Jefe":
                     btnGestionarJefeCom.Location = new Point(0, 100);
                     btnCalculoAdmin.Hide();
                     btnOtrosJefeCom.Location = new Point(0, 140);
                     btnVisuGere.Location = new Point(0, 180);
+                    pictureCampana.Visible = true;
                     break;
                 case "Comisionista":
                     btnGestionarJefeCom.Location = new Point(0, 100);
@@ -293,7 +296,9 @@ namespace Vista
         private void button11_Click(object sender, EventArgs e)
         {
             listaNoticia = logicaNoticia.listarNoticias();
+            listaVisitada = logicaNoticia.listarVisitadas(idPayee, maximo);
             maximo = cantidadMaxima(listaNoticia);
+            evaluarCampana();
             pnlVisualizar.Hide();
             estadoInicial(tipoUsu);
             AbrirFormInPanel(new FrmNoticias(idPayee, listaNoticia,ref listaVisitada));
