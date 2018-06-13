@@ -679,7 +679,7 @@ namespace AccesoDatos
             con.Open();
 
             comando.Connection = con;
-            comando.CommandText = "SELECT * FROM Payee WHERE ISVISIBLE = 0";
+            comando.CommandText = "SELECT * FROM Payee WHERE ISVISIBLE = 0 or isBlocked = 1";
 
             MySqlDataReader rs = comando.ExecuteReader();
 
