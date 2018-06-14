@@ -42,7 +42,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(734, 12);
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Location = new System.Drawing.Point(654, 377);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -52,12 +53,15 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(621, 12);
+            this.btnSeleccionar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSeleccionar.Location = new System.Drawing.Point(561, 377);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 4;
             this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // dgvOrden
@@ -71,15 +75,16 @@
             this.Fecha,
             this.Canal,
             this.MontoVendido});
-            this.dgvOrden.Location = new System.Drawing.Point(25, 59);
+            this.dgvOrden.Location = new System.Drawing.Point(26, 27);
             this.dgvOrden.Name = "dgvOrden";
-            this.dgvOrden.Size = new System.Drawing.Size(788, 332);
+            this.dgvOrden.Size = new System.Drawing.Size(703, 329);
             this.dgvOrden.TabIndex = 6;
+            this.dgvOrden.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrden_CellContentClick);
             // 
             // idOrden
             // 
             this.idOrden.DataPropertyName = "Id";
-            this.idOrden.HeaderText = "idOrden";
+            this.idOrden.HeaderText = "ID";
             this.idOrden.Name = "idOrden";
             // 
             // nombreComisionista
@@ -111,19 +116,20 @@
             // MontoVendido
             // 
             this.MontoVendido.DataPropertyName = "Monto";
-            this.MontoVendido.HeaderText = "MontoVendido";
+            this.MontoVendido.HeaderText = "Monto Vendido";
             this.MontoVendido.Name = "MontoVendido";
+            this.MontoVendido.Width = 110;
             // 
             // FrmRecuperarOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 450);
+            this.ClientSize = new System.Drawing.Size(760, 416);
             this.Controls.Add(this.dgvOrden);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSeleccionar);
             this.Name = "FrmRecuperarOrden";
-            this.Text = "FrmRecuperarOrden";
+            this.Text = "Recuperar Orden";
             this.Load += new System.EventHandler(this.FrmRecuperarOrden_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrden)).EndInit();
             this.ResumeLayout(false);

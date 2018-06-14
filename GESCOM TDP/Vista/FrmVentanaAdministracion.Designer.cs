@@ -797,6 +797,7 @@
             this.pnlContenedor.Name = "pnlContenedor";
             this.pnlContenedor.Size = new System.Drawing.Size(1100, 600);
             this.pnlContenedor.TabIndex = 2;
+            this.pnlContenedor.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.pnlContenedor_ControlRemoved);
             this.pnlContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenedor_Paint);
             // 
             // pictureCampana2

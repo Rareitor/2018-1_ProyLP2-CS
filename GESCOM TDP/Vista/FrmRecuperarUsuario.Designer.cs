@@ -50,25 +50,30 @@
             this.Apellido_Paterno,
             this.Apellido_Materno,
             this.Razón});
-            this.dgvUsuariosRec.Location = new System.Drawing.Point(42, 88);
+            this.dgvUsuariosRec.Location = new System.Drawing.Point(33, 35);
             this.dgvUsuariosRec.Name = "dgvUsuariosRec";
-            this.dgvUsuariosRec.Size = new System.Drawing.Size(642, 252);
+            this.dgvUsuariosRec.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvUsuariosRec.Size = new System.Drawing.Size(648, 252);
             this.dgvUsuariosRec.TabIndex = 0;
             this.dgvUsuariosRec.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuariosRec_CellContentClick);
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(522, 27);
+            this.btnSeleccionar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSeleccionar.Location = new System.Drawing.Point(510, 309);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 1;
             this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(639, 26);
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Location = new System.Drawing.Point(600, 309);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 2;
@@ -111,17 +116,18 @@
             this.Razón.DataPropertyName = "Razon";
             this.Razón.HeaderText = "Razón";
             this.Razón.Name = "Razón";
+            this.Razón.Width = 105;
             // 
             // FrmRecuperarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(710, 352);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvUsuariosRec);
             this.Name = "FrmRecuperarUsuario";
-            this.Text = "FrmRecuperarUsuario";
+            this.Text = "Recuperar Usuario";
             this.Load += new System.EventHandler(this.FrmRecuperarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuariosRec)).EndInit();
             this.ResumeLayout(false);

@@ -41,7 +41,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(106, 344);
+            this.lblUsuario.Location = new System.Drawing.Point(249, 332);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(89, 25);
             this.lblUsuario.TabIndex = 49;
@@ -52,7 +52,7 @@
             // 
             this.lblOrden.AutoSize = true;
             this.lblOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrden.Location = new System.Drawing.Point(542, 344);
+            this.lblOrden.Location = new System.Drawing.Point(685, 332);
             this.lblOrden.Name = "lblOrden";
             this.lblOrden.Size = new System.Drawing.Size(88, 25);
             this.lblOrden.TabIndex = 51;
@@ -62,7 +62,7 @@
             // picOrden
             // 
             this.picOrden.Image = ((System.Drawing.Image)(resources.GetObject("picOrden.Image")));
-            this.picOrden.Location = new System.Drawing.Point(481, 126);
+            this.picOrden.Location = new System.Drawing.Point(624, 114);
             this.picOrden.Name = "picOrden";
             this.picOrden.Size = new System.Drawing.Size(213, 215);
             this.picOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,7 +73,7 @@
             // picUsuario
             // 
             this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
-            this.picUsuario.Location = new System.Drawing.Point(51, 126);
+            this.picUsuario.Location = new System.Drawing.Point(194, 114);
             this.picUsuario.Name = "picUsuario";
             this.picUsuario.Size = new System.Drawing.Size(213, 215);
             this.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -85,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 463);
+            this.ClientSize = new System.Drawing.Size(1090, 460);
             this.Controls.Add(this.lblOrden);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.picOrden);

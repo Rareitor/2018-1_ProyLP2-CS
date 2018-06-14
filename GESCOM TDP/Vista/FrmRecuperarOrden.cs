@@ -18,6 +18,7 @@ namespace Vista
         public FrmRecuperarOrden()
         {
             InitializeComponent();
+            CenterToScreen();
             logicaNegocio = new OrdenBL();
             dgvOrden.AutoGenerateColumns = false;
             dgvOrden.DataSource = logicaNegocio.listarOrdenPapelera();
@@ -26,7 +27,8 @@ namespace Vista
             if (dgvOrden.Rows.Count == 0)
             {
                 btnSeleccionar.Enabled = false;
-                MessageBox.Show("No hay órdenes por restaurar");
+                btnSeleccionar.BackColor = System.Drawing.Color.White;
+                MessageBox.Show("No hay órdenes por restaurar.","Restaurar Órdenes",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
 
 
@@ -50,6 +52,11 @@ namespace Vista
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvOrden_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

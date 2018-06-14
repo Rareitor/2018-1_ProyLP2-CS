@@ -12,6 +12,7 @@ namespace Vista
         {
             InitializeComponent();
             logicaNegocio = new TrabajadorBL();
+            CenterToScreen();
             dgvUsuariosRec.AutoGenerateColumns = false;
             dgvUsuariosRec.DataSource = logicaNegocio.listarTrabajadorPapelera();
             dgvUsuariosRec.ReadOnly = true;
@@ -19,7 +20,8 @@ namespace Vista
             if (dgvUsuariosRec.Rows.Count == 0)
             {
                 btnSeleccionar.Enabled = false;
-                MessageBox.Show("No hay usuarios por restaurar");
+                btnSeleccionar.BackColor = System.Drawing.Color.White;
+                MessageBox.Show("No hay usuarios por restaurar.", "Restaurar Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
                 
 

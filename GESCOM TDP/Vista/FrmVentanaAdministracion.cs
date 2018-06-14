@@ -784,5 +784,12 @@ namespace Vista
             estadoInicial(tipoUsu);
             AbrirFormInPanel(new FrmNoticias(idPayee, listaNoticia, ref listaVisitada));
         }
+
+        private void pnlContenedor_ControlRemoved(object sender, ControlEventArgs e)
+        {
+
+        }
+
+           
     }
 }
