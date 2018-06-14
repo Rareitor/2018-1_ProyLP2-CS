@@ -110,7 +110,7 @@ namespace AccesoDatos
             con.Open();
 
             comando.Connection = con;
-            comando.CommandText = "UPDATE Payee SET isVisible=1 WHERE idPayee=\"" + trab.IdTrabajador + "\"";
+            comando.CommandText = "UPDATE Payee SET isVisible=1,isBlocked = 0 WHERE idPayee=\"" + trab.IdTrabajador + "\"";
             comando.ExecuteNonQuery();
 
             con.Close();

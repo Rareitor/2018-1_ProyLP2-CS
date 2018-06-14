@@ -247,7 +247,7 @@ namespace Vista
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblHora.Text = DateTime.Now.ToString("H:mm:ss");
             lbFecha.Text = DateTime.Now.ToLongDateString();
         }
     }
