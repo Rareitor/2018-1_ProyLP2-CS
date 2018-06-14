@@ -22,7 +22,10 @@ namespace Vista.Otros
         public FrmRecuperarContrasena()
         {
             InitializeComponent();
-            txtRespuesta.Visible = true;
+            this.CenterToScreen();
+            txtUsuario.Select(txtUsuario.TextLength, 0);
+            //txtRespuesta.Visible = true;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -109,6 +112,11 @@ namespace Vista.Otros
         private void txtRespuesta_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

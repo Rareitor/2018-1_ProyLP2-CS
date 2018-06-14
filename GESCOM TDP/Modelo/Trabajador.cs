@@ -19,11 +19,8 @@ namespace Modelo
         private String cargo;
         private String distrito;
         private bool isVisible;
-<<<<<<< HEAD
         private double monto;
-=======
         private bool isBlocked;
->>>>>>> 4889c5f7d43692ca229d63cb03190e3f0815a244
 
         //métodos
         //constructores
@@ -44,23 +41,20 @@ namespace Modelo
         public string Distrito { get => distrito; set => distrito = value; }
         public Sede Locacion { get => locacion; set => locacion = value; }
         public bool IsVisible { get => isVisible; set => isVisible = value; }
-<<<<<<< HEAD
         public double Monto { get => monto; set => monto = value; }
-=======
         public bool IsBlocked { get => isBlocked; set => isBlocked = value; }
         public string Razon { get => (isBlocked ? "BLOQUEADO" : "BORRADO");}
->>>>>>> 4889c5f7d43692ca229d63cb03190e3f0815a244
         internal TipoRegimen Regimen { get => regimen; set => regimen = value; }
 
        
 
-        //public string NombreTrabajadorCompleto()
-        //{
-        //    return this.ApellidoPaterno + " " + this.ApellidoMaterno + ", " + this.Nombre;
-        //}
+        public string NombreTrabajadorCompleto()
+        {
+           return this.ApellidoPaterno + " " + this.ApellidoMaterno + ", " + this.Nombre;
+        }
 
         //métodos adicionales
-        //public  void emitirReporte();
+        //public void emitirReporte();
 
         public override string ToString()
         {

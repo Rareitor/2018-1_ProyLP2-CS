@@ -104,6 +104,7 @@ namespace Vista
             if(mantenimiento == 0)
             {
                 FrmRecuperarContrasena rec = new FrmRecuperarContrasena();
+                
                 rec.Show();
             }
             else
