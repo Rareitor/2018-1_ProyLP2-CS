@@ -347,6 +347,9 @@
     <EmbeddedResource Include="FrmGestionarUsuario.resx">
       <DependentUpon>FrmGestionarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRanking.resx">
+      <DependentUpon>FrmRanking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRecuperarContrasena.resx">
       <DependentUpon>FrmRecuperarContrasena.cs</DependentUpon>
     </EmbeddedResource>

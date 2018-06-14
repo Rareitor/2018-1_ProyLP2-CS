@@ -724,6 +724,42 @@ namespace AccesoDatos
             return listaTrabajador;
 
         }
+
+        public BindingList<Trabajador> listarMejoresComisionistas(string idPayee)
+        {
+
+            BindingList<Trabajador> listaTrabajador = new BindingList<Trabajador>();
+
+            string cadena = "server= 200.16.7.96;" + "user= inf282g8;database= inf282g8;" +
+                    "port=3306;password=4LDJZU;SslMode=none;" + " ";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            con.Open();
+
+            comando.Connection = con;
+            comando.CommandText = "RANKING_COMISIONISTAS";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("_idPayee", MySqlDbType.VarChar).Value = idPayee;
+
+            MySqlDataReader rs = comando.ExecuteReader();
+
+            while (rs.Read())
+            {
+                Trabajador trab = new Trabajador();
+
+                trab.IdTrabajador = rs.GetString("idPayee");
+                trab.Nombre = rs.GetString("nombre");
+                trab.ApellidoPaterno = rs.GetString("apellidoPaterno");
+                double monto = rs.GetDouble("montoTotal");
+                monto = Math.Round(monto, 2);
+                trab.Monto = monto;
+                listaTrabajador.Add(trab);
+            }
+            con.Close();
+
+            return listaTrabajador;
+        }
     }
 
 }

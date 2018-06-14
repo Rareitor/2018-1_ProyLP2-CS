@@ -19,6 +19,7 @@ namespace Modelo
         private String cargo;
         private String distrito;
         private bool isVisible;
+        private double monto;
 
         //métodos
         //constructores
@@ -39,7 +40,10 @@ namespace Modelo
         public string Distrito { get => distrito; set => distrito = value; }
         public Sede Locacion { get => locacion; set => locacion = value; }
         public bool IsVisible { get => isVisible; set => isVisible = value; }
+        public double Monto { get => monto; set => monto = value; }
         internal TipoRegimen Regimen { get => regimen; set => regimen = value; }
+
+       
 
         //public string NombreTrabajadorCompleto()
         //{

@@ -127,5 +127,10 @@ namespace Controlador
         {
             return accesoTrabajador.listarDni();
         }
+
+        public BindingList<Trabajador> listarMejoresComisionistas(string idPayee)
+        {
+            return accesoTrabajador.listarMejoresComisionistas(idPayee);
+        }
     }
 }
