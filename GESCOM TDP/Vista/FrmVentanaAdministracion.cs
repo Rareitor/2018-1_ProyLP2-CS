@@ -111,7 +111,6 @@ namespace Vista
                 this.pnlContenedor.Controls.RemoveAt(0);
             Form fh = formHijo as Form;
             fh.TopLevel = false;
-            //fh.FormBorderStyle = FormBorderStyle.None;
             fh.Dock = DockStyle.Fill;
             this.pnlContenedor.Controls.Add(fh);
             this.pnlContenedor.Tag = fh;
