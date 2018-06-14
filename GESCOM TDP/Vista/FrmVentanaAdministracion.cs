@@ -80,6 +80,12 @@ namespace Vista
                 txtFaltantes.BackColor = Color.Transparent;
                 txtFaltantes.ForeColor = Color.White;
             }
+            else
+            {
+                pictureCampana.BackColor = Color.Red;
+                txtFaltantes.BackColor = Color.Transparent;
+                txtFaltantes.ForeColor = Color.Red;
+            }
         }
 
         private int cantidadMaxima(BindingList<Noticia>listaNoticia)
@@ -743,6 +749,8 @@ namespace Vista
 
         private void pictureCampana_MouseHover(object sender, EventArgs e)
         {
+            listaVisitada = logicaNoticia.listarVisitadas(idPayee);
+            listaNoticia = logicaNoticia.listarNoticias();
             evaluarCampana();
             txtFaltantes.Visible = true;
         }
