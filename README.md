@@ -1,3 +1,8 @@
-# 2018-1_ProyLP2-CS
+# Proyecto LP2 C#
 Falta:
-  - Recuperar ComboProducto
+  - Corregir asignar jefe eliminado
+  - Agregar algunos filtros
+ <br>
+
+ - Javaav
+
