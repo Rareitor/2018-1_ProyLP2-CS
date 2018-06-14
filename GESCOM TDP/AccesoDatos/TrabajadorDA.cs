@@ -716,7 +716,7 @@ namespace AccesoDatos
                 trab.ApellidoPaterno = rs.GetString("apellidoPaterno");
                 trab.ApellidoMaterno = rs.GetString("apellidoMaterno");
                 trab.IsVisible = rs.GetBoolean(rs.GetOrdinal("isVisible"));
-
+                trab.IsBlocked = rs.GetBoolean(rs.GetOrdinal("isBlocked"));
                 listaTrabajador.Add(trab);
             }
             con.Close();

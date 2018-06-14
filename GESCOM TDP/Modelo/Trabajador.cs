@@ -19,6 +19,7 @@ namespace Modelo
         private String cargo;
         private String distrito;
         private bool isVisible;
+        private bool isBlocked;
 
         //métodos
         //constructores
@@ -39,6 +40,8 @@ namespace Modelo
         public string Distrito { get => distrito; set => distrito = value; }
         public Sede Locacion { get => locacion; set => locacion = value; }
         public bool IsVisible { get => isVisible; set => isVisible = value; }
+        public bool IsBlocked { get => isBlocked; set => isBlocked = value; }
+        public string Razon { get => (isBlocked ? "BLOQUEADO" : "BORRADO");}
         internal TipoRegimen Regimen { get => regimen; set => regimen = value; }
 
         //public string NombreTrabajadorCompleto()
