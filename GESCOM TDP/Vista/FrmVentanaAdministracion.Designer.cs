@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVentanaAdministracion));
             this.lblMenuVertical = new System.Windows.Forms.Panel();
+            this.pictureCampana2 = new System.Windows.Forms.PictureBox();
             this.txtFaltantes = new System.Windows.Forms.Label();
             this.pictureCampana = new System.Windows.Forms.PictureBox();
             this.btnCalculoAdmin = new System.Windows.Forms.Button();
@@ -73,8 +75,11 @@
             this.iconRestaurar = new System.Windows.Forms.PictureBox();
             this.iconMinimize = new System.Windows.Forms.PictureBox();
             this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.pictureCampana2 = new System.Windows.Forms.PictureBox();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbFecha = new System.Windows.Forms.Label();
             this.lblMenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCampana2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCampana)).BeginInit();
             this.pnlVisualizar.SuspendLayout();
             this.pnlOtro.SuspendLayout();
@@ -88,7 +93,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCampana2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMenuVertical
@@ -119,6 +123,22 @@
             this.lblMenuVertical.Size = new System.Drawing.Size(200, 650);
             this.lblMenuVertical.TabIndex = 0;
             this.lblMenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.menuVertical_Paint);
+            // 
+            // pictureCampana2
+            // 
+            this.pictureCampana2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureCampana2.Enabled = false;
+            this.pictureCampana2.Image = ((System.Drawing.Image)(resources.GetObject("pictureCampana2.Image")));
+            this.pictureCampana2.Location = new System.Drawing.Point(131, 610);
+            this.pictureCampana2.Name = "pictureCampana2";
+            this.pictureCampana2.Size = new System.Drawing.Size(46, 30);
+            this.pictureCampana2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCampana2.TabIndex = 23;
+            this.pictureCampana2.TabStop = false;
+            this.pictureCampana2.Visible = false;
+            this.pictureCampana2.Click += new System.EventHandler(this.pictureCampana2_Click);
+            this.pictureCampana2.MouseLeave += new System.EventHandler(this.pictureCampana_MouseLeave);
+            this.pictureCampana2.MouseHover += new System.EventHandler(this.pictureCampana_MouseHover);
             // 
             // txtFaltantes
             // 
@@ -726,6 +746,8 @@
             // pnlSuperior
             // 
             this.pnlSuperior.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pnlSuperior.Controls.Add(this.lbFecha);
+            this.pnlSuperior.Controls.Add(this.lblHora);
             this.pnlSuperior.Controls.Add(this.iconMaximizar);
             this.pnlSuperior.Controls.Add(this.iconCerrar);
             this.pnlSuperior.Controls.Add(this.iconRestaurar);
@@ -801,21 +823,32 @@
             this.pnlContenedor.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.pnlContenedor_ControlRemoved);
             this.pnlContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenedor_Paint);
             // 
-            // pictureCampana2
+            // lblHora
             // 
-            this.pictureCampana2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureCampana2.Enabled = false;
-            this.pictureCampana2.Image = ((System.Drawing.Image)(resources.GetObject("pictureCampana2.Image")));
-            this.pictureCampana2.Location = new System.Drawing.Point(131, 610);
-            this.pictureCampana2.Name = "pictureCampana2";
-            this.pictureCampana2.Size = new System.Drawing.Size(46, 30);
-            this.pictureCampana2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureCampana2.TabIndex = 23;
-            this.pictureCampana2.TabStop = false;
-            this.pictureCampana2.Visible = false;
-            this.pictureCampana2.Click += new System.EventHandler(this.pictureCampana2_Click);
-            this.pictureCampana2.MouseLeave += new System.EventHandler(this.pictureCampana_MouseLeave);
-            this.pictureCampana2.MouseHover += new System.EventHandler(this.pictureCampana_MouseHover);
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lblHora.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblHora.Location = new System.Drawing.Point(26, 12);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(79, 29);
+            this.lblHora.TabIndex = 2;
+            this.lblHora.Text = "label1";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbFecha
+            // 
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFecha.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbFecha.Location = new System.Drawing.Point(136, 22);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(47, 15);
+            this.lbFecha.TabIndex = 4;
+            this.lbFecha.Text = "label1";
             // 
             // FrmVentanaAdministracion
             // 
@@ -832,6 +865,7 @@
             this.Load += new System.EventHandler(this.VentanaAdministracion_Load);
             this.lblMenuVertical.ResumeLayout(false);
             this.lblMenuVertical.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCampana2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCampana)).EndInit();
             this.pnlVisualizar.ResumeLayout(false);
             this.pnlOtro.ResumeLayout(false);
@@ -841,11 +875,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picUsu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogoTelef)).EndInit();
             this.pnlSuperior.ResumeLayout(false);
+            this.pnlSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCampana2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -897,5 +931,8 @@
         private System.Windows.Forms.PictureBox pictureCampana;
         private System.Windows.Forms.Label txtFaltantes;
         private System.Windows.Forms.PictureBox pictureCampana2;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbFecha;
     }
 }

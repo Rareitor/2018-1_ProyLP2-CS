@@ -378,7 +378,7 @@
         Tv7HcjMesd5FDYT1Ousd1OFwOBwOh8PhcDgcDofD4XA4/jY87x/EqHcjx2GKxgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="ID_Trabajador.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="DNI.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

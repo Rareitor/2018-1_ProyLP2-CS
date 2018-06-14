@@ -73,7 +73,7 @@
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvBusqueda = new System.Windows.Forms.DataGridView();
-            this.ID_Trabajador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoPat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -509,7 +509,7 @@
             this.pnlBusqueda.Controls.Add(this.dgvBusqueda);
             this.pnlBusqueda.Location = new System.Drawing.Point(485, 58);
             this.pnlBusqueda.Name = "pnlBusqueda";
-            this.pnlBusqueda.Size = new System.Drawing.Size(660, 412);
+            this.pnlBusqueda.Size = new System.Drawing.Size(623, 412);
             this.pnlBusqueda.TabIndex = 20;
             // 
             // cmbCampo
@@ -524,14 +524,14 @@
             "Apellido Paterno",
             "Apellido Materno",
             "Email"});
-            this.cmbCampo.Location = new System.Drawing.Point(51, 79);
+            this.cmbCampo.Location = new System.Drawing.Point(17, 62);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(130, 21);
             this.cmbCampo.TabIndex = 6;
             // 
             // tbFiltro
             // 
-            this.tbFiltro.Location = new System.Drawing.Point(232, 79);
+            this.tbFiltro.Location = new System.Drawing.Point(170, 63);
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(122, 20);
             this.tbFiltro.TabIndex = 5;
@@ -539,7 +539,7 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(558, 371);
+            this.btnSeleccionar.Location = new System.Drawing.Point(17, 100);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 2;
@@ -562,7 +562,7 @@
             this.dgvBusqueda.AllowUserToOrderColumns = true;
             this.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBusqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Trabajador,
+            this.ID,
             this.DNI,
             this.Nombre,
             this.ApellidoPat,
@@ -570,17 +570,17 @@
             this.Email});
             this.dgvBusqueda.Location = new System.Drawing.Point(17, 143);
             this.dgvBusqueda.Name = "dgvBusqueda";
-            this.dgvBusqueda.Size = new System.Drawing.Size(616, 222);
+            this.dgvBusqueda.Size = new System.Drawing.Size(574, 222);
             this.dgvBusqueda.TabIndex = 0;
             this.dgvBusqueda.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBusqueda_ColumnHeaderMouseClick);
             // 
-            // ID_Trabajador
+            // ID
             // 
-            this.ID_Trabajador.DataPropertyName = "IdTrabajador";
-            this.ID_Trabajador.HeaderText = "ID_Trabajador";
-            this.ID_Trabajador.Name = "ID_Trabajador";
-            this.ID_Trabajador.ReadOnly = true;
-            this.ID_Trabajador.Width = 80;
+            this.ID.DataPropertyName = "IdTrabajador";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 80;
             // 
             // DNI
             // 
@@ -688,17 +688,17 @@
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dgvBusqueda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Trabajador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoPat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoMat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.ComboBox cmbCampo;
         private System.Windows.Forms.TextBox tbFiltro;
         private System.Windows.Forms.Label MensajeCorreo;
         private System.Windows.Forms.PictureBox pictureCheked;
         private System.Windows.Forms.Label labelDni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoPat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoMat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

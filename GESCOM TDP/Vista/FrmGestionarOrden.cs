@@ -35,6 +35,7 @@ namespace Vista
         BindingList<String> listaBono = new BindingList<string>();
         private string tipoUsuario;
         public string idUsuario;
+        private int codigoValido;
         public enum Estado
         {
             Inicial, Nuevo, Deshabilitado
@@ -80,7 +81,7 @@ namespace Vista
                     txtCodigo.Enabled = false;
                     btnEliminar.Enabled = false;
                     btnCancelar.Enabled = false;
-                    btnComboProducto.Enabled = false;
+                    btnCombo.Enabled = false;
                     btnImportar.Enabled = false;
                     btnBuscarComisionista.Enabled = false;
                     txtID.Enabled = false;
@@ -99,7 +100,7 @@ namespace Vista
                     pnlBusqueda.Visible = false;          
                     txtID.Enabled = false;
                     txtCodigo.Enabled = true;
-                    btnComboProducto.Enabled = true;
+                    btnCombo.Enabled = true;
                     if (tipoUsuario != "Comisionista")
                     {
                         txtIDComisionista.Enabled = false;
@@ -135,7 +136,7 @@ namespace Vista
                     txtIDComisionista.Enabled = false;
                     dateIngreso.Enabled = false;
                     txtPago.Enabled = false;
-                    btnComboProducto.Enabled = false;
+                    btnCombo.Enabled = false;
                     cmbCanal.Enabled = false;
                     txtCodigo.Enabled = false;
                     cmbCombo.Enabled = false;
@@ -243,16 +244,16 @@ namespace Vista
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtIDComisionista.Text == "" || txtPago.Text == "" ||
-                txtCodigo.Text== "" || existeCodigo == 1) { 
+                txtCodigo.Text== "" || existeCodigo == 1 || codigoValido ==0) { 
             
-                MessageBox.Show("Ingrese una orden valida");
+                MessageBox.Show("Ingrese una orden valida","Orden Inválida",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 
             }
             else
             {
                 if (DateTime.Compare(dateIngreso.Value, DateTime.Now) > 0)
                 {
-                    MessageBox.Show("Error en la fecha de registro");
+                    MessageBox.Show("Error en la fecha de registro", "Orden Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -264,7 +265,7 @@ namespace Vista
                     orden.Canal.IdCanal = idCanal;
                     orden.Canal.Nombre = cmbCanal.Text;
                     orden.Id = txtID.Text;
-                    orden.Codigo = txtCodigo.Text;
+                    orden.Codigo = txtCodigo.Text.ToUpper();
                     orden.Producto = new Producto();
                     orden.Producto.IdProducto = idProducto;
                     orden.Producto.Nombre = cmbProducto.Text;
@@ -282,11 +283,11 @@ namespace Vista
                     if (respuesta != "Correcta")
                     {
                         txtID.Text = respuesta;
-                        MessageBox.Show("Se ha registrado la orden satisfactoriamente");
+                        MessageBox.Show("Se ha registrado la orden satisfactoriamente","Orden Registrada",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                     else if (respuesta == "Correcta")
                     {
-                        MessageBox.Show("Se ha actualizado la orden satisfactoriamente");
+                        MessageBox.Show("Se ha actualizado la orden satisfactoriamente","Orden Registrada",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
 
                     opcion = 1;
@@ -352,10 +353,10 @@ namespace Vista
                 oEliminar.Id = txtID.Text;
                 opcion = 3;
                 logicaOrden.gestionarOrden(oEliminar, opcion,tipoOrden);
-                MessageBox.Show("La orden ha sido eliminado satisfactoriamente");
+                MessageBox.Show("La orden ha sido eliminado satisfactoriamente","Eliminar Orden",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
            } else {
-                MessageBox.Show("Ingrese una orden valida a eliminar");
+                MessageBox.Show("Ingrese una orden valida a eliminar","Orden Inválida",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             estadoComponentes(Estado.Deshabilitado);
         }
@@ -473,7 +474,7 @@ namespace Vista
                     //}
                     MessageBox.Show("Se ha cargado " + cantCargadas + " ordenes");
                 }
-                MessageBox.Show("Se ha cargado los datos correctamente");
+                MessageBox.Show("Se ha cargado los datos correctamente","Datos Cargados",MessageBoxButtons.OK,MessageBoxIcon.Information);
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -669,8 +670,21 @@ namespace Vista
 
         private void txtCodigo_KeyUp(object sender, KeyEventArgs e)
         {
+           
             existeCodigo = 0;
-            string cod = txtCodigo.Text;
+            string cod = txtCodigo.Text.ToUpper();
+
+            bool contieneBol = cod.Contains("BOL");
+            
+            bool contieneFact = cod.Contains("FACT");
+
+            if (contieneBol || contieneFact){
+                codigoValido = 1;
+            } else
+            {
+                codigoValido = 0;
+            }
+
             foreach (String o in listaOrdenCodigo)
             {
                 if (o == cod)
@@ -701,6 +715,11 @@ namespace Vista
         }
 
         private void dateIngreso_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnComboProducto_Click(object sender, EventArgs e)
         {
 
         }

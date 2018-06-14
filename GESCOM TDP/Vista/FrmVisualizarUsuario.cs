@@ -24,6 +24,7 @@ namespace Vista.Otros
         public FrmVisualizarUsuario()
         {
             InitializeComponent();
+            CenterToScreen();
             dgvUsuarios.AutoGenerateColumns = false;
             cmbCampo.Text = "<Todos>";
             foreach (DataGridViewColumn column in dgvUsuarios.Columns)

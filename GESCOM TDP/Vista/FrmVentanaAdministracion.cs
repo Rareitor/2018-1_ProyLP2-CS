@@ -41,11 +41,11 @@ namespace Vista
             this.idPayee = id_usuario;
             estadoInicial(tipoUsuario);
             lblCargo.Text = tipoUsuario;
+            lblNombreUsu.Text = nombreUsu + " " + apellidoPat;
             if (tipoUsu != "Administrador")
             {
                 listaNoticia = logicaNoticia.listarNoticias();
                 maximo = cantidadMaxima(listaNoticia);
-                lblNombreUsu.Text = nombreUsu + " " + apellidoPat;
                 listaVisitada = logicaNoticia.listarVisitadas(idPayee);
             }
             evaluarCampana();
@@ -158,7 +158,7 @@ namespace Vista
                     btnGestionarJefeCom.Location = new Point(0, 100);
                     btnCalculoAdmin.Location = new Point(0, 140);
                     btnOtrosJefeCom.Location = new Point(0, 180);
-
+                    
                     btnVisuGere.Hide();
                     break;
                 case "Gerente":
@@ -796,6 +796,12 @@ namespace Vista
         private void pnlContenedor_ControlRemoved(object sender, ControlEventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("H:mm:ss");
+            lbFecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

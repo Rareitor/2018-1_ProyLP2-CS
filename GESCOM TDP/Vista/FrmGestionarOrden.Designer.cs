@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionarOrden));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tsMenu = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
@@ -62,7 +62,6 @@
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnComboProducto = new System.Windows.Forms.Button();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.cmbCombo = new System.Windows.Forms.ComboBox();
             this.cmbCanal = new System.Windows.Forms.ComboBox();
@@ -71,6 +70,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCombo = new System.Windows.Forms.Button();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.pnlBusqueda.SuspendLayout();
@@ -278,7 +278,7 @@
             this.pnlBusqueda.Controls.Add(this.dgvBusqueda);
             this.pnlBusqueda.Location = new System.Drawing.Point(462, 43);
             this.pnlBusqueda.Name = "pnlBusqueda";
-            this.pnlBusqueda.Size = new System.Drawing.Size(656, 382);
+            this.pnlBusqueda.Size = new System.Drawing.Size(635, 382);
             this.pnlBusqueda.TabIndex = 21;
             // 
             // cmbCampo
@@ -292,7 +292,7 @@
             "Codigo",
             "Fecha",
             "Producto"});
-            this.cmbCampo.Location = new System.Drawing.Point(63, 24);
+            this.cmbCampo.Location = new System.Drawing.Point(17, 59);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(130, 21);
             this.cmbCampo.TabIndex = 4;
@@ -300,7 +300,7 @@
             // 
             // tbFiltro
             // 
-            this.tbFiltro.Location = new System.Drawing.Point(244, 24);
+            this.tbFiltro.Location = new System.Drawing.Point(163, 59);
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(122, 20);
             this.tbFiltro.TabIndex = 3;
@@ -308,7 +308,7 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(558, 342);
+            this.btnSeleccionar.Location = new System.Drawing.Point(17, 92);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 2;
@@ -320,7 +320,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(14, 75);
+            this.label12.Location = new System.Drawing.Point(14, 23);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(249, 18);
             this.label12.TabIndex = 1;
@@ -337,16 +337,16 @@
             this.Fecha,
             this.NombreCanal,
             this.Monto});
-            this.dgvBusqueda.Location = new System.Drawing.Point(17, 112);
+            this.dgvBusqueda.Location = new System.Drawing.Point(17, 121);
             this.dgvBusqueda.Name = "dgvBusqueda";
-            this.dgvBusqueda.Size = new System.Drawing.Size(616, 222);
+            this.dgvBusqueda.Size = new System.Drawing.Size(593, 222);
             this.dgvBusqueda.TabIndex = 0;
             this.dgvBusqueda.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBusqueda_ColumnHeaderMouseClick);
             // 
             // ID_Orden
             // 
             this.ID_Orden.DataPropertyName = "Id";
-            this.ID_Orden.HeaderText = "ID_Orden";
+            this.ID_Orden.HeaderText = "ID";
             this.ID_Orden.Name = "ID_Orden";
             this.ID_Orden.ReadOnly = true;
             this.ID_Orden.Width = 70;
@@ -361,8 +361,8 @@
             // ID_Comisionista
             // 
             this.ID_Comisionista.DataPropertyName = "IdComisionista";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID_Comisionista.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID_Comisionista.DefaultCellStyle = dataGridViewCellStyle2;
             this.ID_Comisionista.HeaderText = "ID Comisionista";
             this.ID_Comisionista.Name = "ID_Comisionista";
             this.ID_Comisionista.Width = 80;
@@ -394,7 +394,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnComboProducto);
+            this.groupBox1.Controls.Add(this.btnCombo);
             this.groupBox1.Controls.Add(this.cmbProducto);
             this.groupBox1.Controls.Add(this.cmbCombo);
             this.groupBox1.Controls.Add(this.cmbCanal);
@@ -410,16 +410,6 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Especificaciones";
-            // 
-            // btnComboProducto
-            // 
-            this.btnComboProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComboProducto.Location = new System.Drawing.Point(381, 30);
-            this.btnComboProducto.Name = "btnComboProducto";
-            this.btnComboProducto.Size = new System.Drawing.Size(30, 23);
-            this.btnComboProducto.TabIndex = 32;
-            this.btnComboProducto.Text = "...";
-            this.btnComboProducto.UseVisualStyleBackColor = true;
             // 
             // cmbProducto
             // 
@@ -499,6 +489,18 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Canal:";
             // 
+            // btnCombo
+            // 
+            this.btnCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCombo.Image = ((System.Drawing.Image)(resources.GetObject("btnCombo.Image")));
+            this.btnCombo.Location = new System.Drawing.Point(381, 30);
+            this.btnCombo.Name = "btnCombo";
+            this.btnCombo.Size = new System.Drawing.Size(30, 23);
+            this.btnCombo.TabIndex = 27;
+            this.btnCombo.Text = "...";
+            this.btnCombo.UseVisualStyleBackColor = true;
+            this.btnCombo.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // FrmGestionarOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,12 +555,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label labelErrorCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Orden;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Comisionista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCanal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnComboProducto;
         private System.Windows.Forms.ComboBox cmbProducto;
@@ -569,5 +565,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Orden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Comisionista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCanal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.Button btnCombo;
     }
 }
