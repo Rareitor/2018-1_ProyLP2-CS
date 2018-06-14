@@ -139,6 +139,7 @@
             // 
             this.pictureCampana.BackColor = System.Drawing.Color.Transparent;
             this.pictureCampana.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureCampana.Enabled = false;
             this.pictureCampana.Image = ((System.Drawing.Image)(resources.GetObject("pictureCampana.Image")));
             this.pictureCampana.Location = new System.Drawing.Point(133, 610);
             this.pictureCampana.Name = "pictureCampana";
@@ -803,8 +804,9 @@
             // pictureCampana2
             // 
             this.pictureCampana2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureCampana2.Enabled = false;
             this.pictureCampana2.Image = ((System.Drawing.Image)(resources.GetObject("pictureCampana2.Image")));
-            this.pictureCampana2.Location = new System.Drawing.Point(133, 610);
+            this.pictureCampana2.Location = new System.Drawing.Point(131, 610);
             this.pictureCampana2.Name = "pictureCampana2";
             this.pictureCampana2.Size = new System.Drawing.Size(46, 30);
             this.pictureCampana2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

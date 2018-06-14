@@ -63,7 +63,7 @@ namespace Vista
             this.btnImportar});
             this.tsMenu.Location = new System.Drawing.Point(0, 0);
             this.tsMenu.Name = "tsMenu";
-            this.tsMenu.Size = new System.Drawing.Size(681, 25);
+            this.tsMenu.Size = new System.Drawing.Size(446, 25);
             this.tsMenu.TabIndex = 18;
             this.tsMenu.Text = "toolStrip2";
             // 
@@ -178,7 +178,7 @@ namespace Vista
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(118, 164);
+            this.label3.Location = new System.Drawing.Point(118, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 30;
@@ -263,7 +263,7 @@ namespace Vista
             // rbnBono
             // 
             this.rbnBono.AutoSize = true;
-            this.rbnBono.Location = new System.Drawing.Point(257, 208);
+            this.rbnBono.Location = new System.Drawing.Point(256, 208);
             this.rbnBono.Name = "rbnBono";
             this.rbnBono.Size = new System.Drawing.Size(50, 17);
             this.rbnBono.TabIndex = 36;
@@ -286,7 +286,7 @@ namespace Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 482);
+            this.ClientSize = new System.Drawing.Size(446, 260);
             this.Controls.Add(this.rbnPenalidad);
             this.Controls.Add(this.rbnBono);
             this.Controls.Add(this.rbnComision);

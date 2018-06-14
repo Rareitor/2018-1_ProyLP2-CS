@@ -97,7 +97,7 @@
             this.btnCancelar});
             this.tsMenu.Location = new System.Drawing.Point(0, 0);
             this.tsMenu.Name = "tsMenu";
-            this.tsMenu.Size = new System.Drawing.Size(1087, 25);
+            this.tsMenu.Size = new System.Drawing.Size(1171, 25);
             this.tsMenu.TabIndex = 17;
             this.tsMenu.Text = "toolStrip2";
             this.tsMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked);
@@ -167,10 +167,10 @@
             this.gbGenerales.Controls.Add(this.label2);
             this.gbGenerales.Controls.Add(this.lblNombre);
             this.gbGenerales.Controls.Add(this.txtNombre);
-            this.gbGenerales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.gbGenerales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbGenerales.Location = new System.Drawing.Point(12, 40);
             this.gbGenerales.Name = "gbGenerales";
-            this.gbGenerales.Size = new System.Drawing.Size(414, 296);
+            this.gbGenerales.Size = new System.Drawing.Size(452, 296);
             this.gbGenerales.TabIndex = 18;
             this.gbGenerales.TabStop = false;
             this.gbGenerales.Text = "Datos Generales";
@@ -352,10 +352,10 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnSuperior);
             this.groupBox1.Controls.Add(this.txtIDSuperior);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(4, 342);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 351);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(445, 190);
+            this.groupBox1.Size = new System.Drawing.Size(455, 190);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Corporativos:";
@@ -408,7 +408,7 @@
             this.rbnGerente.Enabled = false;
             this.rbnGerente.Location = new System.Drawing.Point(167, 37);
             this.rbnGerente.Name = "rbnGerente";
-            this.rbnGerente.Size = new System.Drawing.Size(86, 24);
+            this.rbnGerente.Size = new System.Drawing.Size(93, 24);
             this.rbnGerente.TabIndex = 31;
             this.rbnGerente.TabStop = true;
             this.rbnGerente.Text = "Gerente";
@@ -431,7 +431,7 @@
             this.rbnJefe.Enabled = false;
             this.rbnJefe.Location = new System.Drawing.Point(259, 37);
             this.rbnJefe.Name = "rbnJefe";
-            this.rbnJefe.Size = new System.Drawing.Size(58, 24);
+            this.rbnJefe.Size = new System.Drawing.Size(62, 24);
             this.rbnJefe.TabIndex = 32;
             this.rbnJefe.TabStop = true;
             this.rbnJefe.Text = "Jefe";
@@ -464,7 +464,7 @@
             this.rbnComisionista.Enabled = false;
             this.rbnComisionista.Location = new System.Drawing.Point(323, 37);
             this.rbnComisionista.Name = "rbnComisionista";
-            this.rbnComisionista.Size = new System.Drawing.Size(117, 24);
+            this.rbnComisionista.Size = new System.Drawing.Size(129, 24);
             this.rbnComisionista.TabIndex = 33;
             this.rbnComisionista.TabStop = true;
             this.rbnComisionista.Text = "Comisionista";
@@ -507,9 +507,9 @@
             this.pnlBusqueda.Controls.Add(this.btnSeleccionar);
             this.pnlBusqueda.Controls.Add(this.label12);
             this.pnlBusqueda.Controls.Add(this.dgvBusqueda);
-            this.pnlBusqueda.Location = new System.Drawing.Point(451, 50);
+            this.pnlBusqueda.Location = new System.Drawing.Point(485, 58);
             this.pnlBusqueda.Name = "pnlBusqueda";
-            this.pnlBusqueda.Size = new System.Drawing.Size(636, 388);
+            this.pnlBusqueda.Size = new System.Drawing.Size(660, 412);
             this.pnlBusqueda.TabIndex = 20;
             // 
             // cmbCampo
@@ -539,7 +539,7 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(480, 28);
+            this.btnSeleccionar.Location = new System.Drawing.Point(558, 371);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 2;
@@ -626,7 +626,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 603);
+            this.ClientSize = new System.Drawing.Size(1171, 603);
             this.Controls.Add(this.pnlBusqueda);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbGenerales);

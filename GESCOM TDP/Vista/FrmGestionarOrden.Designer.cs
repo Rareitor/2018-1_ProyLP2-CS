@@ -41,20 +41,11 @@
             this.labelErrorCodigo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.btnComboProducto = new System.Windows.Forms.Button();
             this.btnBuscarComisionista = new System.Windows.Forms.Button();
-            this.cmbProducto = new System.Windows.Forms.ComboBox();
-            this.cmbCombo = new System.Windows.Forms.ComboBox();
-            this.cmbCanal = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtPago = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.dateIngreso = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtIDComisionista = new System.Windows.Forms.TextBox();
             this.pnlBusqueda = new System.Windows.Forms.Panel();
@@ -70,10 +61,21 @@
             this.NombreCanal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnComboProducto = new System.Windows.Forms.Button();
+            this.cmbProducto = new System.Windows.Forms.ComboBox();
+            this.cmbCombo = new System.Windows.Forms.ComboBox();
+            this.cmbCanal = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPago = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.pnlBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tsMenu
@@ -87,7 +89,7 @@
             this.btnImportar});
             this.tsMenu.Location = new System.Drawing.Point(0, 0);
             this.tsMenu.Name = "tsMenu";
-            this.tsMenu.Size = new System.Drawing.Size(1084, 25);
+            this.tsMenu.Size = new System.Drawing.Size(1130, 25);
             this.tsMenu.TabIndex = 18;
             this.tsMenu.Text = "toolStrip2";
             // 
@@ -151,26 +153,17 @@
             this.gbGenerales.Controls.Add(this.labelErrorCodigo);
             this.gbGenerales.Controls.Add(this.label4);
             this.gbGenerales.Controls.Add(this.txtCodigo);
-            this.gbGenerales.Controls.Add(this.btnComboProducto);
             this.gbGenerales.Controls.Add(this.btnBuscarComisionista);
-            this.gbGenerales.Controls.Add(this.cmbProducto);
-            this.gbGenerales.Controls.Add(this.cmbCombo);
-            this.gbGenerales.Controls.Add(this.cmbCanal);
-            this.gbGenerales.Controls.Add(this.label7);
-            this.gbGenerales.Controls.Add(this.txtPago);
-            this.gbGenerales.Controls.Add(this.label6);
             this.gbGenerales.Controls.Add(this.dateIngreso);
-            this.gbGenerales.Controls.Add(this.label5);
             this.gbGenerales.Controls.Add(this.label3);
             this.gbGenerales.Controls.Add(this.txtID);
             this.gbGenerales.Controls.Add(this.label1);
-            this.gbGenerales.Controls.Add(this.label2);
             this.gbGenerales.Controls.Add(this.lblNombre);
             this.gbGenerales.Controls.Add(this.txtIDComisionista);
-            this.gbGenerales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.gbGenerales.Location = new System.Drawing.Point(0, 31);
+            this.gbGenerales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbGenerales.Location = new System.Drawing.Point(20, 43);
             this.gbGenerales.Name = "gbGenerales";
-            this.gbGenerales.Size = new System.Drawing.Size(433, 345);
+            this.gbGenerales.Size = new System.Drawing.Size(422, 175);
             this.gbGenerales.TabIndex = 19;
             this.gbGenerales.TabStop = false;
             this.gbGenerales.Text = "Datos Generales";
@@ -180,7 +173,7 @@
             this.labelErrorCodigo.AutoSize = true;
             this.labelErrorCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.labelErrorCodigo.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorCodigo.Location = new System.Drawing.Point(179, 116);
+            this.labelErrorCodigo.Location = new System.Drawing.Point(180, 150);
             this.labelErrorCodigo.Name = "labelErrorCodigo";
             this.labelErrorCodigo.Size = new System.Drawing.Size(177, 13);
             this.labelErrorCodigo.TabIndex = 26;
@@ -191,7 +184,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(14, 91);
+            this.label4.Location = new System.Drawing.Point(15, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 24;
@@ -200,94 +193,23 @@
             // txtCodigo
             // 
             this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(166, 87);
+            this.txtCodigo.Location = new System.Drawing.Point(167, 121);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(204, 26);
             this.txtCodigo.TabIndex = 25;
             this.txtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyUp);
             // 
-            // btnComboProducto
-            // 
-            this.btnComboProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComboProducto.Location = new System.Drawing.Point(378, 178);
-            this.btnComboProducto.Name = "btnComboProducto";
-            this.btnComboProducto.Size = new System.Drawing.Size(30, 23);
-            this.btnComboProducto.TabIndex = 23;
-            this.btnComboProducto.Text = "...";
-            this.btnComboProducto.UseVisualStyleBackColor = true;
-            this.btnComboProducto.Click += new System.EventHandler(this.button1_Click_2);
-            // 
             // btnBuscarComisionista
             // 
             this.btnBuscarComisionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarComisionista.Location = new System.Drawing.Point(378, 140);
+            this.btnBuscarComisionista.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarComisionista.Image")));
+            this.btnBuscarComisionista.Location = new System.Drawing.Point(381, 88);
             this.btnBuscarComisionista.Name = "btnBuscarComisionista";
             this.btnBuscarComisionista.Size = new System.Drawing.Size(30, 23);
             this.btnBuscarComisionista.TabIndex = 22;
             this.btnBuscarComisionista.Text = "...";
             this.btnBuscarComisionista.UseVisualStyleBackColor = true;
             this.btnBuscarComisionista.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // cmbProducto
-            // 
-            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Location = new System.Drawing.Point(167, 257);
-            this.cmbProducto.Name = "cmbProducto";
-            this.cmbProducto.Size = new System.Drawing.Size(204, 20);
-            this.cmbProducto.TabIndex = 21;
-            // 
-            // cmbCombo
-            // 
-            this.cmbCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.cmbCombo.FormattingEnabled = true;
-            this.cmbCombo.Location = new System.Drawing.Point(167, 219);
-            this.cmbCombo.Name = "cmbCombo";
-            this.cmbCombo.Size = new System.Drawing.Size(204, 20);
-            this.cmbCombo.TabIndex = 20;
-            // 
-            // cmbCanal
-            // 
-            this.cmbCanal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.cmbCanal.FormattingEnabled = true;
-            this.cmbCanal.Location = new System.Drawing.Point(167, 178);
-            this.cmbCanal.Name = "cmbCanal";
-            this.cmbCanal.Size = new System.Drawing.Size(204, 20);
-            this.cmbCanal.TabIndex = 19;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(15, 258);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 20);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Producto";
-            // 
-            // txtPago
-            // 
-            this.txtPago.Enabled = false;
-            this.txtPago.Location = new System.Drawing.Point(232, 296);
-            this.txtPago.Name = "txtPago";
-            this.txtPago.Size = new System.Drawing.Size(139, 26);
-            this.txtPago.TabIndex = 16;
-            this.txtPago.TextChanged += new System.EventHandler(this.txtPago_TextChanged);
-            this.txtPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPago_KeyPress);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(15, 297);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(169, 20);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Monto de Pago (S/):";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // dateIngreso
             // 
@@ -299,16 +221,6 @@
             this.dateIngreso.Size = new System.Drawing.Size(204, 23);
             this.dateIngreso.TabIndex = 14;
             this.dateIngreso.ValueChanged += new System.EventHandler(this.dateIngreso_ValueChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(15, 221);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Combo:";
             // 
             // label3
             // 
@@ -339,21 +251,11 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "ID:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(15, 181);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Canal:";
-            // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNombre.Location = new System.Drawing.Point(15, 144);
+            this.lblNombre.Location = new System.Drawing.Point(12, 92);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(140, 20);
             this.lblNombre.TabIndex = 3;
@@ -362,7 +264,7 @@
             // txtIDComisionista
             // 
             this.txtIDComisionista.Enabled = false;
-            this.txtIDComisionista.Location = new System.Drawing.Point(167, 140);
+            this.txtIDComisionista.Location = new System.Drawing.Point(167, 89);
             this.txtIDComisionista.Name = "txtIDComisionista";
             this.txtIDComisionista.Size = new System.Drawing.Size(204, 26);
             this.txtIDComisionista.TabIndex = 4;
@@ -374,9 +276,9 @@
             this.pnlBusqueda.Controls.Add(this.btnSeleccionar);
             this.pnlBusqueda.Controls.Add(this.label12);
             this.pnlBusqueda.Controls.Add(this.dgvBusqueda);
-            this.pnlBusqueda.Location = new System.Drawing.Point(414, 31);
+            this.pnlBusqueda.Location = new System.Drawing.Point(462, 43);
             this.pnlBusqueda.Name = "pnlBusqueda";
-            this.pnlBusqueda.Size = new System.Drawing.Size(636, 365);
+            this.pnlBusqueda.Size = new System.Drawing.Size(656, 382);
             this.pnlBusqueda.TabIndex = 21;
             // 
             // cmbCampo
@@ -406,7 +308,7 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(480, 75);
+            this.btnSeleccionar.Location = new System.Drawing.Point(558, 342);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 2;
@@ -490,11 +392,119 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnComboProducto);
+            this.groupBox1.Controls.Add(this.cmbProducto);
+            this.groupBox1.Controls.Add(this.cmbCombo);
+            this.groupBox1.Controls.Add(this.cmbCanal);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtPago);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(20, 234);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(421, 191);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Especificaciones";
+            // 
+            // btnComboProducto
+            // 
+            this.btnComboProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComboProducto.Location = new System.Drawing.Point(381, 30);
+            this.btnComboProducto.Name = "btnComboProducto";
+            this.btnComboProducto.Size = new System.Drawing.Size(30, 23);
+            this.btnComboProducto.TabIndex = 32;
+            this.btnComboProducto.Text = "...";
+            this.btnComboProducto.UseVisualStyleBackColor = true;
+            // 
+            // cmbProducto
+            // 
+            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.cmbProducto.FormattingEnabled = true;
+            this.cmbProducto.Location = new System.Drawing.Point(170, 109);
+            this.cmbProducto.Name = "cmbProducto";
+            this.cmbProducto.Size = new System.Drawing.Size(204, 20);
+            this.cmbProducto.TabIndex = 31;
+            // 
+            // cmbCombo
+            // 
+            this.cmbCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.cmbCombo.FormattingEnabled = true;
+            this.cmbCombo.Location = new System.Drawing.Point(170, 73);
+            this.cmbCombo.Name = "cmbCombo";
+            this.cmbCombo.Size = new System.Drawing.Size(204, 20);
+            this.cmbCombo.TabIndex = 30;
+            // 
+            // cmbCanal
+            // 
+            this.cmbCanal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.cmbCanal.FormattingEnabled = true;
+            this.cmbCanal.Location = new System.Drawing.Point(170, 30);
+            this.cmbCanal.Name = "cmbCanal";
+            this.cmbCanal.Size = new System.Drawing.Size(204, 20);
+            this.cmbCanal.TabIndex = 29;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(18, 110);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 20);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Producto";
+            // 
+            // txtPago
+            // 
+            this.txtPago.Enabled = false;
+            this.txtPago.Location = new System.Drawing.Point(235, 148);
+            this.txtPago.Name = "txtPago";
+            this.txtPago.Size = new System.Drawing.Size(139, 26);
+            this.txtPago.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(18, 149);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(169, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Monto de Pago (S/):";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(18, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Combo:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(18, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 20);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Canal:";
+            // 
             // FrmGestionarOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 539);
+            this.ClientSize = new System.Drawing.Size(1130, 448);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlBusqueda);
             this.Controls.Add(this.gbGenerales);
             this.Controls.Add(this.tsMenu);
@@ -509,6 +519,8 @@
             this.pnlBusqueda.ResumeLayout(false);
             this.pnlBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,20 +535,12 @@
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.GroupBox gbGenerales;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtPago;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateIngreso;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtIDComisionista;
-        private System.Windows.Forms.ComboBox cmbProducto;
-        private System.Windows.Forms.ComboBox cmbCombo;
-        private System.Windows.Forms.ComboBox cmbCanal;
         private System.Windows.Forms.Button btnBuscarComisionista;
         private System.Windows.Forms.Panel pnlBusqueda;
         private System.Windows.Forms.Button btnSeleccionar;
@@ -544,7 +548,6 @@
         private System.Windows.Forms.DataGridView dgvBusqueda;
         private System.Windows.Forms.ToolStripButton btnImportar;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button btnComboProducto;
         private System.Windows.Forms.ComboBox cmbCampo;
         private System.Windows.Forms.TextBox tbFiltro;
         private System.Windows.Forms.Label label4;
@@ -556,5 +559,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCanal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnComboProducto;
+        private System.Windows.Forms.ComboBox cmbProducto;
+        private System.Windows.Forms.ComboBox cmbCombo;
+        private System.Windows.Forms.ComboBox cmbCanal;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtPago;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
     }
 }

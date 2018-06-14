@@ -76,14 +76,18 @@ namespace Vista
             txtFaltantes.Text = falta.ToString();
             if (falta == 0)
             {
+                pictureCampana.Enabled = false;
                 pictureCampana.Visible = false;
+                pictureCampana2.Enabled = true;
                 pictureCampana2.Visible = true;
                 txtFaltantes.ForeColor = Color.White;
                 txtFaltantes.BackColor = Color.Transparent;
             }
             else
             {
+                pictureCampana.Enabled = true;
                 pictureCampana.Visible = true;
+                pictureCampana2.Enabled = false;
                 pictureCampana2.Visible = false;
                 txtFaltantes.ForeColor = Color.Red;
                 txtFaltantes.BackColor = Color.Transparent;
@@ -789,7 +793,5 @@ namespace Vista
         {
 
         }
-
-           
     }
 }
