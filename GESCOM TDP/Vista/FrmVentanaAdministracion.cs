@@ -41,11 +41,11 @@ namespace Vista
             this.idPayee = id_usuario;
             estadoInicial(tipoUsuario);
             lblCargo.Text = tipoUsuario;
-            listaNoticia = logicaNoticia.listarNoticias();
-            maximo = cantidadMaxima(listaNoticia);
-            lblNombreUsu.Text = nombreUsu + " " + apellidoPat;
             if (tipoUsu != "Administrador")
             {
+                listaNoticia = logicaNoticia.listarNoticias();
+                maximo = cantidadMaxima(listaNoticia);
+                lblNombreUsu.Text = nombreUsu + " " + apellidoPat;
                 listaVisitada = logicaNoticia.listarVisitadas(idPayee);
             }
             evaluarCampana();
@@ -53,45 +53,49 @@ namespace Vista
 
         private void evaluarCampana()
         {
-            int encontrado;
-            int falta=0;
-
-            foreach(Noticia n in listaNoticia)
+            if(tipoUsu != "Administrador")
             {
-                encontrado = 0;
-                foreach(int i in listaVisitada)
+                int encontrado;
+                int falta = 0;
+
+                foreach (Noticia n in listaNoticia)
                 {
-                    if (n.Id == i)
+                    encontrado = 0;
+                    foreach (int i in listaVisitada)
                     {
-                        encontrado = 1;
-                        break;
+                        if (n.Id == i)
+                        {
+                            encontrado = 1;
+                            break;
+                        }
+                    }
+                    if (encontrado == 0)
+                    {
+                        falta = falta + 1;
                     }
                 }
-                if (encontrado == 0)
+
+                txtFaltantes.Text = falta.ToString();
+                if (falta == 0)
                 {
-                    falta = falta + 1;
+                    pictureCampana.Enabled = false;
+                    pictureCampana.Visible = false;
+                    pictureCampana2.Enabled = true;
+                    pictureCampana2.Visible = true;
+                    txtFaltantes.ForeColor = Color.White;
+                    txtFaltantes.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    pictureCampana.Enabled = true;
+                    pictureCampana.Visible = true;
+                    pictureCampana2.Enabled = false;
+                    pictureCampana2.Visible = false;
+                    txtFaltantes.ForeColor = Color.Red;
+                    txtFaltantes.BackColor = Color.Transparent;
                 }
             }
 
-            txtFaltantes.Text = falta.ToString();
-            if (falta == 0)
-            {
-                pictureCampana.Enabled = false;
-                pictureCampana.Visible = false;
-                pictureCampana2.Enabled = true;
-                pictureCampana2.Visible = true;
-                txtFaltantes.ForeColor = Color.White;
-                txtFaltantes.BackColor = Color.Transparent;
-            }
-            else
-            {
-                pictureCampana.Enabled = true;
-                pictureCampana.Visible = true;
-                pictureCampana2.Enabled = false;
-                pictureCampana2.Visible = false;
-                txtFaltantes.ForeColor = Color.Red;
-                txtFaltantes.BackColor = Color.Transparent;
-            }
         }
 
         private int cantidadMaxima(BindingList<Noticia>listaNoticia)
