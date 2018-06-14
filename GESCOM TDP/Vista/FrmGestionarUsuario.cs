@@ -391,7 +391,7 @@ namespace Vista
         public void llenarComboBox()
         {
             cmbSede.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            cmbSede.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //cmbSede.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             AutoCompleteStringCollection datos = new AutoCompleteStringCollection();
 
             listaSede = logicaSede.listarSedes();

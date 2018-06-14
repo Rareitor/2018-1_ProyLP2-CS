@@ -76,15 +76,17 @@ namespace Vista
             txtFaltantes.Text = falta.ToString();
             if (falta == 0)
             {
-                pictureCampana.BackColor = Color.Transparent;
-                txtFaltantes.BackColor = Color.Transparent;
+                pictureCampana.Visible = false;
+                pictureCampana2.Visible = true;
                 txtFaltantes.ForeColor = Color.White;
+                txtFaltantes.BackColor = Color.Transparent;
             }
             else
             {
-                pictureCampana.BackColor = Color.Red;
-                txtFaltantes.BackColor = Color.Transparent;
+                pictureCampana.Visible = true;
+                pictureCampana2.Visible = false;
                 txtFaltantes.ForeColor = Color.Red;
+                txtFaltantes.BackColor = Color.Transparent;
             }
         }
 
@@ -774,6 +776,13 @@ namespace Vista
         private void picLogoTelef_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new FrmInicio());
+        }
+
+        private void pictureCampana2_Click(object sender, EventArgs e)
+        {
+            pnlVisualizar.Hide();
+            estadoInicial(tipoUsu);
+            AbrirFormInPanel(new FrmNoticias(idPayee, listaNoticia, ref listaVisitada));
         }
     }
 }

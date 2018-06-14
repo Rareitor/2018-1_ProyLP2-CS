@@ -73,6 +73,7 @@
             this.iconRestaurar = new System.Windows.Forms.PictureBox();
             this.iconMinimize = new System.Windows.Forms.PictureBox();
             this.pnlContenedor = new System.Windows.Forms.Panel();
+            this.pictureCampana2 = new System.Windows.Forms.PictureBox();
             this.lblMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCampana)).BeginInit();
             this.pnlVisualizar.SuspendLayout();
@@ -87,11 +88,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCampana2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMenuVertical
             // 
             this.lblMenuVertical.BackColor = System.Drawing.Color.Navy;
+            this.lblMenuVertical.Controls.Add(this.pictureCampana2);
             this.lblMenuVertical.Controls.Add(this.txtFaltantes);
             this.lblMenuVertical.Controls.Add(this.pictureCampana);
             this.lblMenuVertical.Controls.Add(this.btnCalculoAdmin);
@@ -123,8 +126,8 @@
             this.txtFaltantes.BackColor = System.Drawing.Color.Transparent;
             this.txtFaltantes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtFaltantes.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold);
-            this.txtFaltantes.ForeColor = System.Drawing.Color.Red;
-            this.txtFaltantes.Location = new System.Drawing.Point(179, 611);
+            this.txtFaltantes.ForeColor = System.Drawing.Color.White;
+            this.txtFaltantes.Location = new System.Drawing.Point(173, 611);
             this.txtFaltantes.Name = "txtFaltantes";
             this.txtFaltantes.Size = new System.Drawing.Size(24, 26);
             this.txtFaltantes.TabIndex = 22;
@@ -134,7 +137,8 @@
             // 
             // pictureCampana
             // 
-            this.pictureCampana.BackColor = System.Drawing.Color.Red;
+            this.pictureCampana.BackColor = System.Drawing.Color.Transparent;
+            this.pictureCampana.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureCampana.Image = ((System.Drawing.Image)(resources.GetObject("pictureCampana.Image")));
             this.pictureCampana.Location = new System.Drawing.Point(133, 610);
             this.pictureCampana.Name = "pictureCampana";
@@ -795,6 +799,21 @@
             this.pnlContenedor.TabIndex = 2;
             this.pnlContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenedor_Paint);
             // 
+            // pictureCampana2
+            // 
+            this.pictureCampana2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureCampana2.Image = ((System.Drawing.Image)(resources.GetObject("pictureCampana2.Image")));
+            this.pictureCampana2.Location = new System.Drawing.Point(133, 610);
+            this.pictureCampana2.Name = "pictureCampana2";
+            this.pictureCampana2.Size = new System.Drawing.Size(46, 30);
+            this.pictureCampana2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCampana2.TabIndex = 23;
+            this.pictureCampana2.TabStop = false;
+            this.pictureCampana2.Visible = false;
+            this.pictureCampana2.Click += new System.EventHandler(this.pictureCampana2_Click);
+            this.pictureCampana2.MouseLeave += new System.EventHandler(this.pictureCampana_MouseLeave);
+            this.pictureCampana2.MouseHover += new System.EventHandler(this.pictureCampana_MouseHover);
+            // 
             // FrmVentanaAdministracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -823,6 +842,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCampana2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -873,5 +893,6 @@
         private System.Windows.Forms.Button btnMapa2;
         private System.Windows.Forms.PictureBox pictureCampana;
         private System.Windows.Forms.Label txtFaltantes;
+        private System.Windows.Forms.PictureBox pictureCampana2;
     }
 }

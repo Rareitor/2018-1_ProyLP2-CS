@@ -49,7 +49,7 @@
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnRegresar.Location = new System.Drawing.Point(806, 243);
+            this.btnRegresar.Location = new System.Drawing.Point(811, 226);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(107, 23);
             this.btnRegresar.TabIndex = 16;
@@ -60,7 +60,7 @@
             // picNoticias
             // 
             this.picNoticias.Image = ((System.Drawing.Image)(resources.GetObject("picNoticias.Image")));
-            this.picNoticias.Location = new System.Drawing.Point(736, 77);
+            this.picNoticias.Location = new System.Drawing.Point(784, 78);
             this.picNoticias.Name = "picNoticias";
             this.picNoticias.Size = new System.Drawing.Size(155, 127);
             this.picNoticias.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
