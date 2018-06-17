@@ -567,7 +567,7 @@ namespace Vista
 
         private void filtrar()
         {
-
+            if (listaOriginal == null) return;
             string campo = cmbCampo.Text;
             string filtro = tbFiltro.Text.ToLower() ;
             SortableBindingList<Trabajador> listaFiltrada = new SortableBindingList<Trabajador>();
@@ -732,7 +732,7 @@ namespace Vista
 
         private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbFiltro.Text = "";
+            filtrar();
         }
     }
 }

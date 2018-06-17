@@ -70,6 +70,7 @@ namespace Vista.Otros
 
         private void filtrar()
         {
+            if (listaOrdenada == null) return;
             SortableBindingList<Orden> listaAux = new SortableBindingList<Orden>();
             string filtro = cbCampo.Text;
             string field = tbFiltro.Text.ToLower();
@@ -171,7 +172,7 @@ namespace Vista.Otros
 
         private void cbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbFiltro.Text = "";
+            filtrar();
         }
     }
 }

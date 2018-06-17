@@ -81,6 +81,7 @@ namespace Vista
 
         private void filtrar()
         {
+            if (listaOrdenada == null) return;
             string campo = cbCampo.Text;
             string filtro = txtFiltro.Text.ToLower();
             listaFiltrada = new SortableBindingList<ComboProducto>();
@@ -114,7 +115,7 @@ namespace Vista
 
         private void cbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtFiltro.Text = "";
+            filtrar();
         }
     }
 }

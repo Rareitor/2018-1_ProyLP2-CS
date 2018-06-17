@@ -97,6 +97,7 @@ namespace Vista.Otros
 
         private void filtrar()
         {
+            if (listaOriginal == null) return;
             string filtro = cmbCampo.Text;
             string field = txtDato.Text.ToLower();
 
@@ -153,7 +154,7 @@ namespace Vista.Otros
 
         private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtDato.Text = "";
+            filtrar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

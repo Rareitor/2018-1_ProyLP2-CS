@@ -112,11 +112,12 @@ namespace Vista.Otros
 
         private void cmbTipoProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            filtrar();
         }
 
         private void filtrar()
         {
+            if (listaOriginal == null) return;
             string filtro = cmbTipoProducto.Text;
             string filtroNombre = textBox1.Text;
             listaFiltrada = new SortableBindingList<Producto>();
