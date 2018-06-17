@@ -112,7 +112,7 @@ namespace Vista.Otros
 
         private void cmbTipoProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            filtrar();
+            textBox1.Text = "";
         }
 
         private void filtrar()

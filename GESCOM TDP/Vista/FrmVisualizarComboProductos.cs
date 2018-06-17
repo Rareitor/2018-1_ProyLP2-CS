@@ -111,5 +111,10 @@ namespace Vista
         {
             btnSeleccionar.Visible = false;
         }
+
+        private void cbCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFiltro.Text = "";
+        }
     }
 }

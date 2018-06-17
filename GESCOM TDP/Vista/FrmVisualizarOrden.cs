@@ -168,5 +168,10 @@ namespace Vista.Otros
         {
 
         }
+
+        private void cbCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbFiltro.Text = "";
+        }
     }
 }

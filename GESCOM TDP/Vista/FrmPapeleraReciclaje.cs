@@ -12,9 +12,11 @@ namespace Vista.Otros
 {
     public partial class FrmPapeleraReciclaje : Form
     {
-        public FrmPapeleraReciclaje()
+        private FrmVentanaAdministracion padre;
+        public FrmPapeleraReciclaje(FrmVentanaAdministracion padre)
         {
             InitializeComponent();
+            this.padre = padre;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -41,56 +43,56 @@ namespace Vista.Otros
         {
             FrmVisualizarProducto frmVisualizarProducto = new FrmVisualizarProducto(true);
             frmVisualizarProducto.Text = "Recuperar Producto";
-            frmVisualizarProducto.ShowDialog();
+            this.padre.AbrirFormInPanel(frmVisualizarProducto);
         }
 
         private void btnRecuperarUsuario_Click(object sender, EventArgs e)
         {
             FrmRecuperarUsuario frmRecuperarUsuario = new FrmRecuperarUsuario();
             frmRecuperarUsuario.Text = "Recuperar Usuarios";
-            frmRecuperarUsuario.ShowDialog();
+            this.padre.AbrirFormInPanel(frmRecuperarUsuario);
         }
 
         private void lblUsuario_Click(object sender, EventArgs e)
         {
             FrmRecuperarUsuario frmRecuperarUsuario = new FrmRecuperarUsuario();
             frmRecuperarUsuario.Text = "Recuperar Usuarios";
-            frmRecuperarUsuario.ShowDialog();
+            this.padre.AbrirFormInPanel(frmRecuperarUsuario);
         }
 
         private void picUsuario_Click(object sender, EventArgs e)
         {
             FrmRecuperarUsuario frmRecuperarUsuario = new FrmRecuperarUsuario();
             frmRecuperarUsuario.Text = "Recuperar Usuarios";
-            frmRecuperarUsuario.ShowDialog();
+            this.padre.AbrirFormInPanel(frmRecuperarUsuario);
         }
 
         private void picProducto_Click(object sender, EventArgs e)
         {
             FrmVisualizarProducto frmVisualizarProducto = new FrmVisualizarProducto(true);
             frmVisualizarProducto.Text = "Recuperar Producto";
-            frmVisualizarProducto.ShowDialog();
+            this.padre.AbrirFormInPanel(frmVisualizarProducto);
         }
 
         private void lblProductos_Click(object sender, EventArgs e)
         {
             FrmVisualizarProducto frmVisualizarProducto = new FrmVisualizarProducto(true);
             frmVisualizarProducto.Text = "Recuperar Producto";
-            frmVisualizarProducto.ShowDialog();
+            this.padre.AbrirFormInPanel(frmVisualizarProducto);
         }
 
         private void picOrden_Click(object sender, EventArgs e)
         {
             FrmRecuperarOrden frmRecuperarOrden = new FrmRecuperarOrden();
             frmRecuperarOrden.Text = "Recuperar Orden";
-            frmRecuperarOrden.ShowDialog();
+            this.padre.AbrirFormInPanel(frmRecuperarOrden);
         }
 
         private void lblOrden_Click(object sender, EventArgs e)
         {
             FrmRecuperarOrden frmRecuperarOrden = new FrmRecuperarOrden();
             frmRecuperarOrden.Text = "Recuperar Orden";
-            frmRecuperarOrden.ShowDialog();
+            this.padre.AbrirFormInPanel(frmRecuperarOrden);
         }
     }
 }

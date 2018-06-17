@@ -41,9 +41,11 @@ namespace Vista
             cmbCampo.Text = "<Todos>";
             foreach (DataGridViewColumn column in dgvBusqueda.Columns)
             {
-
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
+            logicaTrabajador = new TrabajadorBL();
+            BindingList<Trabajador> lista = logicaTrabajador.listarPayees();
+            listaOriginal = new SortableBindingList<Trabajador>(lista);
         }
 
 
@@ -726,6 +728,11 @@ namespace Vista
                 pictureCheked.Visible = false;
             }
 
+        }
+
+        private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbFiltro.Text = "";
         }
     }
 }

@@ -114,6 +114,7 @@
             "Apellido Materno",
             "Correo",
             "Jefe Directo"});
+            this.cmbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCampo.FormattingEnabled = true;
             this.cmbCampo.Items.AddRange(new object[] {
             "idUsuario",

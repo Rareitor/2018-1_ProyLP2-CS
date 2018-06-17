@@ -115,7 +115,7 @@ namespace Vista
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void AbrirFormInPanel(object formHijo)
+        public void AbrirFormInPanel(object formHijo)
         {
             if (this.pnlContenedor.Controls.Count > 0)
                 this.pnlContenedor.Controls.RemoveAt(0);
@@ -352,7 +352,7 @@ namespace Vista
         {
             pnlOtro.Hide();
             estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmPapeleraReciclaje());
+            AbrirFormInPanel(new FrmPapeleraReciclaje(this));
         }
 
         private void button17_Click(object sender, EventArgs e)

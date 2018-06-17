@@ -37,13 +37,19 @@
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Canal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MontoVendido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlIngreseDato = new System.Windows.Forms.Panel();
+            this.txtDato = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblIngreseCampo = new System.Windows.Forms.Label();
+            this.cmbCampo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrden)).BeginInit();
+            this.pnlIngreseDato.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelar.Location = new System.Drawing.Point(654, 377);
+            this.btnCancelar.Location = new System.Drawing.Point(657, 530);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -56,7 +62,7 @@
             this.btnSeleccionar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSeleccionar.Location = new System.Drawing.Point(561, 377);
+            this.btnSeleccionar.Location = new System.Drawing.Point(564, 530);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 4;
@@ -75,11 +81,12 @@
             this.Fecha,
             this.Canal,
             this.MontoVendido});
-            this.dgvOrden.Location = new System.Drawing.Point(26, 27);
+            this.dgvOrden.Location = new System.Drawing.Point(29, 180);
             this.dgvOrden.Name = "dgvOrden";
             this.dgvOrden.Size = new System.Drawing.Size(703, 329);
             this.dgvOrden.TabIndex = 6;
             this.dgvOrden.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrden_CellContentClick);
+            this.dgvOrden.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOrden_ColumnHeaderMouseClick);
             // 
             // idOrden
             // 
@@ -120,11 +127,73 @@
             this.MontoVendido.Name = "MontoVendido";
             this.MontoVendido.Width = 110;
             // 
+            // pnlIngreseDato
+            // 
+            this.pnlIngreseDato.Controls.Add(this.txtDato);
+            this.pnlIngreseDato.Controls.Add(this.label2);
+            this.pnlIngreseDato.Location = new System.Drawing.Point(29, 60);
+            this.pnlIngreseDato.Name = "pnlIngreseDato";
+            this.pnlIngreseDato.Size = new System.Drawing.Size(450, 100);
+            this.pnlIngreseDato.TabIndex = 29;
+            // 
+            // txtDato
+            // 
+            this.txtDato.Location = new System.Drawing.Point(32, 58);
+            this.txtDato.Name = "txtDato";
+            this.txtDato.Size = new System.Drawing.Size(278, 20);
+            this.txtDato.TabIndex = 1;
+            this.txtDato.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDato_KeyUp);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Ingrese dato:";
+            // 
+            // lblIngreseCampo
+            // 
+            this.lblIngreseCampo.AutoSize = true;
+            this.lblIngreseCampo.Location = new System.Drawing.Point(26, 20);
+            this.lblIngreseCampo.Name = "lblIngreseCampo";
+            this.lblIngreseCampo.Size = new System.Drawing.Size(121, 13);
+            this.lblIngreseCampo.TabIndex = 32;
+            this.lblIngreseCampo.Text = "Ingrese campo a buscar";
+            // 
+            // cmbCampo
+            // 
+            this.cmbCampo.AutoCompleteCustomSource.AddRange(new string[] {
+            "idUsuario",
+            "Usuario",
+            "Nombre",
+            "Apellido Paterno",
+            "Apellido Materno",
+            "Correo",
+            "Jefe Directo"});
+            this.cmbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCampo.FormattingEnabled = true;
+            this.cmbCampo.Items.AddRange(new object[] {
+            "<Todos>",
+            "ID",
+            "Comisionista",
+            "Producto",
+            "Canal"});
+            this.cmbCampo.Location = new System.Drawing.Point(192, 17);
+            this.cmbCampo.Name = "cmbCampo";
+            this.cmbCampo.Size = new System.Drawing.Size(121, 21);
+            this.cmbCampo.TabIndex = 31;
+            this.cmbCampo.SelectedIndexChanged += new System.EventHandler(this.cmbCampo_SelectedIndexChanged);
+            // 
             // FrmRecuperarOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 416);
+            this.ClientSize = new System.Drawing.Size(760, 571);
+            this.Controls.Add(this.lblIngreseCampo);
+            this.Controls.Add(this.cmbCampo);
+            this.Controls.Add(this.pnlIngreseDato);
             this.Controls.Add(this.dgvOrden);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSeleccionar);
@@ -132,7 +201,10 @@
             this.Text = "Recuperar Orden";
             this.Load += new System.EventHandler(this.FrmRecuperarOrden_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrden)).EndInit();
+            this.pnlIngreseDato.ResumeLayout(false);
+            this.pnlIngreseDato.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -147,5 +219,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Canal;
         private System.Windows.Forms.DataGridViewTextBoxColumn MontoVendido;
+        private System.Windows.Forms.Panel pnlIngreseDato;
+        private System.Windows.Forms.TextBox txtDato;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblIngreseCampo;
+        private System.Windows.Forms.ComboBox cmbCampo;
     }
 }

@@ -711,7 +711,7 @@ namespace Vista
 
         private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            tbFiltro.Text = "";
         }
 
         private void dateIngreso_ValueChanged(object sender, EventArgs e)

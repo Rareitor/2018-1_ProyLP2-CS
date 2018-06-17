@@ -528,6 +528,7 @@
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(130, 21);
             this.cmbCampo.TabIndex = 6;
+            this.cmbCampo.SelectedIndexChanged += new System.EventHandler(this.cmbCampo_SelectedIndexChanged);
             // 
             // tbFiltro
             // 
