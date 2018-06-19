@@ -144,6 +144,7 @@ namespace Vista
             dateIngreso.Value = DateTime.Now;
             txtUsuario.Text = "";
             rbnJefe.Checked = false;
+            tbFiltro.Text = ""; 
             rbnComisionista.Checked = false;
             rbnGerente.Checked = false;
             cmbSede.SelectedItem = -1;
@@ -588,6 +589,16 @@ namespace Vista
                 string apellidoMatMin = trabajador.ApellidoMaterno.ToLower();
                 string emailMin = trabajador.Email.ToLower();
                 string idMin = trabajador.IdTrabajador.ToLower();
+                string idSupMin;
+                if (trabajador.IdSuperior!= null)
+                {
+                     idSupMin = trabajador.IdSuperior.ToLower();
+                } else
+                {
+                    idSupMin = "";
+                }
+               
+
                 switch (campo)
                 {
                     case "<Todos>":
@@ -596,7 +607,8 @@ namespace Vista
                                 || nombreMin.Contains(filtro)
                                 || apellidoPatMin.Contains(filtro)
                                 || apellidoMatMin.Contains(filtro)
-                                || emailMin.Contains(filtro);
+                                || emailMin.Contains(filtro)
+                                || idSupMin.Contains(filtro);
                         break;
                     case "ID Trabajador":
                         cumple = idMin.Contains(filtro);
@@ -612,6 +624,9 @@ namespace Vista
                         break;
                     case "Apellido Materno":
                         cumple = apellidoMatMin.Contains(filtro);
+                        break;
+                    case "ID_Superior":
+                        cumple = idSupMin.Contains(filtro);
                         break;
                     case "Email":
                         cumple = emailMin.Contains(filtro);

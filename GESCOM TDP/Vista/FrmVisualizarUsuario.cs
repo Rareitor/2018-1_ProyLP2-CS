@@ -31,28 +31,14 @@ namespace Vista.Otros
             {
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
-            if (dgvUsuarios.RowCount == 1)
-            {
-                btnExportar.Enabled = false;
-            }
-            else
-            {
-                btnExportar.Enabled = true;
-            }
+           
         }
 
         public FrmVisualizarUsuario(String cargoListar, String idPayee, String puesto, int extra)
         {
             InitializeComponent();
 
-            if (dgvUsuarios.RowCount == 1)
-            {
-                btnExportar.Enabled = false;
-            }
-            else
-            {
-                btnExportar.Enabled = true;
-            }
+            
 
             dgvUsuarios.AutoGenerateColumns = false;
             cmbCampo.Text = "<Todos>";

@@ -79,6 +79,7 @@
             this.ApellidoPat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoMat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdSuperior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tsMenu.SuspendLayout();
             this.gbGenerales.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -527,7 +528,8 @@
             "Nombre",
             "Apellido Paterno",
             "Apellido Materno",
-            "Email"});
+            "Email",
+            "ID_Superior"});
             this.cmbCampo.Location = new System.Drawing.Point(17, 62);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(130, 21);
@@ -572,7 +574,8 @@
             this.Nombre,
             this.ApellidoPat,
             this.ApellidoMat,
-            this.Email});
+            this.Email,
+            this.IdSuperior});
             this.dgvBusqueda.Location = new System.Drawing.Point(17, 143);
             this.dgvBusqueda.Name = "dgvBusqueda";
             this.dgvBusqueda.Size = new System.Drawing.Size(574, 222);
@@ -626,6 +629,12 @@
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             this.Email.Width = 140;
+            // 
+            // IdSuperior
+            // 
+            this.IdSuperior.DataPropertyName = "IdSuperior";
+            this.IdSuperior.HeaderText = "Id Superior";
+            this.IdSuperior.Name = "IdSuperior";
             // 
             // FrmGestionarUsuario
             // 
@@ -705,5 +714,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoPat;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoMat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdSuperior;
     }
 }

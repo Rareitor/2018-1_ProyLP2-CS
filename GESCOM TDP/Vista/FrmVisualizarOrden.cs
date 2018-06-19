@@ -28,6 +28,15 @@ namespace Vista.Otros
         {
             InitializeComponent();
             cbCampo.Text = "<Todos>";
+            if (dgvRecord.RowCount == 1)
+            {
+                btnExportar.Enabled = false;
+            }
+            else
+            {
+                btnExportar.Enabled = true;
+            }
+
             this.puesto = puesto;
             this.idPayee = idPayee;
             logicaNegocio = new OrdenBL();
@@ -45,11 +54,26 @@ namespace Vista.Otros
         private void tbFiltro_KeyUp(object sender, KeyEventArgs e)
         {
             filtrar();
+            if (dgvRecord.RowCount == 1)
+            {
+                btnExportar.Enabled = false;
+            }
+            else
+            {
+                btnExportar.Enabled = true;
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+            if (dgvRecord.RowCount == 1)
+            {
+                btnExportar.Enabled = false;
+            }
+            else
+            {
+                btnExportar.Enabled = true;
+            } 
             foreach (DataGridViewColumn column in dgvRecord.Columns)
             {
 
@@ -180,6 +204,11 @@ namespace Vista.Otros
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbFiltro_TextChanged(object sender, EventArgs e)
         {
 
         }

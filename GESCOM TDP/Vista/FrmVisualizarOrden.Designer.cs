@@ -32,6 +32,14 @@
             this.rdoMensual = new System.Windows.Forms.RadioButton();
             this.rdoDiario = new System.Windows.Forms.RadioButton();
             this.dgvRecord = new System.Windows.Forms.DataGridView();
+            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idJefe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreComisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Canal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MontoComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblFechaFin = new System.Windows.Forms.Label();
@@ -48,14 +56,6 @@
             this.tbFiltro = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idJefe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreComisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Canal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MontoComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +109,58 @@
             this.dgvRecord.Size = new System.Drawing.Size(788, 332);
             this.dgvRecord.TabIndex = 3;
             this.dgvRecord.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRecord_ColumnHeaderMouseClick);
+            // 
+            // idOrden
+            // 
+            this.idOrden.DataPropertyName = "Id";
+            this.idOrden.HeaderText = "idOrden";
+            this.idOrden.Name = "idOrden";
+            this.idOrden.Width = 60;
+            // 
+            // idJefe
+            // 
+            this.idJefe.DataPropertyName = "MostrarIdJefe";
+            this.idJefe.HeaderText = "Id Jefe";
+            this.idJefe.Name = "idJefe";
+            this.idJefe.Width = 85;
+            // 
+            // nombreComisionista
+            // 
+            this.nombreComisionista.DataPropertyName = "NombreTrabajadorCompleto";
+            this.nombreComisionista.HeaderText = "Comisionista";
+            this.nombreComisionista.MinimumWidth = 150;
+            this.nombreComisionista.Name = "nombreComisionista";
+            this.nombreComisionista.Width = 150;
+            // 
+            // producto
+            // 
+            this.producto.DataPropertyName = "NombreProducto";
+            this.producto.HeaderText = "Producto";
+            this.producto.Name = "producto";
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "FechaVenta";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // Canal
+            // 
+            this.Canal.DataPropertyName = "NombreCanal";
+            this.Canal.HeaderText = "Canal";
+            this.Canal.Name = "Canal";
+            // 
+            // distrito
+            // 
+            this.distrito.DataPropertyName = "Distrito";
+            this.distrito.HeaderText = "Distrito";
+            this.distrito.Name = "distrito";
+            // 
+            // MontoComision
+            // 
+            this.MontoComision.DataPropertyName = "Monto";
+            this.MontoComision.HeaderText = "MontoComision";
+            this.MontoComision.Name = "MontoComision";
             // 
             // btnExportar
             // 
@@ -251,6 +303,7 @@
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(134, 20);
             this.tbFiltro.TabIndex = 17;
+            this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
             this.tbFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltro_KeyUp);
             // 
             // buttonBuscar
@@ -273,58 +326,6 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // idOrden
-            // 
-            this.idOrden.DataPropertyName = "Id";
-            this.idOrden.HeaderText = "idOrden";
-            this.idOrden.Name = "idOrden";
-            this.idOrden.Width = 60;
-            // 
-            // idJefe
-            // 
-            this.idJefe.DataPropertyName = "MostrarIdJefe";
-            this.idJefe.HeaderText = "Id Jefe";
-            this.idJefe.Name = "idJefe";
-            this.idJefe.Width = 85;
-            // 
-            // nombreComisionista
-            // 
-            this.nombreComisionista.DataPropertyName = "NombreTrabajadorCompleto";
-            this.nombreComisionista.HeaderText = "Comisionista";
-            this.nombreComisionista.MinimumWidth = 150;
-            this.nombreComisionista.Name = "nombreComisionista";
-            this.nombreComisionista.Width = 150;
-            // 
-            // producto
-            // 
-            this.producto.DataPropertyName = "NombreProducto";
-            this.producto.HeaderText = "Producto";
-            this.producto.Name = "producto";
-            // 
-            // Fecha
-            // 
-            this.Fecha.DataPropertyName = "FechaVenta";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // Canal
-            // 
-            this.Canal.DataPropertyName = "NombreCanal";
-            this.Canal.HeaderText = "Canal";
-            this.Canal.Name = "Canal";
-            // 
-            // distrito
-            // 
-            this.distrito.DataPropertyName = "Distrito";
-            this.distrito.HeaderText = "Distrito";
-            this.distrito.Name = "distrito";
-            // 
-            // MontoComision
-            // 
-            this.MontoComision.DataPropertyName = "Monto";
-            this.MontoComision.HeaderText = "MontoComision";
-            this.MontoComision.Name = "MontoComision";
             // 
             // FrmVisualizarOrden
             // 
