@@ -42,21 +42,21 @@ namespace Vista
 
         public Trabajador ObjetoSeleccionado { get => objetoSeleccionado; set => objetoSeleccionado = value; }
 
-        private void btnBusqueda_Click(object sender, EventArgs e)
-        {
-            FrmBusquedaUsuarioPersonalizada frmBusPer = new FrmBusquedaUsuarioPersonalizada(listaTrabajador);
-            if (frmBusPer.ShowDialog() == DialogResult.OK)
-            {
-                pnlBusqueda.Visible = true;
-                BindingList<Trabajador> lista = logicaTrabajador.busquedaPersonalizada(frmBusPer.Dni, frmBusPer.Nombre, frmBusPer.ApellidoPat, frmBusPer.ApellidMat, frmBusPer.Correo);
-                dgvBusqueda.AutoGenerateColumns = false;
+        //private void btnBusqueda_Click(object sender, EventArgs e)
+        //{
+        //    FrmBusquedaUsuarioPersonalizada frmBusPer = new FrmBusquedaUsuarioPersonalizada(listaTrabajador);
+        //    if (frmBusPer.ShowDialog() == DialogResult.OK)
+        //    {
+        //        pnlBusqueda.Visible = true;
+        //        BindingList<Trabajador> lista = logicaTrabajador.busquedaPersonalizada(frmBusPer.Dni, frmBusPer.Nombre, frmBusPer.ApellidoPat, frmBusPer.ApellidMat, frmBusPer.Correo);
+        //        dgvBusqueda.AutoGenerateColumns = false;
 
-                dgvBusqueda.DataSource = lista;
+        //        dgvBusqueda.DataSource = lista;
 
 
 
-            }
-        }
+        //    }
+        //}
 
         private void pnlBusqueda_Paint(object sender, PaintEventArgs e)
         {

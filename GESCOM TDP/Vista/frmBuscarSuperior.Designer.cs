@@ -157,7 +157,7 @@
             this.btnBusqueda.Name = "btnBusqueda";
             this.btnBusqueda.Size = new System.Drawing.Size(133, 22);
             this.btnBusqueda.Text = "Busqueda Avanzada";
-            this.btnBusqueda.Click += new System.EventHandler(this.btnBusqueda_Click);
+            
             // 
             // frmBuscarSuperior
             // 

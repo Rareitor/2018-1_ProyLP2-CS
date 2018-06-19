@@ -362,6 +362,7 @@ namespace AccesoDatos
                 {
                     Comisionista c = new Comisionista();
                     t = (Trabajador)c;
+                    t.Superior = rs.GetString("jefe");
                    
                 }
                 else if (tipoU == "JEFE")

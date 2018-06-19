@@ -131,21 +131,7 @@ namespace Vista
             this.Close();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            FrmGestionarProductoAdmin gest = new FrmGestionarProductoAdmin();
-            gest.CambiarTextoBoton("Añadir");
-            gest.CambiarTextoVentana("Añadir nuevo producto");
-            gest.Show();
-        }
-
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            FrmGestionarProductoAdmin gest = new FrmGestionarProductoAdmin();
-            gest.CambiarTextoBoton("Modificar");
-            gest.CambiarTextoVentana("Modificar producto");
-            gest.Show();
-        }
+ 
 
         private void GestionarProductos_Load(object sender, EventArgs e)
         {
@@ -173,11 +159,6 @@ namespace Vista
             frm.Show();
         }
 
-        private void tsbtnBusquedaPer_Click(object sender, EventArgs e)
-        {
-            FrmBusquedaProductoPersonalizado frmBusPer = new FrmBusquedaProductoPersonalizado();
-            frmBusPer.Show();
-        }
 
         private void tsbtnEliminar_Click(object sender, EventArgs e)
         {

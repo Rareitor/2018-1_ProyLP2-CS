@@ -73,7 +73,11 @@ namespace Vista
                 datatable.CompleteRow();
             }
 
+            Paragraph texto = new Paragraph("                     Total: 450.26");
+
+            
             document.Add(datatable);
+            document.Add(texto);
         }
         //Función que obtiene los tamaños de las columnas del datagridview 
         public float[] GetTamañoColumnas(DataGridView dg)

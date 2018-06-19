@@ -75,24 +75,6 @@
     <Compile Include="frmBuscarSuperior.Designer.cs">
       <DependentUpon>frmBuscarSuperior.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBusquedaOrdenPersonalizada.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBusquedaOrdenPersonalizada.Designer.cs">
-      <DependentUpon>FrmBusquedaOrdenPersonalizada.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmBusquedaProductoPersonalizado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBusquedaProductoPersonalizado.Designer.cs">
-      <DependentUpon>FrmBusquedaProductoPersonalizado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmBusquedaUsuarioPersonalizada.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBusquedaUsuarioPersonalizada.Designer.cs">
-      <DependentUpon>FrmBusquedaUsuarioPersonalizada.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmCambiarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,24 +98,6 @@
     </Compile>
     <Compile Include="FrmFijarPeriodoCalculo.Designer.cs">
       <DependentUpon>FrmFijarPeriodoCalculo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmGestionarOrdenAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGestionarOrdenAdmin.Designer.cs">
-      <DependentUpon>FrmGestionarOrdenAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmGestionarProductoAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGestionarProductoAdmin.Designer.cs">
-      <DependentUpon>FrmGestionarProductoAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmGestionarUsuarioAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGestionarUsuarioAdmin.Designer.cs">
-      <DependentUpon>FrmGestionarUsuarioAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGestionarProducto.cs">
       <SubType>Form</SubType>
@@ -170,12 +134,6 @@
     </Compile>
     <Compile Include="FrmRecuperarUsuario.Designer.cs">
       <DependentUpon>FrmRecuperarUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmTipoUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTipoUsuario.Designer.cs">
-      <DependentUpon>FrmTipoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVisualizarComboProductos.cs">
       <SubType>Form</SubType>
@@ -308,15 +266,6 @@
     <EmbeddedResource Include="frmBuscarSuperior.resx">
       <DependentUpon>frmBuscarSuperior.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBusquedaOrdenPersonalizada.resx">
-      <DependentUpon>FrmBusquedaOrdenPersonalizada.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmBusquedaProductoPersonalizado.resx">
-      <DependentUpon>FrmBusquedaProductoPersonalizado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmBusquedaUsuarioPersonalizada.resx">
-      <DependentUpon>FrmBusquedaUsuarioPersonalizada.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmCambiarContraseña.resx">
       <DependentUpon>FrmCambiarContraseña.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,15 +277,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFijarPeriodoCalculo.resx">
       <DependentUpon>FrmFijarPeriodoCalculo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmGestionarOrdenAdmin.resx">
-      <DependentUpon>FrmGestionarOrdenAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmGestionarProductoAdmin.resx">
-      <DependentUpon>FrmGestionarProductoAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmGestionarUsuarioAdmin.resx">
-      <DependentUpon>FrmGestionarUsuarioAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionarProducto.resx">
       <DependentUpon>FrmGestionarProducto.cs</DependentUpon>
@@ -364,9 +304,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRecuperarUsuario.resx">
       <DependentUpon>FrmRecuperarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTipoUsuario.resx">
-      <DependentUpon>FrmTipoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVisualizarComboProductos.resx">
       <DependentUpon>FrmVisualizarComboProductos.cs</DependentUpon>

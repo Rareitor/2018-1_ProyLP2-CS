@@ -239,6 +239,7 @@
             this.txtApellidoMat.Name = "txtApellidoMat";
             this.txtApellidoMat.Size = new System.Drawing.Size(204, 26);
             this.txtApellidoMat.TabIndex = 13;
+            this.txtApellidoMat.TextChanged += new System.EventHandler(this.txtApellidoMat_TextChanged);
             // 
             // label5
             // 
@@ -298,6 +299,7 @@
             this.txtApellidoPat.Name = "txtApellidoPat";
             this.txtApellidoPat.Size = new System.Drawing.Size(204, 26);
             this.txtApellidoPat.TabIndex = 6;
+            this.txtApellidoPat.TextChanged += new System.EventHandler(this.txtApellidoPat_TextChanged);
             // 
             // label1
             // 
@@ -336,6 +338,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(204, 26);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // groupBox1
             // 

@@ -35,19 +35,19 @@
             this.lblIngreseCampo = new System.Windows.Forms.Label();
             this.cmbCampo = new System.Windows.Forms.ComboBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbnPdf = new System.Windows.Forms.RadioButton();
             this.rbnExcel = new System.Windows.Forms.RadioButton();
             this.btnExportar = new System.Windows.Forms.Button();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdSuperior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlIngreseDato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -129,66 +129,18 @@
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idUsuario,
+            this.IdSuperior,
             this.dni,
             this.nombre,
             this.apellidoPaterno,
             this.apellidoMaterno,
             this.email,
-            this.username,
             this.distrito});
             this.dgvUsuarios.Location = new System.Drawing.Point(26, 177);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(881, 295);
             this.dgvUsuarios.TabIndex = 35;
             this.dgvUsuarios.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuarios_ColumnHeaderMouseClick);
-            // 
-            // idUsuario
-            // 
-            this.idUsuario.DataPropertyName = "IdTrabajador";
-            this.idUsuario.HeaderText = "ID";
-            this.idUsuario.Name = "idUsuario";
-            // 
-            // dni
-            // 
-            this.dni.DataPropertyName = "Dni";
-            this.dni.HeaderText = "DNI";
-            this.dni.Name = "dni";
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "Nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // apellidoPaterno
-            // 
-            this.apellidoPaterno.DataPropertyName = "ApellidoPaterno";
-            this.apellidoPaterno.HeaderText = "Apellido Paterno";
-            this.apellidoPaterno.Name = "apellidoPaterno";
-            // 
-            // apellidoMaterno
-            // 
-            this.apellidoMaterno.DataPropertyName = "ApellidoMaterno";
-            this.apellidoMaterno.HeaderText = "Apellido Materno";
-            this.apellidoMaterno.Name = "apellidoMaterno";
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "Email";
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            // 
-            // username
-            // 
-            this.username.DataPropertyName = "Username";
-            this.username.HeaderText = "Username";
-            this.username.Name = "username";
-            // 
-            // distrito
-            // 
-            this.distrito.DataPropertyName = "Distrito";
-            this.distrito.HeaderText = "Distrito";
-            this.distrito.Name = "distrito";
             // 
             // btnCancelar
             // 
@@ -244,6 +196,54 @@
             this.btnExportar.UseVisualStyleBackColor = true;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
+            // idUsuario
+            // 
+            this.idUsuario.DataPropertyName = "IdTrabajador";
+            this.idUsuario.HeaderText = "ID";
+            this.idUsuario.Name = "idUsuario";
+            // 
+            // IdSuperior
+            // 
+            this.IdSuperior.DataPropertyName = "IdSuperior";
+            this.IdSuperior.HeaderText = "ID Superior";
+            this.IdSuperior.Name = "IdSuperior";
+            // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "Dni";
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // apellidoPaterno
+            // 
+            this.apellidoPaterno.DataPropertyName = "ApellidoPaterno";
+            this.apellidoPaterno.HeaderText = "Apellido Paterno";
+            this.apellidoPaterno.Name = "apellidoPaterno";
+            // 
+            // apellidoMaterno
+            // 
+            this.apellidoMaterno.DataPropertyName = "ApellidoMaterno";
+            this.apellidoMaterno.HeaderText = "Apellido Materno";
+            this.apellidoMaterno.Name = "apellidoMaterno";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            // 
+            // distrito
+            // 
+            this.distrito.DataPropertyName = "Distrito";
+            this.distrito.HeaderText = "Distrito";
+            this.distrito.Name = "distrito";
+            // 
             // FrmVisualizarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,17 +278,17 @@
         private System.Windows.Forms.ComboBox cmbCampo;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbnPdf;
+        private System.Windows.Forms.RadioButton rbnExcel;
+        private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdSuperior;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoPaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoMaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn distrito;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbnPdf;
-        private System.Windows.Forms.RadioButton rbnExcel;
-        private System.Windows.Forms.Button btnExportar;
     }
 }

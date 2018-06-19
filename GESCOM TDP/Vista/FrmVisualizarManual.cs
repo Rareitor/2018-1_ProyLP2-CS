@@ -19,9 +19,9 @@ namespace Vista
 
         public FrmVisualizarManual()
         {
-
+            
             InitializeComponent();
-
+            MessageBox.Show("Espere un momento, esto puede tardar unos segundos");
             string ruta = Application.StartupPath;
             int longitud = ruta.Length;
             ruta = ruta.Remove(longitud - 15, 15);

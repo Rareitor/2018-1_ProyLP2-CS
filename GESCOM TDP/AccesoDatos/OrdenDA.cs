@@ -272,6 +272,8 @@ namespace AccesoDatos
             {
                 Orden o = new Orden();
                 o.Id = rs.GetString("idOrden");
+                o.Trabajador = new Trabajador();
+                o.Trabajador.Superior = rs.GetString("jefe");
                 o.NombreTrabajadorCompleto = rs.GetString("nombrePayee");
                 o.Producto = new Producto();
                 o.Producto.Nombre = rs.GetString("nombreProducto");
@@ -310,6 +312,9 @@ namespace AccesoDatos
             {
                 Orden o = new Orden();
                 o.Id = rs.GetString("idOrden");
+                o.Trabajador = new Trabajador();
+                o.Trabajador.Superior = rs.GetString("jefe");
+
                 o.NombreTrabajadorCompleto = rs.GetString("nombrePayee");
                 o.Producto = new Producto();
                 o.Producto.Nombre = rs.GetString("nombreProducto");
@@ -348,6 +353,9 @@ namespace AccesoDatos
             {
                 Orden o = new Orden();
                 o.Id = rs.GetString("idOrden");
+                o.Trabajador = new Trabajador();
+                o.Trabajador.Superior = rs.GetString("jefe");
+
                 o.NombreTrabajadorCompleto = rs.GetString("nombrePayee");
                 o.Producto = new Producto();
                 o.Producto.Nombre = rs.GetString("nombreProducto");

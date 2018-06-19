@@ -556,7 +556,7 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label labelErrorCodigo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnComboProducto;
+      
         private System.Windows.Forms.ComboBox cmbProducto;
         private System.Windows.Forms.ComboBox cmbCombo;
         private System.Windows.Forms.ComboBox cmbCanal;

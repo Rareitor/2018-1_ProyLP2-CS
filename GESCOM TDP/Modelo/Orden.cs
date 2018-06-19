@@ -37,6 +37,7 @@ namespace Modelo
         public Combo Combo { get => combo; set => combo = value; }
         public double Monto { get => Math.Round(monto,2); set => monto = value; }
         public string IdComisionista { get => trabajador.IdTrabajador; }
+        public string MostrarIdJefe { get => trabajador.Superior; }
         public string NombreProducto { get => producto.Nombre; }
         public string NombreComisionista { get => trabajador.Nombre; }
         public string NombreCanal { get => canal.Nombre; }

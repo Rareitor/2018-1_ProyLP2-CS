@@ -142,6 +142,7 @@ namespace Vista
                     cmbCombo.Enabled = false;
                     cmbProducto.Enabled = false;
                     pnlBusqueda.Visible = false;
+                    limpiarComponentes();
                     break;
             }
         }
@@ -191,22 +192,6 @@ namespace Vista
             this.Close();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            FrmGestionarOrdenAdmin gest = new FrmGestionarOrdenAdmin();
-            gest.CambiarTextoBoton("Añadir");
-            gest.CambiarTextoVentana("Añadir una nueva orden");
-            gest.Show();
-            
-        }
-
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            FrmGestionarOrdenAdmin gest = new FrmGestionarOrdenAdmin();
-            gest.CambiarTextoBoton("Modificar");
-            gest.CambiarTextoVentana("Modificar una orden");
-            gest.Show();
-        }
 
         private void GestionarOrdenes_Load(object sender, EventArgs e)
         {
@@ -226,11 +211,7 @@ namespace Vista
             frm.Show();
         }
 
-        private void tsbtnBusquedaPer_Click(object sender, EventArgs e)
-        {
-            FrmBusquedaOrdenPersonalizada frmBusPer = new FrmBusquedaOrdenPersonalizada();
-            frmBusPer.Show();
-        }
+
         private void pnlIngreseDato_Paint(object sender, PaintEventArgs e)
         {
 
@@ -349,12 +330,15 @@ namespace Vista
         
             if (txtID.Text != "")
             {
-                Orden oEliminar = new Orden();
-                oEliminar.Id = txtID.Text;
-                opcion = 3;
-                logicaOrden.gestionarOrden(oEliminar, opcion,tipoOrden);
-                MessageBox.Show("La orden ha sido eliminado satisfactoriamente","Eliminar Orden",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
+                FrmConfirmaBorrar frmConfBorr = new FrmConfirmaBorrar();
+                if (frmConfBorr.ShowDialog() == DialogResult.OK)
+                {
+                    Orden oEliminar = new Orden();
+                    oEliminar.Id = txtID.Text;
+                    opcion = 3;
+                    logicaOrden.gestionarOrden(oEliminar, opcion, tipoOrden);
+                    MessageBox.Show("La orden ha sido eliminado satisfactoriamente", "Eliminar Orden", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
            } else {
                 MessageBox.Show("Ingrese una orden valida a eliminar","Orden Inválida",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }

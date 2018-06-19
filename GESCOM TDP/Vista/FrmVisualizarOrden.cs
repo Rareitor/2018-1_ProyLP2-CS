@@ -84,7 +84,7 @@ namespace Vista.Otros
                 string nombreProdMin = orden.NombreProducto.ToLower();
                 string nombreCanalMin = orden.NombreCanal.ToLower();
                 string distritoMin = orden.Distrito.ToLower();
-
+                string idjefeMin = orden.Trabajador.Superior.ToLower();
                 switch (filtro)
                 {
                     case "<Todos>":
@@ -92,10 +92,14 @@ namespace Vista.Otros
                                 || nombreMin.Contains(field)
                                 || nombreProdMin.Contains(field)
                                 || nombreCanalMin.Contains(field)
-                                || distritoMin.Contains(field);
+                                || distritoMin.Contains(field)
+                                || idjefeMin.Contains(field);
                         break;
                     case "Comisionista":
                         cumple = nombreMin.Contains(field);
+                        break;
+                    case "ID_Jefe":
+                        cumple = idjefeMin.Contains(field);
                         break;
                     case "Producto":
                         cumple = nombreProdMin.Contains(field);
@@ -173,6 +177,11 @@ namespace Vista.Otros
         private void cbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
             filtrar();
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

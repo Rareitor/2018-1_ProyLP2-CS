@@ -32,13 +32,6 @@
             this.rdoMensual = new System.Windows.Forms.RadioButton();
             this.rdoDiario = new System.Windows.Forms.RadioButton();
             this.dgvRecord = new System.Windows.Forms.DataGridView();
-            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreComisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Canal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MontoVendido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblFechaFin = new System.Windows.Forms.Label();
@@ -55,6 +48,14 @@
             this.tbFiltro = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idJefe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreComisionista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Canal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MontoComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -96,61 +97,18 @@
             this.dgvRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idOrden,
+            this.idJefe,
             this.nombreComisionista,
             this.producto,
             this.Fecha,
             this.Canal,
             this.distrito,
-            this.MontoVendido});
+            this.MontoComision});
             this.dgvRecord.Location = new System.Drawing.Point(50, 178);
             this.dgvRecord.Name = "dgvRecord";
             this.dgvRecord.Size = new System.Drawing.Size(788, 332);
             this.dgvRecord.TabIndex = 3;
             this.dgvRecord.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRecord_ColumnHeaderMouseClick);
-            // 
-            // idOrden
-            // 
-            this.idOrden.DataPropertyName = "Id";
-            this.idOrden.HeaderText = "idOrden";
-            this.idOrden.Name = "idOrden";
-            // 
-            // nombreComisionista
-            // 
-            this.nombreComisionista.DataPropertyName = "NombreTrabajadorCompleto";
-            this.nombreComisionista.HeaderText = "Comisionista";
-            this.nombreComisionista.MinimumWidth = 150;
-            this.nombreComisionista.Name = "nombreComisionista";
-            this.nombreComisionista.Width = 150;
-            // 
-            // producto
-            // 
-            this.producto.DataPropertyName = "NombreProducto";
-            this.producto.HeaderText = "Producto";
-            this.producto.Name = "producto";
-            // 
-            // Fecha
-            // 
-            this.Fecha.DataPropertyName = "FechaVenta";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // Canal
-            // 
-            this.Canal.DataPropertyName = "NombreCanal";
-            this.Canal.HeaderText = "Canal";
-            this.Canal.Name = "Canal";
-            // 
-            // distrito
-            // 
-            this.distrito.DataPropertyName = "Distrito";
-            this.distrito.HeaderText = "Distrito";
-            this.distrito.Name = "distrito";
-            // 
-            // MontoVendido
-            // 
-            this.MontoVendido.DataPropertyName = "Monto";
-            this.MontoVendido.HeaderText = "MontoVendido";
-            this.MontoVendido.Name = "MontoVendido";
             // 
             // btnExportar
             // 
@@ -278,7 +236,8 @@
             "Comisionista",
             "Producto",
             "Canal",
-            "Distrito"});
+            "Distrito",
+            "ID_Jefe"});
             this.cbCampo.Location = new System.Drawing.Point(152, 135);
             this.cbCampo.Name = "cbCampo";
             this.cbCampo.Size = new System.Drawing.Size(121, 21);
@@ -303,6 +262,7 @@
             this.buttonBuscar.TabIndex = 18;
             this.buttonBuscar.Text = "...";
             this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // btnBuscar
             // 
@@ -313,6 +273,58 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // idOrden
+            // 
+            this.idOrden.DataPropertyName = "Id";
+            this.idOrden.HeaderText = "idOrden";
+            this.idOrden.Name = "idOrden";
+            this.idOrden.Width = 60;
+            // 
+            // idJefe
+            // 
+            this.idJefe.DataPropertyName = "MostrarIdJefe";
+            this.idJefe.HeaderText = "Id Jefe";
+            this.idJefe.Name = "idJefe";
+            this.idJefe.Width = 85;
+            // 
+            // nombreComisionista
+            // 
+            this.nombreComisionista.DataPropertyName = "NombreTrabajadorCompleto";
+            this.nombreComisionista.HeaderText = "Comisionista";
+            this.nombreComisionista.MinimumWidth = 150;
+            this.nombreComisionista.Name = "nombreComisionista";
+            this.nombreComisionista.Width = 150;
+            // 
+            // producto
+            // 
+            this.producto.DataPropertyName = "NombreProducto";
+            this.producto.HeaderText = "Producto";
+            this.producto.Name = "producto";
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "FechaVenta";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // Canal
+            // 
+            this.Canal.DataPropertyName = "NombreCanal";
+            this.Canal.HeaderText = "Canal";
+            this.Canal.Name = "Canal";
+            // 
+            // distrito
+            // 
+            this.distrito.DataPropertyName = "Distrito";
+            this.distrito.HeaderText = "Distrito";
+            this.distrito.Name = "distrito";
+            // 
+            // MontoComision
+            // 
+            this.MontoComision.DataPropertyName = "Monto";
+            this.MontoComision.HeaderText = "MontoComision";
+            this.MontoComision.Name = "MontoComision";
             // 
             // FrmVisualizarOrden
             // 
@@ -367,14 +379,15 @@
         private System.Windows.Forms.TextBox tbFiltro;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.RadioButton rbnPdf;
+        private System.Windows.Forms.RadioButton rbnExcel;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOrden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idJefe;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreComisionista;
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Canal;
         private System.Windows.Forms.DataGridViewTextBoxColumn distrito;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MontoVendido;
-        private System.Windows.Forms.RadioButton rbnPdf;
-        private System.Windows.Forms.RadioButton rbnExcel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MontoComision;
     }
 }

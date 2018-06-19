@@ -19,13 +19,14 @@ namespace Vista
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Elemento eliminado");
-            this.Close();
+            this.DialogResult = DialogResult.OK;
+            //this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.Cancel;
+           // this.Close();
         }
     }
 }

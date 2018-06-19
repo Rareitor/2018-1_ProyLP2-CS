@@ -40,7 +40,7 @@
             this.txtUsuario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtUsuario.Location = new System.Drawing.Point(42, 62);
+            this.txtUsuario.Location = new System.Drawing.Point(87, 62);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(190, 23);
@@ -52,19 +52,19 @@
             // 
             this.lblIngreseCorreo.AutoSize = true;
             this.lblIngreseCorreo.Cursor = System.Windows.Forms.Cursors.No;
-            this.lblIngreseCorreo.Location = new System.Drawing.Point(39, 32);
+            this.lblIngreseCorreo.Location = new System.Drawing.Point(40, 21);
             this.lblIngreseCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIngreseCorreo.Name = "lblIngreseCorreo";
-            this.lblIngreseCorreo.Size = new System.Drawing.Size(316, 17);
+            this.lblIngreseCorreo.Size = new System.Drawing.Size(319, 17);
             this.lblIngreseCorreo.TabIndex = 1;
-            this.lblIngreseCorreo.Text = "Ingresa tu usuario para recuperar tu contraseña.";
+            this.lblIngreseCorreo.Text = "Ingresa su usuario para recuperar tu contraseña.";
             this.lblIngreseCorreo.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnRecuperarContra
             // 
             this.btnRecuperarContra.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnRecuperarContra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRecuperarContra.Location = new System.Drawing.Point(183, 126);
+            this.btnRecuperarContra.Location = new System.Drawing.Point(87, 93);
             this.btnRecuperarContra.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecuperarContra.Name = "btnRecuperarContra";
             this.btnRecuperarContra.Size = new System.Drawing.Size(88, 28);
@@ -76,19 +76,19 @@
             // txtRespuesta
             // 
             this.txtRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRespuesta.Location = new System.Drawing.Point(42, 162);
+            this.txtRespuesta.Location = new System.Drawing.Point(42, 138);
             this.txtRespuesta.Margin = new System.Windows.Forms.Padding(4);
             this.txtRespuesta.Multiline = true;
             this.txtRespuesta.Name = "txtRespuesta";
             this.txtRespuesta.ReadOnly = true;
-            this.txtRespuesta.Size = new System.Drawing.Size(314, 10);
+            this.txtRespuesta.Size = new System.Drawing.Size(314, 84);
             this.txtRespuesta.TabIndex = 5;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(279, 126);
+            this.button1.Location = new System.Drawing.Point(183, 93);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 28);
@@ -101,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 167);
+            this.ClientSize = new System.Drawing.Size(394, 235);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtRespuesta);
             this.Controls.Add(this.btnRecuperarContra);

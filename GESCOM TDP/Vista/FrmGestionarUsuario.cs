@@ -113,7 +113,7 @@ namespace Vista
                     txtNombre.Enabled = false;
                     dateIngreso.Enabled = false;
                     txtApellidoPat.Enabled = false;
-
+                    limpiarComponentes();
                     labelDni.Visible = false;
                     txtApellidoMat.Enabled = false;
                     MensajeCorreo.Visible = false;
@@ -157,35 +157,19 @@ namespace Vista
             this.Close();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            FrmTipoUsuario frmTipo = new FrmTipoUsuario();
-            frmTipo.Show();
-        }
 
         private void dataGridViewUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            FrmGestionarUsuarioAdmin tipoUs = new FrmGestionarUsuarioAdmin();
-            tipoUs.CambiarTextoBoton("Modificar");
-            tipoUs.CambiarTextoVentana("Modificar Usuario");
-            tipoUs.Show();
-        }
+ 
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
 
-        private void btnBusquedaPers_Click(object sender, EventArgs e)
-        {
-            FrmBusquedaUsuarioPersonalizada frmBusPer = new FrmBusquedaUsuarioPersonalizada();
-            frmBusPer.Show();
-        }
 
         private void toolStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -225,19 +209,7 @@ namespace Vista
             frmConfBorr.Show();
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            FrmGestionarUsuarioAdmin tipoUs = new FrmGestionarUsuarioAdmin();
-            tipoUs.CambiarTextoBoton("Modificar");
-            tipoUs.CambiarTextoVentana("Modificar Usuario");
-            tipoUs.Show();
-        }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            FrmTipoUsuario frmTipo = new FrmTipoUsuario();
-            frmTipo.Show();
-        }
 
         private void btnListarTodo_Click(object sender, EventArgs e)
         {
@@ -376,6 +348,7 @@ namespace Vista
 
                 opcion = 1;
             }
+            estadoComponentes(Estado.Deshabilitado);
         }
 
         public int asignarIdSede(String sitio)
@@ -496,14 +469,21 @@ namespace Vista
                 MessageBox.Show("Ingrese datos de un usuario valido");
             }else
             {
-                estadoComponentes(Estado.Deshabilitado);
-                pnlBusqueda.Visible = false;
-                opcion = 3;
-                string id_Usuario = logicaTrabajador.gestionarUsuarios(t, txtIDSuperior.Text, 3);
-                if (id_Usuario == "Correcto")
+
+                FrmConfirmaBorrar frmConfBorr = new FrmConfirmaBorrar();
+                if (frmConfBorr.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Se ha eliminado correctamente");
+                    estadoComponentes(Estado.Deshabilitado);
+                    pnlBusqueda.Visible = false;
+                    opcion = 3;
+                    string id_Usuario = logicaTrabajador.gestionarUsuarios(t, txtIDSuperior.Text, 3);
+                    if (id_Usuario == "Correcto")
+                    {
+                        MessageBox.Show("Se ha eliminado correctamente");
+                    }
                 }
+
+               
             }
 
            
@@ -733,6 +713,28 @@ namespace Vista
         private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
             filtrar();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            string nomb = txtNombre.Text;
+            txtNombre.Text = nomb.ToUpper();
+            txtNombre.SelectionStart = txtNombre.Text.Length;
+
+        }
+
+        private void txtApellidoPat_TextChanged(object sender, EventArgs e)
+        {
+            string apellidoPat = txtApellidoPat.Text;
+            txtApellidoPat.Text = apellidoPat.ToUpper();
+            txtApellidoPat.SelectionStart = txtApellidoPat.Text.Length;
+        }
+
+        private void txtApellidoMat_TextChanged(object sender, EventArgs e)
+        {
+            string apellidoMat = txtApellidoMat.Text;
+            txtApellidoMat.Text = apellidoMat.ToUpper();
+            txtApellidoMat.SelectionStart = txtApellidoMat.Text.Length;
         }
     }
 }

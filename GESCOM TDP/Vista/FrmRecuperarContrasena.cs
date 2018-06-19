@@ -83,8 +83,8 @@ namespace Vista.Otros
             Correo.From = new MailAddress("grupo8lp2@gmail.com");
             Correo.To.Add(t.Email);
             Correo.Subject = ("Recuperar Contraseña");
-            Correo.Body = "Hola, " + t.Nombre + " " + t.ApellidoPaterno +
-                ":\n Usted solicitó recuperar contraseña.\n Su contraseña es: " + t.Password;
+            Correo.Body = "Bienvenido " + t.Nombre + " " + t.ApellidoPaterno +
+                " a GESCOM TDP. \n Usted solicitó recuperar su contraseña.\n Su contraseña es: " + t.Password;
             Correo.Priority = MailPriority.Normal;
             SmtpClient ServerMail = new SmtpClient();
             ServerMail.Host = "smtp.gmail.com";

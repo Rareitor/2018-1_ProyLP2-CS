@@ -37,6 +37,7 @@ namespace Modelo
         public string Password { get => password; set => password = value; }
         public string IdTrabajador { get => idTrabajador; set => idTrabajador = value; }
         public string Superior { get => superior; set => superior = value; }
+        public string IdSuperior { get => superior; }
         public string Cargo { get => cargo; set => cargo = value; }
         public string Distrito { get => distrito; set => distrito = value; }
         public Sede Locacion { get => locacion; set => locacion = value; }
