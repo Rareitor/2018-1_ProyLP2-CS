@@ -543,9 +543,10 @@ namespace Vista
                     btnReportarInfraccion.Hide();
                     btnBackup.Location = new Point(0, 0);
                     btnMapa.Location = new Point(0, 25);
-                    btnAñadirNoticias.Location = new Point(0, 50);
-                    pnlOtro.Size = new System.Drawing.Size(180, 75);
-                    cant = 3;
+                    btnPapelera.Location = new Point(0, 50);
+                    btnAñadirNoticias.Location = new Point(0, 75);
+                    pnlOtro.Size = new System.Drawing.Size(180, 100);
+                    cant = 4;
                 }
                 else if (tipoUsu == "Gerente")
                 {

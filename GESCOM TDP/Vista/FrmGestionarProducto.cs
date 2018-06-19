@@ -169,8 +169,14 @@ namespace Vista
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string mesPe = cmbMesPeriodo.Text;
+            if (cmbAñoPeriodo.Text == ""||cmbMesPeriodo.Text == "")
+            {
+                MessageBox.Show("Ingrese un combo producto correcto");
+                return;
+
+            }
             int yearPeriodo = Int32.Parse(cmbAñoPeriodo.Text);
-            int mesPeriodo=5;
+            int mesPeriodo=6;
       
             switch (mesPe)
             {

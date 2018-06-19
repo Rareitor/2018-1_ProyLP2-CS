@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.dgvInfracciones = new System.Windows.Forms.DataGridView();
+            this.Id_Infraccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Reportador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblFechaFin = new System.Windows.Forms.Label();
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.Id_Infraccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Reportador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfracciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +54,31 @@
             this.dgvInfracciones.Name = "dgvInfracciones";
             this.dgvInfracciones.Size = new System.Drawing.Size(896, 386);
             this.dgvInfracciones.TabIndex = 3;
+            // 
+            // Id_Infraccion
+            // 
+            this.Id_Infraccion.DataPropertyName = "IdInfraccion";
+            this.Id_Infraccion.HeaderText = "Id Infraccion";
+            this.Id_Infraccion.Name = "Id_Infraccion";
+            // 
+            // ID_Reportador
+            // 
+            this.ID_Reportador.DataPropertyName = "IdPayeeReportador";
+            this.ID_Reportador.HeaderText = "Id Reportador";
+            this.ID_Reportador.Name = "ID_Reportador";
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // Texto
+            // 
+            this.Texto.DataPropertyName = "Texto";
+            this.Texto.HeaderText = "Motivo";
+            this.Texto.Name = "Texto";
+            this.Texto.Width = 400;
             // 
             // lblFechaFin
             // 
@@ -86,6 +111,7 @@
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(250, 20);
             this.dtpFechaInicio.TabIndex = 5;
+            this.dtpFechaInicio.Value = new System.DateTime(2018, 6, 1, 18, 10, 0, 0);
             // 
             // btnBuscar
             // 
@@ -106,31 +132,6 @@
             this.btnCancelar.Text = "Regresar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // Id_Infraccion
-            // 
-            this.Id_Infraccion.DataPropertyName = "IdInfraccion";
-            this.Id_Infraccion.HeaderText = "Id Infraccion";
-            this.Id_Infraccion.Name = "Id_Infraccion";
-            // 
-            // ID_Reportador
-            // 
-            this.ID_Reportador.DataPropertyName = "IdPayeeReportador";
-            this.ID_Reportador.HeaderText = "Id Reportador";
-            this.ID_Reportador.Name = "ID_Reportador";
-            // 
-            // Fecha
-            // 
-            this.Fecha.DataPropertyName = "Fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // Texto
-            // 
-            this.Texto.DataPropertyName = "Texto";
-            this.Texto.HeaderText = "Motivo";
-            this.Texto.Name = "Texto";
-            this.Texto.Width = 400;
             // 
             // FrmVisualizarInfraccion
             // 

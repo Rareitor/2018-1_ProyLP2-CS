@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTipoReporte = new System.Windows.Forms.Label();
-            this.rdoMensual = new System.Windows.Forms.RadioButton();
-            this.rdoDiario = new System.Windows.Forms.RadioButton();
             this.dgvRecord = new System.Windows.Forms.DataGridView();
             this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idJefe = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,37 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblTipoReporte
-            // 
-            this.lblTipoReporte.AutoSize = true;
-            this.lblTipoReporte.Location = new System.Drawing.Point(47, 21);
-            this.lblTipoReporte.Name = "lblTipoReporte";
-            this.lblTipoReporte.Size = new System.Drawing.Size(145, 13);
-            this.lblTipoReporte.TabIndex = 0;
-            this.lblTipoReporte.Text = "Seleccione el tipo de reporte:";
-            // 
-            // rdoMensual
-            // 
-            this.rdoMensual.AutoSize = true;
-            this.rdoMensual.Location = new System.Drawing.Point(208, 19);
-            this.rdoMensual.Name = "rdoMensual";
-            this.rdoMensual.Size = new System.Drawing.Size(65, 17);
-            this.rdoMensual.TabIndex = 1;
-            this.rdoMensual.TabStop = true;
-            this.rdoMensual.Text = "Mensual";
-            this.rdoMensual.UseVisualStyleBackColor = true;
-            // 
-            // rdoDiario
-            // 
-            this.rdoDiario.AutoSize = true;
-            this.rdoDiario.Location = new System.Drawing.Point(293, 19);
-            this.rdoDiario.Name = "rdoDiario";
-            this.rdoDiario.Size = new System.Drawing.Size(52, 17);
-            this.rdoDiario.TabIndex = 2;
-            this.rdoDiario.TabStop = true;
-            this.rdoDiario.Text = "Diario";
-            this.rdoDiario.UseVisualStyleBackColor = true;
             // 
             // dgvRecord
             // 
@@ -346,9 +312,6 @@
             this.Controls.Add(this.dtpFechaInicio);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvRecord);
-            this.Controls.Add(this.rdoDiario);
-            this.Controls.Add(this.rdoMensual);
-            this.Controls.Add(this.lblTipoReporte);
             this.Name = "FrmVisualizarOrden";
             this.Text = "Visualizar Record Vendido";
             this.Load += new System.EventHandler(this.FrmVisualizarOrden_Load);
@@ -361,10 +324,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTipoReporte;
-        private System.Windows.Forms.RadioButton rdoMensual;
-        private System.Windows.Forms.RadioButton rdoDiario;
         private System.Windows.Forms.DataGridView dgvRecord;
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.Button btnSalir;
