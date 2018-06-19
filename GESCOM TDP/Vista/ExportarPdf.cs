@@ -93,7 +93,8 @@ namespace Vista
                     "                                             " +
                     "                                 " +
                     "                       " +
-                    "              Total: " + total.ToString());
+                    "                    " +
+                    "                   Total: " + total.ToString());
                 document.Add(texto);
             }
 
