@@ -35,11 +35,6 @@
             this.lblIngreseCampo = new System.Windows.Forms.Label();
             this.cmbCampo = new System.Windows.Forms.ComboBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbnPdf = new System.Windows.Forms.RadioButton();
-            this.rbnExcel = new System.Windows.Forms.RadioButton();
-            this.btnExportar = new System.Windows.Forms.Button();
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdSuperior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +43,11 @@
             this.apellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbnPdf = new System.Windows.Forms.RadioButton();
+            this.rbnExcel = new System.Windows.Forms.RadioButton();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.pnlIngreseDato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -117,7 +117,7 @@
             "Apellido Paterno",
             "Apellido Materno",
             "Distrito"});
-            this.cmbCampo.Location = new System.Drawing.Point(189, 25);
+            this.cmbCampo.Location = new System.Drawing.Point(189, 28);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(121, 21);
             this.cmbCampo.TabIndex = 24;
@@ -141,6 +141,54 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(881, 295);
             this.dgvUsuarios.TabIndex = 35;
             this.dgvUsuarios.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuarios_ColumnHeaderMouseClick);
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.DataPropertyName = "IdTrabajador";
+            this.idUsuario.HeaderText = "ID";
+            this.idUsuario.Name = "idUsuario";
+            // 
+            // IdSuperior
+            // 
+            this.IdSuperior.DataPropertyName = "IdSuperior";
+            this.IdSuperior.HeaderText = "ID Superior";
+            this.IdSuperior.Name = "IdSuperior";
+            // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "Dni";
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // apellidoPaterno
+            // 
+            this.apellidoPaterno.DataPropertyName = "ApellidoPaterno";
+            this.apellidoPaterno.HeaderText = "Apellido Paterno";
+            this.apellidoPaterno.Name = "apellidoPaterno";
+            // 
+            // apellidoMaterno
+            // 
+            this.apellidoMaterno.DataPropertyName = "ApellidoMaterno";
+            this.apellidoMaterno.HeaderText = "Apellido Materno";
+            this.apellidoMaterno.Name = "apellidoMaterno";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            // 
+            // distrito
+            // 
+            this.distrito.DataPropertyName = "Distrito";
+            this.distrito.HeaderText = "Distrito";
+            this.distrito.Name = "distrito";
             // 
             // btnCancelar
             // 
@@ -195,54 +243,6 @@
             this.btnExportar.Text = "Generar";
             this.btnExportar.UseVisualStyleBackColor = true;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // idUsuario
-            // 
-            this.idUsuario.DataPropertyName = "IdTrabajador";
-            this.idUsuario.HeaderText = "ID";
-            this.idUsuario.Name = "idUsuario";
-            // 
-            // IdSuperior
-            // 
-            this.IdSuperior.DataPropertyName = "IdSuperior";
-            this.IdSuperior.HeaderText = "ID Superior";
-            this.IdSuperior.Name = "IdSuperior";
-            // 
-            // dni
-            // 
-            this.dni.DataPropertyName = "Dni";
-            this.dni.HeaderText = "DNI";
-            this.dni.Name = "dni";
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "Nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // apellidoPaterno
-            // 
-            this.apellidoPaterno.DataPropertyName = "ApellidoPaterno";
-            this.apellidoPaterno.HeaderText = "Apellido Paterno";
-            this.apellidoPaterno.Name = "apellidoPaterno";
-            // 
-            // apellidoMaterno
-            // 
-            this.apellidoMaterno.DataPropertyName = "ApellidoMaterno";
-            this.apellidoMaterno.HeaderText = "Apellido Materno";
-            this.apellidoMaterno.Name = "apellidoMaterno";
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "Email";
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            // 
-            // distrito
-            // 
-            this.distrito.DataPropertyName = "Distrito";
-            this.distrito.HeaderText = "Distrito";
-            this.distrito.Name = "distrito";
             // 
             // FrmVisualizarUsuario
             // 
