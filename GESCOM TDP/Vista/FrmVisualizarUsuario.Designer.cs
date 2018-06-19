@@ -43,7 +43,6 @@
             this.apellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbnPdf = new System.Windows.Forms.RadioButton();
             this.rbnExcel = new System.Windows.Forms.RadioButton();
@@ -190,22 +189,12 @@
             this.distrito.HeaderText = "Distrito";
             this.distrito.Name = "distrito";
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(536, 132);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 36;
-            this.btnCancelar.Text = "Regresar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbnPdf);
             this.groupBox1.Controls.Add(this.rbnExcel);
             this.groupBox1.Controls.Add(this.btnExportar);
-            this.groupBox1.Location = new System.Drawing.Point(741, 73);
+            this.groupBox1.Location = new System.Drawing.Point(674, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(136, 98);
             this.groupBox1.TabIndex = 37;
@@ -250,7 +239,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 484);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.pnlIngreseDato);
             this.Controls.Add(this.lblIngreseCampo);
@@ -277,7 +265,6 @@
         private System.Windows.Forms.Label lblIngreseCampo;
         private System.Windows.Forms.ComboBox cmbCampo;
         private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbnPdf;
         private System.Windows.Forms.RadioButton rbnExcel;
