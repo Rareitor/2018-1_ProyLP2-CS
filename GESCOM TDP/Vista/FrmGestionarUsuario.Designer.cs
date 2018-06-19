@@ -514,6 +514,7 @@
             this.pnlBusqueda.Name = "pnlBusqueda";
             this.pnlBusqueda.Size = new System.Drawing.Size(623, 412);
             this.pnlBusqueda.TabIndex = 20;
+            this.pnlBusqueda.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBusqueda_Paint);
             // 
             // cmbCampo
             // 

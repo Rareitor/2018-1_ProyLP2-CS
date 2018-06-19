@@ -75,12 +75,6 @@
     <Compile Include="frmBuscarSuperior.Designer.cs">
       <DependentUpon>frmBuscarSuperior.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCambiarContraseña.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCambiarContraseña.Designer.cs">
-      <DependentUpon>FrmCambiarContraseña.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmConfirmaBorrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,12 +182,6 @@
     <Compile Include="FrmRealizarBackup.Designer.cs">
       <DependentUpon>FrmRealizarBackup.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVisualizarRecomendacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmVisualizarRecomendacion.Designer.cs">
-      <DependentUpon>FrmVisualizarRecomendacion.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmNoticias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,9 +254,6 @@
     <EmbeddedResource Include="frmBuscarSuperior.resx">
       <DependentUpon>frmBuscarSuperior.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCambiarContraseña.resx">
-      <DependentUpon>FrmCambiarContraseña.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmConfirmaBorrar.resx">
       <DependentUpon>FrmConfirmaBorrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,9 +298,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVisualizarManual.resx">
       <DependentUpon>FrmVisualizarManual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmVisualizarRecomendacion.resx">
-      <DependentUpon>FrmVisualizarRecomendacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNoticias.resx">
       <DependentUpon>FrmNoticias.cs</DependentUpon>

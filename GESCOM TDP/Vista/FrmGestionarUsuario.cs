@@ -332,7 +332,7 @@ namespace Vista
                 t.Locacion.IdLocal = idSede;
 
                 string idUsuario = logicaTrabajador.gestionarUsuarios(t, idSuperior, opcion);
-
+                
                 if (idUsuario != "Correcto")
                 {
                     txtID.Text = idUsuario;
@@ -735,6 +735,11 @@ namespace Vista
             string apellidoMat = txtApellidoMat.Text;
             txtApellidoMat.Text = apellidoMat.ToUpper();
             txtApellidoMat.SelectionStart = txtApellidoMat.Text.Length;
+        }
+
+        private void pnlBusqueda_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

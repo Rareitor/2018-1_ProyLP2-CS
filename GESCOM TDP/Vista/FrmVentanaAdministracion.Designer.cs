@@ -51,7 +51,6 @@
             this.btnMapa = new System.Windows.Forms.Button();
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnPapelera = new System.Windows.Forms.Button();
-            this.btnEnviarRecomend = new System.Windows.Forms.Button();
             this.btnVisuGere = new System.Windows.Forms.Button();
             this.pnlCalculo = new System.Windows.Forms.Panel();
             this.btnComisionCalculo = new System.Windows.Forms.Button();
@@ -62,7 +61,6 @@
             this.btnOrdenes = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnOtrosJefeCom = new System.Windows.Forms.Button();
-            this.btnMiCuenta = new System.Windows.Forms.Button();
             this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.picCerrarSesion = new System.Windows.Forms.PictureBox();
             this.lblNombreUsu = new System.Windows.Forms.Label();
@@ -70,14 +68,14 @@
             this.picUsu = new System.Windows.Forms.PictureBox();
             this.picLogoTelef = new System.Windows.Forms.PictureBox();
             this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.lbFecha = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.iconMaximizar = new System.Windows.Forms.PictureBox();
             this.iconCerrar = new System.Windows.Forms.PictureBox();
             this.iconRestaurar = new System.Windows.Forms.PictureBox();
             this.iconMinimize = new System.Windows.Forms.PictureBox();
             this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.lblHora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbFecha = new System.Windows.Forms.Label();
             this.lblMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCampana2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCampana)).BeginInit();
@@ -109,7 +107,6 @@
             this.lblMenuVertical.Controls.Add(this.btnGestionarJefeCom);
             this.lblMenuVertical.Controls.Add(this.pnlGestion);
             this.lblMenuVertical.Controls.Add(this.btnOtrosJefeCom);
-            this.lblMenuVertical.Controls.Add(this.btnMiCuenta);
             this.lblMenuVertical.Controls.Add(this.lblCerrarSesion);
             this.lblMenuVertical.Controls.Add(this.picCerrarSesion);
             this.lblMenuVertical.Controls.Add(this.lblNombreUsu);
@@ -376,7 +373,6 @@
             this.pnlOtro.Controls.Add(this.btnMapa);
             this.pnlOtro.Controls.Add(this.btnBackup);
             this.pnlOtro.Controls.Add(this.btnPapelera);
-            this.pnlOtro.Controls.Add(this.btnEnviarRecomend);
             this.pnlOtro.Location = new System.Drawing.Point(20, 220);
             this.pnlOtro.Name = "pnlOtro";
             this.pnlOtro.Size = new System.Drawing.Size(180, 150);
@@ -410,7 +406,7 @@
             this.btnReportarInfraccion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportarInfraccion.ForeColor = System.Drawing.Color.White;
             this.btnReportarInfraccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportarInfraccion.Location = new System.Drawing.Point(0, 75);
+            this.btnReportarInfraccion.Location = new System.Drawing.Point(0, 25);
             this.btnReportarInfraccion.Name = "btnReportarInfraccion";
             this.btnReportarInfraccion.Size = new System.Drawing.Size(180, 25);
             this.btnReportarInfraccion.TabIndex = 12;
@@ -428,7 +424,7 @@
             this.btnMapa.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMapa.ForeColor = System.Drawing.Color.White;
             this.btnMapa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMapa.Location = new System.Drawing.Point(0, 125);
+            this.btnMapa.Location = new System.Drawing.Point(0, 50);
             this.btnMapa.Name = "btnMapa";
             this.btnMapa.Size = new System.Drawing.Size(180, 25);
             this.btnMapa.TabIndex = 11;
@@ -446,7 +442,7 @@
             this.btnBackup.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackup.ForeColor = System.Drawing.Color.White;
             this.btnBackup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBackup.Location = new System.Drawing.Point(0, 50);
+            this.btnBackup.Location = new System.Drawing.Point(0, 75);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(180, 25);
             this.btnBackup.TabIndex = 10;
@@ -464,7 +460,7 @@
             this.btnPapelera.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPapelera.ForeColor = System.Drawing.Color.White;
             this.btnPapelera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPapelera.Location = new System.Drawing.Point(0, 25);
+            this.btnPapelera.Location = new System.Drawing.Point(0, 0);
             this.btnPapelera.Name = "btnPapelera";
             this.btnPapelera.Size = new System.Drawing.Size(180, 25);
             this.btnPapelera.TabIndex = 9;
@@ -472,24 +468,6 @@
             this.btnPapelera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPapelera.UseVisualStyleBackColor = false;
             this.btnPapelera.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // btnEnviarRecomend
-            // 
-            this.btnEnviarRecomend.BackColor = System.Drawing.Color.Navy;
-            this.btnEnviarRecomend.FlatAppearance.BorderSize = 0;
-            this.btnEnviarRecomend.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnEnviarRecomend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviarRecomend.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnEnviarRecomend.ForeColor = System.Drawing.Color.White;
-            this.btnEnviarRecomend.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEnviarRecomend.Location = new System.Drawing.Point(0, 0);
-            this.btnEnviarRecomend.Name = "btnEnviarRecomend";
-            this.btnEnviarRecomend.Size = new System.Drawing.Size(180, 25);
-            this.btnEnviarRecomend.TabIndex = 8;
-            this.btnEnviarRecomend.Text = "Recomendaciones";
-            this.btnEnviarRecomend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEnviarRecomend.UseVisualStyleBackColor = false;
-            this.btnEnviarRecomend.Click += new System.EventHandler(this.button17_Click);
             // 
             // btnVisuGere
             // 
@@ -656,24 +634,6 @@
             this.btnOtrosJefeCom.UseVisualStyleBackColor = false;
             this.btnOtrosJefeCom.Click += new System.EventHandler(this.btnOtrosJefeCom_Click);
             // 
-            // btnMiCuenta
-            // 
-            this.btnMiCuenta.BackColor = System.Drawing.Color.Navy;
-            this.btnMiCuenta.FlatAppearance.BorderSize = 0;
-            this.btnMiCuenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnMiCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMiCuenta.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMiCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnMiCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnMiCuenta.Image")));
-            this.btnMiCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMiCuenta.Location = new System.Drawing.Point(3, 507);
-            this.btnMiCuenta.Name = "btnMiCuenta";
-            this.btnMiCuenta.Size = new System.Drawing.Size(200, 45);
-            this.btnMiCuenta.TabIndex = 7;
-            this.btnMiCuenta.Text = "Mi Cuenta";
-            this.btnMiCuenta.UseVisualStyleBackColor = false;
-            this.btnMiCuenta.Click += new System.EventHandler(this.button18_Click_1);
-            // 
             // lblCerrarSesion
             // 
             this.lblCerrarSesion.AutoSize = true;
@@ -760,6 +720,28 @@
             this.pnlSuperior.TabIndex = 1;
             this.pnlSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperior_MouseDown);
             // 
+            // lbFecha
+            // 
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFecha.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbFecha.Location = new System.Drawing.Point(136, 22);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(47, 15);
+            this.lbFecha.TabIndex = 4;
+            this.lbFecha.Text = "label1";
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lblHora.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblHora.Location = new System.Drawing.Point(26, 12);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(79, 29);
+            this.lblHora.TabIndex = 2;
+            this.lblHora.Text = "label1";
+            // 
             // iconMaximizar
             // 
             this.iconMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -823,32 +805,10 @@
             this.pnlContenedor.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.pnlContenedor_ControlRemoved);
             this.pnlContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenedor_Paint);
             // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.lblHora.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblHora.Location = new System.Drawing.Point(26, 12);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(79, 29);
-            this.lblHora.TabIndex = 2;
-            this.lblHora.Text = "label1";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lbFecha
-            // 
-            this.lbFecha.AutoSize = true;
-            this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFecha.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lbFecha.Location = new System.Drawing.Point(136, 22);
-            this.lbFecha.Name = "lbFecha";
-            this.lbFecha.Size = new System.Drawing.Size(47, 15);
-            this.lbFecha.TabIndex = 4;
-            this.lbFecha.Text = "label1";
             // 
             // FrmVentanaAdministracion
             // 
@@ -898,7 +858,6 @@
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.PictureBox picCerrarSesion;
         private System.Windows.Forms.Label lblCerrarSesion;
-        private System.Windows.Forms.Button btnMiCuenta;
         private System.Windows.Forms.Panel pnlContenedor;
         private System.Windows.Forms.Button btnComisionista;
         private System.Windows.Forms.Button btnJefes;
@@ -908,7 +867,6 @@
         private System.Windows.Forms.Button btnMapa;
         private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.Button btnPapelera;
-        private System.Windows.Forms.Button btnEnviarRecomend;
         private System.Windows.Forms.Panel pnlGestion;
         private System.Windows.Forms.Button btnProductosGestion;
         private System.Windows.Forms.Button btnOrdenes;

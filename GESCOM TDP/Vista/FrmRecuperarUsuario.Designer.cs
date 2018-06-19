@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblIngreseCampo = new System.Windows.Forms.Label();
             this.cmbCampo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuariosRec)).BeginInit();
             this.pnlIngreseDato.SuspendLayout();
             this.SuspendLayout();
@@ -130,9 +131,9 @@
             // 
             this.pnlIngreseDato.Controls.Add(this.txtDato);
             this.pnlIngreseDato.Controls.Add(this.label2);
-            this.pnlIngreseDato.Location = new System.Drawing.Point(35, 52);
+            this.pnlIngreseDato.Location = new System.Drawing.Point(344, 62);
             this.pnlIngreseDato.Name = "pnlIngreseDato";
-            this.pnlIngreseDato.Size = new System.Drawing.Size(450, 100);
+            this.pnlIngreseDato.Size = new System.Drawing.Size(339, 100);
             this.pnlIngreseDato.TabIndex = 28;
             // 
             // txtDato
@@ -155,7 +156,7 @@
             // lblIngreseCampo
             // 
             this.lblIngreseCampo.AutoSize = true;
-            this.lblIngreseCampo.Location = new System.Drawing.Point(32, 9);
+            this.lblIngreseCampo.Location = new System.Drawing.Point(51, 122);
             this.lblIngreseCampo.Name = "lblIngreseCampo";
             this.lblIngreseCampo.Size = new System.Drawing.Size(121, 13);
             this.lblIngreseCampo.TabIndex = 30;
@@ -181,17 +182,27 @@
             "Apellido Paterno",
             "Apellido Materno",
             "Razón"});
-            this.cmbCampo.Location = new System.Drawing.Point(198, 6);
+            this.cmbCampo.Location = new System.Drawing.Point(217, 119);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(121, 21);
             this.cmbCampo.TabIndex = 29;
             this.cmbCampo.SelectedIndexChanged += new System.EventHandler(this.cmbCampo_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(686, 39);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "PAPELERA DE RECICLAJE USUARIOS";
             // 
             // FrmRecuperarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 489);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblIngreseCampo);
             this.Controls.Add(this.cmbCampo);
             this.Controls.Add(this.pnlIngreseDato);
@@ -225,5 +236,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblIngreseCampo;
         private System.Windows.Forms.ComboBox cmbCampo;
+        private System.Windows.Forms.Label label1;
     }
 }

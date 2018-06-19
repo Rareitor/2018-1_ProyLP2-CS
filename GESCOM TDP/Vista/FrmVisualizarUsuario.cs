@@ -31,6 +31,14 @@ namespace Vista.Otros
             {
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
+            if (dgvUsuarios.RowCount == 1)
+            {
+                btnExportar.Enabled = false;
+            }
+            else
+            {
+                btnExportar.Enabled = true;
+            }
         }
 
         public FrmVisualizarUsuario(String cargoListar, String idPayee, String puesto, int extra)
@@ -176,6 +184,14 @@ namespace Vista.Otros
         private void txtDato_KeyUp(object sender, KeyEventArgs e)
         {
             filtrar();
+            if (dgvUsuarios.RowCount == 1)
+            {
+                btnExportar.Enabled = false;
+            }
+            else
+            {
+                btnExportar.Enabled = true;
+            }
         }
 
         private void FrmVisualizarUsuario_Load(object sender, EventArgs e)
@@ -185,6 +201,8 @@ namespace Vista.Otros
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
+
+           
             if (rbnExcel.Checked == true)
             {
                 ExportarExcel excel = new ExportarExcel(dgvUsuarios);

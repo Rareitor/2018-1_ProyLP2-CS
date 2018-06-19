@@ -42,19 +42,19 @@ namespace Vista
             estadoInicial(tipoUsuario);
             lblCargo.Text = tipoUsuario;
             lblNombreUsu.Text = nombreUsu + " " + apellidoPat;
-            if (tipoUsu != "Administrador")
-            {
+            //if (tipoUsu != "Administrador")
+            
                 listaNoticia = logicaNoticia.listarNoticias();
                 maximo = cantidadMaxima(listaNoticia);
                 listaVisitada = logicaNoticia.listarVisitadas(idPayee);
-            }
+            
             evaluarCampana();
         }
 
         private void evaluarCampana()
         {
-            if(tipoUsu != "Administrador")
-            {
+            //if(tipoUsu != "Administrador")
+            
                 int encontrado;
                 int falta = 0;
 
@@ -94,7 +94,7 @@ namespace Vista
                     txtFaltantes.ForeColor = Color.Red;
                     txtFaltantes.BackColor = Color.Transparent;
                 }
-            }
+            
 
         }
 
@@ -156,10 +156,11 @@ namespace Vista
             {
                 case "Administrador":
                     btnGestionarJefeCom.Location = new Point(0, 100);
-                    btnCalculoAdmin.Location = new Point(0, 140);
-                    btnOtrosJefeCom.Location = new Point(0, 180);
-                    
-                    btnVisuGere.Hide();
+                    btnCalculoAdmin.Hide();
+                    // btnCalculoAdmin.Location = new Point(0, 140);
+                    btnOtrosJefeCom.Location = new Point(0, 140);
+                    btnVisuGere.Location = new Point(0, 180);
+                    //btnVisuGere.Hide();
                     break;
                 case "Gerente":
                     btnCalculoAdmin.Text = "Reporte";
@@ -357,9 +358,7 @@ namespace Vista
 
         private void button17_Click(object sender, EventArgs e)
         {
-            pnlOtro.Hide();
-            estadoInicial(tipoUsu);
-            AbrirFormInPanel(new FrmVisualizarRecomendacion());
+          
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -482,12 +481,18 @@ namespace Vista
                     pnlGestion.Size =   new System.Drawing.Size(150, 25);
                 }
 
-                if (tipoUsu == "Gerente" || tipoUsu == "Administrador")
+                if (tipoUsu == "Gerente" )
                 {
                     btnCalculoAdmin.Location = new Point(0, 140 + cant * 25);
                     btnOtrosJefeCom.Location = new Point(0, 180 + cant * 25);
                     btnVisuGere.Location = new Point(0, 220 + cant * 25);
-                } else if (tipoUsu == "Comisionista" || tipoUsu == "Jefe")
+                } else if (tipoUsu == "Administrador") {
+                    
+                    btnOtrosJefeCom.Location = new Point(0, 140 + cant * 25);
+                    btnVisuGere.Location = new Point(0, 180 + cant * 25);
+
+                }
+                else if (tipoUsu == "Comisionista" || tipoUsu == "Jefe")
                 {
                     btnOtrosJefeCom.Location = new Point(0, 140 + cant * 25);
                     btnVisuGere.Location = new Point(0, 180 + cant * 25);
@@ -515,11 +520,13 @@ namespace Vista
             if (pnlOtro.Visible == true)
             {
                 btnGestionarJefeCom.Location = new Point(0, 100);
-                if (tipoUsu == "Gerente" || tipoUsu =="Administrador")
+                if (tipoUsu == "Gerente" )
                 {
                     btnCalculoAdmin.Location = new Point(0, 140);
                     btnOtrosJefeCom.Location = new Point(0, 180);
-                } else if ((tipoUsu == "Comisionista") || (tipoUsu == "Jefe")){
+                } if (tipoUsu == "Administrador") {
+                    btnOtrosJefeCom.Location = new Point(0, 140);
+                } else if ((tipoUsu == "Comisionista") || (tipoUsu == "Jefe")) {
                     btnOtrosJefeCom.Location = new Point(0, 140);
                 }
                 
@@ -534,17 +541,17 @@ namespace Vista
                 if (tipoUsu == "Administrador")
                 {
                     btnReportarInfraccion.Hide();
-                    btnMapa.Location = new Point(0, 75);
-                    btnAñadirNoticias.Location = new Point(0, 100);
-                    pnlOtro.Size = new System.Drawing.Size(180, 100);
-                    cant = 5;
+                    btnMapa.Location = new Point(0, 25);
+                    btnAñadirNoticias.Location = new Point(0, 50);
+                    pnlOtro.Size = new System.Drawing.Size(180, 50);
+                    cant = 2;
                 }
                 else if (tipoUsu == "Gerente")
                 {
                     btnReportarInfraccion.Hide();
                     btnBackup.Hide();
                     btnPapelera.Hide();
-                    btnEnviarRecomend.Hide();
+                    
                     btnAñadirNoticias.Location = new Point(0, 0);
                     btnMapa.Location = new Point(0, 25);
                     pnlOtro.Size = new System.Drawing.Size(180, 50);
@@ -555,7 +562,7 @@ namespace Vista
                 {
                     btnBackup.Hide();
                     btnPapelera.Hide();
-                    btnEnviarRecomend.Hide();
+                   
                     btnAñadirNoticias.Hide();
                     btnReportarInfraccion.Location = new Point(0, -5);
                     btnMapa.Location = new Point(0, 20);
@@ -663,13 +670,18 @@ namespace Vista
                 {
                     btnOtrosJefeCom.Location = new Point(0, 140);
                     btnVisuGere.Location = new Point(0, 180);
+                } else if ((tipoUsu == "Administrador"))
+                {
+                    btnOtrosJefeCom.Location = new Point(0, 140);
+                    btnVisuGere.Location = new Point(0, 180);
                 }
 
-                int yp = btnVisuGere.Location.Y;
+              
                 pnlGestion.Hide() ;
                 pnlCalculo.Hide();
 
                 pnlOtro.Hide();
+                int yp = btnVisuGere.Location.Y;
                 pnlVisualizar.Location = new Point(50,yp+40+10);
 
                 if (tipoUsu == "Gerente")
@@ -693,6 +705,17 @@ namespace Vista
                     btnInfracciones.Hide();
                     btnNoticiasVisu.Location = new Point(0, 100);
 
+                } else if (tipoUsu == "Administrador")
+                {
+                    btnPersonalCargo.Hide();
+                    btnInfracciones.Hide();
+                    btnJefes.Hide();
+                    btnComisionista.Hide();
+                    btnProductosVisu.Hide();
+                    btnCanalesDeVenta.Hide();
+                    btnComisionesVisu.Hide();
+                    btnMapa2.Hide();
+                    btnNoticiasVisu.Location = new Point(0, 0);
                 }
 
                

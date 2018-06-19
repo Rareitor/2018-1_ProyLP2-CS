@@ -38,9 +38,7 @@ namespace Vista.Otros
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FrmCambiarContraseña cambiarContraseña = new FrmCambiarContraseña();
-            cambiarContraseña.Owner = this;
-            cambiarContraseña.ShowDialog();
+            
         }
 
         private void AdministrarCuenta_Load(object sender, EventArgs e)
@@ -70,11 +68,6 @@ namespace Vista.Otros
             }
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            FrmCambiarContraseña cambiarContraseña = new FrmCambiarContraseña();
-            cambiarContraseña.Owner = this;
-            cambiarContraseña.ShowDialog();
-        }
+       
     }
 }
