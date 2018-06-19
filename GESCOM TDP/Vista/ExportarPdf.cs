@@ -14,9 +14,20 @@ namespace Vista
     public class ExportarPdf
     {
         DataGridView dgvRecord;
-        public ExportarPdf(DataGridView dgv)
+        double total = 0;
+        int seImprime = 1;
+        public ExportarPdf(DataGridView dgv, double total)
         {
             dgvRecord = dgv;
+            if (total >= 0)
+            {
+                this.total = total;
+                seImprime = 1;
+            }else
+            {
+                seImprime = 0;
+            }
+           
         }
 
 
@@ -73,11 +84,22 @@ namespace Vista
                 datatable.CompleteRow();
             }
 
-            Paragraph texto = new Paragraph("                     Total: 450.26");
-
-            
             document.Add(datatable);
-            document.Add(texto);
+
+            if (seImprime == 1)
+            {
+                Paragraph texto = new Paragraph("                                        " +
+                    "                                            " +
+                    "                                             " +
+                    "                                 " +
+                    "                       " +
+                    "              Total: " + total.ToString());
+                document.Add(texto);
+            }
+
+
+          
+            
         }
         //Función que obtiene los tamaños de las columnas del datagridview 
         public float[] GetTamañoColumnas(DataGridView dg)

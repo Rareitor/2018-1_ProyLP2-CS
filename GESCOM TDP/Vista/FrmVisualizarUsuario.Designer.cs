@@ -245,7 +245,7 @@
             this.Controls.Add(this.cmbCampo);
             this.Controls.Add(this.btnSeleccionar);
             this.Name = "FrmVisualizarUsuario";
-            this.Text = "Visualizar Comisionista";
+            this.Text = "Visualizar Personal a Cargo";
             this.Load += new System.EventHandler(this.FrmVisualizarUsuario_Load);
             this.pnlIngreseDato.ResumeLayout(false);
             this.pnlIngreseDato.PerformLayout();

@@ -44,6 +44,16 @@ namespace Vista.Otros
         public FrmVisualizarUsuario(String cargoListar, String idPayee, String puesto, int extra)
         {
             InitializeComponent();
+
+            if (dgvUsuarios.RowCount == 1)
+            {
+                btnExportar.Enabled = false;
+            }
+            else
+            {
+                btnExportar.Enabled = true;
+            }
+
             dgvUsuarios.AutoGenerateColumns = false;
             cmbCampo.Text = "<Todos>";
             if (extra == 1)
@@ -61,6 +71,7 @@ namespace Vista.Otros
             BindingList<Trabajador> lista = new BindingList<Trabajador>();
             switch (this.puesto)
             {
+
                 case "Administrador":
                     switch (cargoListar)
                     {
@@ -211,7 +222,7 @@ namespace Vista.Otros
             }
             else if (rbnPdf.Checked == true)
             {
-                ExportarPdf pdf = new ExportarPdf(dgvUsuarios);
+                ExportarPdf pdf = new ExportarPdf(dgvUsuarios,-1.0);
                 pdf.ExportarDataGridViewPdf();
                 MessageBox.Show("Se ha generado correctamente el archivo pdf");
             }

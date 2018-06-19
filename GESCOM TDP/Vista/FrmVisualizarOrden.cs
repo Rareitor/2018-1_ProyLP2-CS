@@ -23,7 +23,7 @@ namespace Vista.Otros
         SortableBindingList<Orden> listaOrdenada;
         private string puesto;
         private string idPayee;
-
+        Double subtotal;
         public FrmVisualizarOrden(string puesto, string idPayee)
         {
             InitializeComponent();
@@ -127,7 +127,7 @@ namespace Vista.Otros
         {
             DateTime fecha1 = dtpFechaInicio.Value;
             DateTime fecha2 = dtpFechaFin.Value;
-            Double subtotal;
+           
             switch (puesto)
             {
                 case "Gerente":
@@ -162,7 +162,7 @@ namespace Vista.Otros
                 excel.GenerarExcel();
                 MessageBox.Show("Se ha generado correctamente el archivo excel");
             } else if (rbnPdf.Checked == true){
-                ExportarPdf pdf = new ExportarPdf(dgvRecord);
+                ExportarPdf pdf = new ExportarPdf(dgvRecord,subtotal);
                 pdf.ExportarDataGridViewPdf();
                 MessageBox.Show("Se ha generado correctamente el archivo pdf");
             }

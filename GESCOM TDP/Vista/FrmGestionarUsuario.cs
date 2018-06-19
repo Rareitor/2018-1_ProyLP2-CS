@@ -279,6 +279,9 @@ namespace Vista
                         {
                             validarTodo = 1;
                         }
+                    } else
+                    {
+                        validarTodo = 1;
                     }
                     
                 }
@@ -292,7 +295,7 @@ namespace Vista
             }
             else
             {
-                estadoComponentes(Estado.Deshabilitado);
+                
                 pnlBusqueda.Visible = false;
                 if (rbnComisionista.Checked == true)
                 {
@@ -345,10 +348,10 @@ namespace Vista
                 {
                     MessageBox.Show("Se ha actualizado correctamente");
                 }
-
+                estadoComponentes(Estado.Deshabilitado);
                 opcion = 1;
             }
-            estadoComponentes(Estado.Deshabilitado);
+            
         }
 
         public int asignarIdSede(String sitio)
@@ -469,19 +472,44 @@ namespace Vista
                 MessageBox.Show("Ingrese datos de un usuario valido");
             }else
             {
+                BindingList<Trabajador> listaE = new BindingList<Trabajador>();
+                int sePuedeEliminar = 1;
 
-                FrmConfirmaBorrar frmConfBorr = new FrmConfirmaBorrar();
-                if (frmConfBorr.ShowDialog() == DialogResult.OK)
+                if (rbnGerente.Checked == true)
                 {
-                    estadoComponentes(Estado.Deshabilitado);
-                    pnlBusqueda.Visible = false;
-                    opcion = 3;
-                    string id_Usuario = logicaTrabajador.gestionarUsuarios(t, txtIDSuperior.Text, 3);
-                    if (id_Usuario == "Correcto")
+                    listaE = logicaTrabajador.listarMisJefes(t.IdTrabajador);
+
+                    if (listaE.Count > 0)
                     {
-                        MessageBox.Show("Se ha eliminado correctamente");
+                        MessageBox.Show("No se puede eliminar al Gerente, debido a que tiene personal a cargo");
+                        sePuedeEliminar = 0;
+                    }
+                } else if (rbnJefe.Checked == true)
+                {
+                    listaE = logicaTrabajador.listarMisComisionistas(t.IdTrabajador);
+                    if (listaE.Count > 0)
+                    {
+                        MessageBox.Show("No se puede eliminar al Jefe, debido a que tiene personal a cargo");
+                        sePuedeEliminar = 0;
                     }
                 }
+
+                if (sePuedeEliminar == 1)
+                {
+                    FrmConfirmaBorrar frmConfBorr = new FrmConfirmaBorrar();
+                    if (frmConfBorr.ShowDialog() == DialogResult.OK)
+                    {
+                        estadoComponentes(Estado.Deshabilitado);
+                        pnlBusqueda.Visible = false;
+                        opcion = 3;
+                        string id_Usuario = logicaTrabajador.gestionarUsuarios(t, txtIDSuperior.Text, 3);
+                        if (id_Usuario == "Correcto")
+                        {
+                            MessageBox.Show("Se ha eliminado correctamente");
+                        }
+                    }
+                }
+               
 
                
             }
@@ -530,6 +558,7 @@ namespace Vista
         {
             estadoComponentes(Estado.Deshabilitado);
             pnlBusqueda.Visible = false;
+            opcion = 1;
         }
 
         private void tbFiltro_KeyUp(object sender, KeyEventArgs e)
