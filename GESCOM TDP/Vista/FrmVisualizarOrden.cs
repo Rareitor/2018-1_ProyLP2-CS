@@ -142,6 +142,13 @@ namespace Vista.Otros
             DateTime fecha2 = dtpFechaFin.Value;
             BindingList<Orden> listaAux;
 
+            if (fecha1 > fecha2)
+            {
+                MessageBox.Show("Por favor, inserte fechas válidas", "Fechas inválidas", MessageBoxButtons.OK);
+            }
+                
+
+
             switch (puesto)
             {
                 case "Gerente":

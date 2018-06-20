@@ -50,6 +50,12 @@ namespace Vista.Otros
             DateTime inicio = dtpFechaInicio.Value;
             DateTime fin = dtpFechaFin.Value;
             BindingList<Infraccion> listaBusqueda = new BindingList<Infraccion>();
+
+            if (inicio > fin)
+            {
+                MessageBox.Show("Por favor, inserte fechas válidas", "Fechas inválidas", MessageBoxButtons.OK);
+            }
+
             foreach (Infraccion i in listaInfraccion)
             {
                 int resultado1 = DateTime.Compare(i.Fecha, inicio);
