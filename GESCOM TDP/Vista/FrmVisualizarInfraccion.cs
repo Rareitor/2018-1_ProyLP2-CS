@@ -55,15 +55,12 @@ namespace Vista.Otros
                 int resultado1 = DateTime.Compare(i.Fecha, inicio);
                 int resultado2 = DateTime.Compare(i.Fecha,fin);
 
-                if (resultado1 >= 0)
+                if (resultado1 >= 0 && resultado2 <=0)
                 {
                     listaBusqueda.Add(i);
                 } 
 
-                if (resultado2 <= 0)
-                {
-                    listaBusqueda.Add(i);
-                }
+               
             }
 
             dgvInfracciones.DataSource = listaBusqueda;
