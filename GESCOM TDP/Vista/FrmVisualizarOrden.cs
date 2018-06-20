@@ -66,6 +66,16 @@ namespace Vista.Otros
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+           
+            foreach (DataGridViewColumn column in dgvRecord.Columns)
+            {
+
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
+            buscar();
+           
+            popularListaOrdenada();
+            filtrar();
             if (dgvRecord.RowCount == 1)
             {
                 btnExportar.Enabled = false;
@@ -73,15 +83,7 @@ namespace Vista.Otros
             else
             {
                 btnExportar.Enabled = true;
-            } 
-            foreach (DataGridViewColumn column in dgvRecord.Columns)
-            {
-
-                column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
-            buscar();
-            popularListaOrdenada();
-            filtrar();
         }
 
         private void popularListaOrdenada()
@@ -166,11 +168,12 @@ namespace Vista.Otros
                 default:
                     break;
             }
+            
             subtotal = listaOrdenes.Sum(Orden => Orden.Monto);
             textBoxTotal.Text = subtotal.ToString();
             cbCampo.Enabled = true;
             tbFiltro.Enabled = true;
-            buttonBuscar.Enabled = true;
+            //buttonBuscar.Enabled = true;
         }
 
         private void dgvRecord_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

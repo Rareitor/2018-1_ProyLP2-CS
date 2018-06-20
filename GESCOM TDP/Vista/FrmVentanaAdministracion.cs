@@ -420,7 +420,7 @@ namespace Vista
         private void button20_Click(object sender, EventArgs e)
         {
            // panelMiCuenta.Visible = false;
-            AbrirFormInPanel(new FrmAdministrarCuenta());
+           
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -434,7 +434,7 @@ namespace Vista
             pnlVisualizar.Visible = false;
             pnlCalculo.Visible = false;
             pnlGestion.Visible = false;
-            AbrirFormInPanel(new FrmAdministrarCuenta());
+          
         }
 
         private void btnOtrosAdmin_Click(object sender, EventArgs e)

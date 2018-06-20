@@ -51,7 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbCampo = new System.Windows.Forms.ComboBox();
             this.tbFiltro = new System.Windows.Forms.TextBox();
-            this.buttonBuscar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -272,17 +271,6 @@
             this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
             this.tbFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltro_KeyUp);
             // 
-            // buttonBuscar
-            // 
-            this.buttonBuscar.Enabled = false;
-            this.buttonBuscar.Location = new System.Drawing.Point(487, 135);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(43, 23);
-            this.buttonBuscar.TabIndex = 18;
-            this.buttonBuscar.Text = "...";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(429, 84);
@@ -299,7 +287,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 623);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.tbFiltro);
             this.Controls.Add(this.cbCampo);
             this.Controls.Add(this.label1);
@@ -337,7 +324,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbCampo;
         private System.Windows.Forms.TextBox tbFiltro;
-        private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.RadioButton rbnPdf;
         private System.Windows.Forms.RadioButton rbnExcel;

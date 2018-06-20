@@ -57,12 +57,6 @@
   <ItemGroup>
     <Compile Include="ExportarExcel.cs" />
     <Compile Include="ExportarPdf.cs" />
-    <Compile Include="FrmAdministrarCuenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAdministrarCuenta.Designer.cs">
-      <DependentUpon>FrmAdministrarCuenta.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmAñadirNoticia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,9 +239,6 @@
       <DependentUpon>FrmVentanaAdministracion.cs</DependentUpon>
     </Compile>
     <Compile Include="SortableBindingList.cs" />
-    <EmbeddedResource Include="FrmAdministrarCuenta.resx">
-      <DependentUpon>FrmAdministrarCuenta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmAñadirNoticia.resx">
       <DependentUpon>FrmAñadirNoticia.cs</DependentUpon>
     </EmbeddedResource>
