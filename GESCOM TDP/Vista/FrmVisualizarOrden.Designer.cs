@@ -71,7 +71,7 @@
             this.MontoComision});
             this.dgvRecord.Location = new System.Drawing.Point(50, 178);
             this.dgvRecord.Name = "dgvRecord";
-            this.dgvRecord.Size = new System.Drawing.Size(788, 332);
+            this.dgvRecord.Size = new System.Drawing.Size(853, 332);
             this.dgvRecord.TabIndex = 3;
             this.dgvRecord.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRecord_ColumnHeaderMouseClick);
             // 
@@ -139,7 +139,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(763, 575);
+            this.btnSalir.Location = new System.Drawing.Point(781, 575);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 6;
@@ -185,7 +185,7 @@
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(615, 525);
+            this.labelTotal.Location = new System.Drawing.Point(709, 525);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(54, 20);
             this.labelTotal.TabIndex = 12;
@@ -194,7 +194,7 @@
             // textBoxTotal
             // 
             this.textBoxTotal.Enabled = false;
-            this.textBoxTotal.Location = new System.Drawing.Point(695, 525);
+            this.textBoxTotal.Location = new System.Drawing.Point(790, 527);
             this.textBoxTotal.Name = "textBoxTotal";
             this.textBoxTotal.Size = new System.Drawing.Size(100, 20);
             this.textBoxTotal.TabIndex = 13;
@@ -285,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 623);
+            this.ClientSize = new System.Drawing.Size(1005, 623);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.tbFiltro);
             this.Controls.Add(this.cbCampo);

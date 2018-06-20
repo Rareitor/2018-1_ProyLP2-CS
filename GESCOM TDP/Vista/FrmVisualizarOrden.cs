@@ -19,8 +19,7 @@ namespace Vista.Otros
     public partial class FrmVisualizarOrden : Form
     {
         private OrdenBL logicaNegocio;
-        BindingList<Orden> listaOrdenes;
-        SortableBindingList<Orden> listaOrdenada;
+        SortableBindingList<Orden> lista;
         private string puesto;
         private string idPayee;
         Double subtotal;
@@ -40,10 +39,13 @@ namespace Vista.Otros
             this.puesto = puesto;
             this.idPayee = idPayee;
             logicaNegocio = new OrdenBL();
-            listaOrdenes = new BindingList<Orden>();
             dgvRecord.AutoGenerateColumns = false;
 
-            listaOrdenada = new SortableBindingList<Orden>();
+            lista = new SortableBindingList<Orden>();
+            foreach (DataGridViewColumn column in dgvRecord.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -66,16 +68,9 @@ namespace Vista.Otros
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           
-            foreach (DataGridViewColumn column in dgvRecord.Columns)
-            {
-
-                column.SortMode = DataGridViewColumnSortMode.Automatic;
-            }
             buscar();
-           
-            popularListaOrdenada();
             filtrar();
+
             if (dgvRecord.RowCount == 1)
             {
                 btnExportar.Enabled = false;
@@ -86,17 +81,9 @@ namespace Vista.Otros
             }
         }
 
-        private void popularListaOrdenada()
-        {
-            foreach (Orden orden in listaOrdenes)
-            {
-                listaOrdenada.Add(orden);
-            }
-        }
-
         private void filtrar()
         {
-            if (listaOrdenada == null) return;
+            if (lista == null) return;
             SortableBindingList<Orden> listaAux = new SortableBindingList<Orden>();
             string filtro = cbCampo.Text;
             string field = tbFiltro.Text.ToLower();
@@ -104,7 +91,7 @@ namespace Vista.Otros
 
             Boolean cumple = false;
             Double monto = 0.0;
-            foreach (Orden orden in listaOrdenada)
+            foreach (Orden orden in lista)
             {
                 string nombreMin = orden.NombreTrabajadorCompleto.ToLower();
                 string nombreProdMin = orden.NombreProducto.ToLower();
@@ -153,26 +140,30 @@ namespace Vista.Otros
         {
             DateTime fecha1 = dtpFechaInicio.Value;
             DateTime fecha2 = dtpFechaFin.Value;
-           
+            BindingList<Orden> listaAux;
+
             switch (puesto)
             {
                 case "Gerente":
-                    listaOrdenes = logicaNegocio.listarOrdenesGerente(this.idPayee, fecha1, fecha2);
+                    listaAux = logicaNegocio.listarOrdenesGerente(this.idPayee, fecha1, fecha2);
                     break;
                 case "Comisionista":
-                    listaOrdenes = logicaNegocio.listarOrdenesComisionista(this.idPayee, fecha1, fecha2);
+                    listaAux = logicaNegocio.listarOrdenesComisionista(this.idPayee, fecha1, fecha2);
                     break;
                 case "Jefe":
-                    listaOrdenes = logicaNegocio.listarOrdenesJefe(this.idPayee, fecha1, fecha2);
+                    listaAux = logicaNegocio.listarOrdenesJefe(this.idPayee, fecha1, fecha2);
                     break;
                 default:
+                    listaAux = new BindingList<Orden>();
                     break;
             }
-            
-            subtotal = listaOrdenes.Sum(Orden => Orden.Monto);
+            subtotal = listaAux.Sum(Orden => Orden.Monto);
             textBoxTotal.Text = subtotal.ToString();
             cbCampo.Enabled = true;
             tbFiltro.Enabled = true;
+            lista = new SortableBindingList<Orden>(listaAux);
+            dgvRecord.DataSource = lista;
+            tbFiltro.Text = "";
             //buttonBuscar.Enabled = true;
         }
 

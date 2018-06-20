@@ -5,6 +5,12 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Vista.Otros;
 
+/*  Admin:          20090380 pucp
+    Gerente:        20176288 roder628
+    Jefe:           20175863 rodri12
+    Comisionista:   20175581 victor558          */
+
+
 namespace Vista
 {
     public partial class FrmLogin : Form
