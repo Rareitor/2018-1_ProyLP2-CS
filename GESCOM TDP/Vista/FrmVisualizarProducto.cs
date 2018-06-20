@@ -175,7 +175,7 @@ namespace Vista.Otros
             n.Texto = texto;
             n.Trabajador.IdTrabajador = idUsu;
             logicaNoticia.registrarNoticia(n);
-            MessageBox.Show("Se ha registrado correctamente la noticia");
+            MessageBox.Show("Se ha registrado correctamente la noticia", "Registro de Noticia", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -212,12 +212,6 @@
     <Compile Include="FrmVisualizarJefe.Designer.cs">
       <DependentUpon>FrmVisualizarJefe.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVisualizarMapa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmVisualizarMapa.Designer.cs">
-      <DependentUpon>FrmVisualizarMapa.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmVisualizarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,9 +301,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVisualizarJefe.resx">
       <DependentUpon>FrmVisualizarJefe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmVisualizarMapa.resx">
-      <DependentUpon>FrmVisualizarMapa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVisualizarProducto.resx">
       <DependentUpon>FrmVisualizarProducto.cs</DependentUpon>

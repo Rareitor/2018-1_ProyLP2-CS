@@ -53,7 +53,7 @@ namespace Vista.Otros
 
             if (inicio > fin)
             {
-                MessageBox.Show("Por favor, inserte fechas válidas", "Fechas inválidas", MessageBoxButtons.OK);
+                MessageBox.Show("Por favor, inserte fechas válidas", "Fechas inválidas", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
             foreach (Infraccion i in listaInfraccion)

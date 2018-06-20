@@ -204,13 +204,13 @@ namespace Vista.Otros
             {
                 ExportarExcel excel = new ExportarExcel(dgvUsuarios);
                 excel.GenerarExcel();
-                MessageBox.Show("Se ha generado correctamente el archivo excel");
+                MessageBox.Show("Se ha generado correctamente el archivo excel","Exportar Archivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (rbnPdf.Checked == true)
             {
                 ExportarPdf pdf = new ExportarPdf(dgvUsuarios,-1.0);
                 pdf.ExportarDataGridViewPdf();
-                MessageBox.Show("Se ha generado correctamente el archivo pdf");
+                MessageBox.Show("Se ha generado correctamente el archivo pdf", "Exportar Archivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

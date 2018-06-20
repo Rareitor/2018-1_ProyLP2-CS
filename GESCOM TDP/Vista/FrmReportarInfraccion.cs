@@ -120,7 +120,7 @@ namespace Vista
 
 
             logicaInfraccion.registrarInfraccion(i);
-            MessageBox.Show("Se ha registrado correctamente la infraccion");
+            MessageBox.Show("Se ha registrado correctamente la infraccion", "Registro de Infraccion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             estadoComponentes(Estado.Deshabilitado);
         }
 

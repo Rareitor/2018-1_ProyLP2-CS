@@ -144,7 +144,7 @@ namespace Vista.Otros
 
             if (fecha1 > fecha2)
             {
-                MessageBox.Show("Por favor, inserte fechas válidas", "Fechas inválidas", MessageBoxButtons.OK);
+                MessageBox.Show("Por favor, inserte fechas válidas", "Fechas inválidas", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
                 
 
@@ -185,11 +185,11 @@ namespace Vista.Otros
             {
                 ExportarExcel excel = new ExportarExcel(dgvRecord);
                 excel.GenerarExcel();
-                MessageBox.Show("Se ha generado correctamente el archivo excel");
+                MessageBox.Show("Se ha generado correctamente el archivo excel", "Exportar Archivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } else if (rbnPdf.Checked == true){
                 ExportarPdf pdf = new ExportarPdf(dgvRecord,subtotal);
                 pdf.ExportarDataGridViewPdf();
-                MessageBox.Show("Se ha generado correctamente el archivo pdf");
+                MessageBox.Show("Se ha generado correctamente el archivo pdf", "Exportar Archivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }

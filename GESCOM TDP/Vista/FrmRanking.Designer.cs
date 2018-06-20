@@ -40,9 +40,10 @@
             // lblMejores
             // 
             this.lblMejores.AutoSize = true;
-            this.lblMejores.Location = new System.Drawing.Point(49, 19);
+            this.lblMejores.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMejores.Location = new System.Drawing.Point(48, 23);
             this.lblMejores.Name = "lblMejores";
-            this.lblMejores.Size = new System.Drawing.Size(160, 13);
+            this.lblMejores.Size = new System.Drawing.Size(318, 24);
             this.lblMejores.TabIndex = 0;
             this.lblMejores.Text = "Los 3 mejores comisionistas son:";
             // 

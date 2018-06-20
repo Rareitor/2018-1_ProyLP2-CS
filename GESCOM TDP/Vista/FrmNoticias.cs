@@ -71,7 +71,7 @@ namespace Vista.Otros
                 listaV.Add(index);
             }
             
-            MessageBox.Show(texto, titulo);
+            MessageBox.Show(texto, titulo,MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         public int verificarSiFueVisitada(int idNoticia)

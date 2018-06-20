@@ -21,7 +21,7 @@ namespace Vista
         {
             
             InitializeComponent();
-            MessageBox.Show("Espere un momento, esto puede tardar unos segundos");
+            MessageBox.Show("Espere un momento, esto podrìa tardar unos segundos", "MANUAL", MessageBoxButtons.OK, MessageBoxIcon.Information);
             string ruta = Application.StartupPath;
             int longitud = ruta.Length;
             ruta = ruta.Remove(longitud - 15, 15);

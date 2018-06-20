@@ -1,4 +1,5 @@
 ﻿using Controlador;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,12 @@ namespace Vista
             dgvRanking.AutoGenerateColumns = false;
             dgvRanking.AllowUserToAddRows = false;
             dgvRanking.ReadOnly = true;
-            dgvRanking.DataSource = logicaNegocio.listarMejoresComisionistas(idPayee);  
+            BindingList<Trabajador> lista = new BindingList<Trabajador>();
+
+            lista= logicaNegocio.listarMejoresComisionistas(idPayee);
+            lblMejores.Text = "Los " + lista.Count + " mejores comisionistas son:";
+            dgvRanking.DataSource = lista;
+
         }
 
         private void FrmRanking_Load(object sender, EventArgs e)
