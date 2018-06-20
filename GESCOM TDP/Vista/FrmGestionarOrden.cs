@@ -456,9 +456,10 @@ namespace Vista
                     //{
                     //    logicaProducto.cargarProducto(p);
                     //}
-                    MessageBox.Show("Se ha cargado " + cantCargadas + " ordenes");
+                    MessageBox.Show("Se ha cargado " + cantCargadas + " òrdenes y " + (listaCargar.Count - cantCargadas).ToString() +
+                       " òrdenes ya se encuentran cargadas en el sistema.", "Datos Cargados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                MessageBox.Show("Se ha cargado los datos correctamente","Datos Cargados",MessageBoxButtons.OK,MessageBoxIcon.Information);
+               
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
